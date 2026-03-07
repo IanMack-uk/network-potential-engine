@@ -9,10 +9,11 @@ Unlike the bootstrap model, the TDC model has curvature that varies with the exp
 The goal of this note is to:
 
 1. define the TDC model clearly,
-2. compute the gradient, Hessian, and mixed derivative block explicitly,
+2. compute the gradient, Hessian, coupling operator, and mixed derivative block explicitly,
 3. derive sufficient conditions for the pointwise theorem mechanism,
-4. state a conditional local ordering theorem,
-5. connect the theorem conditions to the current code and scan results.
+4. derive an analytic sup-norm bound for the equilibrium,
+5. state a conditional local ordering theorem,
+6. connect the theorem conditions to the current code and scan results.
 
 ---
 
@@ -85,6 +86,13 @@ We compute the gradient componentwise.
 c(w_1-w_2).
 \]
 
+So
+\[
+\frac{\partial \Phi_{\mathrm{tdc}}}{\partial w_1}
+=
+\theta_1-(q+\alpha\theta_1+c)w_1+c w_2.
+\]
+
 ### Interior components \(2 \le i \le n-1\)
 \[
 \frac{\partial \Phi_{\mathrm{tdc}}}{\partial w_i}
@@ -134,6 +142,14 @@ c w_{n-1}.
 \]
 
 Thus \(F(w,\theta)\) is affine in \(w\), but with coefficients depending on \(\theta\).
+
+In matrix form,
+
+\[
+F(w,\theta)=\theta-C(\theta)w,
+\]
+
+where \(C(\theta)\) is defined below.
 
 ---
 
@@ -258,7 +274,7 @@ The only off-diagonal entries of \(C(\theta)\) are \(-c\), so if \(c\ge 0\), the
 
 Thus \(C(\theta)\) always has nonpositive off-diagonal entries.
 
-### 7.3 Diagonal dominance margins
+### 7.3 Diagonal-dominance margins
 
 For the first row,
 
@@ -405,7 +421,88 @@ This proves pointwise directional weak monotonicity.
 
 ---
 
-## 11. Conditional local weak ordering theorem
+## 11. Analytic bound lemma
+
+We now derive a simple analytic sufficient condition for the mixed-block positivity requirement.
+
+Define the minimum curvature margin
+
+\[
+m(\theta):=\min_i (q+\alpha\theta_i).
+\]
+
+If \(m(\theta)>0\), then \(C(\theta)\) is strictly diagonally dominant and invertible. Using the standard infinity-norm bound for inverses of strictly diagonally dominant matrices, we obtain
+
+\[
+\|C(\theta)^{-1}\|_\infty \le \frac{1}{m(\theta)}.
+\]
+
+Since
+
+\[
+w^*(\theta)=C(\theta)^{-1}\theta,
+\]
+
+it follows that
+
+\[
+\|w^*(\theta)\|_\infty
+\le
+\|C(\theta)^{-1}\|_\infty \|\theta\|_\infty
+\le
+\frac{\|\theta\|_\infty}{m(\theta)}.
+\]
+
+Therefore, a sufficient condition for
+
+\[
+1-\alpha w_i^*(\theta)\ge 0
+\quad\text{for all }i
+\]
+
+is
+
+\[
+\alpha\,\|w^*(\theta)\|_\infty \le 1.
+\]
+
+Using the bound above, it is enough to require
+
+\[
+\alpha\,\frac{\|\theta\|_\infty}{m(\theta)} \le 1.
+\]
+
+So we have proved the following.
+
+### Lemma (analytic sufficient condition)
+If
+
+\[
+m(\theta)=\min_i(q+\alpha\theta_i)>0
+\]
+
+and
+
+\[
+\alpha\,\frac{\|\theta\|_\infty}{m(\theta)} \le 1,
+\]
+
+then
+
+\[
+1-\alpha w_i^*(\theta)\ge 0
+\quad\text{for all }i.
+\]
+
+Consequently,
+
+\[
+H_{w\theta}(w^*(\theta),\theta)\ge 0.
+\]
+
+---
+
+## 12. Conditional local weak ordering theorem
 
 We now state the local theorem in conditional form.
 
@@ -463,27 +560,50 @@ Hence
 
 ---
 
-## 12. What the code has verified so far
+## 13. What the code has verified so far
 
 The current code has not yet proved the full theorem symbolically for all \(\theta\). But it has verified the theorem mechanism at concrete parameter values and along sampled lines.
 
-For example, for the tested scan in the current implementation:
+For the tested scan in the current implementation:
 
 - the equilibrium exists at every sampled point,
 - the row-wise diagonal-dominance margins remain positive,
 - \(C(\theta)\) remains symmetric with nonpositive off-diagonals,
 - \(R(\theta)=C(\theta)^{-1}H_{w\theta}(\theta)\) remains entrywise nonnegative,
-- and the finite equilibrium differences
+- the finite equilibrium differences
   \[
   w^*(\theta(t_{k+1}))-w^*(\theta(t_k))
   \]
-  remain entrywise nonnegative.
+  remain entrywise nonnegative,
+- the sufficient-condition margins
+  \[
+  q+\alpha\theta_i
+  \quad\text{and}\quad
+  1-\alpha w_i^*(\theta)
+  \]
+  remain positive on the sampled line,
+- and the analytic bound
+  \[
+  \|w^*(\theta)\|_\infty \le \frac{\|\theta\|_\infty}{m(\theta)}
+  \]
+  holds at the tested basepoint.
 
-Thus the code gives strong evidence that the sufficient conditions hold on the sampled neighborhood.
+For the current scan, the code reports:
+
+- minimum sampled curvature margin:
+  \[
+  0.96,
+  \]
+- minimum sampled mixed-block margin:
+  \[
+  \approx 0.931483.
+  \]
+
+Thus the code gives strong evidence that the sufficient conditions hold on the sampled neighborhood, with visible slack.
 
 ---
 
-## 13. Relation to the full programme theorem
+## 14. Relation to the full programme theorem
 
 This model is much closer to the full structural differentiation theorem than the bootstrap model, because:
 
@@ -506,9 +626,11 @@ q+\alpha\theta_i > 0
 
 hold throughout an explicit neighborhood.
 
+The analytic bound lemma above is the first step in that direction.
+
 ---
 
-## 14. Relation to the codebase
+## 15. Relation to the codebase
 
 This note corresponds to the current code modules as follows:
 
@@ -517,22 +639,33 @@ This note corresponds to the current code modules as follows:
 - `symbolic/hessian.py` defines \(H(\theta)\),
 - `symbolic/mixed_derivatives.py` defines \(H_{w\theta}(w,\theta)\),
 - `symbolic/operators.py` defines \(C(\theta)=-H(\theta)\),
+- `symbolic/tdc_equilibrium.py` defines the explicit symbolic equilibrium map,
 - `numeric/equilibrium.py` solves for \(w^*(\theta)\),
 - `numeric/response.py` computes \(R(\theta)=C(\theta)^{-1}H_{w\theta}(\theta)\),
 - `theorem/pointwise.py` checks the pointwise theorem conditions,
-- `theorem/local_scan.py` checks sampled neighborhood persistence and finite differences.
+- `theorem/local_scan.py` checks sampled neighborhood persistence and finite differences,
+- `theorem/tdc_conditions.py` checks the explicit sufficient conditions,
+- `theorem/tdc_neighborhood.py` summarizes those conditions over a scan,
+- `theorem/tdc_bounds.py` computes the analytic bound quantities.
 
 ---
 
-## 15. Next mathematical task
+## 16. Next mathematical task
 
 The next real proof task is to derive an explicit neighborhood \(U\) on which the sufficient conditions hold.
 
 That means proving bounds of the form:
 
 1. \(q+\alpha\theta_i > 0\) for all \(\theta\in U\),
-2. \(1-\alpha w_i^*(\theta)\ge 0\) for all \(\theta\in U\).
+2. \(1-\alpha w_i^*(\theta)\ge 0\) for all \(\theta\in U\),
+
+using either:
+
+- a direct neighborhood bound on \(\theta\),
+- the analytic equilibrium bound
+  \[
+  \|w^*(\theta)\|_\infty \le \frac{\|\theta\|_\infty}{m(\theta)},
+  \]
+- or a combination of analytic estimates and continuity.
 
 Once those are proved, the conditional local ordering theorem above becomes a genuine local theorem for the TDC model.
-
-This is the next bridge from computational evidence to rigorous proof.
