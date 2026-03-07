@@ -228,28 +228,81 @@ w^*(\theta')-w^*(\theta)\succeq 0.
 \]
 This proves the claim.
 
-## 7. Computational status
+## 7. Segment certification
 
-The current implementation verifies, for the sampled TDC scan presently used in the project, that:
+For practical verification, one may certify that the segment between \(\theta^L\) and \(\theta^R\) lies in \(\mathcal R\) using endpoint data only.
 
-- every sampled point lies in the admissible region \(\mathcal R\);
-- the curvature margins \(q+\alpha\theta_i\) remain positive;
-- the mixed-block margins \(1-\alpha w_i^*(\theta)\) remain positive;
-- the response matrix
-  \[
-  C(\theta)^{-1}H_{w\theta}(w^*(\theta),\theta)
-  \]
-  remains entrywise nonnegative;
-- and the sampled finite equilibrium differences remain entrywise nonnegative.
+Let
+\[
+m_{\mathrm{seg}}
+:=
+\min_i \bigl(q+\alpha\min(\theta^L_i,\theta^R_i)\bigr),
+\]
+and
+\[
+M_{\mathrm{seg}}
+:=
+\max\bigl(\|\theta^L\|_\infty,\|\theta^R\|_\infty\bigr).
+\]
 
-Thus the code provides strong evidence that the theorem applies on the sampled local path.
+Then a sufficient condition for the full segment \([\theta^L,\theta^R]\) to lie in \(\mathcal R\) is
+\[
+m_{\mathrm{seg}}>0
+\qquad\text{and}\qquad
+\alpha\,\frac{M_{\mathrm{seg}}}{m_{\mathrm{seg}}}\le 1.
+\]
 
-## 8. Remaining gap to a broader theorem
+This criterion is conservative, but rigorous, and is convenient for certifying monotone chains of sampled parameter values.
 
-This note gives a theorem on the explicit admissible region \(\mathcal R\). The broader remaining task is to prove larger, less conservative neighborhood statements by improving the bound
+## 8. Computational certification for the current sampled path
+
+The current implementation verifies, for the sampled TDC path
+\[
+[0.0,-0.1,-0.2]
+\to
+[0.1,0.0,-0.1]
+\to
+[0.2,0.1,0.0]
+\to
+[0.3,0.2,0.1]
+\to
+[0.4,0.3,0.2],
+\]
+that:
+
+1. every sampled point lies in the admissible region \(\mathcal R\);
+2. every consecutive segment is certified to lie in \(\mathcal R\);
+3. every local theorem hypothesis holds;
+4. every observed equilibrium difference is coordinatewise nonnegative.
+
+Thus the sampled path is fully consistent with the local ordering theorem.
+
+For the current path, the code reports:
+
+- all sampled points in region: `True`,
+- all consecutive segments certified: `True`,
+- all local hypotheses hold: `True`,
+- all observed equilibrium orders hold: `True`,
+- chain consistency: `True`,
+- path supports local ordering: `True`.
+
+## 9. Interpretation
+
+The TDC model is substantially richer than the bootstrap model because:
+
+- the Hessian depends on \(\theta\),
+- the coupling operator varies with \(\theta\),
+- the mixed derivative block is nontrivial,
+- and the monotonicity mechanism requires a genuine admissible-region argument.
+
+The theorem above therefore gives a local ordering result on an explicit region \(\mathcal R\), rather than merely at a single basepoint.
+
+## 10. Remaining gap to broader results
+
+This note proves a local ordering theorem on the explicit admissible region \(\mathcal R\). The main remaining task is to derive less conservative and more geometric conditions that enlarge \(\mathcal R\), for example by sharpening the bound
 \[
 \|w^*(\theta)\|_\infty
 \le
 \frac{\|\theta\|_\infty}{m(\theta)},
 \]
-or by deriving sharper structure-specific estimates for \(w^*(\theta)\).
+or by exploiting finer structure of \(C(\theta)^{-1}\) and the tridiagonal system.
