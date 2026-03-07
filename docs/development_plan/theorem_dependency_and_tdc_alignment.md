@@ -125,7 +125,7 @@ A: foundations
 
 ## 3. Where the TDC Theorem Sits
 
-The theorem in `docs/tdc_local_ordering_theorem_formal.md` is not merely an isolated model-specific theorem. It is the first fully developed worked instance of the framework pipeline.
+The theorem in `docs/theorems/tdc/tdc_local_ordering_theorem_formal.md` is not merely an isolated model-specific theorem. It is the first fully developed worked instance of the framework pipeline.
 
 The TDC document contains the chain:
 
@@ -156,7 +156,7 @@ Every general theorem in A-E should satisfy the following test.
 
 ### TDC Consistency Test
 
-If the general theorem is instantiated with the TDC potential, then it should reproduce the corresponding statement already proved in `docs/tdc_local_ordering_theorem_formal.md`.
+If the general theorem is instantiated with the TDC potential, then it should reproduce the corresponding statement already proved in `docs/theorems/tdc/tdc_local_ordering_theorem_formal.md`.
 
 In schematic form:
 
