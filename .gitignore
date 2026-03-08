@@ -5,3 +5,4 @@ __pycache__/
 .venv/
 .DS_Store
 docs/cascade_instructions
+docs/development_plan
