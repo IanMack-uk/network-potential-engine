@@ -189,3 +189,113 @@ This theorem therefore licenses the use of the objects
 F, H, H_wθ, C
 
 in all subsequent equilibrium, response, and ordering theorems.
+
+------------------------------------------------------------------------
+
+# 8. Proof
+
+## 8.1 Domain Non‑Emptiness
+
+Assume W and Θ are non‑empty subsets of ℝⁿ.
+
+Since the admissible potential domain satisfies Ω_Φ ⊆ W × Θ and the
+theorem is asserted on Ω_Φ, it is sufficient to exhibit that W × Θ is
+non‑empty.
+
+Pick any w₀ ∈ W and any θ₀ ∈ Θ (possible because W and Θ are non‑empty).
+Then (w₀, θ₀) ∈ W × Θ, so W × Θ ≠ ∅.
+
+In the common ambient choice W = ℝⁿ and Θ = ℝⁿ, one explicit admissible
+point is (w₀, θ₀) = (0, 0), hence Ω_Φ is non‑empty whenever Ω_Φ = W × Θ.
+
+## 8.2 Potential Well‑Definedness
+
+By assumption A1.1 (Finite valuation), for every (w, θ) ∈ Ω_Φ the value
+Φ(w, θ) is finite.
+
+In particular, when Φ is given by a finite algebraic expression in the
+components of (w, θ) involving only finitely many arithmetic operations
+(addition, subtraction, multiplication, and scalar division by nonzero
+constants), the value Φ(w, θ) is well‑defined and finite for all
+(w, θ) where the expression is defined.
+
+For the TDC instantiation in Section 6, Φ_tdc(w, θ) is a polynomial in
+the entries of w and θ, hence is finite for all (w, θ) ∈ ℝⁿ × ℝⁿ.
+
+## 8.3 Continuity
+
+Assumption A1.2 states that Φ ∈ C⁰(Ω_Φ), i.e. Φ is continuous on Ω_Φ.
+
+Moreover, in the common case where Φ is algebraic in (w, θ) and in
+particular when Φ is polynomial, Φ is continuous on its domain of
+definition. Therefore Φ ∈ C⁰(Ω_Φ) holds under the stated regularity.
+
+## 8.4 State Derivative Existence
+
+Assumption A1.3 states that Φ ∈ C²_w(Ω_Φ). By definition of C²
+regularity in the state variables, all first partial derivatives
+∂Φ/∂w_i and all second mixed partial derivatives ∂²Φ/(∂w_i ∂w_j) exist on
+Ω_Φ and depend continuously on (w, θ).
+
+Define the equilibrium operator
+
+F(w, θ) = ∇\_w Φ(w, θ)
+
+and the Hessian
+
+H(w, θ) = ∇²_ww Φ(w, θ).
+
+These are exactly the canonical objects recorded in
+`docs/foundations/core_objects.md`. The C²_w assumption implies that F
+and H are well‑defined on Ω_Φ, and that F and H are continuous on Ω_Φ.
+
+## 8.5 Mixed Derivative Block
+
+Assumptions A1.3 and A1.4 state that Φ ∈ C²_w(Ω_Φ) and Φ ∈ C¹_θ(Ω_Φ).
+
+Because Φ is once continuously differentiable in θ and twice
+continuously differentiable in w, the map (w, θ) ↦ ∇\_w Φ(w, θ) is well
+defined on Ω_Φ and has a well‑defined θ‑derivative wherever the mixed
+partials exist. In particular, under these regularity hypotheses the
+mixed derivative block
+
+H_wθ(w, θ) = D_θ (∇\_w Φ(w, θ))
+
+exists on Ω_Φ.
+
+## 8.6 Coupling Operator Definition
+
+By Section 8.4, H(w, θ) = ∇²_ww Φ(w, θ) is well‑defined on Ω_Φ.
+
+Define the coupling operator
+
+C(θ) = −H(w, θ).
+
+This is therefore well‑defined wherever H exists.
+
+No claim is made here about invertibility, M‑matrix structure, or
+positivity of C(θ); such properties appear only in later theorems.
+
+## 8.7 Compatibility with Admissibility Taxonomy
+
+The admissibility taxonomy in `docs/foundations/admissibility_taxonomy.md`
+organizes domains for the framework objects.
+
+This theorem A1 establishes the well‑posedness and differentiability of
+Φ(w, θ) only on the admissible potential domain Ω_Φ. In particular, all
+claims in Sections 3–6 and the definitions in Sections 8.4–8.6 are
+understood as statements on Ω_Φ.
+
+## 8.8 TDC Model Certification
+
+For the TDC model, the potential Φ_tdc(w, θ) in Section 6 is a
+polynomial in w and θ.
+
+Polynomial functions are C^∞ on ℝⁿ × ℝⁿ.
+
+Therefore
+
+Φ_tdc ∈ C^∞(ℝⁿ × ℝⁿ)
+
+and all derivative objects F, H, H_wθ, C exist globally for the TDC
+instantiation.

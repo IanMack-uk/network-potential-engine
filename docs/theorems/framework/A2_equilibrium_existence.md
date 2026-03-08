@@ -183,3 +183,65 @@ C(θ) w\*(θ) = θ
 
 This equilibrium branch forms the basis for the response analysis and
 ordering results developed in later theorems.
+
+------------------------------------------------------------------------
+
+# 10. Proof
+
+## 10.1 Well-definedness of the equilibrium operator
+
+By A1, the potential Φ(w, θ) is twice continuously differentiable in the
+state variables on Ω_Φ. Therefore the gradient ∇\_w Φ(w, θ) exists and
+is continuous on Ω_Φ. Hence the equilibrium operator
+
+F(w, θ) = ∇\_w Φ(w, θ)
+
+is well-defined on Ω_Φ.
+
+## 10.2 Equilibrium definition and stationarity equation
+
+By definition, an equilibrium state for parameters θ is any w ∈ W
+satisfying F(w, θ) = 0. Since F is well-defined on Ω_Φ, the stationarity
+equation is a well-defined system of n equations in n unknowns on Ω_Φ.
+
+## 10.3 Existence under an affine coupling representation
+
+Assume the equilibrium operator admits the representation
+
+F(w, θ) = θ − C(θ) w.
+
+Then the stationarity equation F(w, θ) = 0 is equivalent to
+
+C(θ) w = θ.
+
+If C(θ) is invertible, this linear system has the unique solution
+
+w\*(θ) = C(θ)⁻¹ θ.
+
+Thus an equilibrium exists for every θ such that det C(θ) ≠ 0, and the
+equilibrium branch is uniquely defined on the corresponding subset Ω_eq.
+
+## 10.4 Verification of stationarity
+
+Substituting w\*(θ) into the coupling-form stationarity equation gives
+
+C(θ) w\*(θ) = C(θ) C(θ)⁻¹ θ = θ,
+
+which is equivalent to F(w\*(θ), θ) = 0.
+
+## 10.5 TDC instantiation and computational verification
+
+For the TDC model, the equilibrium operator satisfies
+
+F(w, θ) = θ − C(θ) w
+
+and the equilibrium branch is w\*(θ) = C(θ)⁻¹ θ whenever C(θ) is
+nonsingular, matching the framework statement.
+
+This identity chain is verified computationally in
+
+`src/network_potential_engine/scripts/check_A2_tdc_equilibrium_existence.py`
+
+and in the pytest file
+
+`tests/test_A2_tdc_equilibrium_existence.py`.
