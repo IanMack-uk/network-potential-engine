@@ -48,7 +48,7 @@ H(w, θ) = ∇²_ww Φ(w, θ)
 
 and the coupling operator
 
-C(θ) = −H(w, θ).
+C(w, θ) = −H(w, θ).
 
 No global sign or invertibility property is assumed a priori; such
 properties are imposed as hypotheses below.
@@ -68,7 +68,7 @@ xᵀ H(w\*(θ), θ) x < 0  for all nonzero x ∈ ℝⁿ.
 Equivalently, assume the coupling operator at the equilibrium is
 **positive definite**:
 
-xᵀ C(θ) x > 0  for all nonzero x ∈ ℝⁿ.
+xᵀ C(w\*(θ), θ) x > 0  for all nonzero x ∈ ℝⁿ.
 
 ------------------------------------------------------------------------
 
@@ -78,7 +78,7 @@ Under the hypothesis above:
 
 1. w\*(θ) is a strict local maximizer of the map w ↦ Φ(w, θ).
 2. w\*(θ) is locally isolated as a solution of F(w, θ) = 0.
-3. The Hessian H(w\*(θ), θ) is invertible, and therefore C(θ) is
+3. The Hessian H(w\*(θ), θ) is invertible, and therefore C(w\*(θ), θ) is
    invertible at the equilibrium.
 
 ------------------------------------------------------------------------
@@ -146,7 +146,7 @@ Hence w\* is locally isolated as a solution of F(w, θ) = 0.
 ## 9.3 Invertibility
 
 Negative definiteness implies that the Hessian matrix H(w\*, θ) is
-nonsingular. Therefore C(θ) = −H(w\*, θ) is also nonsingular at w\*.
+nonsingular. Therefore C(w\*, θ) = −H(w\*, θ) is also nonsingular at w\*.
 
 ## 9.4 Computational verification (TDC instance)
 

@@ -4,7 +4,7 @@ from collections.abc import Callable
 from dataclasses import dataclass
 
 import numpy as np
-from scipy.optimize import root
+from network_potential_engine.numeric.optional_scipy import require_scipy_root
 
 
 @dataclass
@@ -59,6 +59,7 @@ def solve_equilibrium(
         value = np.asarray(gradient_fn(w_values, theta_arr), dtype=float).reshape(-1)
         return value
 
+    root = require_scipy_root()
     sol = root(objective, w0_arr)
     residual = objective(sol.x)
 

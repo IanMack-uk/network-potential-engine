@@ -69,11 +69,13 @@ H(w, θ) = ∇²_ww Φ(w, θ)
 
 and the coupling operator is defined as
 
-C(θ) = −H(w, θ)
+C(w, θ) = −H(w, θ)
 
 When the equilibrium operator can be written in the form
 
 F(w, θ) = θ − C(θ) w
+
+where C(θ) denotes an equilibrium-evaluated or model-specific coupling matrix,
 
 the stationarity condition becomes
 

@@ -122,7 +122,7 @@ exists.
 
 ### 3.4 Coupling operator
 
-C(θ) = −H(w, θ)
+C(w, θ) = −H(w, θ)
 
 is therefore well‑defined.
 
@@ -267,14 +267,14 @@ exists on Ω_Φ.
 
 By Section 8.4, H(w, θ) = ∇²_ww Φ(w, θ) is well‑defined on Ω_Φ.
 
-Define the coupling operator
+ Define the coupling operator
+ 
+ C(w, θ) = −H(w, θ).
+ 
+ This is therefore well‑defined wherever H exists.
 
-C(θ) = −H(w, θ).
-
-This is therefore well‑defined wherever H exists.
-
-No claim is made here about invertibility, M‑matrix structure, or
-positivity of C(θ); such properties appear only in later theorems.
+ No claim is made here about invertibility, M‑matrix structure, or
+ positivity of C; such properties appear only in later theorems.
 
 ## 8.7 Compatibility with Admissibility Taxonomy
 

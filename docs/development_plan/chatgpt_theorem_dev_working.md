@@ -80,23 +80,30 @@ The repository is the **source of truth**.
 
 # Current Target
 
-## A. Framework Foundations
+## Current project state
 
-### Theorem A1 --- Admissible Relational Potential Well-Posedness
+The repo now contains framework theorem documents and supporting checks through:
+
+-   A1 (well-posedness)
+-   A2 (equilibrium existence)
+-   A3 (interior nondegeneracy / strict local maximum)
+
+Additionally, a draft equilibrium-response theorem document exists as:
+
+-   `docs/theorems/framework/DRAFT_C1_equilibrium_regularity.md`
+
+By naming convention and workflow alignment:
+
+-   A3 remains the interior nondegeneracy theorem.
+-   The equilibrium response identity is treated as C1 (not as A3).
+
+## Next formal target
+
+### Theorem B1 — Hessian–Coupling Theorem
 
 ### Objective
 
-Prove that the Network Potential functional is well-defined on its
-admissible domain with the exact regularity claimed.
-
-### This theorem must certify
-
--   admissible domain definition
--   domain non-emptiness
--   potential well-definedness
--   continuity
--   existence of derivative objects
--   explicit domain vs interior vs neighbourhood regimes
+Certify the coupling operator as the negative equilibrium Hessian, exporting the operator object needed for C1 and the downstream D/E ordering package.
 
 ------------------------------------------------------------------------
 
@@ -106,13 +113,12 @@ admissible domain with the exact regularity claimed.
 
 Locate files defining:
 
--   admissible domain
--   Network Potential functional
--   locality assumptions
--   equilibrium definitions
--   derivatives
--   code objects
--   tests
+-   the coupling operator object and its mathematical definition
+-   equilibrium Hessian and its representation
+-   the relationship between the two (target of B1)
+-   locality/incident structure assumptions that may constrain operator form
+-   code objects implementing Hessian / coupling / response
+-   tests and verification scripts
 
 ### Step 2 --- Report current state
 
@@ -122,16 +128,14 @@ Before theorem drafting, report:
 -   what the repo already establishes
 -   what is missing
 
-### Step 3 --- Develop A1
+### Step 3 --- Develop B1
 
-1.  admissible domain definition
-2.  domain non-emptiness
-3.  potential well-definedness
-4.  continuity
-5.  differentiability regime
-6.  derivative object well-posedness
-7.  locality compatibility
-8.  final theorem statement
+1.  precise statement of the coupling operator and equilibrium Hessian objects
+2.  hypotheses under which the Hessian exists and is symmetric/self-adjoint
+3.  proof that the coupling operator equals the negative equilibrium Hessian (under those hypotheses)
+4.  export of the operator object for downstream response theory (C1)
+5.  TDC instantiation (as a certified worked example)
+6.  final theorem statement
 
 ### Step 4 --- Suggest code support
 
@@ -150,7 +154,7 @@ Code should support the mathematics, not replace proof.
 
 1.  Relevant repo sources
 2.  What the repo already establishes
-3.  What is missing for A1
+3.  What is missing for the target theorem
 4.  Proposed minimal certifiable theorem
 5.  Required assumptions
 6.  Proof skeleton

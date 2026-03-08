@@ -1,5 +1,18 @@
 # Certified Theorem Workflow for the Network Potential Framework — Version 2
 
+## Status (repo as of now)
+
+-   A1: complete (theorem doc + proof integration + TDC check scripts/tests)
+-   A2: complete (theorem doc + proof integration + TDC check scripts/tests)
+-   A3: complete (interior nondegeneracy / strict local maximum theorem doc + proof integration + TDC check scripts/tests)
+-   C1: draft exists as `docs/theorems/framework/DRAFT_C1_equilibrium_regularity.md` (equilibrium response identity); not yet finalized
+-   Next formal theorem target in this workflow: B1
+
+Naming alignment:
+
+-   A3 is reserved for interior nondegeneracy / strict local maximum.
+-   The equilibrium response identity belongs to C1 (not A3).
+
 ## Overview
 
 The TDC local ordering theorem shows that the mathematically correct certification chain is not:

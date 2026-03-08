@@ -62,9 +62,9 @@ This operator captures curvature of the potential with respect to the state vari
 
 # 5. Coupling Operator
 
-C(θ) := −H(w, θ)
+C(w, θ) := −H(w, θ)
 
-In many models (including TDC) the Hessian does not depend on w, so C depends only on θ.
+In many models (including TDC) the Hessian does not depend on w, so the coupling operator may be written as C(θ) without ambiguity.
 
 ---
 

@@ -12,6 +12,21 @@ Equivalently, the TDC theorem should be treated as a certification target, or pr
 
 ---
 
+## Status (repo as of now)
+
+-   A1: complete
+-   A2: complete
+-   A3: complete (interior nondegeneracy / strict local maximum)
+-   C1: draft theorem document exists as `docs/theorems/framework/DRAFT_C1_equilibrium_regularity.md`; not yet finalized
+-   Next formal theorem target: B1
+
+Naming alignment:
+
+-   A3 is reserved for interior nondegeneracy / strict local maximum.
+-   The equilibrium response identity belongs to C1 (not A3).
+
+---
+
 ## 1. Full Theorem Dependency Graph
 
 The project architecture can be organised as the following dependency graph.
