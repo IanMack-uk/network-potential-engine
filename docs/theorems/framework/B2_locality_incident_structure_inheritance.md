@@ -6,6 +6,8 @@ This theorem exports the fact that a locality hypothesis on the marginal structu
 
 No claim is made here about invertibility, positivity, M-matrix structure, or ordering consequences.
 
+Role in framework: B2 exports locality / incident-structure inheritance for the coupling operator. This structure is used in S2 to bound off-diagonal row sums and construct diagonal-dominance margins. B2 is not a logical dependency of S1 (which is a sign theorem), and it supports S3 only indirectly through S2.
+
 ------------------------------------------------------------------------
 
 # 1. Setup

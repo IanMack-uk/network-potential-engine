@@ -85,7 +85,7 @@ def check_response_identity_at_equilibrium() -> None:
 
     residual = sp.simplify(jac - response)
     assert residual == sp.zeros(*jac.shape), (
-        "A3 response identity failed: D_theta w*(theta) != C(theta)^(-1) H_wtheta(w*(theta), theta)."
+        "A3a response identity failed: D_theta w*(theta) != C(theta)^(-1) H_wtheta(w*(theta), theta)."
     )
 
 
@@ -106,7 +106,7 @@ def check_equilibrium_branch_remains_stationary_after_differentiation_setup() ->
 
 
 def run_all_checks() -> None:
-    print("Running A3 equilibrium regularity checks (TDC model)")
+    print("Running A3a equilibrium regularity checks (TDC model)")
 
     check_equilibrium_branch_is_symbolically_constructible()
     print("✓ symbolic equilibrium branch constructed")
@@ -120,7 +120,7 @@ def run_all_checks() -> None:
     check_response_identity_at_equilibrium()
     print("✓ Dθw*(θ) = C(θ)^(-1) H_wθ(w*(θ), θ) verified")
 
-    print("A3 checks completed successfully")
+    print("A3a checks completed successfully")
 
 
 if __name__ == "__main__":

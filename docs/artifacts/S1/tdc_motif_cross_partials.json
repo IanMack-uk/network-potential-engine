@@ -1,0 +1,3435 @@
+{
+  "aggregated_is_zmatrix": true,
+  "aggregated_off_diagonal_entries": [
+    {
+      "coupling_entry": "-1/2",
+      "coupling_sign": "negative",
+      "hessian_entry": "1/2",
+      "hessian_sign": "positive",
+      "i": 0,
+      "j": 1
+    },
+    {
+      "coupling_entry": "0",
+      "coupling_sign": "zero",
+      "hessian_entry": "0",
+      "hessian_sign": "zero",
+      "i": 0,
+      "j": 2
+    },
+    {
+      "coupling_entry": "0",
+      "coupling_sign": "zero",
+      "hessian_entry": "0",
+      "hessian_sign": "zero",
+      "i": 0,
+      "j": 3
+    },
+    {
+      "coupling_entry": "0",
+      "coupling_sign": "zero",
+      "hessian_entry": "0",
+      "hessian_sign": "zero",
+      "i": 0,
+      "j": 4
+    },
+    {
+      "coupling_entry": "-1/2",
+      "coupling_sign": "negative",
+      "hessian_entry": "1/2",
+      "hessian_sign": "positive",
+      "i": 1,
+      "j": 0
+    },
+    {
+      "coupling_entry": "-1/2",
+      "coupling_sign": "negative",
+      "hessian_entry": "1/2",
+      "hessian_sign": "positive",
+      "i": 1,
+      "j": 2
+    },
+    {
+      "coupling_entry": "0",
+      "coupling_sign": "zero",
+      "hessian_entry": "0",
+      "hessian_sign": "zero",
+      "i": 1,
+      "j": 3
+    },
+    {
+      "coupling_entry": "0",
+      "coupling_sign": "zero",
+      "hessian_entry": "0",
+      "hessian_sign": "zero",
+      "i": 1,
+      "j": 4
+    },
+    {
+      "coupling_entry": "0",
+      "coupling_sign": "zero",
+      "hessian_entry": "0",
+      "hessian_sign": "zero",
+      "i": 2,
+      "j": 0
+    },
+    {
+      "coupling_entry": "-1/2",
+      "coupling_sign": "negative",
+      "hessian_entry": "1/2",
+      "hessian_sign": "positive",
+      "i": 2,
+      "j": 1
+    },
+    {
+      "coupling_entry": "-1/2",
+      "coupling_sign": "negative",
+      "hessian_entry": "1/2",
+      "hessian_sign": "positive",
+      "i": 2,
+      "j": 3
+    },
+    {
+      "coupling_entry": "0",
+      "coupling_sign": "zero",
+      "hessian_entry": "0",
+      "hessian_sign": "zero",
+      "i": 2,
+      "j": 4
+    },
+    {
+      "coupling_entry": "0",
+      "coupling_sign": "zero",
+      "hessian_entry": "0",
+      "hessian_sign": "zero",
+      "i": 3,
+      "j": 0
+    },
+    {
+      "coupling_entry": "0",
+      "coupling_sign": "zero",
+      "hessian_entry": "0",
+      "hessian_sign": "zero",
+      "i": 3,
+      "j": 1
+    },
+    {
+      "coupling_entry": "-1/2",
+      "coupling_sign": "negative",
+      "hessian_entry": "1/2",
+      "hessian_sign": "positive",
+      "i": 3,
+      "j": 2
+    },
+    {
+      "coupling_entry": "-1/2",
+      "coupling_sign": "negative",
+      "hessian_entry": "1/2",
+      "hessian_sign": "positive",
+      "i": 3,
+      "j": 4
+    },
+    {
+      "coupling_entry": "0",
+      "coupling_sign": "zero",
+      "hessian_entry": "0",
+      "hessian_sign": "zero",
+      "i": 4,
+      "j": 0
+    },
+    {
+      "coupling_entry": "0",
+      "coupling_sign": "zero",
+      "hessian_entry": "0",
+      "hessian_sign": "zero",
+      "i": 4,
+      "j": 1
+    },
+    {
+      "coupling_entry": "0",
+      "coupling_sign": "zero",
+      "hessian_entry": "0",
+      "hessian_sign": "zero",
+      "i": 4,
+      "j": 2
+    },
+    {
+      "coupling_entry": "-1/2",
+      "coupling_sign": "negative",
+      "hessian_entry": "1/2",
+      "hessian_sign": "positive",
+      "i": 4,
+      "j": 3
+    }
+  ],
+  "groups": [
+    {
+      "expr": "theta0*w0",
+      "group_class": "edge_local",
+      "group_id": "edge_linear_0",
+      "off_diagonal_entries": [
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 3
+        }
+      ],
+      "taxonomy_class": "A",
+      "variables": [
+        "w0",
+        "theta0"
+      ]
+    },
+    {
+      "expr": "theta1*w1",
+      "group_class": "edge_local",
+      "group_id": "edge_linear_1",
+      "off_diagonal_entries": [
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 3
+        }
+      ],
+      "taxonomy_class": "A",
+      "variables": [
+        "w1",
+        "theta1"
+      ]
+    },
+    {
+      "expr": "theta2*w2",
+      "group_class": "edge_local",
+      "group_id": "edge_linear_2",
+      "off_diagonal_entries": [
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 3
+        }
+      ],
+      "taxonomy_class": "A",
+      "variables": [
+        "w2",
+        "theta2"
+      ]
+    },
+    {
+      "expr": "theta3*w3",
+      "group_class": "edge_local",
+      "group_id": "edge_linear_3",
+      "off_diagonal_entries": [
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 3
+        }
+      ],
+      "taxonomy_class": "A",
+      "variables": [
+        "w3",
+        "theta3"
+      ]
+    },
+    {
+      "expr": "theta4*w4",
+      "group_class": "edge_local",
+      "group_id": "edge_linear_4",
+      "off_diagonal_entries": [
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 3
+        }
+      ],
+      "taxonomy_class": "A",
+      "variables": [
+        "w4",
+        "theta4"
+      ]
+    },
+    {
+      "expr": "w0**2*(-theta0 - 5)/10",
+      "group_class": "edge_local",
+      "group_id": "edge_diag_curvature_0",
+      "off_diagonal_entries": [
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 3
+        }
+      ],
+      "taxonomy_class": "A",
+      "variables": [
+        "w0",
+        "theta0"
+      ]
+    },
+    {
+      "expr": "w1**2*(-theta1 - 5)/10",
+      "group_class": "edge_local",
+      "group_id": "edge_diag_curvature_1",
+      "off_diagonal_entries": [
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 3
+        }
+      ],
+      "taxonomy_class": "A",
+      "variables": [
+        "w1",
+        "theta1"
+      ]
+    },
+    {
+      "expr": "w2**2*(-theta2 - 5)/10",
+      "group_class": "edge_local",
+      "group_id": "edge_diag_curvature_2",
+      "off_diagonal_entries": [
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 3
+        }
+      ],
+      "taxonomy_class": "A",
+      "variables": [
+        "w2",
+        "theta2"
+      ]
+    },
+    {
+      "expr": "w3**2*(-theta3 - 5)/10",
+      "group_class": "edge_local",
+      "group_id": "edge_diag_curvature_3",
+      "off_diagonal_entries": [
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 3
+        }
+      ],
+      "taxonomy_class": "A",
+      "variables": [
+        "w3",
+        "theta3"
+      ]
+    },
+    {
+      "expr": "w4**2*(-theta4 - 5)/10",
+      "group_class": "edge_local",
+      "group_id": "edge_diag_curvature_4",
+      "off_diagonal_entries": [
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 3
+        }
+      ],
+      "taxonomy_class": "A",
+      "variables": [
+        "w4",
+        "theta4"
+      ]
+    },
+    {
+      "expr": "-w0**2/4",
+      "group_class": "edge_local",
+      "group_id": "edge_coupling_diag_0",
+      "off_diagonal_entries": [
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 3
+        }
+      ],
+      "taxonomy_class": "A",
+      "variables": [
+        "w0"
+      ]
+    },
+    {
+      "expr": "-w1**2/2",
+      "group_class": "edge_local",
+      "group_id": "edge_coupling_diag_1",
+      "off_diagonal_entries": [
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 3
+        }
+      ],
+      "taxonomy_class": "A",
+      "variables": [
+        "w1"
+      ]
+    },
+    {
+      "expr": "-w2**2/2",
+      "group_class": "edge_local",
+      "group_id": "edge_coupling_diag_2",
+      "off_diagonal_entries": [
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 3
+        }
+      ],
+      "taxonomy_class": "A",
+      "variables": [
+        "w2"
+      ]
+    },
+    {
+      "expr": "-w3**2/2",
+      "group_class": "edge_local",
+      "group_id": "edge_coupling_diag_3",
+      "off_diagonal_entries": [
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 3
+        }
+      ],
+      "taxonomy_class": "A",
+      "variables": [
+        "w3"
+      ]
+    },
+    {
+      "expr": "-w4**2/4",
+      "group_class": "edge_local",
+      "group_id": "edge_coupling_diag_4",
+      "off_diagonal_entries": [
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 3
+        }
+      ],
+      "taxonomy_class": "A",
+      "variables": [
+        "w4"
+      ]
+    },
+    {
+      "expr": "w0*w1/2",
+      "group_class": "interaction",
+      "group_id": "pair_coupling_0_1",
+      "off_diagonal_entries": [
+        {
+          "coupling_entry": "-1/2",
+          "coupling_sign": "negative",
+          "hessian_entry": "1/2",
+          "hessian_sign": "positive",
+          "i": 0,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 4
+        },
+        {
+          "coupling_entry": "-1/2",
+          "coupling_sign": "negative",
+          "hessian_entry": "1/2",
+          "hessian_sign": "positive",
+          "i": 1,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 3
+        }
+      ],
+      "taxonomy_class": "B",
+      "variables": [
+        "w0",
+        "w1"
+      ]
+    },
+    {
+      "expr": "w1*w2/2",
+      "group_class": "interaction",
+      "group_id": "pair_coupling_1_2",
+      "off_diagonal_entries": [
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 0
+        },
+        {
+          "coupling_entry": "-1/2",
+          "coupling_sign": "negative",
+          "hessian_entry": "1/2",
+          "hessian_sign": "positive",
+          "i": 1,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 0
+        },
+        {
+          "coupling_entry": "-1/2",
+          "coupling_sign": "negative",
+          "hessian_entry": "1/2",
+          "hessian_sign": "positive",
+          "i": 2,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 3
+        }
+      ],
+      "taxonomy_class": "B",
+      "variables": [
+        "w1",
+        "w2"
+      ]
+    },
+    {
+      "expr": "w2*w3/2",
+      "group_class": "interaction",
+      "group_id": "pair_coupling_2_3",
+      "off_diagonal_entries": [
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 1
+        },
+        {
+          "coupling_entry": "-1/2",
+          "coupling_sign": "negative",
+          "hessian_entry": "1/2",
+          "hessian_sign": "positive",
+          "i": 2,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 1
+        },
+        {
+          "coupling_entry": "-1/2",
+          "coupling_sign": "negative",
+          "hessian_entry": "1/2",
+          "hessian_sign": "positive",
+          "i": 3,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 3
+        }
+      ],
+      "taxonomy_class": "B",
+      "variables": [
+        "w2",
+        "w3"
+      ]
+    },
+    {
+      "expr": "w3*w4/2",
+      "group_class": "interaction",
+      "group_id": "pair_coupling_3_4",
+      "off_diagonal_entries": [
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 0,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 2
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 1,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 3
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 2,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 3,
+          "j": 2
+        },
+        {
+          "coupling_entry": "-1/2",
+          "coupling_sign": "negative",
+          "hessian_entry": "1/2",
+          "hessian_sign": "positive",
+          "i": 3,
+          "j": 4
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 0
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 1
+        },
+        {
+          "coupling_entry": "0",
+          "coupling_sign": "zero",
+          "hessian_entry": "0",
+          "hessian_sign": "zero",
+          "i": 4,
+          "j": 2
+        },
+        {
+          "coupling_entry": "-1/2",
+          "coupling_sign": "negative",
+          "hessian_entry": "1/2",
+          "hessian_sign": "positive",
+          "i": 4,
+          "j": 3
+        }
+      ],
+      "taxonomy_class": "B",
+      "variables": [
+        "w3",
+        "w4"
+      ]
+    }
+  ],
+  "model": "tdc",
+  "schema": {
+    "note": "Pilot semantic grouping for theorem S1; not an authoritative motif ontology.",
+    "pilot_semantic_grouping": true
+  }
+}

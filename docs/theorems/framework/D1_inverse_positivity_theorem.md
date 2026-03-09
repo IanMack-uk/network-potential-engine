@@ -26,7 +26,7 @@ In response analysis one works with the equilibrium-evaluated coupling operator
 
 C(θ) := C(w*(θ), θ)
 
-when an equilibrium branch w*(θ) is licensed by A2/A3/C1.
+when an equilibrium branch w*(θ) is licensed by A2/A3b/C1.
 
 ------------------------------------------------------------------------
 
@@ -40,6 +40,8 @@ Let C be a real square matrix.
 This theorem uses the following classical matrix-analysis fact:
 
 - A nonsingular M-matrix has an entrywise nonnegative inverse.
+
+In the Network Potential Framework pipeline, the structural curvature layer (S1–S3) provides a sufficient condition under which the coupling operator `C(w, θ)` is a nonsingular M-matrix on a certified region.
 
 ------------------------------------------------------------------------
 
@@ -64,6 +66,10 @@ Assume C(θ) is a Z-matrix and is **strictly diagonally dominant by rows**, i.e.
 C(θ)_{ii} > \sum_{j \ne i} |C(θ)_{ij}|.
 
 Then C(θ) is a nonsingular M-matrix, and therefore C(θ)^{-1} \ge 0 entrywise.
+
+In the framework closure chain, this corollary is exported structurally by:
+
+- S3 — Structural M-Matrix Theorem (`docs/theorems/framework/S3_structural_mmatrix_theorem.md`).
 
 ------------------------------------------------------------------------
 
@@ -93,9 +99,19 @@ C(θ)^{-1} \ge 0.
 
 This matches Lemma 7–8 of the TDC formal theorem document.
 
+At the structural framework level, the same inference is organized as:
+
+- S1 (Z-matrix sign structure) + S2 (strict row diagonal dominance) ⇒ S3 (nonsingular M-matrix) ⇒ D1 (inverse nonnegativity).
+
 ------------------------------------------------------------------------
 
 # 7. Computational evidence (supporting)
+
+S3 Phase-1 TDC evidence pipeline (supporting):
+
+- `src/network_potential_engine/scripts/check_S3_mmatrix_tdc.py`
+- `docs/artifacts/S3/tdc_mmatrix_report.json`
+- `tests/test_S3_mmatrix_tdc.py`
 
 TDC-specific supporting checks of the analytic margin/bound machinery are implemented in:
 

@@ -75,7 +75,7 @@ When the equilibrium operator can be written in the form
 
 F(w, θ) = θ − C(θ) w
 
-where C(θ) denotes an equilibrium-evaluated or model-specific coupling matrix,
+where C(θ) denotes either a model-specific coupling matrix independent of w, or the equilibrium-evaluated shorthand C(θ) := C(w*(θ), θ) when an equilibrium branch w*(θ) is licensed by later theorems,
 
 the stationarity condition becomes
 

@@ -26,7 +26,7 @@ and let w*(θ) be an equilibrium branch satisfying
 
 F(w*(θ), θ) = 0
 
-when licensed by A2/A3/C1.
+when licensed by A2/A3b/C1.
 
 Define the mixed derivative block
 

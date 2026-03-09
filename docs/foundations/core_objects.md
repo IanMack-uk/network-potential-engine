@@ -66,6 +66,10 @@ C(w, θ) := −H(w, θ)
 
 In many models (including TDC) the Hessian does not depend on w, so the coupling operator may be written as C(θ) without ambiguity.
 
+More generally, when an equilibrium branch w*(θ) is licensed by later theorems, one may also use the equilibrium-evaluated shorthand
+
+C(θ) := C(w*(θ), θ).
+
 ---
 
 # 6. Mixed Derivative Block

@@ -1,4 +1,4 @@
-# A3 --- Interior Nondegeneracy
+# A3b — Interior Nondegeneracy
 
 ## Purpose
 
@@ -153,8 +153,8 @@ nonsingular. Therefore C(w\*, θ) = −H(w\*, θ) is also nonsingular at w\*.
 For the TDC model, the algebraic identities and representative numeric
 support checks for interior nondegeneracy are verified computationally in
 
-`src/network_potential_engine/scripts/check_A3_tdc_interior_nondegeneracy.py`
+`src/network_potential_engine/scripts/check_A3b_tdc_interior_nondegeneracy.py`
 
 and in the pytest file
 
-`tests/test_A3_tdc_interior_nondegeneracy.py`.
+`tests/test_A3b_tdc_interior_nondegeneracy.py`.

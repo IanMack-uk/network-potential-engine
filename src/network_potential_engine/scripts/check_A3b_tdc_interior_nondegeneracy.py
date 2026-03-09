@@ -150,7 +150,7 @@ def check_local_uniqueness_support_via_hessian_nonsingularity() -> None:
 
 
 def run_all_checks() -> None:
-    print("Running A3 interior nondegeneracy checks (TDC model)")
+    print("Running A3b interior nondegeneracy checks (TDC model)")
 
     check_hessian_equals_negative_coupling()
     print("✓ H = -C verified")
@@ -164,7 +164,7 @@ def run_all_checks() -> None:
     check_local_uniqueness_support_via_hessian_nonsingularity()
     print("✓ nonsingularity / local uniqueness supported on admissible sample")
 
-    print("A3 checks completed successfully")
+    print("A3b checks completed successfully")
 
 
 if __name__ == "__main__":

@@ -43,7 +43,7 @@ F(w\*(θ), θ) = 0.
 Assume:
 
 1. Φ is twice continuously differentiable in w and once continuously differentiable in θ on the admissible domain (as in A1), so that H and H\_{wθ} exist.
-2. The equilibrium w\*(θ) is an interior equilibrium and satisfies the interior nondegeneracy hypothesis of A3, i.e. H(w\*(θ), θ) is nonsingular.
+2. The equilibrium w\*(θ) is an interior equilibrium and satisfies the interior nondegeneracy hypothesis of A3b, i.e. H(w\*(θ), θ) is nonsingular.
 
 Equivalently, the equilibrium-evaluated coupling matrix
 
@@ -104,4 +104,5 @@ D\_θ w\*(θ) = C(θ)^{-1} H\_{wθ}(w\*(θ), θ).
 
 For the TDC model, a symbolic verification of the response identity is implemented in:
 
-- `src/network_potential_engine/scripts/check_A3_tdc_equilibrium_regularity.py`
+- `src/network_potential_engine/scripts/check_A3a_tdc_equilibrium_regularity.py`
+- `src/network_potential_engine/scripts/check_A3a_tdc_equilibrium_regularity.py`

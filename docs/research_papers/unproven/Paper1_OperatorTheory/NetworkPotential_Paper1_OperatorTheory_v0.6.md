@@ -7,9 +7,9 @@
 
 **Author:** Ian Mack
 
-**Version:** 0.6 (Working Draft)\
+**Version:** 1.0\
 **Date:** March 2026\
-**Status:** Working Draft
+**Status:** DRAFT
 
 **Citation (Draft)**
 

@@ -22,7 +22,7 @@ Let w*(θ) be an equilibrium branch satisfying
 
 F(w*(θ), θ) = 0
 
-when licensed by A2/A3/C1.
+when licensed by A2/A3b/C1.
 
 Let the coupling operator be C(w, θ) = −H(w, θ) (B1), and define the equilibrium-evaluated coupling matrix
 
