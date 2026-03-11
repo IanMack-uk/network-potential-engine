@@ -105,4 +105,3 @@ D\_θ w\*(θ) = C(θ)^{-1} H\_{wθ}(w\*(θ), θ).
 For the TDC model, a symbolic verification of the response identity is implemented in:
 
 - `src/network_potential_engine/scripts/check_A3a_tdc_equilibrium_regularity.py`
-- `src/network_potential_engine/scripts/check_A3a_tdc_equilibrium_regularity.py`

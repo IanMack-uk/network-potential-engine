@@ -65,7 +65,7 @@ Use this order of tasks unless there is a strong reason to deviate.
 
 - `docs/theorems/framework/A1_admissible_relational_potential_well_posedness.md`
 - `docs/theorems/framework/A2_equilibrium_existence.md`
-- `docs/theorems/framework/A3_interior_nondegeneracy.md`
+- `docs/theorems/framework/A3b_interior_nondegeneracy.md`
 - `docs/theorems/framework/B1_hessian_coupling_theorem.md`
 - `docs/theorems/framework/B2_locality_incident_structure_inheritance.md`
 - `docs/theorems/framework/C1_equilibrium_response_theorem.md`
@@ -227,7 +227,7 @@ Evidence anchors:
 ### Repo citations
 
 - B1 (core identity): `docs/theorems/framework/B1_hessian_coupling_theorem.md`
-- A3b (nondegeneracy/hyperbolicity regime): `docs/theorems/framework/A3_interior_nondegeneracy.md`
+- A3b (nondegeneracy/hyperbolicity regime): `docs/theorems/framework/A3b_interior_nondegeneracy.md`
 
 Evidence anchors:
 
@@ -323,7 +323,7 @@ In the paper, add a short “Certification status” note near Theorem 0.4.1:
 
 ### Repo citations
 
-- A3b: `docs/theorems/framework/A3_interior_nondegeneracy.md`
+- A3b: `docs/theorems/framework/A3b_interior_nondegeneracy.md`
 - C1: `docs/theorems/framework/C1_equilibrium_response_theorem.md`
 - D1–D3: `docs/theorems/framework/D1_inverse_positivity_theorem.md`, `D2_mixed_block_positivity_theorem.md`, `D3_response_positivity_theorem.md`
 

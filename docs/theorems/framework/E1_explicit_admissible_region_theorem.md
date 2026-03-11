@@ -14,7 +14,7 @@ Let Φ(w, θ) be a relational potential satisfying the regularity assumptions of
 
 A1 — Admissible Relational Potential Well-Posedness.
 
-Let w*(θ) be an equilibrium branch when licensed by A2/A3/C1.
+Let w*(θ) be an equilibrium branch when licensed by A2/A3a/A3b/C1.
 
 Let the equilibrium response identity (C1) hold at θ:
 

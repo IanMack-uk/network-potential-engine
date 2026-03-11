@@ -10,7 +10,7 @@ It is the segment-level ordering statement obtained by integrating pointwise res
 
 # 1. Setup
 
-Let Φ(w, θ) be a relational potential satisfying the regularity assumptions of A1, and let w*(θ) be an equilibrium branch when licensed by A2/A3/C1.
+Let Φ(w, θ) be a relational potential satisfying the regularity assumptions of A1, and let w*(θ) be an equilibrium branch when licensed by A2/A3a/A3b/C1.
 
 Let R ⊆ Θ be an admissible region as in E1.
 
