@@ -1,0 +1,13 @@
+Job 4 — Frozen source mapping ψ (v1)
+
+Definition:
+- Input: node attributes x_i = (r_i, extras_i)
+- Output: source value s_i
+
+Frozen mapping:
+- ψ(x_i) := r_i
+
+Notes:
+- Deterministic.
+- Non-negative provided r_i >= 0.
+- For v1, r_i is constant 1.0 for all students (see node_attribute_field_v1.json).
