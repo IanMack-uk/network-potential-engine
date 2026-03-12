@@ -1,0 +1,34 @@
+Job 14 — Product validity checks — evaluation note (v1)
+
+timestamp_utc: 2026-03-12T15:01:28.846432+00:00
+git_head_sha: 99a9c3dacffdd031355dc4483b9d3aa4b50c7fa4
+python: 3.12.4
+platform: macOS-15.7.4-x86_64-i386-64bit
+
+Scenario S1 — Schema + explanation coherence
+Expected:
+- explanation fields present
+- intrinsic_component + network_component == E_eff (within tol)
+- ranking matches (-E_eff, node_index)
+Observed:
+- passed: True
+- max_abs_err(intrinsic+network-E_eff): 0
+- ranking_ok: True
+
+Scenario S2 — Single-node uplift monotonicity
+Expected:
+- target node score increases
+- target node rank does not worsen
+- other nodes unchanged
+Observed:
+- passed: True
+- score_increased: True
+- rank_not_worse: True
+- others_unchanged_max_abs: 0
+
+Conclusion
+- overall_passed: True
+
+Note
+- v1 uses placeholder-uniform signal regime, so validity checks here are harness-level (coherence/monotonicity), not outcome efficacy.
+
