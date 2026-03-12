@@ -1,0 +1,36 @@
+Job 9 — Green operator G application policy (v1)
+
+Inputs
+- C artifact: affinity/artifacts/n50/coupling_operator_C_v1.json
+- Certification diagnostics: affinity/artifacts/n50/green_operator_G_v1_diagnostics.txt
+
+Policy (frozen for v1)
+
+1) Representation
+- We DO NOT store an explicit dense inverse matrix G.
+- We define G implicitly by the solve operation:
+  - Given a vector b, compute x := G b by solving C x = b.
+
+2) Primary implementation
+- Use NumPy linear solve:
+  - x = np.linalg.solve(C, b)
+- C is reconstructed from the symmetric tridiagonal representation in the artifact.
+
+3) Certification / required checks
+- Before applying the policy for a run, confirm:
+  - matrix_rank(C) == 50
+  - min_eigenvalue(C) >= 1e-12
+  - cond2(C) <= 1e8
+- These checks and their values are recorded in:
+  - affinity/artifacts/n50/green_operator_G_v1_diagnostics.txt
+
+4) Failure / regularization policy
+- If any certification check fails, FAIL FAST and do not proceed to Job 10.
+- Optional emergency fallback (not used in v1 unless explicitly recorded):
+  - ridge regularization C_λ = C + λ I
+  - choose λ > 0 minimally to restore certification
+  - record λ and the updated diagnostics in a new v2 artifact set
+
+5) Ordering
+- All vectors b and x are ordered by node_index ascending (0..49) per:
+  - affinity/artifacts/n50/student_registry_v1.json

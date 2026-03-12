@@ -1,0 +1,56 @@
+Job 9 — Green operator (G) certification diagnostics (v1)
+
+Purpose
+- Certify invertibility/conditioning of the coupling operator C and certify a reproducible policy for applying the Green operator G.
+
+Artifacts
+- Coupling operator C: affinity/artifacts/n50/coupling_operator_C_v1.json
+- Coupling diagnostics: affinity/artifacts/n50/coupling_operator_C_v1_diagnostics.txt
+
+Definition
+- Green operator: G := C^{-1} (when C is invertible)
+- Application policy may be explicit inverse or linear solve.
+
+Diagnostics (computed from committed C artifact)
+
+1) Shape
+- n: 50
+- Result: PASS
+
+2) Symmetry
+- Symmetry residual ||C - C^T||_F: 0.0
+- Result: PASS
+
+3) Rank / invertibility
+- matrix_rank(C): 50
+- Result: PASS (full rank)
+
+4) Eigenvalue bounds (SPD witness)
+- min eigenvalue: 1.2
+- max eigenvalue: 3.198026728428271
+- Result: PASS (min eigenvalue > 0)
+
+5) Conditioning
+- cond2(C): 2.665022273690227
+- Result: PASS (well-conditioned)
+
+6) Solver smoke-check (NumPy-only)
+- RHS b = 1-vector
+- Solve x = C^{-1} b via np.linalg.solve
+- Residual L2 ||b - Cx||_2: 7.850462293418876e-16
+- Residual L∞ max_i |b_i - (Cx)_i|: 4.440892098500626e-16
+- x_min: 0.8333333333333330
+- x_max: 0.8333333333333334
+- Result: PASS
+
+PASS thresholds (frozen for v1)
+- matrix_rank(C) == 50
+- min_eigenvalue(C) >= 1e-12
+- cond2(C) <= 1e8
+- solver residuals:
+  - ||b - Cx||_2 <= 1e-10
+  - ||b - Cx||_∞ <= 1e-10
+
+Conclusion
+- C is invertible and well-conditioned for v1.
+- A solve-based policy for applying G is certified.
