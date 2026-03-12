@@ -1,0 +1,213 @@
+{
+  "schema_version": "1.0",
+  "cohort": {
+    "name": "affinity_n50",
+    "n": 50,
+    "source": {
+      "system": "neo4j",
+      "id_type": "urn:qc:person:ulid"
+    }
+  },
+  "nodes": [
+    {
+      "node_index": 0,
+      "student_id": "urn:qc:person:ulid:01KFHJVET7C3NPVJJASQ6XBHNS"
+    },
+    {
+      "node_index": 1,
+      "student_id": "urn:qc:person:ulid:01KFHJVET7FCS04EY72A91H291"
+    },
+    {
+      "node_index": 2,
+      "student_id": "urn:qc:person:ulid:01KFHJVET87QPW012QEP4K876X"
+    },
+    {
+      "node_index": 3,
+      "student_id": "urn:qc:person:ulid:01KFHJVET830R2DFB3X062V2Q9"
+    },
+    {
+      "node_index": 4,
+      "student_id": "urn:qc:person:ulid:01KFHJVET856H2A0RVBC0SZSZ2"
+    },
+    {
+      "node_index": 5,
+      "student_id": "urn:qc:person:ulid:01KFHJVET802Q3ZCEM1ZGMPWTG"
+    },
+    {
+      "node_index": 6,
+      "student_id": "urn:qc:person:ulid:01KFHJVET8ZCCXS2Z6AD52ZE65"
+    },
+    {
+      "node_index": 7,
+      "student_id": "urn:qc:person:ulid:01KFHJVET80QWZ5EQYJD8WH0PR"
+    },
+    {
+      "node_index": 8,
+      "student_id": "urn:qc:person:ulid:01KFHJVET763FG4SJFE361MCW3"
+    },
+    {
+      "node_index": 9,
+      "student_id": "urn:qc:person:ulid:01KFHJVET7DBNMAXJKDHX157SJ"
+    },
+    {
+      "node_index": 10,
+      "student_id": "urn:qc:person:ulid:01KFHJVET7CANJ7WWMM5WRQBW2"
+    },
+    {
+      "node_index": 11,
+      "student_id": "urn:qc:person:ulid:01KFHJVET7CHHWD5K7BTK7N5P1"
+    },
+    {
+      "node_index": 12,
+      "student_id": "urn:qc:person:ulid:01KFHJVET7D3SEVMJXR8HJ63AN"
+    },
+    {
+      "node_index": 13,
+      "student_id": "urn:qc:person:ulid:01KFHJVET79T269NPXDY6NGTGZ"
+    },
+    {
+      "node_index": 14,
+      "student_id": "urn:qc:person:ulid:01KFHJVET77JHZVT5WTDFVAD4P"
+    },
+    {
+      "node_index": 15,
+      "student_id": "urn:qc:person:ulid:01KFHJVET738JS2ND41Y76KNEY"
+    },
+    {
+      "node_index": 16,
+      "student_id": "urn:qc:person:ulid:01KFHJVET7X0CXQHXQDVA56RBW"
+    },
+    {
+      "node_index": 17,
+      "student_id": "urn:qc:person:ulid:01KFHJVET713BX28YCHBG1MARK"
+    },
+    {
+      "node_index": 18,
+      "student_id": "urn:qc:person:ulid:01KFHJVET7JBEEB9MJWWRBKAEY"
+    },
+    {
+      "node_index": 19,
+      "student_id": "urn:qc:person:ulid:01KFHJVET7Q1N1Y15WSKYGNTRT"
+    },
+    {
+      "node_index": 20,
+      "student_id": "urn:qc:person:ulid:01KFHJVET7E5S9072YNQB0G3TH"
+    },
+    {
+      "node_index": 21,
+      "student_id": "urn:qc:person:ulid:01KFHJVET7DXC53ZT4D98FXSTV"
+    },
+    {
+      "node_index": 22,
+      "student_id": "urn:qc:person:ulid:01KFHJVET755ET0RX8W3CP9325"
+    },
+    {
+      "node_index": 23,
+      "student_id": "urn:qc:person:ulid:01KFHJVET73FH52M3BWB0PPC72"
+    },
+    {
+      "node_index": 24,
+      "student_id": "urn:qc:person:ulid:01KFHJVET7GJ6DJQJZS260JHYT"
+    },
+    {
+      "node_index": 25,
+      "student_id": "urn:qc:person:ulid:01KFHJVET7270RKCKVQT45M1YZ"
+    },
+    {
+      "node_index": 26,
+      "student_id": "urn:qc:person:ulid:01KFHJVET72TKGYMSGCXMN81GM"
+    },
+    {
+      "node_index": 27,
+      "student_id": "urn:qc:person:ulid:01KFHJVET792E7QD5KF6D7ET0M"
+    },
+    {
+      "node_index": 28,
+      "student_id": "urn:qc:person:ulid:01KFHJVET77M3D1ZX83K0A3XSB"
+    },
+    {
+      "node_index": 29,
+      "student_id": "urn:qc:person:ulid:01KFHJVET8XKCTAZYW7R6KAEHA"
+    },
+    {
+      "node_index": 30,
+      "student_id": "urn:qc:person:ulid:01KFHJVET8QHW6JXZZZ20AVCJW"
+    },
+    {
+      "node_index": 31,
+      "student_id": "urn:qc:person:ulid:01KFHJVET8XMJKC3M8PVC1YWTE"
+    },
+    {
+      "node_index": 32,
+      "student_id": "urn:qc:person:ulid:01KFHJVET8GWWDCG3BJRQHMK6P"
+    },
+    {
+      "node_index": 33,
+      "student_id": "urn:qc:person:ulid:01KFHJVET8CK393BFHX8A4DBFH"
+    },
+    {
+      "node_index": 34,
+      "student_id": "urn:qc:person:ulid:01KFHJVET8DA947VZCH5V2P7R8"
+    },
+    {
+      "node_index": 35,
+      "student_id": "urn:qc:person:ulid:01KFHJVET8R79A1WQ6DYMYRYQ5"
+    },
+    {
+      "node_index": 36,
+      "student_id": "urn:qc:person:ulid:01KFHJVET8D58EXHNAYPJZFSPQ"
+    },
+    {
+      "node_index": 37,
+      "student_id": "urn:qc:person:ulid:01KFHJVET8E4P9EXJRX4RWH81Z"
+    },
+    {
+      "node_index": 38,
+      "student_id": "urn:qc:person:ulid:01KFHJVET89Q4P4XXM5AQ3VD65"
+    },
+    {
+      "node_index": 39,
+      "student_id": "urn:qc:person:ulid:01KFHJVET84PDMV2AMASSMEVR6"
+    },
+    {
+      "node_index": 40,
+      "student_id": "urn:qc:person:ulid:01KFHJVET87BYB44ZK3ADBVZP0"
+    },
+    {
+      "node_index": 41,
+      "student_id": "urn:qc:person:ulid:01KFHJVET829VBMBWYMKR1PFJW"
+    },
+    {
+      "node_index": 42,
+      "student_id": "urn:qc:person:ulid:01KFHJVET812XEVW8DCQ10D4DV"
+    },
+    {
+      "node_index": 43,
+      "student_id": "urn:qc:person:ulid:01KFHJVET8D02Y0E7Z6FPP8TBE"
+    },
+    {
+      "node_index": 44,
+      "student_id": "urn:qc:person:ulid:01KFHJVET8RSBBEAP3N6KRVK2N"
+    },
+    {
+      "node_index": 45,
+      "student_id": "urn:qc:person:ulid:01KFHJVET8ZSR020W7306WNJC6"
+    },
+    {
+      "node_index": 46,
+      "student_id": "urn:qc:person:ulid:01KFHJVET8M4PPE9R8YDY2X0KQ"
+    },
+    {
+      "node_index": 47,
+      "student_id": "urn:qc:person:ulid:01KFHJVET885JQ15P40NDGW09Y"
+    },
+    {
+      "node_index": 48,
+      "student_id": "urn:qc:person:ulid:01KFHJVET8RCSK1ERH54T5KXMM"
+    },
+    {
+      "node_index": 49,
+      "student_id": "urn:qc:person:ulid:01KFHJVET89HH9D26B0SGFQJ2H"
+    }
+  ]
+}

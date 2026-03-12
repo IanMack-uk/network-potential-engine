@@ -6,3 +6,4 @@ __pycache__/
 .DS_Store
 docs/cascade_instructions
 docs/development_plan
+docs/chat_conversations
