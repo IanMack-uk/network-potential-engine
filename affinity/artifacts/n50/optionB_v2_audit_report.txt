@@ -1,0 +1,85 @@
+==============================================================================
+Affinity n=50 Option B v2 audit report
+==============================================================================
+timestamp_utc: 2026-03-12T20:23:58.080637Z
+n_nodes: 50
+n_modules: 9
+n_sessions_per_module: 8
+total_sessions_per_student: 72
+n_observation_events: 57060
+n_directed_ties: 2450
+
+Frozen policies
+- s_i = (Q_i * P_i) / 9.0
+- Q,P tier mapping: very_low->1 low->2 medium->3 high->4 very_high->5
+- rho mapping: innovator 0.90, early_adopter 0.95, early_majority 1.00, late_majority 1.05, laggard 1.10
+- P(attend) = min(1, a_i * (1 + 0.05*sharedTagCount)), sharedTagCount<=3
+
+Summary stats
+s: min=0.222222 mean=0.991111 max=2.22222
+rho: min=0.9 mean=1.024 max=1.1
+E_eff: min=0.685546 mean=1.83561 max=3.71377
+
+Modules (derived from shared tags)
+- Career Strategies
+- Club Promotion and Roles
+- Contracts and Law
+- Live Music Industry
+- Music Business Game
+- Record Label and Distribution
+- The Management Role
+- Tour Management and Promotion
+- Understanding Creative Industries
+
+Per-student audit (node_index order)
+node_index	rank	displayName	student_id	adopterCategory	outputQuality	outputProductivity	Q	P	s	rho	a_i	sessions_attended	attendance_rate	out_degree	in_degree	w_out_sum	w_in_sum	v	E	E_eff
+0	23	Alex Turner	urn:qc:person:ulid:01KFHJVET7C3NPVJJASQ6XBHNS	early_majority	medium	medium	3	3	1	1	0.623028	42	0.583333	49	49	1173	1173	0.852114	1.85211	1.85211
+1	22	Jamal Reed	urn:qc:person:ulid:01KFHJVET7FCS04EY72A91H291	late_majority	medium	medium	3	3	1	1.05	0.636836	51	0.708333	49	49	1404	1404	0.897189	1.89719	1.94205
+2	14	Oliver Grant	urn:qc:person:ulid:01KFHJVET87QPW012QEP4K876X	early_adopter	medium	high	3	4	1.33333	0.95	0.440152	30	0.416667	49	49	821	821	1.09552	2.42885	2.37407
+3	3	Theo Bennett	urn:qc:person:ulid:01KFHJVET830R2DFB3X062V2Q9	early_adopter	high	high	4	4	1.77778	0.95	0.513235	41	0.569444	49	49	1153	1153	1.25641	3.03419	2.97137
+4	25	Marcus Johnson	urn:qc:person:ulid:01KFHJVET856H2A0RVBC0SZSZ2	late_majority	high	low	4	2	0.888889	1.05	0.468272	38	0.527778	49	49	1074	1074	0.87714	1.76603	1.80989
+5	29	Daniel Kowalski	urn:qc:person:ulid:01KFHJVET802Q3ZCEM1ZGMPWTG	laggard	medium	low	3	2	0.666667	1.1	0.481968	36	0.5	49	49	994	994	0.825226	1.49189	1.57441
+6	1	Ben Matthews	urn:qc:person:ulid:01KFHJVET8ZCCXS2Z6AD52ZE65	late_majority	very_high	high	5	4	2.22222	1.05	0.593872	46	0.638889	49	49	1310	1310	1.42052	3.64274	3.71377
+7	19	Ryan O’Neill	urn:qc:person:ulid:01KFHJVET80QWZ5EQYJD8WH0PR	late_majority	very_high	low	5	2	1.11111	1.05	0.584158	46	0.638889	49	49	1273	1273	0.980617	2.09173	2.14076
+8	38	Lewis Park	urn:qc:person:ulid:01KFHJVET763FG4SJFE361MCW3	early_adopter	medium	low	3	2	0.666667	0.95	0.485719	37	0.513889	49	49	998	998	0.671971	1.33864	1.30504
+9	30	Tom Wilkins	urn:qc:person:ulid:01KFHJVET7DBNMAXJKDHX157SJ	late_majority	low	high	2	4	0.888889	1.05	0.458646	30	0.416667	49	49	840	840	0.642725	1.53161	1.56375
+10	48	Callum Fraser	urn:qc:person:ulid:01KFHJVET7CANJ7WWMM5WRQBW2	early_majority	very_low	medium	1	3	0.333333	1	0.626291	45	0.625	49	49	1279	1279	0.378239	0.711572	0.711572
+11	49	Noah Patel	urn:qc:person:ulid:01KFHJVET7CHHWD5K7BTK7N5P1	early_majority	very_low	medium	1	3	0.333333	1	0.473032	36	0.5	49	49	1000	1000	0.354859	0.688192	0.688192
+12	40	Harry Collins	urn:qc:person:ulid:01KFHJVET7D3SEVMJXR8HJ63AN	late_majority	medium	low	3	2	0.666667	1.05	0.612548	46	0.638889	49	49	1289	1289	0.516472	1.18314	1.20896
+13	41	Ethan Moore	urn:qc:person:ulid:01KFHJVET79T269NPXDY6NGTGZ	innovator	low	medium	2	3	0.666667	0.9	0.53828	38	0.527778	49	49	1042	1042	0.584286	1.25095	1.19252
+14	26	Samir Haddad	urn:qc:person:ulid:01KFHJVET77JHZVT5WTDFVAD4P	early_majority	medium	medium	3	3	1	1	0.697023	50	0.694444	49	49	1381	1381	0.721054	1.72105	1.72105
+15	39	Josh Walker	urn:qc:person:ulid:01KFHJVET738JS2ND41Y76KNEY	early_majority	low	medium	2	3	0.666667	1	0.605818	44	0.611111	49	49	1215	1215	0.588352	1.25502	1.25502
+16	46	Miguel Santos	urn:qc:person:ulid:01KFHJVET7X0CXQHXQDVA56RBW	early_adopter	very_low	medium	1	3	0.333333	0.95	0.507714	38	0.527778	49	49	1057	1057	0.534362	0.867696	0.840978
+17	7	Luke Evans	urn:qc:person:ulid:01KFHJVET713BX28YCHBG1MARK	early_majority	medium	very_high	3	5	1.66667	1	0.65232	48	0.666667	49	49	1323	1323	1.09618	2.76284	2.76284
+18	12	Aaron Hughes	urn:qc:person:ulid:01KFHJVET7JBEEB9MJWWRBKAEY	laggard	medium	high	3	4	1.33333	1.1	0.504828	36	0.5	49	49	983	983	0.955478	2.28881	2.38436
+19	50	Patrick Doyle	urn:qc:person:ulid:01KFHJVET7Q1N1Y15WSKYGNTRT	late_majority	low	very_low	2	1	0.222222	1.05	0.647055	43	0.597222	49	49	1204	1204	0.441261	0.663483	0.685546
+20	43	Maya Thompson	urn:qc:person:ulid:01KFHJVET7E5S9072YNQB0G3TH	late_majority	high	very_low	4	1	0.444444	1.05	0.456443	26	0.361111	49	49	709	709	0.541627	0.986071	1.01315
+21	9	Aisha Rahman	urn:qc:person:ulid:01KFHJVET7DXC53ZT4D98FXSTV	early_majority	very_high	medium	5	3	1.66667	1	0.503862	45	0.625	49	49	1234	1234	1.05301	2.71967	2.71967
+22	33	Eleanor Brooks	urn:qc:person:ulid:01KFHJVET755ET0RX8W3CP9325	early_majority	low	medium	2	3	0.666667	1	0.478026	38	0.527778	49	49	1057	1057	0.758273	1.42494	1.42494
+23	13	Sofia Mendes	urn:qc:person:ulid:01KFHJVET73FH52M3BWB0PPC72	laggard	high	medium	4	3	1.33333	1.1	0.499451	38	0.527778	49	49	1053	1053	0.950062	2.2834	2.3784
+24	31	Priya Shah	urn:qc:person:ulid:01KFHJVET7GJ6DJQJZS260JHYT	late_majority	low	medium	2	3	0.666667	1.05	0.495497	40	0.555556	49	49	1104	1104	0.755332	1.422	1.45977
+25	15	Hannah Lewis	urn:qc:person:ulid:01KFHJVET7270RKCKVQT45M1YZ	early_majority	medium	high	3	4	1.33333	1	0.665784	46	0.638889	49	49	1290	1290	1.04007	2.3734	2.3734
+26	6	Lucy Morgan	urn:qc:person:ulid:01KFHJVET72TKGYMSGCXMN81GM	early_adopter	medium	very_high	3	5	1.66667	0.95	0.52576	42	0.583333	49	49	1194	1194	1.15429	2.82096	2.76324
+27	34	Nadia Karim	urn:qc:person:ulid:01KFHJVET792E7QD5KF6D7ET0M	early_majority	low	medium	2	3	0.666667	1	0.499038	32	0.444444	49	49	877	877	0.705487	1.37215	1.37215
+28	37	Emily Carter	urn:qc:person:ulid:01KFHJVET77M3D1ZX83K0A3XSB	late_majority	low	medium	2	3	0.666667	1.05	0.511637	35	0.486111	49	49	956	956	0.616518	1.28318	1.31401
+29	36	Fatima Ali	urn:qc:person:ulid:01KFHJVET8XKCTAZYW7R6KAEHA	early_majority	medium	low	3	2	0.666667	1	0.441538	31	0.430556	49	49	878	878	0.673859	1.34053	1.34053
+30	11	Zara Ahmed	urn:qc:person:ulid:01KFHJVET8QHW6JXZZZ20AVCJW	late_majority	medium	high	3	4	1.33333	1.05	0.564029	40	0.555556	49	49	1127	1127	1.01513	2.34846	2.39922
+31	5	Beatrice Hill	urn:qc:person:ulid:01KFHJVET8XMJKC3M8PVC1YWTE	early_majority	medium	very_high	3	5	1.66667	1	0.597952	44	0.611111	49	49	1246	1246	1.12603	2.7927	2.7927
+32	42	Leila Hassan	urn:qc:person:ulid:01KFHJVET8GWWDCG3BJRQHMK6P	late_majority	high	very_low	4	1	0.444444	1.05	0.491173	39	0.541667	49	49	1063	1063	0.606091	1.05053	1.08084
+33	35	Olivia Price	urn:qc:person:ulid:01KFHJVET8CK393BFHX8A4DBFH	late_majority	low	medium	2	3	0.666667	1.05	0.498829	34	0.472222	49	49	959	959	0.651875	1.31854	1.35114
+34	16	Carla Rossi	urn:qc:person:ulid:01KFHJVET8DA947VZCH5V2P7R8	laggard	medium	high	3	4	1.33333	1.1	0.566976	43	0.597222	49	49	1205	1205	0.928827	2.26216	2.35504
+35	32	Rebecca Stone	urn:qc:person:ulid:01KFHJVET8R79A1WQ6DYMYRYQ5	early_majority	medium	low	3	2	0.666667	1	0.614815	37	0.513889	49	49	1034	1034	0.768296	1.43496	1.43496
+36	8	Imogen Wright	urn:qc:person:ulid:01KFHJVET8D58EXHNAYPJZFSPQ	early_adopter	medium	very_high	3	5	1.66667	0.95	0.686078	57	0.791667	49	49	1572	1572	1.11834	2.78501	2.72909
+37	27	Yasmin Khan	urn:qc:person:ulid:01KFHJVET8E4P9EXJRX4RWH81Z	early_majority	high	low	4	2	0.888889	1	0.518429	34	0.472222	49	49	954	954	0.819077	1.70797	1.70797
+38	28	Chloe Bennett	urn:qc:person:ulid:01KFHJVET89Q4P4XXM5AQ3VD65	late_majority	high	low	4	2	0.888889	1.05	0.562109	44	0.611111	49	49	1260	1260	0.707821	1.59671	1.6321
+39	45	Daniela Costa	urn:qc:person:ulid:01KFHJVET84PDMV2AMASSMEVR6	late_majority	medium	very_low	3	1	0.333333	1.05	0.618823	52	0.722222	49	49	1437	1437	0.517555	0.850889	0.876766
+40	18	Megan O’Connor	urn:qc:person:ulid:01KFHJVET87BYB44ZK3ADBVZP0	early_majority	high	medium	4	3	1.33333	1	0.432957	32	0.444444	49	49	912	912	0.902756	2.23609	2.23609
+41	24	Isabelle Laurent	urn:qc:person:ulid:01KFHJVET829VBMBWYMKR1PFJW	late_majority	medium	medium	3	3	1	1.05	0.681183	55	0.763889	49	49	1496	1496	0.787906	1.78791	1.8273
+42	44	Talia Green	urn:qc:person:ulid:01KFHJVET812XEVW8DCQ10D4DV	early_majority	medium	very_low	3	1	0.333333	1	0.437515	34	0.472222	49	49	950	950	0.56403	0.897364	0.897364
+43	10	Sara Mahmood	urn:qc:person:ulid:01KFHJVET8D02Y0E7Z6FPP8TBE	laggard	medium	high	3	4	1.33333	1.1	0.599735	44	0.611111	49	49	1228	1228	1.02716	2.36049	2.46321
+44	4	Anya Petrov	urn:qc:person:ulid:01KFHJVET8RSBBEAP3N6KRVK2N	early_adopter	very_high	medium	5	3	1.66667	0.95	0.634834	51	0.708333	49	49	1442	1442	1.28881	2.95548	2.89104
+45	2	Louise Martin	urn:qc:person:ulid:01KFHJVET8ZSR020W7306WNJC6	early_majority	high	high	4	4	1.77778	1	0.626708	45	0.625	49	49	1269	1269	1.31027	3.08805	3.08805
+46	20	Riya Malhotra	urn:qc:person:ulid:01KFHJVET8M4PPE9R8YDY2X0KQ	laggard	low	very_high	2	5	1.11111	1.1	0.675825	55	0.763889	49	49	1522	1522	0.92084	2.03195	2.12404
+47	47	Katie Reynolds	urn:qc:person:ulid:01KFHJVET885JQ15P40NDGW09Y	laggard	very_low	low	1	2	0.222222	1.1	0.486331	31	0.430556	49	49	867	867	0.5192	0.741422	0.793342
+48	17	Noor Ahmed	urn:qc:person:ulid:01KFHJVET8RCSK1ERH54T5KXMM	late_majority	high	medium	4	3	1.33333	1.05	0.550193	37	0.513889	49	49	1050	1050	0.919194	2.25253	2.29849
+49	21	Eleni Papadopoulos	urn:qc:person:ulid:01KFHJVET89HH9D26B0SGFQJ2H	laggard	medium	medium	3	3	1	1.1	0.664307	46	0.638889	49	49	1302	1302	0.858586	1.85859	1.94445

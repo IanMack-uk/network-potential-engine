@@ -1,0 +1,2752 @@
+[
+  {
+    "student": {
+      "notes": "Scouts emerging artists and gives practical demo feedback; comfortable curating scenes and spotting early momentum. Particularly interested in early-stage indie projects and collaborative development environments.",
+      "adopterCategory": "early_majority",
+      "displayName": "Alex Turner",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Turner",
+      "imageURL": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET7C3NPVJJASQ6XBHNS",
+      "preferredName": "Alex",
+      "providesIntroductions": true,
+      "email": "alex.turner@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:2"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Alex",
+      "dateOfBirth": {
+        "year": 2006,
+        "month": 2,
+        "day": 14
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "medium",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Growth-minded marketer with a strong feel for UK rap culture and emerging scenes. Enjoys running social-first campaigns, testing formats, and using performance data to refine messaging and audience reach.",
+      "adopterCategory": "late_majority",
+      "displayName": "Jamal Reed",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Reed",
+      "imageURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET7FCS04EY72A91H291",
+      "preferredName": "Jamal",
+      "providesIntroductions": true,
+      "email": "jamal.reed@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:3"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Jamal",
+      "dateOfBirth": {
+        "year": 2004,
+        "month": 9,
+        "day": 3
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "medium",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Detail-oriented and methodical, with a strong interest in publishing and sync. Enjoys matching music to briefs, keeping metadata clean, and building well-structured pitches for licensors and supervisors.",
+      "adopterCategory": "early_adopter",
+      "displayName": "Oliver Grant",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Grant",
+      "imageURL": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET87QPW012QEP4K876X",
+      "preferredName": "Oliver",
+      "providesIntroductions": true,
+      "email": "oliver.grant@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:4"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Oliver",
+      "dateOfBirth": {
+        "year": 2005,
+        "month": 6,
+        "day": 21
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "high",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Calm and practical live-operations profile. Comfortable coordinating schedules, managing crews, and solving problems on show days. Enjoys the pace and teamwork of touring and production environments.",
+      "adopterCategory": "early_adopter",
+      "displayName": "Theo Bennett",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Bennett",
+      "imageURL": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET830R2DFB3X062V2Q9",
+      "preferredName": "Theo",
+      "providesIntroductions": true,
+      "email": "theo.bennett@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:5"
+      ],
+      "outputQuality": "high",
+      "givenName": "Theo",
+      "dateOfBirth": {
+        "year": 2003,
+        "month": 11,
+        "day": 9
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "high",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "People-first artist management profile with strong communication instincts. Focused on planning, negotiation, and helping artists maintain sustainable routines while navigating releases and live work.",
+      "adopterCategory": "late_majority",
+      "displayName": "Marcus Johnson",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Johnson",
+      "imageURL": "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET856H2A0RVBC0SZSZ2",
+      "preferredName": "Marcus",
+      "providesIntroductions": true,
+      "email": "marcus.johnson@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:6"
+      ],
+      "outputQuality": "high",
+      "givenName": "Marcus",
+      "dateOfBirth": {
+        "year": 2002,
+        "month": 4,
+        "day": 17
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "low",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Interested in music-tech products and how audiences interact with platforms. Enjoys testing tools, running basic user research, and translating feedback into practical product improvements.",
+      "adopterCategory": "laggard",
+      "displayName": "Daniel Kowalski",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Kowalski",
+      "imageURL": "https://images.unsplash.com/photo-1520975693414-1d47f50c9d3b?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET802Q3ZCEM1ZGMPWTG",
+      "preferredName": "Daniel",
+      "providesIntroductions": true,
+      "email": "daniel.kowalski@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:7"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Daniel",
+      "dateOfBirth": {
+        "year": 2005,
+        "month": 1,
+        "day": 30
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "low",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Grassroots promoter with a hands-on approach to local shows. Enjoys building welcoming nights from the ground up, combining simple design, clear promotion, and strong community relationships.",
+      "adopterCategory": "late_majority",
+      "displayName": "Ben Matthews",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Matthews",
+      "imageURL": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET8ZCCXS2Z6AD52ZE65",
+      "preferredName": "Ben",
+      "providesIntroductions": true,
+      "email": "ben.matthews@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:8"
+      ],
+      "outputQuality": "very_high",
+      "givenName": "Ben",
+      "dateOfBirth": {
+        "year": 2007,
+        "month": 7,
+        "day": 19
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "high",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Steady and diplomatic touring assistant with experience supporting artists on the road. Comfortable handling logistics, artist relations, and long working days while keeping teams aligned and calm.",
+      "adopterCategory": "late_majority",
+      "displayName": "Ryan O’Neill",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "ONeill",
+      "imageURL": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET80QWZ5EQYJD8WH0PR",
+      "preferredName": "Ryan",
+      "providesIntroductions": true,
+      "email": "ryan.oneill@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:9"
+      ],
+      "outputQuality": "very_high",
+      "givenName": "Ryan",
+      "dateOfBirth": {
+        "year": 2001,
+        "month": 10,
+        "day": 5
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "low",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Streaming-focused with a data-driven mindset. Thinks in release cycles, playlist strategy, and measurable growth levers, using performance data to inform campaign decisions.",
+      "adopterCategory": "early_adopter",
+      "displayName": "Lewis Park",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Park",
+      "imageURL": "https://images.unsplash.com/photo-1517841905240-472988babdf1?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET763FG4SJFE361MCW3",
+      "preferredName": "Lewis",
+      "providesIntroductions": true,
+      "email": "lewis.park@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:10"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Lewis",
+      "dateOfBirth": {
+        "year": 2004,
+        "month": 4,
+        "day": 12
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "low",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Interested in festival programming and curation. Enjoys researching line-ups, balancing creative vision with budgets, and coordinating with multiple stakeholders.",
+      "adopterCategory": "late_majority",
+      "displayName": "Tom Wilkins",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Wilkins",
+      "imageURL": "https://images.unsplash.com/photo-1520974735194-6a26f60439c7?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET7DBNMAXJKDHX157SJ",
+      "preferredName": "Tom",
+      "providesIntroductions": true,
+      "email": "tom.wilkins@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:11"
+      ],
+      "outputQuality": "low",
+      "givenName": "Tom",
+      "dateOfBirth": {
+        "year": 2003,
+        "month": 8,
+        "day": 28
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "high",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Community-minded organiser with an interest in youth-focused music projects. Motivated by access, inclusion, and creating supportive creative environments.",
+      "adopterCategory": "early_majority",
+      "displayName": "Callum Fraser",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Fraser",
+      "imageURL": "https://images.unsplash.com/photo-1480429370139-e0132c086e22?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET7CANJ7WWMM5WRQBW2",
+      "preferredName": "Callum",
+      "providesIntroductions": true,
+      "email": "callum.fraser@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:12"
+      ],
+      "outputQuality": "very_low",
+      "givenName": "Callum",
+      "dateOfBirth": {
+        "year": 2006,
+        "month": 12,
+        "day": 2
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "medium",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Curious about global music markets and cultural context. Enjoys research-led work and presenting insights that inform marketing and release strategies.",
+      "adopterCategory": "early_majority",
+      "displayName": "Noah Patel",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Patel",
+      "imageURL": "https://images.unsplash.com/photo-1520975918318-3f8f62d0d4b6?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET7CHHWD5K7BTK7N5P1",
+      "preferredName": "Noah",
+      "providesIntroductions": true,
+      "email": "noah.patel@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:13"
+      ],
+      "outputQuality": "very_low",
+      "givenName": "Noah",
+      "dateOfBirth": {
+        "year": 2005,
+        "month": 3,
+        "day": 9
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "medium",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Business-affairs leaning with a preference for structure and clarity. Enjoys legal research, contract analysis, and preparing negotiation positions.",
+      "adopterCategory": "late_majority",
+      "displayName": "Harry Collins",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Collins",
+      "imageURL": "https://images.unsplash.com/photo-1542178243-bc20204b769b?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET7D3SEVMJXR8HJ63AN",
+      "preferredName": "Harry",
+      "providesIntroductions": true,
+      "email": "harry.collins@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:14"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Harry",
+      "dateOfBirth": {
+        "year": 2000,
+        "month": 6,
+        "day": 14
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "low",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Visually minded with a strong interest in artist branding. Enjoys shaping coherent visual identities and building presentation assets that support releases and pitches.",
+      "adopterCategory": "innovator",
+      "displayName": "Ethan Moore",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Moore",
+      "imageURL": "https://images.unsplash.com/photo-1524502397800-2c57b43f04fa?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET79T269NPXDY6NGTGZ",
+      "preferredName": "Ethan",
+      "providesIntroductions": true,
+      "email": "ethan.moore@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:15"
+      ],
+      "outputQuality": "low",
+      "givenName": "Ethan",
+      "dateOfBirth": {
+        "year": 2007,
+        "month": 1,
+        "day": 7
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "medium",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Confident writer and interviewer with an interest in PR and editorial storytelling. Enjoys shaping narratives around new releases and emerging artists.",
+      "adopterCategory": "early_majority",
+      "displayName": "Samir Haddad",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Haddad",
+      "imageURL": "https://images.unsplash.com/photo-1521119989659-a83eee488004?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET77JHZVT5WTDFVAD4P",
+      "preferredName": "Samir",
+      "providesIntroductions": true,
+      "email": "samir.haddad@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:16"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Samir",
+      "dateOfBirth": {
+        "year": 2003,
+        "month": 2,
+        "day": 20
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "medium",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Finance-oriented with a focus on touring and live projects. Enjoys building forecasts, tracking costs, and supporting sustainable touring models.",
+      "adopterCategory": "early_majority",
+      "displayName": "Josh Walker",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Walker",
+      "imageURL": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET738JS2ND41Y76KNEY",
+      "preferredName": "Josh",
+      "providesIntroductions": true,
+      "email": "josh.walker@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:17"
+      ],
+      "outputQuality": "low",
+      "givenName": "Josh",
+      "dateOfBirth": {
+        "year": 2004,
+        "month": 11,
+        "day": 11
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "medium",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Strong on international administration and cross-border logistics. Comfortable coordinating itineraries and communicating clearly across languages and teams.",
+      "adopterCategory": "early_adopter",
+      "displayName": "Miguel Santos",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Santos",
+      "imageURL": "https://images.unsplash.com/photo-1524503033411-1f0d1b3b2b26?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET7X0CXQHXQDVA56RBW",
+      "preferredName": "Miguel",
+      "providesIntroductions": true,
+      "email": "miguel.santos@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:18"
+      ],
+      "outputQuality": "very_low",
+      "givenName": "Miguel",
+      "dateOfBirth": {
+        "year": 2002,
+        "month": 9,
+        "day": 26
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "medium",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Venue operations experience with strong front-of-house instincts. Calm under pressure and focused on creating positive audience and artist experiences.",
+      "adopterCategory": "early_majority",
+      "displayName": "Luke Evans",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Evans",
+      "imageURL": "https://images.unsplash.com/photo-1520975682037-92724c9b2f87?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET713BX28YCHBG1MARK",
+      "preferredName": "Luke",
+      "providesIntroductions": true,
+      "email": "luke.evans@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:19"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Luke",
+      "dateOfBirth": {
+        "year": 2006,
+        "month": 5,
+        "day": 30
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "very_high",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Analytical and research-led, with a strong interest in business affairs and deal structures. Enjoys preparing background research, supporting negotiations, and translating complex information into clear summaries.",
+      "adopterCategory": "laggard",
+      "displayName": "Aaron Hughes",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Hughes",
+      "imageURL": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET7JBEEB9MJWWRBKAEY",
+      "preferredName": "Aaron",
+      "providesIntroductions": true,
+      "email": "aaron.hughes@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:20"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Aaron",
+      "dateOfBirth": {
+        "year": 2003,
+        "month": 7,
+        "day": 18
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "high",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Entrepreneurial and outward-looking, interested in building independent projects and long-term business models around artists. Enjoys networking, pitching ideas, and thinking beyond single campaigns.",
+      "adopterCategory": "late_majority",
+      "displayName": "Patrick Doyle",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Doyle",
+      "imageURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET7Q1N1Y15WSKYGNTRT",
+      "preferredName": "Patrick",
+      "providesIntroductions": true,
+      "email": "patrick.doyle@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:21"
+      ],
+      "outputQuality": "low",
+      "givenName": "Patrick",
+      "dateOfBirth": {
+        "year": 2005,
+        "month": 2,
+        "day": 2
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "very_low",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Strategic and people-focused, with a strong interest in artist management and long-term career development. Enjoys balancing creative ambition with practical planning and clear communication.",
+      "adopterCategory": "late_majority",
+      "displayName": "Maya Thompson",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Thompson",
+      "imageURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET7E5S9072YNQB0G3TH",
+      "preferredName": "Maya",
+      "providesIntroductions": true,
+      "email": "maya.thompson@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:22"
+      ],
+      "outputQuality": "high",
+      "givenName": "Maya",
+      "dateOfBirth": {
+        "year": 2005,
+        "month": 5,
+        "day": 16
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "very_low",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Marketing-focused with a strong interest in culturally led campaigns and audience insight. Enjoys shaping messaging that resonates with specific communities and scenes.",
+      "adopterCategory": "early_majority",
+      "displayName": "Aisha Rahman",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Rahman",
+      "imageURL": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET7DXC53ZT4D98FXSTV",
+      "preferredName": "Aisha",
+      "providesIntroductions": true,
+      "email": "aisha.rahman@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:23"
+      ],
+      "outputQuality": "very_high",
+      "givenName": "Aisha",
+      "dateOfBirth": {
+        "year": 2004,
+        "month": 8,
+        "day": 11
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "medium",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Drawn to live events and festival environments. Enjoys the coordination side of programming and supporting artists through well-run production processes.",
+      "adopterCategory": "early_majority",
+      "displayName": "Eleanor Brooks",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Brooks",
+      "imageURL": "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET755ET0RX8W3CP9325",
+      "preferredName": "Ellie",
+      "providesIntroductions": true,
+      "email": "eleanor.brooks@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:24"
+      ],
+      "outputQuality": "low",
+      "givenName": "Eleanor",
+      "dateOfBirth": {
+        "year": 2006,
+        "month": 1,
+        "day": 23
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "medium",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Interested in international markets and cross-border releases. Enjoys research-led strategy and adapting campaigns for different cultural contexts.",
+      "adopterCategory": "laggard",
+      "displayName": "Sofia Mendes",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Mendes",
+      "imageURL": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET73FH52M3BWB0PPC72",
+      "preferredName": "Sofia",
+      "providesIntroductions": true,
+      "email": "sofia.mendes@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:25"
+      ],
+      "outputQuality": "high",
+      "givenName": "Sofia",
+      "dateOfBirth": {
+        "year": 2003,
+        "month": 3,
+        "day": 17
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "medium",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Publishing-focused with a practical approach to rights, metadata, and administration. Enjoys keeping systems clean and supporting smooth licensing processes.",
+      "adopterCategory": "late_majority",
+      "displayName": "Priya Shah",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Shah",
+      "imageURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET7GJ6DJQJZS260JHYT",
+      "preferredName": "Priya",
+      "providesIntroductions": true,
+      "email": "priya.shah@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:26"
+      ],
+      "outputQuality": "low",
+      "givenName": "Priya",
+      "dateOfBirth": {
+        "year": 2005,
+        "month": 10,
+        "day": 29
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "medium",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Audience-led digital marketer with a strong feel for online communities. Enjoys testing formats, tracking engagement, and refining campaigns based on platform performance.",
+      "adopterCategory": "early_majority",
+      "displayName": "Hannah Lewis",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Lewis",
+      "imageURL": "https://images.unsplash.com/photo-1544725176-7c40e5a2c9f9?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET7270RKCKVQT45M1YZ",
+      "preferredName": "Hannah",
+      "providesIntroductions": true,
+      "email": "hannah.lewis@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:27"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Hannah",
+      "dateOfBirth": {
+        "year": 2004,
+        "month": 6,
+        "day": 8
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "high",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Enjoys working at the intersection of music and community. Drawn to projects that support access, education, and long-term local impact.",
+      "adopterCategory": "early_adopter",
+      "displayName": "Lucy Morgan",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Morgan",
+      "imageURL": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET72TKGYMSGCXMN81GM",
+      "preferredName": "Lucy",
+      "providesIntroductions": true,
+      "email": "lucy.morgan@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:28"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Lucy",
+      "dateOfBirth": {
+        "year": 2006,
+        "month": 9,
+        "day": 14
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "very_high",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Calm and organised with a strong interest in touring operations. Enjoys itinerary planning, artist care, and ensuring smooth day-to-day logistics on the road.",
+      "adopterCategory": "early_majority",
+      "displayName": "Nadia Karim",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Karim",
+      "imageURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET792E7QD5KF6D7ET0M",
+      "preferredName": "Nadia",
+      "providesIntroductions": true,
+      "email": "nadia.karim@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:29"
+      ],
+      "outputQuality": "low",
+      "givenName": "Nadia",
+      "dateOfBirth": {
+        "year": 2003,
+        "month": 12,
+        "day": 5
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "medium",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Brand-conscious and visually literate. Enjoys developing artist identities and translating creative direction into coherent visual outputs.",
+      "adopterCategory": "late_majority",
+      "displayName": "Emily Carter",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Carter",
+      "imageURL": "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET77M3D1ZX83K0A3XSB",
+      "preferredName": "Emily",
+      "providesIntroductions": true,
+      "email": "emily.carter@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:30"
+      ],
+      "outputQuality": "low",
+      "givenName": "Emily",
+      "dateOfBirth": {
+        "year": 2005,
+        "month": 2,
+        "day": 27
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "medium",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Interested in PR and media relations, with a focus on thoughtful storytelling and representation. Enjoys interviews, press writing, and building long-term journalist relationships.",
+      "adopterCategory": "early_majority",
+      "displayName": "Fatima Ali",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Ali",
+      "imageURL": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET8XKCTAZYW7R6KAEHA",
+      "preferredName": "Fatima",
+      "providesIntroductions": true,
+      "email": "fatima.ali@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:31"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Fatima",
+      "dateOfBirth": {
+        "year": 2004,
+        "month": 1,
+        "day": 19
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "low",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Creator-led strategist with a strong interest in short-form platforms and audience behaviour. Enjoys building creator-first release strategies and testing content ideas quickly.",
+      "adopterCategory": "late_majority",
+      "displayName": "Zara Ahmed",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Ahmed",
+      "imageURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET8QHW6JXZZZ20AVCJW",
+      "preferredName": "Zara",
+      "providesIntroductions": true,
+      "email": "zara.ahmed@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:32"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Zara",
+      "dateOfBirth": {
+        "year": 2006,
+        "month": 4,
+        "day": 3
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "high",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Careful and detail-focused, with a strong interest in rights administration and catalogues. Enjoys keeping records accurate and supporting long-term revenue flows.",
+      "adopterCategory": "early_majority",
+      "displayName": "Beatrice Hill",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Hill",
+      "imageURL": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET8XMJKC3M8PVC1YWTE",
+      "preferredName": "Bea",
+      "providesIntroductions": true,
+      "email": "beatrice.hill@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:33"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Beatrice",
+      "dateOfBirth": {
+        "year": 2003,
+        "month": 9,
+        "day": 27
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "very_high",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Internationally minded with a focus on coordination and compliance. Interested in visas, administration, and supporting artists working across borders.",
+      "adopterCategory": "late_majority",
+      "displayName": "Leila Hassan",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Hassan",
+      "imageURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET8GWWDCG3BJRQHMK6P",
+      "preferredName": "Leila",
+      "providesIntroductions": true,
+      "email": "leila.hassan@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:34"
+      ],
+      "outputQuality": "high",
+      "givenName": "Leila",
+      "dateOfBirth": {
+        "year": 2004,
+        "month": 7,
+        "day": 21
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "very_low",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Venue-focused with experience in front-of-house and audience care. Values smooth operations and positive experiences for both artists and audiences.",
+      "adopterCategory": "late_majority",
+      "displayName": "Olivia Price",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Price",
+      "imageURL": "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET8CK393BFHX8A4DBFH",
+      "preferredName": "Olivia",
+      "providesIntroductions": true,
+      "email": "olivia.price@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:35"
+      ],
+      "outputQuality": "low",
+      "givenName": "Olivia",
+      "dateOfBirth": {
+        "year": 2005,
+        "month": 11,
+        "day": 2
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "medium",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Research-driven with an interest in global scenes and emerging markets. Enjoys presenting insights and supporting internationally focused strategies.",
+      "adopterCategory": "laggard",
+      "displayName": "Carla Rossi",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Rossi",
+      "imageURL": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET8DA947VZCH5V2P7R8",
+      "preferredName": "Carla",
+      "providesIntroductions": true,
+      "email": "carla.rossi@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:36"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Carla",
+      "dateOfBirth": {
+        "year": 2002,
+        "month": 2,
+        "day": 14
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "high",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Focused on live promotion and grassroots touring. Enjoys building momentum for emerging artists through well-targeted local campaigns and strong venue relationships.",
+      "adopterCategory": "early_majority",
+      "displayName": "Rebecca Stone",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Stone",
+      "imageURL": "https://images.unsplash.com/photo-1544725176-7c40e5a2c9f9?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET8R79A1WQ6DYMYRYQ5",
+      "preferredName": "Becky",
+      "providesIntroductions": true,
+      "email": "rebecca.stone@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:37"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Rebecca",
+      "dateOfBirth": {
+        "year": 2004,
+        "month": 3,
+        "day": 12
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "low",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Quietly analytical with a strong interest in streaming data and audience insights. Enjoys dashboards, reporting, and using numbers to guide creative decisions.",
+      "adopterCategory": "early_adopter",
+      "displayName": "Imogen Wright",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Wright",
+      "imageURL": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET8D58EXHNAYPJZFSPQ",
+      "preferredName": "Imogen",
+      "providesIntroductions": true,
+      "email": "imogen.wright@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:38"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Imogen",
+      "dateOfBirth": {
+        "year": 2006,
+        "month": 8,
+        "day": 6
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "very_high",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Business-minded with an interest in entrepreneurship and long-term planning. Enjoys developing ideas into viable projects and pitching them clearly.",
+      "adopterCategory": "early_majority",
+      "displayName": "Yasmin Khan",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Khan",
+      "imageURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET8E4P9EXJRX4RWH81Z",
+      "preferredName": "Yasmin",
+      "providesIntroductions": true,
+      "email": "yasmin.khan@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:39"
+      ],
+      "outputQuality": "high",
+      "givenName": "Yasmin",
+      "dateOfBirth": {
+        "year": 2003,
+        "month": 1,
+        "day": 25
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "low",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Focused on press and communications. Enjoys shaping narratives, preparing press materials, and supporting artists through release cycles.",
+      "adopterCategory": "late_majority",
+      "displayName": "Chloe Bennett",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Bennett",
+      "imageURL": "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET89Q4P4XXM5AQ3VD65",
+      "preferredName": "Chloe",
+      "providesIntroductions": true,
+      "email": "chloe.bennett@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:40"
+      ],
+      "outputQuality": "high",
+      "givenName": "Chloe",
+      "dateOfBirth": {
+        "year": 2005,
+        "month": 9,
+        "day": 1
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "low",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Internationally oriented with a focus on coordination and market research. Enjoys supporting cross-border campaigns and analysing regional trends.",
+      "adopterCategory": "late_majority",
+      "displayName": "Daniela Costa",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Costa",
+      "imageURL": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET84PDMV2AMASSMEVR6",
+      "preferredName": "Daniela",
+      "providesIntroductions": true,
+      "email": "daniela.costa@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:41"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Daniela",
+      "dateOfBirth": {
+        "year": 2004,
+        "month": 12,
+        "day": 18
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "very_low",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Drawn to community-facing live projects and inclusive programming. Enjoys working with grassroots venues and supporting emerging local talent.",
+      "adopterCategory": "early_majority",
+      "displayName": "Megan O’Connor",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "OConnor",
+      "imageURL": "https://images.unsplash.com/photo-1544725176-7c40e5a2c9f9?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET87BYB44ZK3ADBVZP0",
+      "preferredName": "Megan",
+      "providesIntroductions": true,
+      "email": "megan.oconnor@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:42"
+      ],
+      "outputQuality": "high",
+      "givenName": "Megan",
+      "dateOfBirth": {
+        "year": 2005,
+        "month": 4,
+        "day": 9
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "medium",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Analytical and research-focused, with a strong interest in rights, contracts, and international market structures.",
+      "adopterCategory": "late_majority",
+      "displayName": "Isabelle Laurent",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Laurent",
+      "imageURL": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET829VBMBWYMKR1PFJW",
+      "preferredName": "Isabelle",
+      "providesIntroductions": true,
+      "email": "isabelle.laurent@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:43"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Isabelle",
+      "dateOfBirth": {
+        "year": 2003,
+        "month": 6,
+        "day": 22
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "medium",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Interested in artist branding and visual storytelling. Enjoys translating creative direction into consistent visual assets across platforms.",
+      "adopterCategory": "early_majority",
+      "displayName": "Talia Green",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Green",
+      "imageURL": "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET812XEVW8DCQ10D4DV",
+      "preferredName": "Talia",
+      "providesIntroductions": true,
+      "email": "talia.green@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:44"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Talia",
+      "dateOfBirth": {
+        "year": 2006,
+        "month": 2,
+        "day": 14
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "very_low",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Strong communicator with an interest in PR strategy and relationship-building. Enjoys shaping press narratives and managing media outreach.",
+      "adopterCategory": "laggard",
+      "displayName": "Sara Mahmood",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Mahmood",
+      "imageURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET8D02Y0E7Z6FPP8TBE",
+      "preferredName": "Sara",
+      "providesIntroductions": true,
+      "email": "sara.mahmood@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:45"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Sara",
+      "dateOfBirth": {
+        "year": 2004,
+        "month": 10,
+        "day": 30
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "high",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Interested in global music scenes and cultural exchange. Enjoys research-led strategy and supporting internationally focused projects.",
+      "adopterCategory": "early_adopter",
+      "displayName": "Anya Petrov",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Petrov",
+      "imageURL": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET8RSBBEAP3N6KRVK2N",
+      "preferredName": "Anya",
+      "providesIntroductions": true,
+      "email": "anya.petrov@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:46"
+      ],
+      "outputQuality": "very_high",
+      "givenName": "Anya",
+      "dateOfBirth": {
+        "year": 2002,
+        "month": 7,
+        "day": 7
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "medium",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Process-driven with a strong interest in operations and coordination. Enjoys keeping projects on track and supporting teams through clear organisation.",
+      "adopterCategory": "early_majority",
+      "displayName": "Louise Martin",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Martin",
+      "imageURL": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET8ZSR020W7306WNJC6",
+      "preferredName": "Louise",
+      "providesIntroductions": true,
+      "email": "louise.martin@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:47"
+      ],
+      "outputQuality": "high",
+      "givenName": "Louise",
+      "dateOfBirth": {
+        "year": 2005,
+        "month": 6,
+        "day": 19
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "high",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Interested in international branding and cross-market strategy. Enjoys adapting campaigns for different cultural contexts and audience expectations.",
+      "adopterCategory": "laggard",
+      "displayName": "Riya Malhotra",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Malhotra",
+      "imageURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET8M4PPE9R8YDY2X0KQ",
+      "preferredName": "Riya",
+      "providesIntroductions": true,
+      "email": "riya.malhotra@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:48"
+      ],
+      "outputQuality": "low",
+      "givenName": "Riya",
+      "dateOfBirth": {
+        "year": 2003,
+        "month": 4,
+        "day": 1
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "very_high",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Enjoys live event environments and festival settings. Interested in production support, scheduling, and ensuring smooth on-the-day delivery.",
+      "adopterCategory": "laggard",
+      "displayName": "Katie Reynolds",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Reynolds",
+      "imageURL": "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET885JQ15P40NDGW09Y",
+      "preferredName": "Katie",
+      "providesIntroductions": true,
+      "email": "katie.reynolds@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:49"
+      ],
+      "outputQuality": "very_low",
+      "givenName": "Katie",
+      "dateOfBirth": {
+        "year": 2006,
+        "month": 8,
+        "day": 31
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "low",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Data-inclined with a strong interest in audience insights and performance reporting. Enjoys translating numbers into clear recommendations.",
+      "adopterCategory": "late_majority",
+      "displayName": "Noor Ahmed",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Ahmed",
+      "imageURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET8RCSK1ERH54T5KXMM",
+      "preferredName": "Noor",
+      "providesIntroductions": true,
+      "email": "noor.ahmed@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:50"
+      ],
+      "outputQuality": "high",
+      "givenName": "Noor",
+      "dateOfBirth": {
+        "year": 2004,
+        "month": 2,
+        "day": 8
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "medium",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  },
+  {
+    "student": {
+      "notes": "Internationally experienced with an interest in coordination, compliance, and artist support across borders. Enjoys structured, detail-oriented work.",
+      "adopterCategory": "laggard",
+      "displayName": "Eleni Papadopoulos",
+      "openToCollaborate": true,
+      "createdAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 4,
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nanosecond": 0,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "emailPolicy": "UWL_REQUIRED",
+      "familyName": "Papadopoulos",
+      "imageURL": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=256&h=256&fit=facearea&facepad=4&q=60",
+      "offersOpportunities": false,
+      "id": "urn:qc:person:ulid:01KFHJVET89HH9D26B0SGFQJ2H",
+      "preferredName": "Eleni",
+      "providesIntroductions": true,
+      "email": "eleni.papadopoulos@uwl.ac.uk",
+      "updatedAt": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "hour": 2,
+        "minute": 15,
+        "second": 15,
+        "nanosecond": 638000000,
+        "timeZoneOffsetSeconds": 0,
+        "timeZoneId": null
+      },
+      "idAliases": [
+        "urn:qc:person:51"
+      ],
+      "outputQuality": "medium",
+      "givenName": "Eleni",
+      "dateOfBirth": {
+        "year": 2002,
+        "month": 11,
+        "day": 15
+      },
+      "providesMentorship": false,
+      "updatedVia": "SEED",
+      "outputProductivity": "medium",
+      "providesTeaching": false,
+      "providesSupport": false,
+      "status": "ACTIVE",
+      "openToWork": true
+    }
+  }
+]
