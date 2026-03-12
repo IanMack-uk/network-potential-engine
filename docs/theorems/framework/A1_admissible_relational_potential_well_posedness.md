@@ -95,6 +95,16 @@ Thus
 
 exists and is continuous.
 
+### A1.5 Mixed-derivative licensing (explicit)
+
+Downstream response theorems require differentiability of the equilibrium operator
+
+F(w, θ) = ∇_w Φ(w, θ)
+
+with respect to θ. Accordingly, in addition to A1.3–A1.4 we assume that the equilibrium operator is continuously differentiable in both variables on the admissible domain:
+
+F ∈ C¹(Ω_Φ).
+
 ------------------------------------------------------------------------
 
 # 3. Consequences
@@ -118,7 +128,7 @@ exists and is continuous.
 
 H_wθ(w, θ) = D_θ (∇\_w Φ(w, θ))
 
-exists.
+exists and is continuous.
 
 ### 3.4 Coupling operator
 
@@ -137,7 +147,7 @@ later exist.
   ----------- --------------------------
   F(w,θ)      C²_w regularity
   H(w,θ)      C²_w regularity
-  H_wθ(w,θ)   C¹_θ and C²_w regularity
+  H_wθ(w,θ)   F ∈ C¹(Ω_Φ) (explicit mixed-derivative licensing)
 
 Later theorems may impose stronger conditions such as invertibility or
 positivity.

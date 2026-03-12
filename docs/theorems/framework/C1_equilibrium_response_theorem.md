@@ -42,8 +42,9 @@ F(w\*(θ), θ) = 0.
 
 Assume:
 
-1. Φ is twice continuously differentiable in w and once continuously differentiable in θ on the admissible domain (as in A1), so that H and H\_{wθ} exist.
-2. The equilibrium w\*(θ) is an interior equilibrium and satisfies the interior nondegeneracy hypothesis of A3b, i.e. H(w\*(θ), θ) is nonsingular.
+1. The equilibrium operator F(w, θ) = ∇_w Φ(w, θ) is continuously differentiable in (w, θ) on the admissible domain (as explicitly licensed in A1), so that the mixed derivative block H\_{wθ}(w, θ) = D_θ(∇_w Φ(w, θ)) exists and is continuous.
+2. The equilibrium branch θ ↦ w\*(θ) is locally well-defined and differentiable on the regime of interest (as licensed by A3a under the interior nondegeneracy hypothesis).
+3. The equilibrium w\*(θ) is an interior equilibrium and satisfies the interior nondegeneracy hypothesis of A3b, i.e. H(w\*(θ), θ) is nonsingular.
 
 Equivalently, the equilibrium-evaluated coupling matrix
 

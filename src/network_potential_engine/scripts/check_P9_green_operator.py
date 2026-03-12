@@ -8,7 +8,7 @@ from network_potential_engine.symbolic.potential import theta_dependent_curvatur
 from network_potential_engine.symbolic.symbols import make_symbols
 
 
-def check_p10_propagation_mapping():
+def check_p9_green_operator():
     w, theta = make_symbols(3, 3)
 
     q, alpha, c = sp.symbols("q alpha c", real=True)
@@ -23,23 +23,18 @@ def check_p10_propagation_mapping():
     H = hessian_of_potential(phi, w)
     C = coupling_operator_from_hessian(H)
     G = sp.simplify(C.inv())
+    left_residual = sp.simplify(C * G - sp.eye(C.rows))
+    right_residual = sp.simplify(G * C - sp.eye(C.rows))
 
-    s1, s2, s3 = sp.symbols("s1 s2 s3", real=True)
-    s = sp.Matrix([s1, s2, s3])
-
-    v = sp.simplify(G * s)
-    residual = sp.simplify(C * v - s)
-
-    return C, G, s, v, residual
+    return C, G, left_residual, right_residual
 
 
 def main() -> None:
-    print("P10 propagation mapping smoke-check")
-    print("Definition: v = G s where Green operator G(w,θ) = C(w,θ)^{-1} (when C is invertible)")
-    print("Equivalent linear system: C(w,θ) v = s")
+    print("P9 Green operator smoke-check")
+    print("Definition: Green operator G(w,θ) = C(w,θ)^{-1} (when C is invertible)")
     print()
 
-    C, G, s, v, residual = check_p10_propagation_mapping()
+    C, G, left_residual, right_residual = check_p9_green_operator()
 
     print("Coupling operator:")
     print("C(w, θ) =")
@@ -51,22 +46,17 @@ def main() -> None:
     print(G)
     print()
 
-    print("Source vector:")
-    print("s =")
-    print(s)
+    print("Identity check residual: C*G - I =")
+    print(left_residual)
     print()
 
-    print("Propagated value field:")
-    print("v = G s =")
-    print(v)
+    print("Identity check residual: G*C - I =")
+    print(right_residual)
+    assert left_residual == sp.zeros(C.rows, C.cols)
+    assert right_residual == sp.zeros(C.rows, C.cols)
     print()
 
-    print("Consistency check residual: C v - s =")
-    print(residual)
-    assert residual == sp.zeros(C.rows, 1)
-    print()
-
-    print("P10 propagation mapping smoke-check: PASS")
+    print("P9 Green operator smoke-check: PASS")
 
 
 if __name__ == "__main__":

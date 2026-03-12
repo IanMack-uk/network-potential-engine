@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This step introduces the **propagation mapping** as the first application of the inverse response operator to a node-level source vector.
+This step introduces the **propagation mapping** as the first application of the Green operator to a node-level source vector.
 
 It is an operator-application step:
 
@@ -18,11 +18,13 @@ It is an operator-application step:
 Let `Φ(w, θ)` be a relational potential and define canonical objects as in `docs/foundations/core_objects.md`:
 
 - coupling operator: `C(w, θ) := −∇²_{ww} Φ(w, θ)`
-- inverse response operator (when defined): `G(w, θ) := C(w, θ)^{-1}`
+- Green operator (when defined): `G(w, θ) := C(w, θ)^{-1}`
 
 Let `s = (s_i) ∈ ℝ^n` denote a node-level source value vector (as defined in Step `3(10)`), and let `v ∈ ℝ^n` denote the propagated value field defined below.
 
-The operator `G(w, θ)` acts on node-indexed vectors, so on any fixed node set it is an `n×n` linear operator.
+In the certified core pipeline, the canonical object convention is single-space: `w`, `s`, and `v` are treated as vectors in the same ambient `\mathbb{R}^n`, and `G(w, θ)` is correspondingly an `n×n` linear operator acting on that space.
+
+A fully general treatment that distinguishes node- and edge-indexed spaces (and introduces explicit bridge/readout operators) is recorded as a universality-layer schema in Step `17(17)`.
 
 When an equilibrium branch `w*(θ)` is licensed by the A-layer and one works with equilibrium-evaluated objects, one may write
 
@@ -52,7 +54,7 @@ When the shorthand `G(θ)` is licensed (equilibrium-evaluated or model-simplifie
 
 ## Domain of validity
 
-The propagation mapping is defined **only** on regimes where the inverse response operator exists.
+The propagation mapping is defined **only** on regimes where the Green operator exists.
 
 - If one writes `v = G(w, θ) s`, this requires `C(w, θ)` nonsingular.
 - If one writes `v(θ) = G(θ) s`, this requires:
@@ -65,7 +67,7 @@ Invertibility is not established by P10; it is imported from the regimes that li
 
 ## Separation from adjacent operators / steps
 
-- **Inverse response operator (Step 9(7))**
+- **Green operator (Step 9(7))**
   - `G(w, θ) := C(w, θ)^{-1}` (when defined).
 
 - **Propagation mapping (this step)**

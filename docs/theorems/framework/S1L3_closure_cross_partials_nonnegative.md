@@ -6,6 +6,10 @@ Let `Φ(w, θ)` be a relational potential defined on `Ω_Φ ⊆ W × Θ`.
 
 Let `ψ(w_S, θ)` be a motif-local closure term supported on a finite index set `S ⊆ {1, …, n}`.
 
+Assume the closure motif is evaluated on an admissible regime in which the relevant state coordinates are nonnegative:
+
+- for every `i ∈ S`, `w_i ≥ 0` on `Ω_Φ`.
+
 Assume that `ψ` admits a finite decomposition into gated triadic product monomials of the form:
 
 `ψ(w_S, θ) = Σ_{α ∈ A} a_α(θ) w_{ij(α)}^{p_α} w_{ik(α)}^{q_α} κ_α`,
@@ -25,6 +29,10 @@ Then for any pair of distinct indices `a ≠ b`:
 
 ------------------------------------------------------------------------
 
+## Domain of validity
+
+This lemma is conditional: it applies on regimes where the closure motif coordinates satisfy `w_i ≥ 0` for all `i ∈ S`. This hypothesis is required for the inequality in the product-term cross-partial calculation.
+
 ## Proof
 
 Fix distinct indices `a ≠ b`.
@@ -39,7 +47,7 @@ Therefore:
 
 - if `{a, b}` is not equal to `{ij(α), ik(α)}`, then at least one of `w_a` or `w_b` does not appear in this monomial, hence its mixed second derivative with respect to `(w_a, w_b)` is `0`.
 
-- if `{a, b} = {ij(α), ik(α)}`, then (using `a_α(θ) κ_α ≥ 0` and `p_α, q_α > 0`):
+- if `{a, b} = {ij(α), ik(α)}`, then (using `a_α(θ) κ_α ≥ 0`, `p_α, q_α > 0`, and the admissibility hypothesis `w_a, w_b ≥ 0` on `Ω_Φ`):
 
 `∂²/(∂w_a ∂w_b) [a_α(θ) w_a^{p_α} w_b^{q_α} κ_α] = a_α(θ) κ_α p_α q_α w_a^{p_α - 1} w_b^{q_α - 1} ≥ 0`
 

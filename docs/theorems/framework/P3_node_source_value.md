@@ -58,7 +58,9 @@ The source field is indexed by nodes:
 
 ### I2. Separation from edge-indexed state variables
 
-The source vector `s` is node-indexed and therefore distinct from edge-indexed state vectors such as `w` in Step `1(1)`.
+In full generality, the source vector `s` is node-indexed and may therefore be distinct from edge-indexed representations of relational weights (Step `1(1)`).
+
+In the certified core pipeline, the canonical object convention is single-space: `w`, `s`, and downstream node-level fields are all treated as vectors in the same ambient `\mathbb{R}^n` (see `docs/foundations/core_objects.md`). A fully general node/edge bridge-operator formulation is treated as a universality-layer schema (Step `17(17)`).
 
 ### I3. Compatibility with canonical potential signature
 

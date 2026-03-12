@@ -40,10 +40,7 @@ Assume w₀ is an interior equilibrium (w₀ lies in the interior of W).
 
 Assume:
 
-1. Φ is twice continuously differentiable in w and once continuously differentiable in θ on the admissible domain (as in A1), so that:
-
-   - D_w F(w, θ) exists and is continuous,
-   - D_θ F(w, θ) exists and is continuous.
+1. The equilibrium operator F(w, θ) = ∇_w Φ(w, θ) is continuously differentiable in (w, θ) on the admissible domain (as explicitly licensed in A1).
 
 2. The equilibrium is nondegenerate at (w₀, θ₀):
 

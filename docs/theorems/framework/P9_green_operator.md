@@ -1,12 +1,12 @@
-# P9 — Inverse Response Operator
+# P9 — Green Operator (Inverse Coupling Operator)
 
 ## Purpose
 
-This step introduces the **inverse response operator** as the inverse of the coupling operator.
+This step introduces the **Green operator** as the inverse of the coupling operator.
 
 It is an operator-construction step:
 
-- it defines `G = C^{-1}` on regimes where the coupling operator is invertible;
+- it defines the Green operator `G = C^{-1}` on regimes where the coupling operator is invertible;
 - it does **not** apply `G` to any specific signal (that occurs in Step `10(11)`);
 - it is distinct from the response operator `R = C^{-1} H_{wθ}` (exported by C1).
 
@@ -28,11 +28,11 @@ when an equilibrium branch `w*(θ)` is licensed by the A-layer and the response 
 
 ------------------------------------------------------------------------
 
-## Definition (inverse response operator)
+## Definition (Green operator)
 
 ### Two-variable operator
 
-On any regime in which `C(w, θ)` is **nonsingular**, define the inverse response operator
+On any regime in which `C(w, θ)` is **nonsingular**, define the Green operator
 
 `G(w, θ) := C(w, θ)^{-1}`.
 
@@ -54,7 +54,7 @@ is nonsingular, define
 
 ## Domain of validity
 
-The inverse response operator is defined **only** on parameter/state regimes where the relevant coupling operator is invertible.
+The Green operator is defined **only** on parameter/state regimes where the relevant coupling operator is invertible.
 
 - If one writes `G(w, θ)`, this requires `C(w, θ)` nonsingular.
 - If one writes `G(θ)`, this requires:
@@ -70,7 +70,7 @@ Invertibility is not established by P9; it is imported from the appropriate regi
 - **Coupling operator (Step 8(6))**
   - `C(w, θ) := −H(w, θ)`.
 
-- **Inverse response operator (this step)**
+- **Green operator (this step)**
   - `G(w, θ) := C(w, θ)^{-1}` (when defined).
 
 - **Response operator (C1 / core objects)**

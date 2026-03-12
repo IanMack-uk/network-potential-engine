@@ -5,6 +5,11 @@ from dataclasses import dataclass
 
 import numpy as np
 
+from network_potential_engine.numeric.green_operator import (
+    GreenOperator,
+    certify_green_operator,
+)
+
 
 @dataclass
 class ResponseResult:
@@ -26,6 +31,7 @@ class ResponseResult:
     hessian_matrix: np.ndarray
     coupling_matrix: np.ndarray
     mixed_block: np.ndarray
+    green_operator: GreenOperator
 
 
 def compute_response(
@@ -74,12 +80,15 @@ def compute_response(
 
     coupling = -hessian
 
+    green_operator = certify_green_operator(coupling)
+
     # Solve C X = H_{w,theta} for X rather than forming inv(C) explicitly.
-    response = np.linalg.solve(coupling, mixed_block)
+    response = green_operator.apply(mixed_block)
 
     return ResponseResult(
         response_matrix=response,
         hessian_matrix=hessian,
         coupling_matrix=coupling,
         mixed_block=mixed_block,
+        green_operator=green_operator,
     )

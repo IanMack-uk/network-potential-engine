@@ -3,8 +3,9 @@
 ## Purpose
 
 This theorem defines the notion of **equilibrium** for relational
-potential systems and establishes conditions under which equilibria
-exist.
+potential systems and records an explicit solvability/existence result
+for a restricted model class in which the equilibrium operator admits an
+affine coupling representation.
 
 The equilibrium concept is defined through the **equilibrium operator**
 
@@ -12,8 +13,8 @@ F(w, θ) = ∇\_w Φ(w, θ)
 
 introduced in `docs/foundations/core_objects.md`.
 
-This theorem connects the general framework to the equilibrium equation
-used in the TDC model.
+This theorem connects the framework equilibrium definition to the
+explicit affine stationarity equation used in the TDC model.
 
 ------------------------------------------------------------------------
 
@@ -83,7 +84,13 @@ C(θ) w = θ
 
 ------------------------------------------------------------------------
 
-# 4. Equilibrium Existence Under Invertibility
+# 4. Equilibrium Existence Under an Affine Coupling Representation
+
+Assume the equilibrium operator admits an affine coupling representation
+
+F(w, θ) = θ − C(θ) w
+
+on the regime of interest, where C(θ) denotes either a model-specific coupling matrix independent of w, or the equilibrium-evaluated shorthand C(θ) := C(w*(θ), θ) when an equilibrium branch w*(θ) is licensed by later theorems.
 
 Assume the coupling operator
 
@@ -99,8 +106,7 @@ has the unique solution
 
 w\*(θ) = C(θ)⁻¹ θ
 
-Thus an equilibrium exists for every parameter value θ for which the
-coupling operator is invertible.
+Thus, under the affine coupling representation and invertibility, an equilibrium exists for every parameter value θ for which the coupling operator is invertible.
 
 ------------------------------------------------------------------------
 
@@ -158,8 +164,8 @@ theorem.
 
 # 8. Domain of Validity
 
-The equilibrium existence result holds on the subset of the admissible
-domain where
+The explicit existence/solvability result in Sections 4–7 holds on any subset of the admissible
+domain where the affine coupling representation is valid and where
 
 det C(θ) ≠ 0
 
@@ -173,9 +179,8 @@ in the admissibility taxonomy.
 
 # 9. Conclusion
 
-Under the regularity conditions of A1 and the invertibility of the
-coupling operator, the relational potential framework admits an
-equilibrium branch
+Under the regularity conditions of A1, the affine coupling representation, and the invertibility of the
+coupling operator, the framework admits an explicitly defined equilibrium branch
 
 w\*(θ)
 

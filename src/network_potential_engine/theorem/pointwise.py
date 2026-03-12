@@ -6,13 +6,8 @@ from dataclasses import dataclass
 import numpy as np
 
 from network_potential_engine.numeric.equilibrium import EquilibriumResult, solve_equilibrium
-from network_potential_engine.numeric.linear_algebra import (
-    diagonal_dominance_margins,
-    has_nonpositive_off_diagonals,
-    is_strictly_diagonally_dominant,
-    is_symmetric,
-)
 from network_potential_engine.numeric.response import ResponseResult, compute_response
+from network_potential_engine.theorem.exceptions import MissingCertificateError
 
 
 @dataclass
@@ -73,20 +68,24 @@ def check_pointwise_conditions(
 
     coupling = response.coupling_matrix
     response_matrix = response.response_matrix
-    margins = diagonal_dominance_margins(coupling)
+
+    cert = response.green_operator.certificate
+    if cert is None:
+        raise MissingCertificateError(
+            message="GreenOperator is missing a coupling certificate.",
+            evidence={
+                "sign_tol": float(sign_tol),
+            },
+        )
 
     return PointwiseTheoremCheck(
         equilibrium=equilibrium,
         response=response,
-        c_diagonal_dominance_margins=margins,
-        c_min_diagonal_dominance_margin=float(np.min(margins)),
-        is_c_symmetric=is_symmetric(coupling, tol=sign_tol),
-        is_c_strictly_diagonally_dominant=is_strictly_diagonally_dominant(
-            coupling, tol=sign_tol
-        ),
-        has_c_nonpositive_off_diagonals=has_nonpositive_off_diagonals(
-            coupling, tol=sign_tol
-        ),
+        c_diagonal_dominance_margins=cert.diagonal_dominance_margins,
+        c_min_diagonal_dominance_margin=cert.min_diagonal_dominance_margin,
+        is_c_symmetric=cert.is_symmetric,
+        is_c_strictly_diagonally_dominant=cert.is_strictly_diagonally_dominant,
+        has_c_nonpositive_off_diagonals=cert.has_nonpositive_off_diagonals,
         response_is_entrywise_nonnegative=is_entrywise_nonnegative(
             response_matrix, tol=sign_tol
         ),

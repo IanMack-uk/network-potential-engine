@@ -5,6 +5,8 @@ from typing import Callable
 from network_potential_engine.scripts.check_C1_tdc_equilibrium_response_identity import (
     run_all_checks as check_c1,
 )
+from network_potential_engine.scripts.check_S1_motif_cross_partials import run_all_checks as check_s1
+from network_potential_engine.scripts.check_S2_row_dominance_tdc import run_all_checks as check_s2
 from network_potential_engine.scripts.check_S3_mmatrix_tdc import run_all_checks as check_s3
 from network_potential_engine.scripts.check_D1_tdc_inverse_positivity import (
     run_all_checks as check_d1,
@@ -27,6 +29,8 @@ def run_step(name: str, fn: Callable[[], None]) -> None:
 
 def main() -> None:
     run_step("C1 — Equilibrium Response Identity (TDC)", check_c1)
+    run_step("S1 — Structural Z-matrix Preconditions (TDC)", check_s1)
+    run_step("S2 — Structural Diagonal Dominance Preconditions (TDC)", check_s2)
     run_step("S3 — Structural M-matrix Preconditions (TDC)", check_s3)
     run_step("D1 — Inverse Positivity (TDC)", check_d1)
     run_step("D2 — Mixed-block Positivity (TDC)", check_d2)

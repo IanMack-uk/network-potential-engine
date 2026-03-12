@@ -27,8 +27,8 @@ Operator spine (upstream anchors):
 - coupling operator (Step `8(6)`): `C(w, θ) := −∇²_{ww} Φ(w, θ)`
   - canonical anchor: `docs/theorems/framework/P8_coupling_operator.md`
 
-- inverse response operator (Step `9(7)`): `G(w, θ) := C(w, θ)^{-1}` (when defined)
-  - canonical anchor: `docs/theorems/framework/P9_inverse_response_operator.md`
+- Green operator (Step `9(7)`): `G(w, θ) := C(w, θ)^{-1}` (when defined)
+  - canonical anchor: `docs/theorems/framework/P9_green_operator.md`
 
 - propagation mapping (Step `10(11)`): `v := G(w, θ) s`
   - canonical anchor: `docs/theorems/framework/P10_propagation_mapping.md`
@@ -40,6 +40,28 @@ Framework admissibility conventions for potentials are specified in:
 ------------------------------------------------------------------------
 
 ## Definitions
+
+### D0. Bridge-operator schema (node/edge typing generalization)
+
+Some admissible model classes distinguish:
+
+- an edge-indexed state space `\mathbb{R}^{|E|}` for relational weights, and
+- a node-indexed space `\mathbb{R}^{|V|}` for source/value fields.
+
+In such cases, the Green operator `G(w, θ) := C(w, θ)^{-1}` remains an operator on the state space induced by differentiation with respect to `w`.
+
+A node-level propagation operator is then obtained by introducing explicit bridge/readout maps:
+
+- `B : \mathbb{R}^{|V|} \to \mathbb{R}^{|E|}` (inject node sources into state space)
+- `R : \mathbb{R}^{|E|} \to \mathbb{R}^{|V|}` (read out state-space responses back to nodes)
+
+and defining the induced node-level transfer operator
+
+- `K(w, θ) := R \, G(w, θ) \, B = R \, C(w, θ)^{-1} \, B`.
+
+In this schema, the node-level propagation mapping may be stated as `v := K(w, θ) s`.
+
+This repository’s certified core pipeline uses a single ambient `\mathbb{R}^n` convention for `w`, `s`, and `v`. The bridge-operator schema above records the path to full generality when one wishes to keep node- and edge-indexed spaces distinct.
 
 ### D1. Universality class of potentials
 

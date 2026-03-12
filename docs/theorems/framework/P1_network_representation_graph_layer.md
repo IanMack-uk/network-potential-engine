@@ -54,9 +54,10 @@ Define the edge-indexed vector representation `\mathbf{w} \in \mathbb{R}^{|E|}` 
 
 `\mathbf{w}_k := w(\pi(k))`.
 
-When the broader framework uses the canonical state-vector notation `w \in \mathbb{R}^n` (as in `docs/foundations/core_objects.md`), Step 1(1) fixes the interpretation as follows:
+When the broader framework uses the canonical state-vector notation `w \in \mathbb{R}^n` (as in `docs/foundations/core_objects.md`), Step 1(1) uses D4 only as a **representational view**:
 
-- the canonical state vector `w \in \mathbb{R}^n` is identified with `\mathbf{w} \in \mathbb{R}^{|E|}` for some chosen edge-ordering `\pi`, i.e. `n := |E|` for this representational layer.
+- if one chooses to represent relational weights as an edge-indexed vector, then `\mathbf{w} \in \mathbb{R}^{|E|}` is the edge-vector induced by an edge ordering `\pi`.
+- in the certified core pipeline, downstream steps treat the canonical `w \in \mathbb{R}^n` as the primary state-space object; any identification between `n` and `|E|` must be declared explicitly as part of the chosen model instantiation.
 
 Graph-indexed notation such as `w_{ij}` is then a derived view defined via D3 from `\mathbf{w}` and `E`.
 

@@ -13,3 +13,12 @@ def require_scipy_root() -> Callable:
         ) from e
 
     return root
+
+
+def optional_scipy_lu_factor_solve() -> tuple[Callable, Callable] | None:
+    try:
+        from scipy.linalg import lu_factor, lu_solve  # type: ignore
+    except ModuleNotFoundError:
+        return None
+
+    return lu_factor, lu_solve
