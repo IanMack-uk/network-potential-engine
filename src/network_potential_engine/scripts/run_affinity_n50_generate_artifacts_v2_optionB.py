@@ -106,6 +106,67 @@ def _reconstruct_tridiagonal_matrix(*, main: np.ndarray, off: np.ndarray) -> np.
     return C
 
 
+def _coupling_operator_from_ties(
+    *,
+    student_ids: list[str],
+    w_directed: dict[tuple[str, str], float],
+    alpha: float = 1.0,
+    jitter: float = 1e-6,
+) -> tuple[np.ndarray, dict[str, Any]]:
+    """Build an SPD coupling operator from tie strengths.
+
+    Policy (frozen for Option B v2):
+      - Symmetricize directed ties: w_sym(i,j) = 0.5*(w_ij + w_ji)
+      - Scale weights by mean nonzero w_sym to keep magnitudes stable.
+      - Graph Laplacian: L = D - W_sym
+      - Coupling operator: C = I + alpha*L + jitter*I  (SPD)
+
+    Returns:
+      C: np.ndarray (n,n)
+      policy: JSON-serializable policy object to embed in artifact.
+    """
+
+    n = len(student_ids)
+    idx = {sid: i for i, sid in enumerate(student_ids)}
+    W = np.zeros((n, n), dtype=float)
+
+    for (a, b), wt in w_directed.items():
+        if a == b:
+            continue
+        ia = idx.get(a)
+        ib = idx.get(b)
+        if ia is None or ib is None:
+            continue
+        # We store directed weights in a dense matrix first.
+        W[ia, ib] += float(wt)
+
+    W_sym = 0.5 * (W + W.T)
+    nonzero = W_sym[W_sym > 0]
+    scale = float(np.mean(nonzero)) if nonzero.size > 0 else 1.0
+    if scale <= 0:
+        scale = 1.0
+    W_sym_scaled = W_sym / scale
+
+    d = np.sum(W_sym_scaled, axis=1)
+    L = np.diag(d) - W_sym_scaled
+
+    C = np.eye(n, dtype=float) + float(alpha) * L + float(jitter) * np.eye(n, dtype=float)
+
+    policy = {
+        "type": "laplacian_from_ties",
+        "symmetrization": "w_sym(i,j)=0.5*(w_ij+w_ji)",
+        "scaling": {
+            "type": "divide_by_mean_nonzero_w_sym",
+            "mean_nonzero_w_sym": scale,
+        },
+        "laplacian": "L = D - W_sym_scaled",
+        "definition": "C = I + alpha*L + jitter*I",
+        "alpha": float(alpha),
+        "jitter": float(jitter),
+    }
+    return C, policy
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -120,12 +181,12 @@ def main() -> int:
     neo4j_dir = repo_root / "affinity" / "from_neo4j"
 
     registry_path = artifacts_dir / "student_registry_v1.json"
-    coupling_C_path = artifacts_dir / "coupling_operator_C_v1.json"
+    coupling_C_v1_path = artifacts_dir / "coupling_operator_C_v1.json"
     personal_props_path = neo4j_dir / "n50_student_personal_properties.json"
     shared_tags_path = neo4j_dir / "n5_students_module_share_tags.json"
     participation_graph_path = neo4j_dir / "n50-student-participation-graph.json"
 
-    for p in [registry_path, coupling_C_path, personal_props_path, shared_tags_path, participation_graph_path]:
+    for p in [registry_path, coupling_C_v1_path, personal_props_path, shared_tags_path, participation_graph_path]:
         if not p.exists():
             raise FileNotFoundError(str(p))
 
@@ -222,14 +283,39 @@ def main() -> int:
         },
     )
 
-    # Propagation + energies using existing C_v1
-    C_obj = _load_json(coupling_C_path)
-    fmt = C_obj["format"]
-    main = np.asarray(fmt["main_diagonal"], dtype=float)
-    off = np.asarray(fmt["off_diagonal"], dtype=float)
-    C = _reconstruct_tridiagonal_matrix(main=main, off=off)
+    # Tie weights (derived) as a simple artifact
+    ties = []
+    for (a, b), wt in sorted(w.items(), key=lambda x: (x[0][0], x[0][1])):
+        ties.append({"actor_student_id": a, "target_student_id": b, "w": float(wt)})
 
-    v = np.linalg.solve(C, s_vec)
+    _write_json(
+        artifacts_dir / "tie_strengths_w_v2.json",
+        {
+            "schema_version": "1.0",
+            "name": "affinity_tie_strengths_w_v2",
+            "cohort_registry_ref": "affinity/artifacts/n50/student_registry_v1.json",
+            "observations_ref": "affinity/artifacts/n50/observations_v2.json",
+            "definition": "w_ij = sum(weight) over events with actor=i and target=j",
+            "ties": ties,
+        },
+    )
+
+    # Build and write data-driven coupling operator C_v2 from v2 ties
+    C_v2, C_v2_policy = _coupling_operator_from_ties(student_ids=student_ids, w_directed=w)
+    _write_json(
+        artifacts_dir / "coupling_operator_C_v2.json",
+        {
+            "schema_version": "1.0",
+            "name": "affinity_coupling_operator_C_v2",
+            "cohort_registry_ref": "affinity/artifacts/n50/student_registry_v1.json",
+            "ties_ref": "affinity/artifacts/n50/tie_strengths_w_v2.json",
+            "format": {"type": "symmetric_dense", "matrix": [[float(x) for x in row] for row in C_v2.tolist()]},
+            "policy": C_v2_policy,
+        },
+    )
+
+    # Propagation + energies using data-driven C_v2
+    v = np.linalg.solve(C_v2, s_vec)
 
     _write_json(
         artifacts_dir / "propagated_value_v_v2.json",
@@ -238,7 +324,7 @@ def main() -> int:
             "name": "affinity_propagated_value_v_v2",
             "cohort_registry_ref": "affinity/artifacts/n50/student_registry_v1.json",
             "source_vector_ref": "affinity/artifacts/n50/source_vector_s_v2.json",
-            "coupling_operator_C_ref": "affinity/artifacts/n50/coupling_operator_C_v1.json",
+            "coupling_operator_C_ref": "affinity/artifacts/n50/coupling_operator_C_v2.json",
             "definition": "v = G s, computed by solving C v = s",
             "ordering": "node_index_ascending",
             "method": {"type": "solve", "solver": "numpy.linalg.solve", "numpy_only": True},
@@ -325,23 +411,6 @@ def main() -> int:
             "ranking_policy": {"sort_key": "(-score, node_index)", "score_field": "E_eff", "deterministic": True},
             "rankings": {"by_score": "E_eff", "entries": entries},
             "students": students,
-        },
-    )
-
-    # Tie weights (derived) as a simple artifact
-    ties = []
-    for (a, b), wt in sorted(w.items(), key=lambda x: (x[0][0], x[0][1])):
-        ties.append({"actor_student_id": a, "target_student_id": b, "w": float(wt)})
-
-    _write_json(
-        artifacts_dir / "tie_strengths_w_v2.json",
-        {
-            "schema_version": "1.0",
-            "name": "affinity_tie_strengths_w_v2",
-            "cohort_registry_ref": "affinity/artifacts/n50/student_registry_v1.json",
-            "observations_ref": "affinity/artifacts/n50/observations_v2.json",
-            "definition": "w_ij = sum(weight) over events with actor=i and target=j",
-            "ties": ties,
         },
     )
 

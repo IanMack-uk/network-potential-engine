@@ -58,7 +58,7 @@ def main() -> int:
     artifact_paths = {
         "registry": artifacts_dir / "student_registry_v1.json",
         "source_s": artifacts_dir / "source_vector_s_v2.json",
-        "coupling_C": artifacts_dir / "coupling_operator_C_v1.json",
+        "coupling_C": artifacts_dir / "coupling_operator_C_v2.json",
         "propagated_v": artifacts_dir / "propagated_value_v_v2.json",
         "energy_E": artifacts_dir / "node_energy_E_v2.json",
         "energy_E_eff": artifacts_dir / "node_energy_E_eff_v2.json",
@@ -124,11 +124,11 @@ def main() -> int:
         raise ValueError("E_eff does not match definition E_eff = beta0*s + beta1*(rho ⊙ v)")
 
     fmt = C_obj["format"]
-    if fmt.get("type") != "symmetric_tridiagonal":
-        raise ValueError("coupling_operator_C_v1.json must be symmetric_tridiagonal")
-    main = np.asarray(fmt["main_diagonal"], dtype=float)
-    off = np.asarray(fmt["off_diagonal"], dtype=float)
-    C = _reconstruct_tridiagonal_matrix(main=main, off=off)
+    if fmt.get("type") != "symmetric_dense":
+        raise ValueError("coupling_operator_C_v2.json must be symmetric_dense")
+    C = np.asarray(fmt["matrix"], dtype=float)
+    if C.shape != (n, n):
+        raise ValueError(f"C shape mismatch: expected {(n, n)}, got {C.shape}")
 
     residual = C @ v - s
     residual_norm = float(np.linalg.norm(residual, ord=2))
