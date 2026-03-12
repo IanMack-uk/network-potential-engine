@@ -1,0 +1,17 @@
+Job 11 — Canonical score declaration (v1)
+
+Canonical score (frozen for v1)
+- Canonical score for downstream ranking/export is: E_eff
+
+Definitions
+- E     := beta0*s + beta1*v
+- E_eff := beta0*s + beta1*(rho ⊙ v)
+
+Frozen parameters (v1)
+- beta0 = 1.0
+- beta1 = 1.0
+- rho policy: rho_i = 1 for all i
+
+Notes
+- Under the v1 rho policy, E_eff == E, so rankings coincide.
+- E_eff remains canonical to preserve a stable downstream interface when a nontrivial rho is introduced later.
