@@ -1,0 +1,48 @@
+Job 3 — NodeAttributeField (x) validation report
+
+Artifact:
+- affinity/artifacts/n50/node_attribute_field_v1.json
+
+Registry:
+- affinity/artifacts/n50/student_registry_v1.json
+
+Validation checks (expected for Affinity n=50):
+
+1) Artifacts exist
+- NodeAttributeField exists: YES
+- Registry exists: YES
+- Result: PASS
+
+2) Record count
+- Expected: 50 node attribute records
+- Observed: 50
+- Result: PASS
+
+3) student_id membership
+- Expected: every record student_id is in registry
+- Observed: all 50 IDs are present in registry
+- Result: PASS
+
+4) student_id uniqueness
+- Expected: all student_id unique within artifact
+- Observed: unique
+- Result: PASS
+
+5) Required keys present
+- Required per record: student_id, r, extras
+- Observed: present for all records
+- Result: PASS
+
+6) r constraints
+- Expected: r is numeric and r >= 0
+- Observed: all r == 1.0
+- Result: PASS
+
+7) PII policy
+- Expected: extras contains no PII
+- Observed: extras is {} for all records
+- Result: PASS
+
+Notes:
+- Capacity regime for v1 is constant r=1.0 across all students.
+- This artifact is index-safe: ordering is derived from the registry when constructing vectors.
