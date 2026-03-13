@@ -34,6 +34,12 @@ def _stable_u01(seed: str) -> float:
     return (x % (10**12)) / float(10**12)
 
 
+def _with_seed_prefix(*, scenario_seed: str | None, key: str) -> str:
+    if scenario_seed is None:
+        return key
+    return f"scenario_seed::{scenario_seed}::{key}"
+
+
 def _tier_1_to_5(x: str) -> int:
     m = {"very_low": 1, "low": 2, "medium": 3, "high": 4, "very_high": 5}
     if x not in m:
@@ -54,8 +60,8 @@ def _rho(cat: str) -> float:
     return float(m[cat])
 
 
-def _attendance_propensity(student_id: str) -> float:
-    u = 2.0 * _stable_u01(f"a::{student_id}") - 1.0
+def _attendance_propensity(*, student_id: str, scenario_seed: str | None) -> float:
+    u = 2.0 * _stable_u01(_with_seed_prefix(scenario_seed=scenario_seed, key=f"a::{student_id}")) - 1.0
     a = 0.55 + 0.15 * u
     return float(min(0.95, max(0.20, a)))
 
@@ -170,11 +176,18 @@ def _coupling_operator_from_ties(
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
+        "--seed",
+        default=None,
+        help="Optional scenario seed. If provided, the simulated observations/ties will change deterministically while remaining reproducible.",
+    )
+    parser.add_argument(
         "--audit",
         action="store_true",
         help="Print an end-to-end audit report to stdout and write it to an artifact text file.",
     )
     args = parser.parse_args()
+
+    scenario_seed = str(args.seed) if args.seed is not None else None
 
     repo_root = _find_repo_root(Path(__file__).resolve())
     artifacts_dir = repo_root / "affinity" / "artifacts" / "n50"
@@ -213,7 +226,7 @@ def main() -> int:
         s_entries.append({"student_id": sid, "s": s_i})
         s_vec[i] = s_i
         rho_vec[i] = _rho(str(st["adopterCategory"]))
-        a_vec[i] = _attendance_propensity(sid)
+        a_vec[i] = _attendance_propensity(student_id=sid, scenario_seed=scenario_seed)
 
     # Simulate attendance and co-attendance observations
     events: list[dict[str, Any]] = []
@@ -232,10 +245,17 @@ def main() -> int:
                 st = people[sid]
                 dn = str(st.get("displayName", ""))
                 t = int(shared_tags.get((dn, title), 0))
-                a_i = _attendance_propensity(sid)
+                a_i = _attendance_propensity(student_id=sid, scenario_seed=scenario_seed)
                 mult = 1.0 + 0.05 * float(t)
                 p_attend = min(1.0, a_i * mult)
-                if _stable_u01(f"attend::{sid}::{title}::{sess}") < p_attend:
+                if (
+                    _stable_u01(
+                        _with_seed_prefix(
+                            scenario_seed=scenario_seed, key=f"attend::{sid}::{title}::{sess}"
+                        )
+                    )
+                    < p_attend
+                ):
                     attendees.append(sid)
 
             attendees.sort()
@@ -267,7 +287,7 @@ def main() -> int:
             "schema_version": "1.0",
             "schema_ref": "affinity/artifacts/n50/observations_schema_v1.json",
             "cohort_registry_ref": "affinity/artifacts/n50/student_registry_v1.json",
-            "generated": {"method": "optionB_v2_attendance_simulation"},
+            "generated": {"method": "optionB_v2_attendance_simulation", "scenario_seed": scenario_seed},
             "events": events,
         },
     )
@@ -449,6 +469,7 @@ def main() -> int:
         lines.append("- Q,P tier mapping: very_low->1 low->2 medium->3 high->4 very_high->5")
         lines.append("- rho mapping: innovator 0.90, early_adopter 0.95, early_majority 1.00, late_majority 1.05, laggard 1.10")
         lines.append("- P(attend) = min(1, a_i * (1 + 0.05*sharedTagCount)), sharedTagCount<=3")
+        lines.append(f"- scenario_seed: {scenario_seed}")
         lines.append("")
         lines.append("Summary stats")
         lines.append(
