@@ -267,6 +267,6 @@ These items are not part of v1, but are being defined as a deterministic mock re
 ## References
 
 - Pipeline map:
-  - `docs/development_plan/Affinity_App_Pipeline_Dependency_Map_n50.md` (local)
+  - `docs/public_development_plan/Affinity_App_Pipeline_Dependency_Map_n50.md`
 - Audit/debrief:
   - `docs/affinity_n50_pipeline_audit_and_debrief.md`
