@@ -49,6 +49,12 @@ jobs:
         run: |
           python -m network_potential_engine.scripts.run_affinity_n50_product_validity_checks_v1
 
+      - name: Affinity product validity checks (v2)
+        env:
+          PYTHONPATH: src
+        run: |
+          python -m network_potential_engine.scripts.run_affinity_n50_product_validity_checks_v2
+
       - name: Upload Affinity transcripts
         uses: actions/upload-artifact@v4
         with:
@@ -70,3 +76,13 @@ jobs:
             affinity/artifacts/n50/smoke_run_transcript_v2.txt
             affinity/artifacts/n50/optionB_v2_audit_report.txt
             affinity/artifacts/n50/data_driven_full_audit_transcript_v2.txt
+
+      - name: Upload Affinity v2 product validity
+        uses: actions/upload-artifact@v4
+        with:
+          name: affinity-n50-v2-product-validity
+          if-no-files-found: error
+          path: |
+            affinity/artifacts/n50/product_validity_scenarios_v2.json
+            affinity/artifacts/n50/product_validity_outputs_v2.json
+            affinity/artifacts/n50/product_validity_evaluation_note_v2.txt
