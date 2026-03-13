@@ -30,12 +30,12 @@ This document distinguishes between:
 | Formal item | Claim type | Mathematical status | Computational status | Verification mode | Code anchor | Evidence artifact | Remaining gap |
 |---|---|---|---|---|---|---|---|
 | Prop 1 — TDC potential | object definition | exact | symbolic | audited identity | `symbolic/potential.py` | symbolic construction | none |
-| Prop 2 — equilibrium operator | algebraic identity | exact | symbolic | audited identity | `check_A2_tdc_equilibrium_identity.py` | script output | none |
+| Prop 2 — equilibrium operator | algebraic identity | exact | symbolic | audited identity | `check_A2_tdc_equilibrium_existence.py` | script output | none |
 | Prop 3 — Hessian | derivative identity | exact | symbolic | audited identity | `symbolic/hessian.py` | residual checks | none |
 | Prop 4 — mixed derivative block | derivative identity | exact | symbolic | audited identity | `symbolic/mixed_derivatives.py` | symbolic construction | none |
-| Prop 5 — affine equilibrium w*=C^{-1}θ | algebraic identity | exact | symbolic | audited identity | `check_A2_tdc_equilibrium_identity.py` | script output | none |
+| Prop 5 — affine equilibrium w*=C^{-1}θ | algebraic identity | exact | symbolic | audited identity | `check_A2_tdc_equilibrium_existence.py` | script output | none |
 | Prop 6 — response identity | algebraic identity | exact | symbolic | audited identity | `check_C1_tdc_equilibrium_response_identity.py` | residual check | none |
-| Lemma 7 — Z-matrix structure | sign structure | sufficient | analytic-check | certified sufficient condition | `check_S1_zmatrix_structure.py` | script output | none |
+| Lemma 7 — Z-matrix structure | sign structure | sufficient | analytic-check | certified sufficient condition | `check_S1_motif_cross_partials.py` | script output | none |
 | Lemma 8 — diagonal dominance | inequality condition | sufficient | analytic-check | certified sufficient condition | `check_S2_row_dominance_tdc.py` | margin logs | none |
 | Corollary — M-matrix property | structural theorem | sufficient | analytic-check | certified sufficient condition | `check_S3_mmatrix_tdc.py` | artifact JSON | none |
 | Lemma — inverse positivity | matrix property | sufficient | numeric-check | instance witness | `check_D1_tdc_inverse_positivity.py` | script output | analytic generalisation |
