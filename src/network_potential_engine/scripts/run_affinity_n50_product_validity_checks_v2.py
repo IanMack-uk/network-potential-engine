@@ -361,6 +361,225 @@ def _scenario_v2_s3_network_intervention_strengthen_pair(
     )
 
 
+def _scenario_v2_s4_network_intervention_weaken_pair(
+    *,
+    student_ids: list[str],
+    w_directed: dict[tuple[str, str], float],
+    s: np.ndarray,
+    rho: np.ndarray,
+    beta0: float,
+    beta1: float,
+    i: int,
+    j: int,
+    delta_w: float,
+    alpha: float,
+    jitter: float,
+) -> ScenarioResult:
+    n = int(s.shape[0])
+    if i < 0 or i >= n or j < 0 or j >= n or i == j:
+        return ScenarioResult(
+            "S4",
+            "Network intervention (tie weaken -> regenerate C -> re-solve)",
+            False,
+            {"error": "invalid i/j"},
+        )
+
+    sid_i = student_ids[i]
+    sid_j = student_ids[j]
+
+    C0 = _coupling_operator_from_ties(
+        student_ids=student_ids, w_directed=w_directed, alpha=alpha, jitter=jitter
+    )
+    v0 = _solve_v(C=C0, s=s)
+
+    w_cf = dict(w_directed)
+    w_cf[(sid_i, sid_j)] = float(max(0.0, float(w_cf.get((sid_i, sid_j), 0.0)) - float(delta_w)))
+    w_cf[(sid_j, sid_i)] = float(max(0.0, float(w_cf.get((sid_j, sid_i), 0.0)) - float(delta_w)))
+
+    C1 = _coupling_operator_from_ties(
+        student_ids=student_ids, w_directed=w_cf, alpha=alpha, jitter=jitter
+    )
+    v1 = _solve_v(C=C1, s=s)
+
+    E0 = _compute_E_eff(s=s, v=v0, rho=rho, beta0=beta0, beta1=beta1)
+    E1 = _compute_E_eff(s=s, v=v1, rho=rho, beta0=beta0, beta1=beta1)
+
+    gap0 = float(abs(float(v0[i]) - float(v0[j])))
+    gap1 = float(abs(float(v1[i]) - float(v1[j])))
+
+    decoupling = bool(gap1 >= gap0 - 1e-12)
+    solvable = bool(np.isfinite(v1).all())
+    passed = bool(decoupling and solvable)
+
+    return ScenarioResult(
+        "S4",
+        "Network intervention (tie weaken -> regenerate C -> re-solve)",
+        passed,
+        {
+            "pair": {"i": int(i), "j": int(j), "student_id_i": sid_i, "student_id_j": sid_j},
+            "delta_w": float(delta_w),
+            "alpha": float(alpha),
+            "jitter": float(jitter),
+            "gap_abs_v_i_minus_v_j": {"baseline": gap0, "counterfactual": gap1},
+            "checks": {"decoupling_gap_not_decrease": decoupling, "solvable": solvable},
+            "E_eff_pair": {
+                "baseline": {"i": float(E0[i]), "j": float(E0[j])},
+                "counterfactual": {"i": float(E1[i]), "j": float(E1[j])},
+            },
+        },
+    )
+
+
+def _scenario_v2_s5_intrinsic_source_value_uplift_spillover(
+    *,
+    student_ids: list[str],
+    s: np.ndarray,
+    C: np.ndarray,
+    rho: np.ndarray,
+    beta0: float,
+    beta1: float,
+    node_index: int,
+    delta: float,
+    w_directed: dict[tuple[str, str], float],
+) -> ScenarioResult:
+    n = int(s.shape[0])
+    if node_index < 0 or node_index >= n:
+        return ScenarioResult(
+            "S5",
+            "Intrinsic source value uplift spillover (re-solve)",
+            False,
+            {"error": f"node_index out of range: {node_index}"},
+        )
+
+    v0 = _solve_v(C=C, s=s)
+    E0 = _compute_E_eff(s=s, v=v0, rho=rho, beta0=beta0, beta1=beta1)
+
+    s_cf = np.array(s, dtype=float)
+    s_cf[node_index] = float(s_cf[node_index] + float(delta))
+    v1 = _solve_v(C=C, s=s_cf)
+    E1 = _compute_E_eff(s=s_cf, v=v1, rho=rho, beta0=beta0, beta1=beta1)
+
+    dv = v1 - v0
+    dE = E1 - E0
+
+    # Spillover: at least one other node experiences a measurable dv.
+    tol = 1e-10
+    spillover_nodes = [int(i) for i in range(n) if i != node_index and abs(float(dv[i])) > tol]
+    spillover_exists = bool(len(spillover_nodes) > 0)
+
+    # Connectivity-weighted sanity check: nodes more strongly tied to the uplifted node
+    # should, on average, see larger absolute dv than very weakly connected nodes.
+    sid0 = student_ids[node_index]
+    strength_to_uplift = np.zeros(n, dtype=float)
+    for j, sid in enumerate(student_ids):
+        if j == node_index:
+            continue
+        w01 = float(w_directed.get((sid0, sid), 0.0))
+        w10 = float(w_directed.get((sid, sid0), 0.0))
+        strength_to_uplift[j] = 0.5 * (w01 + w10)
+
+    hi = [i for i in range(n) if i != node_index and strength_to_uplift[i] > 0]
+    lo = [i for i in range(n) if i != node_index and strength_to_uplift[i] == 0]
+
+    connectivity_check = True
+    hi_mean = None
+    lo_mean = None
+    if len(hi) >= 3 and len(lo) >= 3:
+        hi_mean = float(np.mean(np.abs(dv[hi])))
+        lo_mean = float(np.mean(np.abs(dv[lo])))
+        connectivity_check = bool(hi_mean >= lo_mean - 1e-12)
+
+    passed = bool(spillover_exists and connectivity_check)
+
+    return ScenarioResult(
+        "S5",
+        "Intrinsic source value uplift spillover (re-solve)",
+        passed,
+        {
+            "node_index": int(node_index),
+            "student_id": sid0,
+            "delta": float(delta),
+            "checks": {
+                "spillover_exists": spillover_exists,
+                "connectivity_weighted_dv_check": connectivity_check,
+            },
+            "spillover_node_count": int(len(spillover_nodes)),
+            "spillover_node_indices_sample": spillover_nodes[:10],
+            "dv_max_abs": float(np.max(np.abs(dv))),
+            "dE_max_abs": float(np.max(np.abs(dE))),
+            "connectivity_summary": {
+                "hi_group_size": int(len(hi)),
+                "lo_group_size": int(len(lo)),
+                "hi_mean_abs_dv": None if hi_mean is None else float(hi_mean),
+                "lo_mean_abs_dv": None if lo_mean is None else float(lo_mean),
+            },
+        },
+    )
+
+
+def _scenario_v2_s6_receptivity_only_change(
+    *,
+    student_ids: list[str],
+    s: np.ndarray,
+    v: np.ndarray,
+    rho: np.ndarray,
+    beta0: float,
+    beta1: float,
+    node_index: int,
+    delta_rho: float,
+    top_k: int,
+) -> ScenarioResult:
+    n = int(s.shape[0])
+    if node_index < 0 or node_index >= n:
+        return ScenarioResult(
+            "S6",
+            "Receptivity-only change (rho)",
+            False,
+            {"error": f"node_index out of range: {node_index}"},
+        )
+
+    E0 = _compute_E_eff(s=s, v=v, rho=rho, beta0=beta0, beta1=beta1)
+
+    rho_cf = np.array(rho, dtype=float)
+    rho_cf[node_index] = float(rho_cf[node_index] + float(delta_rho))
+    E1 = _compute_E_eff(s=s, v=v, rho=rho_cf, beta0=beta0, beta1=beta1)
+
+    expected_delta = float(beta1 * float(delta_rho) * float(v[node_index]))
+    observed_delta = float(E1[node_index] - E0[node_index])
+    delta_ok = bool(abs(observed_delta - expected_delta) <= 1e-12)
+
+    # No other nodes should change.
+    others_max_abs = float(np.max(np.abs(np.delete(E1 - E0, node_index)))) if n > 1 else 0.0
+    others_unchanged = bool(others_max_abs <= 1e-12)
+
+    base_rank = {i: r for r, i in enumerate(_ranking_indices_by_policy(E0, top_k=n), start=1)}
+    cf_rank = {i: r for r, i in enumerate(_ranking_indices_by_policy(E1, top_k=n), start=1)}
+
+    baseline_top = _ranking_indices_by_policy(E0, top_k=top_k)
+    cf_top = _ranking_indices_by_policy(E1, top_k=top_k)
+
+    passed = bool(delta_ok and others_unchanged)
+
+    return ScenarioResult(
+        "S6",
+        "Receptivity-only change (rho)",
+        passed,
+        {
+            "node_index": int(node_index),
+            "student_id": student_ids[node_index],
+            "delta_rho": float(delta_rho),
+            "expected_delta_E_eff": expected_delta,
+            "observed_delta_E_eff": observed_delta,
+            "others_unchanged_max_abs": others_max_abs,
+            "checks": {"delta_exact": delta_ok, "others_unchanged": others_unchanged},
+            "baseline": {"E_eff": float(E0[node_index]), "rank": int(base_rank[node_index])},
+            "counterfactual": {"E_eff": float(E1[node_index]), "rank": int(cf_rank[node_index])},
+            "baseline_top_k_node_indices": baseline_top,
+            "counterfactual_top_k_node_indices": cf_top,
+        },
+    )
+
+
 def main() -> int:
     repo_root = _find_repo_root(Path(__file__))
     artifacts_dir = repo_root / "affinity" / "artifacts" / "n50"
@@ -397,6 +616,16 @@ def main() -> int:
     s3_j = 1
     s3_delta_w = 10.0
 
+    s4_i = 0
+    s4_j = 1
+    s4_delta_w = 10.0
+
+    s5_node_index = 0
+    s5_delta = 0.25
+
+    s6_node_index = 0
+    s6_delta_rho = 0.05
+
     C_policy = _load_json(artifacts_dir / "coupling_operator_C_v2.json").get("policy", {})
     alpha = float(C_policy.get("alpha", 1.0)) if isinstance(C_policy, dict) else 1.0
     jitter = float(C_policy.get("jitter", 1e-6)) if isinstance(C_policy, dict) else 1e-6
@@ -420,6 +649,9 @@ def main() -> int:
             "tol": tol,
             "S2": {"node_index": s2_node_index, "delta_s": s2_delta},
             "S3": {"i": s3_i, "j": s3_j, "delta_w": s3_delta_w, "alpha": alpha, "jitter": jitter},
+            "S4": {"i": s4_i, "j": s4_j, "delta_w": s4_delta_w, "alpha": alpha, "jitter": jitter},
+            "S5": {"node_index": s5_node_index, "delta_s": s5_delta},
+            "S6": {"node_index": s6_node_index, "delta_rho": s6_delta_rho},
         },
         "scenarios": [
             {
@@ -441,6 +673,27 @@ def main() -> int:
                 "name": "Network intervention (strengthen tie pair -> regenerate C -> re-solve)",
                 "expectation": {
                     "description": "Strengthening a tie between two nodes should not increase the absolute gap |v_i - v_j| (smoothing effect) after regenerating C and re-solving."
+                },
+            },
+            {
+                "scenario_id": "S4",
+                "name": "Network intervention (weaken tie pair -> regenerate C -> re-solve)",
+                "expectation": {
+                    "description": "Weakening a tie between two nodes should not decrease the absolute gap |v_i - v_j| (decoupling effect) after regenerating C and re-solving."
+                },
+            },
+            {
+                "scenario_id": "S5",
+                "name": "Intrinsic source value uplift spillover (re-solve)",
+                "expectation": {
+                    "description": "Uplifting one node's intrinsic source value s_i and re-solving should produce non-trivial network spillovers (other nodes' v change); more connected nodes should (weakly) show larger changes on average."
+                },
+            },
+            {
+                "scenario_id": "S6",
+                "name": "Receptivity-only change (rho)",
+                "expectation": {
+                    "description": "Changing one node's rho should change only that node's E_eff by exactly beta1*(delta_rho)*v_i, with all other nodes unchanged."
                 },
             },
         ],
@@ -472,7 +725,45 @@ def main() -> int:
         jitter=jitter,
     )
 
-    all_passed = bool(r1.passed and r2.passed and r3.passed)
+    r4 = _scenario_v2_s4_network_intervention_weaken_pair(
+        student_ids=student_ids,
+        w_directed=w_directed,
+        s=s,
+        rho=rho,
+        beta0=beta0,
+        beta1=beta1,
+        i=s4_i,
+        j=s4_j,
+        delta_w=s4_delta_w,
+        alpha=alpha,
+        jitter=jitter,
+    )
+
+    r5 = _scenario_v2_s5_intrinsic_source_value_uplift_spillover(
+        student_ids=student_ids,
+        s=s,
+        C=C,
+        rho=rho,
+        beta0=beta0,
+        beta1=beta1,
+        node_index=s5_node_index,
+        delta=s5_delta,
+        w_directed=w_directed,
+    )
+
+    r6 = _scenario_v2_s6_receptivity_only_change(
+        student_ids=student_ids,
+        s=s,
+        v=v,
+        rho=rho,
+        beta0=beta0,
+        beta1=beta1,
+        node_index=s6_node_index,
+        delta_rho=s6_delta_rho,
+        top_k=top_k,
+    )
+
+    all_passed = bool(r1.passed and r2.passed and r3.passed and r4.passed and r5.passed and r6.passed)
 
     outputs = {
         "schema_version": "1.0",
@@ -485,6 +776,9 @@ def main() -> int:
             {"scenario_id": r1.scenario_id, "name": r1.name, "passed": r1.passed, "details": r1.details},
             {"scenario_id": r2.scenario_id, "name": r2.name, "passed": r2.passed, "details": r2.details},
             {"scenario_id": r3.scenario_id, "name": r3.name, "passed": r3.passed, "details": r3.details},
+            {"scenario_id": r4.scenario_id, "name": r4.name, "passed": r4.passed, "details": r4.details},
+            {"scenario_id": r5.scenario_id, "name": r5.name, "passed": r5.passed, "details": r5.details},
+            {"scenario_id": r6.scenario_id, "name": r6.name, "passed": r6.passed, "details": r6.details},
         ],
         "overall": {"passed": all_passed},
     }
@@ -506,6 +800,9 @@ def main() -> int:
     _fmt_result(r1)
     _fmt_result(r2)
     _fmt_result(r3)
+    _fmt_result(r4)
+    _fmt_result(r5)
+    _fmt_result(r6)
 
     note_lines.append("Conclusion")
     note_lines.append(f"- overall_passed: {all_passed}")
@@ -524,7 +821,7 @@ def main() -> int:
     print(f"git_head_sha: {_try_git_head_sha(repo_root)}")
     print("")
 
-    for r in (r1, r2, r3):
+    for r in (r1, r2, r3, r4, r5, r6):
         print("------------------------------------------------------------------------------")
         print(f"{r.scenario_id}: {r.name}")
         print("PASS" if r.passed else "FAIL")
