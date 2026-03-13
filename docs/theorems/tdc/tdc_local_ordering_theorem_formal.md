@@ -1,5 +1,7 @@
 # Formal Local Ordering Results for the Theta-Dependent-Curvature Model
 
+This theorem has a repository-aligned computational certification companion documented in `docs/theorems/tdc/tdc_certification_ledger.md`, which maps each formal item below to its verification mode in code.
+
 ## Definition 1 (Theta-dependent-curvature model)
 
 Let
@@ -338,6 +340,12 @@ the current implementation verifies that:
 4. every consecutive equilibrium difference is coordinatewise nonnegative.
 
 Therefore the sampled path is fully consistent with Theorem 17.
+
+## Computational certification ledger
+
+For a mapping from each formal item above to its verification mode in the repository
+(audited identity vs certified sufficient condition vs instance witness vs proof-only), see:
+`docs/theorems/tdc/tdc_certification_ledger.md`.
 
 ## Remark 19
 
