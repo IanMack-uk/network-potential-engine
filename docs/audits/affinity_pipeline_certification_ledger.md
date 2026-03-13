@@ -29,6 +29,15 @@ This ledger therefore distinguishes between:
 The Affinity pipeline should be interpreted primarily as a **data‑driven
 audit and deterministic replay system**, not a formal theorem prover.
 
+Key caveats for interpreting the current audited run:
+
+- source-score and receptivity heterogeneity may be limited in the current audited setup,
+  so ranking differences can be substantially driven by the deterministic tie-break policy;
+- pipeline outputs are best interpreted as infrastructure/coherence validation unless the
+  upstream signals (`s`, `rho`, ties, and modelling parameters) are substantively non-uniform;
+- theorem-side monotonicity results do not transfer to pipeline rankings without an explicit,
+  premise-complete theorem–pipeline semantic bridge.
+
 ------------------------------------------------------------------------
 
 # Verification Mode Legend
@@ -57,98 +66,98 @@ audit and deterministic replay system**, not a formal theorem prover.
 # Affinity Pipeline Certification Ledger
 
   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Pipeline stage /     Claim type       Mathematical   Computational    Verification   Code anchor                                            Evidence       Remaining gap
+  Pipeline stage /     Logical role     Claim type       Mathematical   Computational    Verification   Code anchor                                            Evidence       Remaining gap
   audit item                            status         status           mode                                                                  artifact       
-  -------------------- ---------------- -------------- ---------------- -------------- ------------------------------------------------------ -------------- ------------------
-  Node set ingestion   representation   exact          data‑check       audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    add schema
+  -------------------- ---------------- ---------------- -------------- ---------------- -------------- ------------------------------------------------------ -------------- ------------------
+  Node set ingestion   Premise check    representation   exact          data‑check       audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    add schema
                                                                        identity                                                              `artifacts/`   documentation
                                                                                                                                            `n50/student_registry_v1.json`,
                                                                                                                                            `n50/data_driven_full_audit_transcript_v2.txt`
 
-  Directed tie         representation   exact          data‑check       audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    add structural
+  Directed tie         Premise check    representation   exact          data‑check       audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    add structural
   ingestion                                                             identity                                                              `artifacts/`   validation script
                                                                                                                                            `n50/tie_strengths_w_v2.json`,
                                                                                                                                            `n50/data_driven_full_audit_transcript_v2.txt`
 
-  Node attribute       representation   exact          data‑check       audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    document attribute
+  Node attribute       Premise check    representation   exact          data‑check       audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    document attribute
   ingestion                                                             identity                                                              `artifacts/`   schema
                                                                                                                                            `n50/observations_v2.json`,
                                                                                                                                            `affinity/from_neo4j/n50_student_personal_properties.json`,
                                                                                                                                            `n50/data_driven_full_audit_transcript_v2.txt`
 
-  Ordinal‑to‑numeric   preprocessing    sufficient     numeric          instance       `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    formalize encoding
+  Ordinal‑to‑numeric   Premise check    preprocessing    sufficient     numeric          instance       `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    formalize encoding
   encoding             rule                            reconstruction   witness                                                               `artifacts/`   policy
                                                                                                                                            `n50/observations_v2.json`,
                                                                                                                                            `n50/data_driven_full_audit_transcript_v2.txt`
 
-  Source score         arithmetic       exact          numeric          audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    none
+  Source score         Identity         arithmetic       exact          numeric          audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    none
   computation (s_i =   identity                        reconstruction   identity                                                              `artifacts/`   
   (Q_i P_i)/9)                                                                                                                                           `n50/source_vector_s_v2.json`,
                                                                                                                                                           `n50/data_driven_full_audit_transcript_v2.txt`
 
-  Tie symmetrisation   preprocessing    sufficient     numeric          instance       `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    document symmetry
+  Tie symmetrisation   Identity         preprocessing    sufficient     numeric          instance       `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    document symmetry
   rule                 rule                            reconstruction   witness                                                               `artifacts/`   policy
                                                                                                                                            `n50/tie_strengths_w_v2.json`,
                                                                                                                                            `n50/data_driven_full_audit_transcript_v2.txt`
 
-  Weighted adjacency   arithmetic       exact          numeric          audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    add analytic
+  Weighted adjacency   Identity         arithmetic       exact          numeric          audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    add analytic
   construction         identity                        reconstruction   identity                                                              `artifacts/`   description
                                                                                                                                            `n50/tie_strengths_w_v2.json`,
                                                                                                                                            `n50/data_driven_full_audit_transcript_v2.txt`
 
-  Laplacian            algebraic        exact          numeric          audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    none
+  Laplacian            Identity         algebraic        exact          numeric          audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    none
   construction (L =    identity                        reconstruction   identity                                                              `artifacts/`   
   D - A)                                                                                                                                           `n50/tie_strengths_w_v2.json`,
                                                                                                                                                           `n50/data_driven_full_audit_transcript_v2.txt`
 
-  Coupling operator (C algebraic        exact          numeric          audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    link to
+  Coupling operator (C Identity         algebraic        exact          numeric          audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    link to
   = I + αL + εI)       identity                        reconstruction   identity                                                              `artifacts/`   theorem‑side
                                                                                                                                                             operator
                                                                                                                                                             interpretation
                                                                                                                                            `n50/coupling_operator_C_v2.json`,
                                                                                                                                            `n50/data_driven_full_audit_transcript_v2.txt`
 
-  Linear propagation   linear system    exact          numeric check    audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    add
+  Linear propagation   Identity         linear system    exact          numeric check    audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    add
   solve (C v = s)      identity                                         identity                                                                             condition‑number
                                                                                                                                                              logging
                                                                                                                                            `artifacts/`   
                                                                                                                                            `n50/propagated_value_v_v2.json`,
                                                                                                                                            `n50/data_driven_full_audit_transcript_v2.txt`
 
-  Propagation residual solver           exact          numeric check    audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    none
+  Propagation residual  Identity         solver           exact          numeric check    audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    none
   verification         correctness                                      identity                                                              `artifacts/`   
                                                                                                                                            `n50/data_driven_full_audit_transcript_v2.txt`
 
-  Node energy (E = s + arithmetic       exact          numeric          audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    none
+  Node energy (E = s + Identity         arithmetic       exact          numeric          audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    none
   v)                   identity                        reconstruction   identity                                                              `artifacts/`   
                                                                                                                                            `n50/node_energy_E_v2.json`,
                                                                                                                                            `n50/data_driven_full_audit_transcript_v2.txt`
 
-  Receptivity mapping  arithmetic       exact          numeric          audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    document parameter
+  Receptivity mapping  Interpretation  arithmetic       exact          numeric          audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    document parameter
   (ṽ = ρ ⊙ v)          identity                        reconstruction   identity                                                              `artifacts/`   source
                                                                                                                                            `n50/data_driven_full_audit_transcript_v2.txt`
 
-  Effective energy     arithmetic       exact          numeric          audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    none
+  Effective energy      Identity         arithmetic       exact          numeric          audited        `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    none
   (E_eff = s + ρ ⊙ v)  identity                        reconstruction   identity                                                              `artifacts/`   
                                                                                                                                            `n50/node_energy_E_eff_v2.json`,
                                                                                                                                            `n50/data_driven_full_audit_transcript_v2.txt`
 
-  Ranking / top‑k      deterministic    witness        numeric check    instance       `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    document tie‑break
+  Ranking / top‑k      Instance corroboration deterministic    witness        numeric check    instance       `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    document tie‑break
   export               ordering                                         witness                                                               `artifacts/`   policy
                                                                                                                                            `n50/app_facing_outputs_v2.json`,
                                                                                                                                            `n50/data_driven_full_audit_transcript_v2.txt`
 
-  Artifact existence   structural       sufficient     data‑check       certified      `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    expand validation
+  Artifact existence   Premise check    structural       sufficient     data‑check       certified      `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    expand validation
   and schema checks    validation                                       sufficient                                                            `artifacts/`   coverage
                                                                         condition                                                                 `n50/data_driven_full_audit_transcript_v2.txt`
 
-  End‑to‑end pipeline  deterministic    witness        numeric‑check    instance       `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    add
-  replay               replay                                           witness                                                               `artifacts/`   reproducibility
+  End‑to‑end pipeline  Deterministic replay check deterministic    witness        numeric‑check    instance       `check_affinity_n50_full_pipeline_v2_data_driven.py`   `affinity/`    add
+  replay               replay           replay                                           witness                                                               `artifacts/`   reproducibility
                                                                                                                                                             harness
                                                                                                                                            `n50/data_driven_full_audit_transcript_v2.txt`,
                                                                                                                                            `n50/full_pipeline_transcript_v2.txt`
 
-  Equilibrium          conceptual       proof‑only     not implemented  proof‑only     theorem documentation                                  none           requires
+  Equilibrium          Interpretation boundary conceptual       proof‑only     not implemented  proof‑only     theorem documentation                                  none           requires
   interpretation of    mapping                                                                                                                               theorem‑side
   ranking                                                                                                                                                    linkage
   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

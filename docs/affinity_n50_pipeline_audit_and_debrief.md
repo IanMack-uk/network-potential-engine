@@ -163,6 +163,8 @@ From Job 14:
   - a controlled harness check, not a full re-run of upstream physics.
 
 This is appropriate for v1: it proves wiring, schema, determinism, and math identities.
+It should be interpreted as an infrastructure/coherence validation, not a substantive modelling validation.
+For the current theorem–pipeline semantic boundary, see `docs/theorem_pipeline_bridge.md`.
 
 ## B) What is already “real-data-ready” (architecture-wise)
 

@@ -12,6 +12,7 @@ Key documents:
 
 - `docs/certification_framework.md` – overview of the repository's certification architecture
 - `docs/verification_boundary.md` – claims register defining what is proven, verified, or demonstrated
+- `docs/theorem_pipeline_bridge.md` – theorem-to-pipeline mapping and current semantic transfer boundary
 - `docs/theorems/tdc/tdc_certification_ledger.md` – theorem-to-code verification mapping
 - `docs/audits/affinity_pipeline_certification_ledger.md` – pipeline-to-artifact audit mapping
 
@@ -23,6 +24,7 @@ These documents allow readers to trace claims from **theory → verification scr
 docs/
   certification_framework.md
   verification_boundary.md
+  theorem_pipeline_bridge.md
 
   theorems/
     tdc/

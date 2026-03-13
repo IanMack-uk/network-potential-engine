@@ -19,6 +19,14 @@ Two complementary certification ledgers provide this structure:
 Together they allow readers to trace claims from theory to executable
 verification.
 
+The repository currently has strong evidence in two layers:
+
+- a theorem-side layer (formal statements plus symbolic/analytic checks of identities and sufficient conditions), and
+- a pipeline-side layer (deterministic replay and arithmetic audits of exported artifacts).
+
+The formal semantic bridge between these layers is documented separately and is not yet complete:
+`docs/theorem_pipeline_bridge.md`.
+
 ------------------------------------------------------------------------
 
 # High-Level Certification Architecture
@@ -138,6 +146,12 @@ The Affinity pipeline should be interpreted primarily as a
 **deterministic replay and arithmetic audit** of exported artifacts
 rather than a theorem prover.
 
+In particular, the current audited run should be interpreted conservatively:
+
+- rankings can be substantially driven by deterministic tie-breaks when upstream signals are close to uniform;
+- uniform or near-uniform source scores and receptivity reduce substantive interpretability;
+- theorem-side monotonicity results do not transfer to pipeline rankings without an explicit, premise-complete bridge.
+
 ------------------------------------------------------------------------
 
 # Relationship Between the Two Ledgers
@@ -163,6 +177,9 @@ with the implemented algorithms.
 
 Together they provide **bidirectional auditability** across the
 repository.
+
+However, bidirectional auditability does not by itself constitute theorem-to-pipeline semantic equivalence.
+The current theorem–pipeline mapping status is recorded in `docs/theorem_pipeline_bridge.md`.
 
 ------------------------------------------------------------------------
 

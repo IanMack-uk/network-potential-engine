@@ -98,9 +98,18 @@ hence
 w^*(\theta)=C(\theta)^{-1}\theta.
 \]
 
+## Proposition 5.1 (Regularity of the equilibrium map)
+
+Assume \(C(\theta)\) depends smoothly on \(\theta\), and is nonsingular for all \(\theta\in\mathcal R\).
+Then the equilibrium map
+\[
+\theta\mapsto w^*(\theta)=C(\theta)^{-1}\theta
+\]
+is smooth on \(\mathcal R\).
+
 ## Proposition 6 (Response identity)
 
-Whenever \(w^*(\theta)\) is differentiable in \(\theta\),
+Whenever \(w^*(\theta)\) is differentiable in \(\theta\) (e.g. under the hypotheses of Proposition 5.1),
 \[
 D_\theta w^*(\theta)
 =
@@ -275,7 +284,7 @@ then the full segment
 \]
 is contained in \(\mathcal R\).
 
-## Theorem 17 (Local ordering theorem on the admissible region)
+## Theorem 17 (Segment-certified monotonicity theorem on the admissible region)
 
 Let \(\theta,\theta'\in\mathcal R\). Assume that the line segment
 \[

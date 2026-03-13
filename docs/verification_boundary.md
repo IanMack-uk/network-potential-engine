@@ -22,6 +22,7 @@ It should be read alongside:
 -   `docs/certification_framework.md`
 -   `docs/theorems/tdc/tdc_certification_ledger.md`
 -   `docs/audits/affinity_pipeline_certification_ledger.md`
+-   `docs/theorem_pipeline_bridge.md`
 
 Together these documents define the repository's **verification
 architecture**.
@@ -78,8 +79,9 @@ claims implemented or referenced by the repository.
   Structural M-matrix     Certified sufficient    S-layer scripts verifying Z-matrix and
   conditions              condition               diagonal dominance
 
-  Local ordering theorem  Formal theorem +        theorem document and E3 verification
-  (TDC model)             instance witnesses      scripts
+  Segment-certified       Formal theorem +        theorem document and E3 instance-witness
+  monotonicity theorem    instance witnesses      scripts
+  (TDC model)
 
   Propagation solve (Cv = Deterministic pipeline  Affinity pipeline audit script
   s) in pipeline          replay                  
@@ -120,12 +122,29 @@ These guarantees ensure that:
 2.  the **computational pipeline reproduces exported artifacts
     deterministically**.
 
+At present the repository should be understood as having **two strong verified islands**:
+
+- a theorem-side island (formal theorem statements plus symbolic/analytic verification of identities and sufficient conditions), and
+- a pipeline-side island (deterministic replay and arithmetic audit of exported artifacts).
+
+The semantic bridge between theorem objects and pipeline objects is documented in
+`docs/theorem_pipeline_bridge.md` and is not yet complete.
+
 ------------------------------------------------------------------------
 
 # Verification Boundary
 
 Certain broader interpretations remain **outside the current
 computational verification boundary**.
+
+For the Affinity pipeline in particular, the current audited run should be interpreted conservatively:
+
+- source-score and receptivity heterogeneity may be limited in the current audited setup, so ranking differences can be substantially driven by deterministic tie-breaks;
+- deterministic replay and arithmetic audit demonstrate reproducibility and internal coherence, not theorem proof;
+- monotonicity theorems do not apply to pipeline rankings without an explicit, premise-complete theorem–pipeline bridge.
+
+The current mapping status and non-transfer points are recorded in:
+`docs/theorem_pipeline_bridge.md`.
 
 Examples include:
 

@@ -7,7 +7,8 @@ to its verification mode in the implementation.
 
 This document distinguishes between:
 
-- Audited identities
+- Formal theorem items
+- Symbolic audits (identities)
 - Certified sufficient conditions
 - Instance witnesses
 - Proof-only items
@@ -27,26 +28,25 @@ This document distinguishes between:
 
 ## Certification Ledger
 
-| Formal item | Claim type | Mathematical status | Computational status | Verification mode | Code anchor | Evidence artifact | Remaining gap |
-|---|---|---|---|---|---|---|---|
-| Prop 1 — TDC potential | object definition | exact | symbolic | audited identity | `symbolic/potential.py` | symbolic construction | none |
-| Prop 2 — equilibrium operator | algebraic identity | exact | symbolic | audited identity | `check_A2_tdc_equilibrium_existence.py` | script output | none |
-| Prop 3 — Hessian | derivative identity | exact | symbolic | audited identity | `symbolic/hessian.py` | residual checks | none |
-| Prop 4 — mixed derivative block | derivative identity | exact | symbolic | audited identity | `symbolic/mixed_derivatives.py` | symbolic construction | none |
-| Prop 5 — affine equilibrium w*=C^{-1}θ | algebraic identity | exact | symbolic | audited identity | `check_A2_tdc_equilibrium_existence.py` | script output | none |
-| Prop 6 — response identity | algebraic identity | exact | symbolic | audited identity | `check_C1_tdc_equilibrium_response_identity.py` | residual check | none |
-| Lemma 7 — Z-matrix structure | sign structure | sufficient | analytic-check | certified sufficient condition | `check_S1_motif_cross_partials.py` | script output | none |
-| Lemma 8 — diagonal dominance | inequality condition | sufficient | analytic-check | certified sufficient condition | `check_S2_row_dominance_tdc.py` | margin logs | none |
-| Corollary — M-matrix property | structural theorem | sufficient | analytic-check | certified sufficient condition | `check_S3_mmatrix_tdc.py` | artifact JSON | none |
-| Lemma — inverse positivity | matrix property | sufficient | numeric-check | instance witness | `check_D1_tdc_inverse_positivity.py` | script output | analytic generalisation |
-| Lemma — mixed-block positivity | inequality condition | sufficient | analytic+numeric | certified sufficient condition | `check_D2_tdc_mixed_block_positivity.py` | script output | region-wide analytic verification |
-| Corollary — response positivity | monotonicity | sufficient | numeric-check | instance witness | `check_D3_tdc_response_positivity.py` | script output | analytic upgrade |
-| Definition — admissible region | set definition | exact | analytic-check | certified sufficient condition | `theorem/tdc_region.py` | region evaluation | none |
-| Proposition — positivity on region | inequality theorem | sufficient | analytic+numeric | certified sufficient condition | `check_E1_tdc_region.py` | script output | expand analytic bounds |
-| Lemma — segment containment | path condition | exact | analytic-check | certified sufficient condition | `theorem/tdc_segment.py` | script output | none |
-| Theorem — ordering hypothesis | theorem structure | sufficient | analytic-check | certified sufficient condition | `theorem/tdc_local_theorem.py` | script output | none |
-| Theorem — ordering conclusion | monotonicity | sufficient | numeric-check | instance witness | `check_E3_tdc_local_weak_ordering.py` | script output | region-wide certification |
-| End-to-end workflow | theorem composition | sufficient | analytic+numeric | instance witness | `check_tdc_full_workflow.py` | workflow transcript | stronger region coverage |
+| Formal item | Logical role | Claim type | Mathematical status | Repository verification status | Verification mode | Code anchor | Evidence artifact | Remaining gap |
+|---|---|---|---|---|---|---|---|---|
+| Prop 1 — TDC potential | Identity | object definition | exact | symbolic audit | symbolic audit (identity) | `symbolic/potential.py` | symbolic construction | none |
+| Prop 2 — equilibrium operator | Identity | algebraic identity | exact | symbolic audit | symbolic audit (identity) | `check_A2_tdc_equilibrium_existence.py` | script output | none |
+| Prop 3 — Hessian | Identity | derivative identity | exact | symbolic audit | symbolic audit (identity) | `symbolic/hessian.py` | residual checks | none |
+| Prop 4 — mixed derivative block | Identity | derivative identity | exact | symbolic audit | symbolic audit (identity) | `symbolic/mixed_derivatives.py` | symbolic construction | none |
+| Prop 5 — affine equilibrium w*=C^{-1}θ | Identity | algebraic identity | exact | symbolic audit | symbolic audit (identity) | `check_A2_tdc_equilibrium_existence.py` | script output | none |
+| Prop 6 — response identity | Identity | algebraic identity | exact | symbolic audit | symbolic audit (identity) | `check_C1_tdc_equilibrium_response_identity.py` | residual check | none |
+| Lemma 7 — Z-matrix structure | Premise check | sign structure | sufficient | analytic-check | certified sufficient condition | `check_S1_motif_cross_partials.py` | script output | none |
+| Lemma 8 — diagonal dominance | Premise check | inequality condition | sufficient | analytic-check | certified sufficient condition | `check_S2_row_dominance_tdc.py` | margin logs | none |
+| Corollary — M-matrix property | Premise check | structural theorem | sufficient | analytic-check | certified sufficient condition | `check_S3_mmatrix_tdc.py` | artifact JSON | none |
+| Lemma — inverse positivity | Instance corroboration | matrix property | sufficient | numeric-check | instance witness | `check_D1_tdc_inverse_positivity.py` | script output | analytic generalisation |
+| Lemma — mixed-block positivity | Premise check | inequality condition | sufficient | analytic+numeric | certified sufficient condition | `check_D2_tdc_mixed_block_positivity.py` | script output | region-wide analytic verification |
+| Corollary — response positivity | Instance corroboration | monotonicity | sufficient | numeric-check | instance witness | `check_D3_tdc_response_positivity.py` | script output | analytic upgrade |
+| Definition — admissible region | Premise check | set definition | exact | analytic-check | certified sufficient condition | `theorem/tdc_region.py` | region evaluation | none |
+| Proposition — positivity on region | Premise check | inequality theorem | sufficient | analytic+numeric | certified sufficient condition | `check_E1_tdc_region.py` | script output | expand analytic bounds |
+| Lemma — segment containment | Premise check | path condition | exact | analytic-check | certified sufficient condition | `theorem/tdc_segment.py` | script output | none |
+| Theorem 17 — segment-certified monotonicity | Terminal theorem | monotonicity | formal theorem | numeric-check | instance witness | `check_E3_tdc_local_weak_ordering.py` | script output | region-wide certification |
+| End-to-end workflow | Deterministic replay check | theorem composition | sufficient | analytic+numeric | instance witness | `check_tdc_full_workflow.py` | workflow transcript | stronger region coverage |
 
 ---
 
