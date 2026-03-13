@@ -8,3 +8,6 @@ docs/cascade_instructions
 docs/development_plan
 docs/chat_conversations
 docs/reviews
+affinity/artifacts/n50/product_validity_scenarios_v2.json
+affinity/artifacts/n50/product_validity_outputs_v2.json
+affinity/artifacts/n50/product_validity_evaluation_note_v2.txt
