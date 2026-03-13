@@ -10,6 +10,7 @@ formal mathematical results to verification scripts and computational outputs.
 
 Key documents:
 
+- `docs/README.md` – documentation index
 - `docs/certification_framework.md` – overview of the repository's certification architecture
 - `docs/verification_boundary.md` – claims register defining what is proven, verified, or demonstrated
 - `docs/theorem_pipeline_bridge.md` – theorem-to-pipeline mapping and current semantic transfer boundary
