@@ -22,61 +22,61 @@
         "rank": 1,
         "node_index": 6,
         "student_id": "urn:qc:person:ulid:01KFHJVET8ZCCXS2Z6AD52ZE65",
-        "score": 3.2856747593201985
+        "score": 3.285674759320199
       },
       {
         "rank": 2,
         "node_index": 45,
         "student_id": "urn:qc:person:ulid:01KFHJVET8ZSR020W7306WNJC6",
-        "score": 2.783492430767768
+        "score": 2.783492430767769
       },
       {
         "rank": 3,
         "node_index": 3,
         "student_id": "urn:qc:person:ulid:01KFHJVET830R2DFB3X062V2Q9",
-        "score": 2.7345604754424286
+        "score": 2.7345604754424295
       },
       {
         "rank": 4,
         "node_index": 31,
         "student_id": "urn:qc:person:ulid:01KFHJVET8XMJKC3M8PVC1YWTE",
-        "score": 2.6706403023491188
+        "score": 2.6706403023491196
       },
       {
         "rank": 5,
         "node_index": 21,
         "student_id": "urn:qc:person:ulid:01KFHJVET7DXC53ZT4D98FXSTV",
-        "score": 2.6705731109708086
+        "score": 2.6705731109708095
       },
       {
         "rank": 6,
         "node_index": 17,
         "student_id": "urn:qc:person:ulid:01KFHJVET713BX28YCHBG1MARK",
-        "score": 2.669777536336487
+        "score": 2.669777536336488
       },
       {
         "rank": 7,
         "node_index": 26,
         "student_id": "urn:qc:person:ulid:01KFHJVET72TKGYMSGCXMN81GM",
-        "score": 2.620927550122879
+        "score": 2.6209275501228797
       },
       {
         "rank": 8,
         "node_index": 44,
         "student_id": "urn:qc:person:ulid:01KFHJVET8RSBBEAP3N6KRVK2N",
-        "score": 2.6187856639663574
+        "score": 2.6187856639663583
       },
       {
         "rank": 9,
         "node_index": 36,
         "student_id": "urn:qc:person:ulid:01KFHJVET8D58EXHNAYPJZFSPQ",
-        "score": 2.61804436351597
+        "score": 2.6180443635159705
       },
       {
         "rank": 10,
         "node_index": 18,
         "student_id": "urn:qc:person:ulid:01KFHJVET7JBEEB9MJWWRBKAEY",
-        "score": 2.4327563752106856
+        "score": 2.432756375210687
       }
     ]
   },
@@ -85,12 +85,12 @@
       "node_index": 0,
       "student_id": "urn:qc:person:ulid:01KFHJVET7C3NPVJJASQ6XBHNS",
       "s": 1.0,
-      "v": 0.9919127618614264,
-      "E": 1.9919127618614265,
-      "E_eff": 1.9919127618614265,
+      "v": 0.9919127618614269,
+      "E": 1.991912761861427,
+      "E_eff": 1.991912761861427,
       "explanation": {
         "intrinsic_component": 1.0,
-        "network_component": 0.9919127618614264,
+        "network_component": 0.9919127618614269,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -98,12 +98,12 @@
       "node_index": 1,
       "student_id": "urn:qc:person:ulid:01KFHJVET7FCS04EY72A91H291",
       "s": 1.0,
-      "v": 0.9920336032444069,
-      "E": 1.992033603244407,
-      "E_eff": 2.0416352834066274,
+      "v": 0.9920336032444075,
+      "E": 1.9920336032444075,
+      "E_eff": 2.041635283406628,
       "explanation": {
         "intrinsic_component": 1.0,
-        "network_component": 1.0416352834066274,
+        "network_component": 1.0416352834066278,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -111,12 +111,12 @@
       "node_index": 2,
       "student_id": "urn:qc:person:ulid:01KFHJVET87QPW012QEP4K876X",
       "s": 1.3333333333333333,
-      "v": 1.0008167907893755,
-      "E": 2.3341501241227087,
-      "E_eff": 2.28410928458324,
+      "v": 1.0008167907893761,
+      "E": 2.3341501241227096,
+      "E_eff": 2.2841092845832405,
       "explanation": {
         "intrinsic_component": 1.3333333333333333,
-        "network_component": 0.9507759512499067,
+        "network_component": 0.9507759512499073,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -124,12 +124,12 @@
       "node_index": 3,
       "student_id": "urn:qc:person:ulid:01KFHJVET830R2DFB3X062V2Q9",
       "s": 1.7777777777777777,
-      "v": 1.0071396817522642,
-      "E": 2.7849174595300417,
-      "E_eff": 2.7345604754424286,
+      "v": 1.0071396817522649,
+      "E": 2.7849174595300425,
+      "E_eff": 2.7345604754424295,
       "explanation": {
         "intrinsic_component": 1.7777777777777777,
-        "network_component": 0.956782697664651,
+        "network_component": 0.9567826976646516,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -137,12 +137,12 @@
       "node_index": 4,
       "student_id": "urn:qc:person:ulid:01KFHJVET856H2A0RVBC0SZSZ2",
       "s": 0.8888888888888888,
-      "v": 0.9897034816051898,
-      "E": 1.8785923704940788,
-      "E_eff": 1.928077544574338,
+      "v": 0.9897034816051912,
+      "E": 1.8785923704940801,
+      "E_eff": 1.9280775445743397,
       "explanation": {
         "intrinsic_component": 0.8888888888888888,
-        "network_component": 1.0391886556854493,
+        "network_component": 1.0391886556854508,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -150,12 +150,12 @@
       "node_index": 5,
       "student_id": "urn:qc:person:ulid:01KFHJVET802Q3ZCEM1ZGMPWTG",
       "s": 0.6666666666666666,
-      "v": 0.9845393206195077,
-      "E": 1.6512059872861742,
-      "E_eff": 1.749659919348125,
+      "v": 0.9845393206195084,
+      "E": 1.651205987286175,
+      "E_eff": 1.749659919348126,
       "explanation": {
         "intrinsic_component": 0.6666666666666666,
-        "network_component": 1.0829932526814585,
+        "network_component": 1.0829932526814594,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -163,12 +163,12 @@
       "node_index": 6,
       "student_id": "urn:qc:person:ulid:01KFHJVET8ZCCXS2Z6AD52ZE65",
       "s": 2.2222222222222223,
-      "v": 1.0128119400933107,
+      "v": 1.0128119400933109,
       "E": 3.235034162315533,
-      "E_eff": 3.2856747593201985,
+      "E_eff": 3.285674759320199,
       "explanation": {
         "intrinsic_component": 2.2222222222222223,
-        "network_component": 1.0634525370979762,
+        "network_component": 1.0634525370979764,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -176,12 +176,12 @@
       "node_index": 7,
       "student_id": "urn:qc:person:ulid:01KFHJVET80QWZ5EQYJD8WH0PR",
       "s": 1.1111111111111112,
-      "v": 0.9940298829996665,
-      "E": 2.1051409941107777,
-      "E_eff": 2.154842488260761,
+      "v": 0.9940298829996673,
+      "E": 2.1051409941107786,
+      "E_eff": 2.154842488260762,
       "explanation": {
         "intrinsic_component": 1.1111111111111112,
-        "network_component": 1.04373137714965,
+        "network_component": 1.0437313771496508,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -189,12 +189,12 @@
       "node_index": 8,
       "student_id": "urn:qc:person:ulid:01KFHJVET763FG4SJFE361MCW3",
       "s": 0.6666666666666666,
-      "v": 0.9844212743838087,
-      "E": 1.6510879410504753,
-      "E_eff": 1.6018668773312847,
+      "v": 0.9844212743838094,
+      "E": 1.6510879410504762,
+      "E_eff": 1.6018668773312856,
       "explanation": {
         "intrinsic_component": 0.6666666666666666,
-        "network_component": 0.9352002106646182,
+        "network_component": 0.9352002106646189,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -202,12 +202,12 @@
       "node_index": 9,
       "student_id": "urn:qc:person:ulid:01KFHJVET7DBNMAXJKDHX157SJ",
       "s": 0.8888888888888888,
-      "v": 0.9891906579020592,
-      "E": 1.8780795467909481,
-      "E_eff": 1.927539079686051,
+      "v": 0.9891906579020595,
+      "E": 1.8780795467909484,
+      "E_eff": 1.9275390796860514,
       "explanation": {
         "intrinsic_component": 0.8888888888888888,
-        "network_component": 1.0386501907971621,
+        "network_component": 1.0386501907971626,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -215,12 +215,12 @@
       "node_index": 10,
       "student_id": "urn:qc:person:ulid:01KFHJVET7CANJ7WWMM5WRQBW2",
       "s": 0.3333333333333333,
-      "v": 0.9803451529344428,
-      "E": 1.3136784862677762,
-      "E_eff": 1.3136784862677762,
+      "v": 0.9803451529344435,
+      "E": 1.3136784862677768,
+      "E_eff": 1.3136784862677768,
       "explanation": {
         "intrinsic_component": 0.3333333333333333,
-        "network_component": 0.9803451529344428,
+        "network_component": 0.9803451529344435,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -228,12 +228,12 @@
       "node_index": 11,
       "student_id": "urn:qc:person:ulid:01KFHJVET7CHHWD5K7BTK7N5P1",
       "s": 0.3333333333333333,
-      "v": 0.9770253125071422,
-      "E": 1.3103586458404755,
-      "E_eff": 1.3103586458404755,
+      "v": 0.9770253125071432,
+      "E": 1.3103586458404766,
+      "E_eff": 1.3103586458404766,
       "explanation": {
         "intrinsic_component": 0.3333333333333333,
-        "network_component": 0.9770253125071422,
+        "network_component": 0.9770253125071432,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -241,12 +241,12 @@
       "node_index": 12,
       "student_id": "urn:qc:person:ulid:01KFHJVET7D3SEVMJXR8HJ63AN",
       "s": 0.6666666666666666,
-      "v": 0.9861720537031118,
-      "E": 1.6528387203697785,
-      "E_eff": 1.702147323054934,
+      "v": 0.9861720537031127,
+      "E": 1.6528387203697794,
+      "E_eff": 1.7021473230549349,
       "explanation": {
         "intrinsic_component": 0.6666666666666666,
-        "network_component": 1.0354806563882675,
+        "network_component": 1.0354806563882684,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -254,12 +254,12 @@
       "node_index": 13,
       "student_id": "urn:qc:person:ulid:01KFHJVET79T269NPXDY6NGTGZ",
       "s": 0.6666666666666666,
-      "v": 0.9847096887947321,
-      "E": 1.6513763554613987,
-      "E_eff": 1.5529053865819256,
+      "v": 0.9847096887947331,
+      "E": 1.6513763554613998,
+      "E_eff": 1.5529053865819265,
       "explanation": {
         "intrinsic_component": 0.6666666666666666,
-        "network_component": 0.8862387199152589,
+        "network_component": 0.8862387199152598,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -267,12 +267,12 @@
       "node_index": 14,
       "student_id": "urn:qc:person:ulid:01KFHJVET77JHZVT5WTDFVAD4P",
       "s": 1.0,
-      "v": 0.992079998182313,
-      "E": 1.992079998182313,
-      "E_eff": 1.992079998182313,
+      "v": 0.992079998182314,
+      "E": 1.992079998182314,
+      "E_eff": 1.992079998182314,
       "explanation": {
         "intrinsic_component": 1.0,
-        "network_component": 0.992079998182313,
+        "network_component": 0.992079998182314,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -280,12 +280,12 @@
       "node_index": 15,
       "student_id": "urn:qc:person:ulid:01KFHJVET738JS2ND41Y76KNEY",
       "s": 0.6666666666666666,
-      "v": 0.9858745729966357,
-      "E": 1.6525412396633024,
-      "E_eff": 1.6525412396633024,
+      "v": 0.9858745729966363,
+      "E": 1.6525412396633028,
+      "E_eff": 1.6525412396633028,
       "explanation": {
         "intrinsic_component": 0.6666666666666666,
-        "network_component": 0.9858745729966357,
+        "network_component": 0.9858745729966363,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -293,12 +293,12 @@
       "node_index": 16,
       "student_id": "urn:qc:person:ulid:01KFHJVET7X0CXQHXQDVA56RBW",
       "s": 0.3333333333333333,
-      "v": 0.977752933007464,
-      "E": 1.3110862663407974,
-      "E_eff": 1.262198619690424,
+      "v": 0.9777529330074647,
+      "E": 1.311086266340798,
+      "E_eff": 1.2621986196904247,
       "explanation": {
         "intrinsic_component": 0.3333333333333333,
-        "network_component": 0.9288652863570908,
+        "network_component": 0.9288652863570914,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -306,12 +306,12 @@
       "node_index": 17,
       "student_id": "urn:qc:person:ulid:01KFHJVET713BX28YCHBG1MARK",
       "s": 1.6666666666666667,
-      "v": 1.0031108696698205,
-      "E": 2.669777536336487,
-      "E_eff": 2.669777536336487,
+      "v": 1.0031108696698212,
+      "E": 2.669777536336488,
+      "E_eff": 2.669777536336488,
       "explanation": {
         "intrinsic_component": 1.6666666666666667,
-        "network_component": 1.0031108696698205,
+        "network_component": 1.0031108696698212,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -319,12 +319,12 @@
       "node_index": 18,
       "student_id": "urn:qc:person:ulid:01KFHJVET7JBEEB9MJWWRBKAEY",
       "s": 1.3333333333333333,
-      "v": 0.9994754926157747,
-      "E": 2.332808825949108,
-      "E_eff": 2.4327563752106856,
+      "v": 0.9994754926157757,
+      "E": 2.332808825949109,
+      "E_eff": 2.432756375210687,
       "explanation": {
         "intrinsic_component": 1.3333333333333333,
-        "network_component": 1.0994230418773523,
+        "network_component": 1.0994230418773534,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -332,12 +332,12 @@
       "node_index": 19,
       "student_id": "urn:qc:person:ulid:01KFHJVET7Q1N1Y15WSKYGNTRT",
       "s": 0.2222222222222222,
-      "v": 0.9777396070159686,
-      "E": 1.1999618292381908,
-      "E_eff": 1.2488488095889894,
+      "v": 0.9777396070159694,
+      "E": 1.1999618292381915,
+      "E_eff": 1.2488488095889902,
       "explanation": {
         "intrinsic_component": 0.2222222222222222,
-        "network_component": 1.026626587366767,
+        "network_component": 1.026626587366768,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -345,12 +345,12 @@
       "node_index": 20,
       "student_id": "urn:qc:person:ulid:01KFHJVET7E5S9072YNQB0G3TH",
       "s": 0.4444444444444444,
-      "v": 0.9744884509435151,
-      "E": 1.4189328953879596,
-      "E_eff": 1.4676573179351353,
+      "v": 0.974488450943516,
+      "E": 1.4189328953879605,
+      "E_eff": 1.4676573179351362,
       "explanation": {
         "intrinsic_component": 0.4444444444444444,
-        "network_component": 1.023212873490691,
+        "network_component": 1.0232128734906918,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -358,12 +358,12 @@
       "node_index": 21,
       "student_id": "urn:qc:person:ulid:01KFHJVET7DXC53ZT4D98FXSTV",
       "s": 1.6666666666666667,
-      "v": 1.003906444304142,
-      "E": 2.6705731109708086,
-      "E_eff": 2.6705731109708086,
+      "v": 1.003906444304143,
+      "E": 2.6705731109708095,
+      "E_eff": 2.6705731109708095,
       "explanation": {
         "intrinsic_component": 1.6666666666666667,
-        "network_component": 1.003906444304142,
+        "network_component": 1.003906444304143,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -371,12 +371,12 @@
       "node_index": 22,
       "student_id": "urn:qc:person:ulid:01KFHJVET755ET0RX8W3CP9325",
       "s": 0.6666666666666666,
-      "v": 0.9847468967530139,
-      "E": 1.6514135634196805,
-      "E_eff": 1.6514135634196805,
+      "v": 0.9847468967530147,
+      "E": 1.6514135634196814,
+      "E_eff": 1.6514135634196814,
       "explanation": {
         "intrinsic_component": 0.6666666666666666,
-        "network_component": 0.9847468967530139,
+        "network_component": 0.9847468967530147,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -384,12 +384,12 @@
       "node_index": 23,
       "student_id": "urn:qc:person:ulid:01KFHJVET73FH52M3BWB0PPC72",
       "s": 1.3333333333333333,
-      "v": 0.9992010566275625,
-      "E": 2.332534389960896,
-      "E_eff": 2.4324544956236522,
+      "v": 0.9992010566275635,
+      "E": 2.332534389960897,
+      "E_eff": 2.432454495623653,
       "explanation": {
         "intrinsic_component": 1.3333333333333333,
-        "network_component": 1.099121162290319,
+        "network_component": 1.0991211622903199,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -397,12 +397,12 @@
       "node_index": 24,
       "student_id": "urn:qc:person:ulid:01KFHJVET7GJ6DJQJZS260JHYT",
       "s": 0.6666666666666666,
-      "v": 0.9848881007996196,
-      "E": 1.6515547674662863,
-      "E_eff": 1.7007991725062674,
+      "v": 0.9848881007996202,
+      "E": 1.651554767466287,
+      "E_eff": 1.7007991725062679,
       "explanation": {
         "intrinsic_component": 0.6666666666666666,
-        "network_component": 1.0341325058396007,
+        "network_component": 1.0341325058396011,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -410,12 +410,12 @@
       "node_index": 25,
       "student_id": "urn:qc:person:ulid:01KFHJVET7270RKCKVQT45M1YZ",
       "s": 1.3333333333333333,
-      "v": 0.9975834817832078,
-      "E": 2.330916815116541,
-      "E_eff": 2.330916815116541,
+      "v": 0.9975834817832083,
+      "E": 2.3309168151165416,
+      "E_eff": 2.3309168151165416,
       "explanation": {
         "intrinsic_component": 1.3333333333333333,
-        "network_component": 0.9975834817832078,
+        "network_component": 0.9975834817832083,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -423,12 +423,12 @@
       "node_index": 26,
       "student_id": "urn:qc:person:ulid:01KFHJVET72TKGYMSGCXMN81GM",
       "s": 1.6666666666666667,
-      "v": 1.0044851404802233,
-      "E": 2.67115180714689,
-      "E_eff": 2.620927550122879,
+      "v": 1.004485140480224,
+      "E": 2.6711518071468907,
+      "E_eff": 2.6209275501228797,
       "explanation": {
         "intrinsic_component": 1.6666666666666667,
-        "network_component": 0.9542608834562121,
+        "network_component": 0.9542608834562127,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -436,12 +436,12 @@
       "node_index": 27,
       "student_id": "urn:qc:person:ulid:01KFHJVET792E7QD5KF6D7ET0M",
       "s": 0.6666666666666666,
-      "v": 0.9835796333416451,
-      "E": 1.6502463000083116,
-      "E_eff": 1.6502463000083116,
+      "v": 0.9835796333416457,
+      "E": 1.6502463000083123,
+      "E_eff": 1.6502463000083123,
       "explanation": {
         "intrinsic_component": 0.6666666666666666,
-        "network_component": 0.9835796333416451,
+        "network_component": 0.9835796333416457,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -449,12 +449,12 @@
       "node_index": 28,
       "student_id": "urn:qc:person:ulid:01KFHJVET77M3D1ZX83K0A3XSB",
       "s": 0.6666666666666666,
-      "v": 0.9841236363026018,
+      "v": 0.984123636302602,
       "E": 1.6507903029692685,
-      "E_eff": 1.6999964847843985,
+      "E_eff": 1.699996484784399,
       "explanation": {
         "intrinsic_component": 0.6666666666666666,
-        "network_component": 1.033329818117732,
+        "network_component": 1.0333298181177322,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -462,12 +462,12 @@
       "node_index": 29,
       "student_id": "urn:qc:person:ulid:01KFHJVET8XKCTAZYW7R6KAEHA",
       "s": 0.6666666666666666,
-      "v": 0.9835607278629075,
-      "E": 1.650227394529574,
-      "E_eff": 1.650227394529574,
+      "v": 0.9835607278629086,
+      "E": 1.6502273945295753,
+      "E_eff": 1.6502273945295753,
       "explanation": {
         "intrinsic_component": 0.6666666666666666,
-        "network_component": 0.9835607278629075,
+        "network_component": 0.9835607278629086,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -475,12 +475,12 @@
       "node_index": 30,
       "student_id": "urn:qc:person:ulid:01KFHJVET8QHW6JXZZZ20AVCJW",
       "s": 1.3333333333333333,
-      "v": 0.9984928331406969,
-      "E": 2.33182616647403,
-      "E_eff": 2.381750808131065,
+      "v": 0.9984928331406977,
+      "E": 2.331826166474031,
+      "E_eff": 2.381750808131066,
       "explanation": {
         "intrinsic_component": 1.3333333333333333,
-        "network_component": 1.0484174747977317,
+        "network_component": 1.0484174747977326,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -488,12 +488,12 @@
       "node_index": 31,
       "student_id": "urn:qc:person:ulid:01KFHJVET8XMJKC3M8PVC1YWTE",
       "s": 1.6666666666666667,
-      "v": 1.003973635682452,
-      "E": 2.6706403023491188,
-      "E_eff": 2.6706403023491188,
+      "v": 1.0039736356824527,
+      "E": 2.6706403023491196,
+      "E_eff": 2.6706403023491196,
       "explanation": {
         "intrinsic_component": 1.6666666666666667,
-        "network_component": 1.003973635682452,
+        "network_component": 1.0039736356824527,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -501,12 +501,12 @@
       "node_index": 32,
       "student_id": "urn:qc:person:ulid:01KFHJVET8GWWDCG3BJRQHMK6P",
       "s": 0.4444444444444444,
-      "v": 0.9804181263279524,
-      "E": 1.424862570772397,
-      "E_eff": 1.4738834770887945,
+      "v": 0.9804181263279537,
+      "E": 1.424862570772398,
+      "E_eff": 1.4738834770887959,
       "explanation": {
         "intrinsic_component": 0.4444444444444444,
-        "network_component": 1.02943903264435,
+        "network_component": 1.0294390326443514,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -514,12 +514,12 @@
       "node_index": 33,
       "student_id": "urn:qc:person:ulid:01KFHJVET8CK393BFHX8A4DBFH",
       "s": 0.6666666666666666,
-      "v": 0.9842271236270761,
-      "E": 1.6508937902937428,
-      "E_eff": 1.7001051464750967,
+      "v": 0.9842271236270769,
+      "E": 1.6508937902937435,
+      "E_eff": 1.7001051464750976,
       "explanation": {
         "intrinsic_component": 0.6666666666666666,
-        "network_component": 1.03343847980843,
+        "network_component": 1.0334384798084308,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -527,12 +527,12 @@
       "node_index": 34,
       "student_id": "urn:qc:person:ulid:01KFHJVET8DA947VZCH5V2P7R8",
       "s": 1.3333333333333333,
-      "v": 0.998250802123657,
-      "E": 2.3315841354569904,
-      "E_eff": 2.431409215669356,
+      "v": 0.998250802123658,
+      "E": 2.3315841354569913,
+      "E_eff": 2.4314092156693574,
       "explanation": {
         "intrinsic_component": 1.3333333333333333,
-        "network_component": 1.0980758823360228,
+        "network_component": 1.098075882336024,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -540,12 +540,12 @@
       "node_index": 35,
       "student_id": "urn:qc:person:ulid:01KFHJVET8R79A1WQ6DYMYRYQ5",
       "s": 0.6666666666666666,
-      "v": 0.9848604323428752,
-      "E": 1.6515270990095419,
-      "E_eff": 1.6515270990095419,
+      "v": 0.984860432342876,
+      "E": 1.6515270990095425,
+      "E_eff": 1.6515270990095425,
       "explanation": {
         "intrinsic_component": 0.6666666666666666,
-        "network_component": 0.9848604323428752,
+        "network_component": 0.984860432342876,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -553,12 +553,12 @@
       "node_index": 36,
       "student_id": "urn:qc:person:ulid:01KFHJVET8D58EXHNAYPJZFSPQ",
       "s": 1.6666666666666667,
-      "v": 1.0014502072097928,
-      "E": 2.6681168738764596,
-      "E_eff": 2.61804436351597,
+      "v": 1.0014502072097935,
+      "E": 2.6681168738764605,
+      "E_eff": 2.6180443635159705,
       "explanation": {
         "intrinsic_component": 1.6666666666666667,
-        "network_component": 0.9513776968493032,
+        "network_component": 0.9513776968493037,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -566,12 +566,12 @@
       "node_index": 37,
       "student_id": "urn:qc:person:ulid:01KFHJVET8E4P9EXJRX4RWH81Z",
       "s": 0.8888888888888888,
-      "v": 0.9894049698497238,
-      "E": 1.8782938587386127,
-      "E_eff": 1.8782938587386127,
+      "v": 0.9894049698497249,
+      "E": 1.8782938587386138,
+      "E_eff": 1.8782938587386138,
       "explanation": {
         "intrinsic_component": 0.8888888888888888,
-        "network_component": 0.9894049698497238,
+        "network_component": 0.9894049698497249,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -579,12 +579,12 @@
       "node_index": 38,
       "student_id": "urn:qc:person:ulid:01KFHJVET89Q4P4XXM5AQ3VD65",
       "s": 0.8888888888888888,
-      "v": 0.9900664841833375,
-      "E": 1.8789553730722264,
-      "E_eff": 1.9284586972813933,
+      "v": 0.9900664841833383,
+      "E": 1.8789553730722273,
+      "E_eff": 1.9284586972813942,
       "explanation": {
         "intrinsic_component": 0.8888888888888888,
-        "network_component": 1.0395698083925045,
+        "network_component": 1.0395698083925053,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -592,12 +592,12 @@
       "node_index": 39,
       "student_id": "urn:qc:person:ulid:01KFHJVET84PDMV2AMASSMEVR6",
       "s": 0.3333333333333333,
-      "v": 0.9816968870291662,
-      "E": 1.3150302203624995,
-      "E_eff": 1.364115064713958,
+      "v": 0.9816968870291672,
+      "E": 1.3150302203625006,
+      "E_eff": 1.3641150647139588,
       "explanation": {
         "intrinsic_component": 0.3333333333333333,
-        "network_component": 1.0307817313806247,
+        "network_component": 1.0307817313806256,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -605,12 +605,12 @@
       "node_index": 40,
       "student_id": "urn:qc:person:ulid:01KFHJVET87BYB44ZK3ADBVZP0",
       "s": 1.3333333333333333,
-      "v": 1.000197914182998,
-      "E": 2.3335312475163312,
-      "E_eff": 2.3335312475163312,
+      "v": 1.0001979141829989,
+      "E": 2.333531247516332,
+      "E_eff": 2.333531247516332,
       "explanation": {
         "intrinsic_component": 1.3333333333333333,
-        "network_component": 1.000197914182998,
+        "network_component": 1.0001979141829989,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -618,12 +618,12 @@
       "node_index": 41,
       "student_id": "urn:qc:person:ulid:01KFHJVET829VBMBWYMKR1PFJW",
       "s": 1.0,
-      "v": 0.9918587036514085,
-      "E": 1.9918587036514084,
-      "E_eff": 2.041451638833979,
+      "v": 0.9918587036514093,
+      "E": 1.9918587036514093,
+      "E_eff": 2.04145163883398,
       "explanation": {
         "intrinsic_component": 1.0,
-        "network_component": 1.041451638833979,
+        "network_component": 1.0414516388339798,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -631,12 +631,12 @@
       "node_index": 42,
       "student_id": "urn:qc:person:ulid:01KFHJVET812XEVW8DCQ10D4DV",
       "s": 0.3333333333333333,
-      "v": 0.9765034894152556,
-      "E": 1.3098368227485888,
-      "E_eff": 1.3098368227485888,
+      "v": 0.9765034894152567,
+      "E": 1.30983682274859,
+      "E_eff": 1.30983682274859,
       "explanation": {
         "intrinsic_component": 0.3333333333333333,
-        "network_component": 0.9765034894152556,
+        "network_component": 0.9765034894152567,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -644,12 +644,12 @@
       "node_index": 43,
       "student_id": "urn:qc:person:ulid:01KFHJVET8D02Y0E7Z6FPP8TBE",
       "s": 1.3333333333333333,
-      "v": 0.9978541226501766,
-      "E": 2.33118745598351,
-      "E_eff": 2.430972868248528,
+      "v": 0.9978541226501774,
+      "E": 2.3311874559835104,
+      "E_eff": 2.4309728682485288,
       "explanation": {
         "intrinsic_component": 1.3333333333333333,
-        "network_component": 1.0976395349151944,
+        "network_component": 1.0976395349151953,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -657,12 +657,12 @@
       "node_index": 44,
       "student_id": "urn:qc:person:ulid:01KFHJVET8RSBBEAP3N6KRVK2N",
       "s": 1.6666666666666667,
-      "v": 1.0022305234733584,
-      "E": 2.668897190140025,
-      "E_eff": 2.6187856639663574,
+      "v": 1.0022305234733593,
+      "E": 2.668897190140026,
+      "E_eff": 2.6187856639663583,
       "explanation": {
         "intrinsic_component": 1.6666666666666667,
-        "network_component": 0.9521189972996904,
+        "network_component": 0.9521189972996913,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -670,12 +670,12 @@
       "node_index": 45,
       "student_id": "urn:qc:person:ulid:01KFHJVET8ZSR020W7306WNJC6",
       "s": 1.7777777777777777,
-      "v": 1.0057146529899903,
-      "E": 2.783492430767768,
-      "E_eff": 2.783492430767768,
+      "v": 1.005714652989991,
+      "E": 2.783492430767769,
+      "E_eff": 2.783492430767769,
       "explanation": {
         "intrinsic_component": 1.7777777777777777,
-        "network_component": 1.0057146529899903,
+        "network_component": 1.005714652989991,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -683,12 +683,12 @@
       "node_index": 46,
       "student_id": "urn:qc:person:ulid:01KFHJVET8M4PPE9R8YDY2X0KQ",
       "s": 1.1111111111111112,
-      "v": 0.9935526416150349,
-      "E": 2.104663752726146,
-      "E_eff": 2.2040190168876497,
+      "v": 0.993552641615036,
+      "E": 2.104663752726147,
+      "E_eff": 2.204019016887651,
       "explanation": {
         "intrinsic_component": 1.1111111111111112,
-        "network_component": 1.0929079057765385,
+        "network_component": 1.0929079057765396,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -696,12 +696,12 @@
       "node_index": 47,
       "student_id": "urn:qc:person:ulid:01KFHJVET885JQ15P40NDGW09Y",
       "s": 0.2222222222222222,
-      "v": 0.9719943901909309,
-      "E": 1.194216612413153,
-      "E_eff": 1.2914160514322464,
+      "v": 0.9719943901909318,
+      "E": 1.194216612413154,
+      "E_eff": 1.2914160514322472,
       "explanation": {
         "intrinsic_component": 0.2222222222222222,
-        "network_component": 1.069193829210024,
+        "network_component": 1.0691938292100251,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -709,12 +709,12 @@
       "node_index": 48,
       "student_id": "urn:qc:person:ulid:01KFHJVET8RCSK1ERH54T5KXMM",
       "s": 1.3333333333333333,
-      "v": 0.999178623282665,
-      "E": 2.332511956615998,
-      "E_eff": 2.3824708877801317,
+      "v": 0.999178623282666,
+      "E": 2.332511956615999,
+      "E_eff": 2.3824708877801326,
       "explanation": {
         "intrinsic_component": 1.3333333333333333,
-        "network_component": 1.0491375544467982,
+        "network_component": 1.0491375544467993,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     },
@@ -722,12 +722,12 @@
       "node_index": 49,
       "student_id": "urn:qc:person:ulid:01KFHJVET89HH9D26B0SGFQJ2H",
       "s": 1.0,
-      "v": 0.9921307912042662,
-      "E": 1.992130791204266,
-      "E_eff": 2.091343870324693,
+      "v": 0.992130791204267,
+      "E": 1.992130791204267,
+      "E_eff": 2.091343870324694,
       "explanation": {
         "intrinsic_component": 1.0,
-        "network_component": 1.091343870324693,
+        "network_component": 1.0913438703246938,
         "formula": "E_eff = beta0*s + beta1*(rho \u2299 v)"
       }
     }

@@ -1,7 +1,7 @@
 ==============================================================================
 Affinity n=50 Option B v2 audit report
 ==============================================================================
-timestamp_utc: 2026-03-12T21:20:47.333600Z
+timestamp_utc: 2026-03-12T21:19:43.559485Z
 n_nodes: 50
 n_modules: 9
 n_sessions_per_module: 8
@@ -83,3 +83,6 @@ node_index	rank	displayName	student_id	adopterCategory	outputQuality	outputProdu
 47	48	Katie Reynolds	urn:qc:person:ulid:01KFHJVET885JQ15P40NDGW09Y	laggard	very_low	low	1	2	0.222222	1.1	0.486331	31	0.430556	49	49	867	867	0.971994	1.19422	1.29142
 48	14	Noor Ahmed	urn:qc:person:ulid:01KFHJVET8RCSK1ERH54T5KXMM	late_majority	high	medium	4	3	1.33333	1.05	0.550193	37	0.513889	49	49	1050	1050	0.999179	2.33251	2.38247
 49	21	Eleni Papadopoulos	urn:qc:person:ulid:01KFHJVET89HH9D26B0SGFQJ2H	laggard	medium	medium	3	3	1	1.1	0.664307	46	0.638889	49	49	1302	1302	0.992131	1.99213	2.09134
+
+Wrote audit report: /Users/ianmack/Desktop/network-potential-engine/affinity/artifacts/n50/optionB_v2_audit_report.txt
+Wrote transcript: /Users/ianmack/Desktop/network-potential-engine/affinity/artifacts/n50/smoke_run_transcript_v2.txt

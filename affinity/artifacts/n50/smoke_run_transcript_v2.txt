@@ -1,10 +1,10 @@
 ==============================================================================
 Affinity n=50 smoke transcript (v2)
 ==============================================================================
-timestamp_utc: 2026-03-12T20:52:41.185379Z
-python: 3.12.4
-platform: macOS-15.7.4-x86_64-i386-64bit
-git_head_sha: 64087b4a841698776229b0605f818e58fd1d05c1
+timestamp_utc: 2026-03-12T21:20:47.722754Z
+python: 3.11.5
+platform: macOS-10.16-x86_64-i386-64bit
+git_head_sha: 2645306ad60492109bc892898e701aa6a6f3dfc9
 
 ==============================================================================
 Artifact presence
@@ -25,25 +25,25 @@ Summary stats
 n_nodes: 50
 n_observation_events: 57060
 n_directed_ties: 2450
-solve_residual_l2_norm: 8.34599220759757e-14
+solve_residual_l2_norm: 6.745180521230289e-14
 
 s: min=0.2222222222222222 mean=0.9911111111111111 max=2.222222222222222
 rho: min=0.9 mean=1.024 max=1.1
-E_eff: min=1.248848809588989 mean=2.005958632614564 max=3.285674759320198
+E_eff: min=1.24884880958899 mean=2.005958632614565 max=3.285674759320199
 
 ==============================================================================
 Top-k ranking (deterministic policy)
 ==============================================================================
- 1. node_index= 6 score=3.285674759320198 student_id=urn:qc:person:ulid:01KFHJVET8ZCCXS2Z6AD52ZE65
- 2. node_index=45 score=2.783492430767768 student_id=urn:qc:person:ulid:01KFHJVET8ZSR020W7306WNJC6
- 3. node_index= 3 score=2.734560475442429 student_id=urn:qc:person:ulid:01KFHJVET830R2DFB3X062V2Q9
- 4. node_index=31 score=2.670640302349119 student_id=urn:qc:person:ulid:01KFHJVET8XMJKC3M8PVC1YWTE
- 5. node_index=21 score=2.670573110970809 student_id=urn:qc:person:ulid:01KFHJVET7DXC53ZT4D98FXSTV
- 6. node_index=17 score=2.669777536336487 student_id=urn:qc:person:ulid:01KFHJVET713BX28YCHBG1MARK
- 7. node_index=26 score=2.620927550122879 student_id=urn:qc:person:ulid:01KFHJVET72TKGYMSGCXMN81GM
- 8. node_index=44 score=2.618785663966357 student_id=urn:qc:person:ulid:01KFHJVET8RSBBEAP3N6KRVK2N
+ 1. node_index= 6 score=3.285674759320199 student_id=urn:qc:person:ulid:01KFHJVET8ZCCXS2Z6AD52ZE65
+ 2. node_index=45 score=2.783492430767769 student_id=urn:qc:person:ulid:01KFHJVET8ZSR020W7306WNJC6
+ 3. node_index= 3 score=2.73456047544243 student_id=urn:qc:person:ulid:01KFHJVET830R2DFB3X062V2Q9
+ 4. node_index=31 score=2.67064030234912 student_id=urn:qc:person:ulid:01KFHJVET8XMJKC3M8PVC1YWTE
+ 5. node_index=21 score=2.67057311097081 student_id=urn:qc:person:ulid:01KFHJVET7DXC53ZT4D98FXSTV
+ 6. node_index=17 score=2.669777536336488 student_id=urn:qc:person:ulid:01KFHJVET713BX28YCHBG1MARK
+ 7. node_index=26 score=2.62092755012288 student_id=urn:qc:person:ulid:01KFHJVET72TKGYMSGCXMN81GM
+ 8. node_index=44 score=2.618785663966358 student_id=urn:qc:person:ulid:01KFHJVET8RSBBEAP3N6KRVK2N
  9. node_index=36 score=2.61804436351597 student_id=urn:qc:person:ulid:01KFHJVET8D58EXHNAYPJZFSPQ
-10. node_index=18 score=2.432756375210686 student_id=urn:qc:person:ulid:01KFHJVET7JBEEB9MJWWRBKAEY
+10. node_index=18 score=2.432756375210687 student_id=urn:qc:person:ulid:01KFHJVET7JBEEB9MJWWRBKAEY
 
 ==============================================================================
 PASS
