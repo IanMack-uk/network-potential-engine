@@ -24,6 +24,14 @@ The repository currently has strong evidence in two layers:
 - a theorem-side layer (formal statements plus symbolic/analytic checks of identities and sufficient conditions), and
 - a pipeline-side layer (deterministic replay and arithmetic audits of exported artifacts).
 
+Pipeline-side evidence may be stored either as the latest outputs under:
+
+- `affinity/artifacts/n50/`
+
+or as a per-run provenance bundle under:
+
+- `affinity/artifacts/n50/snapshots/<run_id>/`
+
 The formal semantic bridge between these layers is documented separately and is not yet complete:
 `docs/theorem_pipeline_bridge.md`.
 
