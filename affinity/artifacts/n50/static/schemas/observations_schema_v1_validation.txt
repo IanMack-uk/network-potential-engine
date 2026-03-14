@@ -1,0 +1,71 @@
+Job 2 — Observations schema + sample dataset validation report
+
+Schema artifact:
+- affinity/artifacts/n50/static/schemas/observations_schema_v1.json
+
+Sample dataset artifact:
+- affinity/artifacts/n50/legacy/v1/observations_sample_v1.json
+
+Registry artifact:
+- affinity/artifacts/n50/static/registry/student_registry_v1.json
+
+Validation checks (expected for Affinity n=50):
+
+1) Artifacts exist
+- Schema exists: YES
+- Sample dataset exists: YES
+- Registry exists: YES
+- Result: PASS
+
+2) Sample dataset structure
+- Expected: top-level object containing key "events" as an array
+- Observed: "events" present and is an array
+- Result: PASS
+
+3) Event count sanity
+- Observed: 20 events
+- Result: PASS
+
+4) Required fields present per event
+- Required: event_id, timestamp, event_type, actor_student_id, target_student_id, weight
+- Observed: all events contain required keys
+- Result: PASS
+
+5) event_id uniqueness
+- Expected: all event_id unique within file
+- Observed: unique
+- Result: PASS
+
+6) timestamp format sanity
+- Expected: ISO-8601 strings
+- Observed: all timestamps end with 'Z' and include date + time
+- Result: PASS
+
+7) event_type allowed values
+- Allowed: ["interaction"]
+- Observed: all event_type == "interaction"
+- Result: PASS
+
+8) Registry membership checks
+- Expected: actor_student_id and target_student_id are present in registry student_id set
+- Observed: all referenced IDs found in registry
+- Result: PASS
+
+9) Actor/target distinctness
+- Expected: actor_student_id != target_student_id
+- Observed: all events have distinct actor/target
+- Result: PASS
+
+10) Weight constraints
+- Expected: weight is a number and weight >= 0
+- Observed: all weights numeric and non-negative
+- Result: PASS
+
+11) PII policy
+- Expected: sample contains no names/emails/phones/free-text notes
+- Observed: sample includes only student_id identifiers; metadata contains only {"pii": false} when present
+- Result: PASS
+
+Notes:
+- This report is a saved validation transcript for Job 2 evidence.
+- If the sample dataset generation becomes programmatic later, record the generator seed and parameters here.

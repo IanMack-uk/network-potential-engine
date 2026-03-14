@@ -58,7 +58,8 @@ def _ranking_indices_by_policy(score: np.ndarray, *, top_k: int) -> list[int]:
 
 
 def _load_v2_vectors(*, artifacts_dir: Path) -> tuple[list[str], np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
-    registry_obj = _load_json(artifacts_dir / "student_registry_v1.json")
+    artifacts_root = artifacts_dir.parent.parent
+    registry_obj = _load_json(artifacts_root / "static" / "registry" / "student_registry_v1.json")
     s_obj = _load_json(artifacts_dir / "source_vector_s_v2.json")
     C_obj = _load_json(artifacts_dir / "coupling_operator_C_v2.json")
     v_obj = _load_json(artifacts_dir / "propagated_value_v_v2.json")
@@ -582,7 +583,9 @@ def _scenario_v2_s6_receptivity_only_change(
 
 def main() -> int:
     repo_root = _find_repo_root(Path(__file__))
-    artifacts_dir = repo_root / "affinity" / "artifacts" / "n50"
+    artifacts_root = repo_root / "affinity" / "artifacts" / "n50"
+    static_dir = artifacts_root / "static"
+    artifacts_dir = artifacts_root / "generated" / "latest"
 
     export_path = artifacts_dir / "app_facing_outputs_v2.json"
     ties_path = artifacts_dir / "tie_strengths_w_v2.json"
@@ -640,10 +643,10 @@ def main() -> int:
         "python": sys.version.split()[0],
         "platform": platform.platform(),
         "inputs": {
-            "export_ref": "affinity/artifacts/n50/app_facing_outputs_v2.json",
-            "ties_ref": "affinity/artifacts/n50/tie_strengths_w_v2.json",
-            "source_vector_ref": "affinity/artifacts/n50/source_vector_s_v2.json",
-            "coupling_operator_ref": "affinity/artifacts/n50/coupling_operator_C_v2.json",
+            "export_ref": "affinity/artifacts/n50/generated/latest/app_facing_outputs_v2.json",
+            "ties_ref": "affinity/artifacts/n50/generated/latest/tie_strengths_w_v2.json",
+            "source_vector_ref": "affinity/artifacts/n50/generated/latest/source_vector_s_v2.json",
+            "coupling_operator_ref": "affinity/artifacts/n50/generated/latest/coupling_operator_C_v2.json",
         },
         "frozen_parameters": {
             "tol": tol,

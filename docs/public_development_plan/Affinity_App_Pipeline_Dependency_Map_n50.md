@@ -85,8 +85,8 @@ App outputs (rankings + explanations)
   - Job 0
 - **Evidence / paperwork**
   - a committed `n=50` cohort registry artifact and a validation transcript that counts to 50 and checks uniqueness:
-    - `affinity/artifacts/n50/student_registry_v1.json`
-    - `affinity/artifacts/n50/student_registry_v1_validation.txt`
+    - `affinity/artifacts/n50/static/registry/student_registry_v1.json`
+    - `affinity/artifacts/n50/static/registry/student_registry_v1_validation.txt`
 - **Completion gate**
   - you can point to a single registry file and every downstream job references it, with no “index drift” ambiguity
 
@@ -103,9 +103,9 @@ App outputs (rankings + explanations)
   - Job 1
 - **Evidence / paperwork**
   - a schema document/example file + a validation transcript for one sample dataset:
-    - `affinity/artifacts/n50/observations_schema_v1.json`
-    - `affinity/artifacts/n50/observations_sample_v1.json`
-    - `affinity/artifacts/n50/observations_schema_v1_validation.txt`
+    - `affinity/artifacts/n50/static/schemas/observations_schema_v1.json`
+    - `affinity/artifacts/n50/legacy/v1/observations_sample_v1.json`
+    - `affinity/artifacts/n50/static/schemas/observations_schema_v1_validation.txt`
 - **Completion gate**
   - raw data can be loaded and validated (types, missingness policy)
 
@@ -124,8 +124,8 @@ App outputs (rankings + explanations)
   - `src/network_potential_engine/attributes/node_attributes.py`
 - **Evidence / paperwork**
   - a serialized `NodeAttributeField` artifact for n=50 + a validation transcript (required keys present):
-    - `affinity/artifacts/n50/node_attribute_field_v1.json`
-    - `affinity/artifacts/n50/node_attribute_field_v1_validation.txt`
+    - `affinity/artifacts/n50/legacy/v1/node_attribute_field_v1.json`
+    - `affinity/artifacts/n50/legacy/v1/node_attribute_field_v1_validation.txt`
 - **Completion gate**
   - a validated `NodeAttributeField` exists for all 50 students
 
@@ -144,9 +144,9 @@ App outputs (rankings + explanations)
   - `src/network_potential_engine/source/value_model.py`
 - **Evidence / paperwork**
   - a saved `s` vector (with node IDs) + a short note stating the frozen `ψ` used:
-    - `affinity/artifacts/n50/source_mapping_psi_v1.txt`
-    - `affinity/artifacts/n50/source_vector_s_v1.json`
-    - `affinity/artifacts/n50/source_vector_s_v1_validation.txt`
+    - `affinity/artifacts/n50/static/specs/source_mapping_psi_v1.txt`
+    - `affinity/artifacts/n50/legacy/v1/source_vector_s_v1.json`
+    - `affinity/artifacts/n50/legacy/v1/source_vector_s_v1_validation.txt`
 - **Completion gate**
   - `s` is computed deterministically and matches the declared `ψ`
 
@@ -166,8 +166,8 @@ App outputs (rankings + explanations)
   - `src/network_potential_engine/constraints/feasible_relational_investment.py`
 - **Evidence / paperwork**
   - a short “feasibility regime declaration” note (interior vs constrained) + feasibility diagnostics output for one run:
-    - `affinity/artifacts/n50/feasibility_regime_v1.txt`
-    - `affinity/artifacts/n50/feasibility_diagnostics_v1.txt`
+    - `affinity/artifacts/n50/legacy/v1/feasibility_regime_v1.txt`
+    - `affinity/artifacts/n50/legacy/v1/feasibility_diagnostics_v1.txt`
 - **Completion gate**
   - the regime is written down and feasibility diagnostics are defined (even if not yet binding)
 
@@ -186,8 +186,8 @@ App outputs (rankings + explanations)
   - `src/network_potential_engine/symbolic/potential.py`
 - **Evidence / paperwork**
   - a written spec for `Φ` and `θ` (meaning, dimensionality, construction) + a reproducible parameter dump used by the run:
-    - `affinity/artifacts/n50/potential_phi_and_theta_spec_v1.md`
-    - `affinity/artifacts/n50/potential_phi_and_theta_params_v1.json`
+    - `affinity/artifacts/n50/static/specs/potential_phi_and_theta_spec_v1.md`
+    - `affinity/artifacts/n50/legacy/v1/potential_phi_and_theta_params_v1.json`
 - **Completion gate**
   - `Φ` is selected and parameterized, and `θ` construction is frozen for the n=50 run
 
@@ -205,8 +205,8 @@ App outputs (rankings + explanations)
   - `src/network_potential_engine/numeric/equilibrium.py`
 - **Evidence / paperwork**
   - a saved `w*` artifact + solver diagnostics (residual norms, iterations, constraint status):
-    - `affinity/artifacts/n50/equilibrium_w_star_v1.json`
-    - `affinity/artifacts/n50/equilibrium_w_star_v1_diagnostics.txt`
+    - `affinity/artifacts/n50/legacy/v1/equilibrium_w_star_v1.json`
+    - `affinity/artifacts/n50/legacy/v1/equilibrium_w_star_v1_diagnostics.txt`
 - **Completion gate**
   - residual norms and (if relevant) constraint diagnostics are produced with a clear pass/fail threshold
 
@@ -225,8 +225,8 @@ App outputs (rankings + explanations)
   - `src/network_potential_engine/symbolic/operators.py`
 - **Evidence / paperwork**
   - a saved `C` artifact + shape/symmetry/sign diagnostics report:
-    - `affinity/artifacts/n50/coupling_operator_C_v1.json`
-    - `affinity/artifacts/n50/coupling_operator_C_v1_diagnostics.txt`
+    - `affinity/artifacts/n50/legacy/v1/coupling_operator_C_v1.json`
+    - `affinity/artifacts/n50/legacy/v1/coupling_operator_C_v1_diagnostics.txt`
 - **Completion gate**
   - `C` is computed at n=50 with shape checks and stored diagnostics
 
@@ -245,8 +245,8 @@ App outputs (rankings + explanations)
   - `src/network_potential_engine/numeric/response.py`
 - **Evidence / paperwork**
   - conditioning/invertibility diagnostics (e.g. rank/cond/solver status) + declared policy for failure/regularization:
-    - `affinity/artifacts/n50/green_operator_G_v1_diagnostics.txt`
-    - `affinity/artifacts/n50/green_operator_G_v1_policy.txt`
+    - `affinity/artifacts/n50/legacy/v1/green_operator_G_v1_diagnostics.txt`
+    - `affinity/artifacts/n50/static/specs/green_operator_G_v1_policy.txt`
 - **Completion gate**
   - invertibility/certification diagnostics are produced; failure mode is explicit if `C` is singular/ill-conditioned
 
@@ -262,8 +262,8 @@ App outputs (rankings + explanations)
   - Jobs 4 and 9
 - **Evidence / paperwork**
   - a saved `v` artifact + residual report `||C v - s||`:
-    - `affinity/artifacts/n50/propagated_value_v_v1.json`
-    - `affinity/artifacts/n50/propagated_value_v_v1_residual.txt`
+    - `affinity/artifacts/n50/legacy/v1/propagated_value_v_v1.json`
+    - `affinity/artifacts/n50/legacy/v1/propagated_value_v_v1_residual.txt`
 - **Completion gate**
   - propagation residual check passes: `||C v - s||` below tolerance
 
@@ -283,10 +283,10 @@ App outputs (rankings + explanations)
   - `src/network_potential_engine/energy/effective_energy.py`
 - **Evidence / paperwork**
   - saved `E` / `E_eff` artifacts + ranking summary (top-k) and a note declaring which score is canonical:
-    - `affinity/artifacts/n50/node_energy_E_v1.json`
-    - `affinity/artifacts/n50/node_energy_E_eff_v1.json`
-    - `affinity/artifacts/n50/node_energy_rankings_topk_v1.txt`
-    - `affinity/artifacts/n50/node_energy_canonical_score_v1.txt`
+    - `affinity/artifacts/n50/legacy/v1/node_energy_E_v1.json`
+    - `affinity/artifacts/n50/legacy/v1/node_energy_E_eff_v1.json`
+    - `affinity/artifacts/n50/legacy/v1/node_energy_rankings_topk_v1.txt`
+    - `affinity/artifacts/n50/legacy/v1/node_energy_canonical_score_v1.txt`
 - **Completion gate**
   - stable top-k rankings exist for `s`, `v`, `E`, `E_eff`
 
@@ -304,8 +304,8 @@ App outputs (rankings + explanations)
   - Job 11
 - **Evidence / paperwork**
   - exported JSON outputs + a rendered report example demonstrating explanation fields:
-    - `affinity/artifacts/n50/app_facing_outputs_v1.json`
-    - `affinity/artifacts/n50/app_facing_outputs_v1_report_example.md`
+    - `affinity/artifacts/n50/legacy/v1/app_facing_outputs_v1.json`
+    - `affinity/artifacts/n50/static/examples/app_facing_outputs_v1_report_example.md`
 - **Completion gate**
   - outputs can be rendered in a report and are stable under reruns
 
@@ -325,7 +325,7 @@ App outputs (rankings + explanations)
   - Jobs 6–12
 - **Evidence / paperwork**
   - a single saved “run transcript” (stdout/log file) with seed/config, diagnostics, and pass/fail summary:
-    - `affinity/artifacts/n50/smoke_run_transcript_v1.txt`
+    - `affinity/artifacts/n50/legacy/v1/smoke_run_transcript_v1.txt`
 - **Completion gate**
   - one command produces an auditable transcript for the n=50 run
 
@@ -341,9 +341,9 @@ App outputs (rankings + explanations)
   - Job 12
 - **Evidence / paperwork**
   - scenario definitions + saved outputs + a short evaluation note (expected vs observed qualitative behavior)
-    - `affinity/artifacts/n50/product_validity_scenarios_v1.json`
-    - `affinity/artifacts/n50/product_validity_outputs_v1.json`
-    - `affinity/artifacts/n50/product_validity_evaluation_note_v1.txt`
+    - `affinity/artifacts/n50/legacy/v1/product_validity_scenarios_v1.json`
+    - `affinity/artifacts/n50/legacy/v1/product_validity_outputs_v1.json`
+    - `affinity/artifacts/n50/legacy/v1/product_validity_evaluation_note_v1.txt`
 - **Completion gate**
   - at least 2 scenarios match declared qualitative expectations
 

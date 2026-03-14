@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "name": "affinity_observations_v1",
+  "description": "Minimal observations schema for Affinity n=50 ingestion. This schema is a project-level contract (not JSON-Schema).",
+  "cohort_registry": {
+    "path": "affinity/artifacts/n50/static/registry/student_registry_v1.json",
+    "id_field": "student_id"
+  },
+  "record_type": "event_log",
+  "missingness_policy": {
+    "required_fields_must_be_present": true,
+    "optional_fields_may_be_omitted_or_null": true
+  },
+  "fields": {
+    "event_id": {
+      "type": "string",
+      "required": true,
+      "constraints": {
+        "unique_within_file": true
+      }
+    },
+    "timestamp": {
+      "type": "string",
+      "required": true,
+      "constraints": {
+        "format": "ISO-8601"
+      }
+    },
+    "event_type": {
+      "type": "string",
+      "required": true,
+      "constraints": {
+        "allowed": ["interaction"]
+      }
+    },
+    "actor_student_id": {
+      "type": "string",
+      "required": true,
+      "constraints": {
+        "must_exist_in_registry": true
+      }
+    },
+    "target_student_id": {
+      "type": "string",
+      "required": true,
+      "constraints": {
+        "must_exist_in_registry": true,
+        "must_differ_from_actor_student_id": true
+      }
+    },
+    "weight": {
+      "type": "number",
+      "required": true,
+      "constraints": {
+        "min": 0
+      }
+    },
+    "channel": {
+      "type": "string",
+      "required": false
+    },
+    "metadata": {
+      "type": "object",
+      "required": false,
+      "constraints": {
+        "pii": "forbidden"
+      }
+    }
+  },
+  "mapping_intent": {
+    "to_x_job3": {
+      "notes": "Job 3 will derive node attributes x via per-student aggregates from this event log.",
+      "intended_aggregates": [
+        "outgoing_interaction_count",
+        "incoming_interaction_count",
+        "outgoing_weight_sum",
+        "incoming_weight_sum"
+      ]
+    },
+    "to_theta_job6": {
+      "notes": "Job 6 will use global distributional summaries of weights/timing (and declared regimes) to set/estimate theta.",
+      "intended_global_summaries": [
+        "weight_scale",
+        "event_rate",
+        "regularization_policy_tag"
+      ]
+    }
+  },
+  "pii_policy": {
+    "allowed": ["student_id"],
+    "forbidden_examples": ["name", "email", "phone", "free_text_notes"]
+  }
+}

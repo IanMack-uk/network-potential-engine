@@ -154,6 +154,7 @@ def _ranking_indices_by_policy(score: np.ndarray, *, top_k: int) -> list[int]:
 class _Context:
     repo_root: Path
     artifacts_dir: Path
+    static_dir: Path
     neo4j_dir: Path
 
 
@@ -230,7 +231,8 @@ def main() -> int:
     repo_root = _find_repo_root(Path(__file__).resolve())
     ctx = _Context(
         repo_root=repo_root,
-        artifacts_dir=repo_root / "affinity" / "artifacts" / "n50",
+        artifacts_dir=repo_root / "affinity" / "artifacts" / "n50" / "generated" / "latest",
+        static_dir=repo_root / "affinity" / "artifacts" / "n50" / "static",
         neo4j_dir=repo_root / "affinity" / "from_neo4j",
     )
 
@@ -262,7 +264,7 @@ def main() -> int:
     emit("")
 
     artifact_paths = {
-        "registry": ctx.artifacts_dir / "student_registry_v1.json",
+        "registry": ctx.static_dir / "registry" / "student_registry_v1.json",
         "source_s": ctx.artifacts_dir / "source_vector_s_v2.json",
         "ties": ctx.artifacts_dir / "tie_strengths_w_v2.json",
         "coupling_C": ctx.artifacts_dir / "coupling_operator_C_v2.json",

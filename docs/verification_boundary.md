@@ -122,7 +122,7 @@ These guarantees ensure that:
 2.  the **computational pipeline reproduces exported artifacts
     deterministically**.
 
-Note: in Neo4j-authoritative ties mode, the pipeline may write `affinity/artifacts/n50/observations_v2.json` as a provenance stub (with an empty event list) referencing Neo4j-derived inputs. In this configuration, the pipeline's audited identities and deterministic replay guarantees apply to the exported operator/energy artifacts produced by the run, not to any particular underlying event dataset.
+Note: in Neo4j-authoritative ties mode, the pipeline may write `affinity/artifacts/n50/generated/latest/observations_v2.json` as a provenance stub (with an empty event list) referencing Neo4j-derived inputs. In this configuration, the pipeline's audited identities and deterministic replay guarantees apply to the exported operator/energy artifacts produced by the run, not to any particular underlying event dataset.
 
 At present the repository should be understood as having **two strong verified islands**:
 

@@ -11,7 +11,7 @@
   - how-to: `docs/how_to_run_affinity_v2_live_neo4j.md`
   - snapshots: `affinity/artifacts/n50/snapshots/<run_id>/`
 - There is a one-command verification transcript (Job 13) that re-checks the key invariants for Jobs 6–12 and writes an auditable transcript:
-  - `affinity/artifacts/n50/smoke_run_transcript_v1.txt`
+  - `affinity/artifacts/n50/legacy/v1/smoke_run_transcript_v1.txt`
 - There is a “product validity harness” (Job 14) that runs two scenarios and writes:
   - scenario definitions
   - scenario outputs
@@ -102,7 +102,7 @@ PYTHONPATH=src python3 -m network_potential_engine.scripts.run_affinity_n50_smok
 ```
 
 - Writes:
-  - `affinity/artifacts/n50/smoke_run_transcript_v1.txt`
+  - `affinity/artifacts/n50/legacy/v1/smoke_run_transcript_v1.txt`
 
 ### Job 14 runner (scenario harness; writes 3 evidence artifacts)
 
@@ -115,9 +115,9 @@ PYTHONPATH=src python3 -m network_potential_engine.scripts.run_affinity_n50_prod
 ```
 
 - Writes:
-  - `affinity/artifacts/n50/product_validity_scenarios_v1.json`
-  - `affinity/artifacts/n50/product_validity_outputs_v1.json`
-  - `affinity/artifacts/n50/product_validity_evaluation_note_v1.txt`
+  - `affinity/artifacts/n50/legacy/v1/product_validity_scenarios_v1.json`
+  - `affinity/artifacts/n50/legacy/v1/product_validity_outputs_v1.json`
+  - `affinity/artifacts/n50/legacy/v1/product_validity_evaluation_note_v1.txt`
 
 ---
 

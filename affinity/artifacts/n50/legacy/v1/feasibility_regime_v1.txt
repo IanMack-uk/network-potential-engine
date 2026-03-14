@@ -1,0 +1,18 @@
+Job 5 — Feasibility regime declaration (v1)
+
+Object:
+- W_feas(r): feasible relational investment set given node capacities r.
+
+Regime choice (frozen for Affinity n=50 v1 run):
+- Interior / unconstrained regime (constraints treated as inactive).
+
+Interpretation:
+- We proceed assuming downstream numeric work operates in the interior of W_feas(r), i.e. any feasibility constraints are non-binding for the v1 run.
+
+Inputs referenced:
+- Cohort registry: affinity/artifacts/n50/static/registry/student_registry_v1.json
+- Node capacities r: affinity/artifacts/n50/legacy/v1/node_attribute_field_v1.json
+
+Rationale (v1):
+- Current n=50 artifacts define r_i = 1.0 (constant, non-negative) for all students.
+- No explicit w / equilibrium computation is yet frozen at n=50; this job freezes the regime declaration and defines diagnostics without requiring constraints to be active.

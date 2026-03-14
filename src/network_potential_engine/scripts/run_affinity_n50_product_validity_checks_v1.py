@@ -281,9 +281,11 @@ def _scenario_s2_single_node_uplift(
 
 def main() -> int:
     repo_root = _find_repo_root(Path(__file__))
-    artifacts_dir = repo_root / "affinity" / "artifacts" / "n50"
+    artifacts_root = repo_root / "affinity" / "artifacts" / "n50"
+    artifacts_dir = artifacts_root / "generated" / "latest"
+    legacy_dir = artifacts_root / "legacy" / "v1"
 
-    export_path = artifacts_dir / "app_facing_outputs_v1.json"
+    export_path = legacy_dir / "app_facing_outputs_v1.json"
 
     scenarios_path = artifacts_dir / "product_validity_scenarios_v1.json"
     outputs_path = artifacts_dir / "product_validity_outputs_v1.json"
@@ -308,7 +310,7 @@ def main() -> int:
         "python": sys.version.split()[0],
         "platform": platform.platform(),
         "inputs": {
-            "export_ref": "affinity/artifacts/n50/app_facing_outputs_v1.json",
+            "export_ref": "affinity/artifacts/n50/legacy/v1/app_facing_outputs_v1.json",
         },
         "frozen_parameters": {
             "tol": tol,

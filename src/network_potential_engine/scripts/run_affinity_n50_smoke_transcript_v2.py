@@ -51,20 +51,22 @@ def _check_no_nan_inf(x: np.ndarray, *, name: str) -> None:
 
 def main() -> int:
     repo_root = Path(__file__).resolve().parents[3]
-    artifacts_dir = repo_root / "affinity" / "artifacts" / "n50"
+    artifacts_root = repo_root / "affinity" / "artifacts" / "n50"
+    static_dir = artifacts_root / "static"
+    latest_dir = artifacts_root / "generated" / "latest"
 
-    transcript_path = artifacts_dir / "smoke_run_transcript_v2.txt"
+    transcript_path = latest_dir / "smoke_run_transcript_v2.txt"
 
     artifact_paths = {
-        "registry": artifacts_dir / "student_registry_v1.json",
-        "source_s": artifacts_dir / "source_vector_s_v2.json",
-        "coupling_C": artifacts_dir / "coupling_operator_C_v2.json",
-        "propagated_v": artifacts_dir / "propagated_value_v_v2.json",
-        "energy_E": artifacts_dir / "node_energy_E_v2.json",
-        "energy_E_eff": artifacts_dir / "node_energy_E_eff_v2.json",
-        "export": artifacts_dir / "app_facing_outputs_v2.json",
-        "observations": artifacts_dir / "observations_v2.json",
-        "ties": artifacts_dir / "tie_strengths_w_v2.json",
+        "registry": static_dir / "registry" / "student_registry_v1.json",
+        "source_s": latest_dir / "source_vector_s_v2.json",
+        "coupling_C": latest_dir / "coupling_operator_C_v2.json",
+        "propagated_v": latest_dir / "propagated_value_v_v2.json",
+        "energy_E": latest_dir / "node_energy_E_v2.json",
+        "energy_E_eff": latest_dir / "node_energy_E_eff_v2.json",
+        "export": latest_dir / "app_facing_outputs_v2.json",
+        "observations": latest_dir / "observations_v2.json",
+        "ties": latest_dir / "tie_strengths_w_v2.json",
     }
 
     missing = [str(p) for p in artifact_paths.values() if not p.exists()]

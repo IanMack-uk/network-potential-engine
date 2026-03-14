@@ -579,7 +579,9 @@ def main() -> int:
     neo4j_mode = live_neo4j_mode or (args.neo4j_ties_json is not None)
 
     repo_root = _find_repo_root(Path(__file__).resolve())
-    artifacts_dir = repo_root / "affinity" / "artifacts" / "n50"
+    artifacts_root = repo_root / "affinity" / "artifacts" / "n50"
+    static_dir = artifacts_root / "static"
+    latest_dir = artifacts_root / "generated" / "latest"
     neo4j_dir = repo_root / "affinity" / "from_neo4j"
 
     run_id = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace(":", "-")
@@ -587,7 +589,7 @@ def main() -> int:
     snapshot_root = (
         (repo_root / str(args.snapshot_dir)).resolve()
         if str(args.snapshot_dir).strip()
-        else (artifacts_dir / "snapshots")
+        else (artifacts_root / "generated" / "snapshots")
     )
     snapshot_dir = snapshot_root / run_id
     versioned_exports_dir = snapshot_dir
@@ -595,8 +597,10 @@ def main() -> int:
         versioned_exports_dir = neo4j_dir / "_runs" / run_id
     versioned_exports_dir.mkdir(parents=True, exist_ok=True)
 
-    registry_path = artifacts_dir / "student_registry_v1.json"
-    coupling_C_v1_path = artifacts_dir / "coupling_operator_C_v1.json"
+    latest_dir.mkdir(parents=True, exist_ok=True)
+
+    registry_path = static_dir / "registry" / "student_registry_v1.json"
+    coupling_C_v1_path = artifacts_root / "legacy" / "v1" / "coupling_operator_C_v1.json"
     personal_props_path = neo4j_dir / "n50_student_personal_properties.json"
     interest_scores_path = neo4j_dir / "student_module_interest_score.json"
     participation_graph_path = neo4j_dir / "n50-student-participation-graph.json"
@@ -728,13 +732,13 @@ def main() -> int:
                             evt_counter += 1
                             w[(actor, target)] = float(w.get((actor, target), 0.0) + 1.0)
 
-        observations_path = artifacts_dir / "observations_v2.json"
+        observations_path = latest_dir / "observations_v2.json"
         _write_json(
             observations_path,
             {
                 "schema_version": "1.0",
-                "schema_ref": "affinity/artifacts/n50/observations_schema_v1.json",
-                "cohort_registry_ref": "affinity/artifacts/n50/student_registry_v1.json",
+                "schema_ref": "affinity/artifacts/n50/static/schemas/observations_schema_v1.json",
+                "cohort_registry_ref": "affinity/artifacts/n50/static/registry/student_registry_v1.json",
                 "generated": {"method": "optionB_v2_attendance_simulation", "scenario_seed": scenario_seed},
                 "events": events,
             },
@@ -763,7 +767,7 @@ def main() -> int:
                 "Neo4j tie export contains actor/target student_ids not present in registry: " + ", ".join(unknown[:10])
             )
 
-        observations_path = artifacts_dir / "observations_v2.json"
+        observations_path = latest_dir / "observations_v2.json"
         ties_source: str
         if live_neo4j_mode:
             ties_source = (
@@ -778,8 +782,8 @@ def main() -> int:
             observations_path,
             {
                 "schema_version": "1.0",
-                "schema_ref": "affinity/artifacts/n50/observations_schema_v1.json",
-                "cohort_registry_ref": "affinity/artifacts/n50/student_registry_v1.json",
+                "schema_ref": "affinity/artifacts/n50/static/schemas/observations_schema_v1.json",
+                "cohort_registry_ref": "affinity/artifacts/n50/static/registry/student_registry_v1.json",
                 "generated": {
                     "method": "optionB_v2_neo4j_authoritative_ties",
                     "scenario_seed": scenario_seed,
@@ -792,17 +796,17 @@ def main() -> int:
         created_files.append(observations_path)
 
         if neo4j_readable_json_path is not None:
-            archived_readable = artifacts_dir / neo4j_readable_json_path.name
+            archived_readable = latest_dir / neo4j_readable_json_path.name
             shutil.copy2(neo4j_readable_json_path, archived_readable)
             created_files.append(archived_readable)
 
-    source_vector_path = artifacts_dir / "source_vector_s_v2.json"
+    source_vector_path = latest_dir / "source_vector_s_v2.json"
     _write_json(
         source_vector_path,
         {
             "schema_version": "1.0",
             "name": "affinity_source_vector_s_v2",
-            "cohort_registry_ref": "affinity/artifacts/n50/student_registry_v1.json",
+            "cohort_registry_ref": "affinity/artifacts/n50/static/registry/student_registry_v1.json",
             "definition": "s_i = (Q_i * P_i) / 9.0",
             "s": s_entries,
         },
@@ -814,14 +818,14 @@ def main() -> int:
     for (a, b), wt in sorted(w.items(), key=lambda x: (x[0][0], x[0][1])):
         ties.append({"actor_student_id": a, "target_student_id": b, "w": float(wt)})
 
-    tie_strengths_path = artifacts_dir / "tie_strengths_w_v2.json"
+    tie_strengths_path = latest_dir / "tie_strengths_w_v2.json"
     _write_json(
         tie_strengths_path,
         {
             "schema_version": "1.0",
             "name": "affinity_tie_strengths_w_v2",
-            "cohort_registry_ref": "affinity/artifacts/n50/student_registry_v1.json",
-            "observations_ref": "affinity/artifacts/n50/observations_v2.json",
+            "cohort_registry_ref": "affinity/artifacts/n50/static/registry/student_registry_v1.json",
+            "observations_ref": "affinity/artifacts/n50/generated/latest/observations_v2.json",
             "definition": "w_ij = sum(weight) over events with actor=i and target=j",
             "ties": ties,
         },
@@ -830,14 +834,14 @@ def main() -> int:
 
     # Build and write data-driven coupling operator C_v2 from v2 ties
     C_v2, C_v2_policy = _coupling_operator_from_ties(student_ids=student_ids, w_directed=w)
-    coupling_v2_path = artifacts_dir / "coupling_operator_C_v2.json"
+    coupling_v2_path = latest_dir / "coupling_operator_C_v2.json"
     _write_json(
         coupling_v2_path,
         {
             "schema_version": "1.0",
             "name": "affinity_coupling_operator_C_v2",
-            "cohort_registry_ref": "affinity/artifacts/n50/student_registry_v1.json",
-            "ties_ref": "affinity/artifacts/n50/tie_strengths_w_v2.json",
+            "cohort_registry_ref": "affinity/artifacts/n50/static/registry/student_registry_v1.json",
+            "ties_ref": "affinity/artifacts/n50/generated/latest/tie_strengths_w_v2.json",
             "format": {"type": "symmetric_dense", "matrix": [[float(x) for x in row] for row in C_v2.tolist()]},
             "policy": C_v2_policy,
         },
@@ -847,15 +851,15 @@ def main() -> int:
     # Propagation + energies using data-driven C_v2
     v = np.linalg.solve(C_v2, s_vec)
 
-    propagated_path = artifacts_dir / "propagated_value_v_v2.json"
+    propagated_path = latest_dir / "propagated_value_v_v2.json"
     _write_json(
         propagated_path,
         {
             "schema_version": "1.0",
             "name": "affinity_propagated_value_v_v2",
-            "cohort_registry_ref": "affinity/artifacts/n50/student_registry_v1.json",
-            "source_vector_ref": "affinity/artifacts/n50/source_vector_s_v2.json",
-            "coupling_operator_C_ref": "affinity/artifacts/n50/coupling_operator_C_v2.json",
+            "cohort_registry_ref": "affinity/artifacts/n50/static/registry/student_registry_v1.json",
+            "source_vector_ref": "affinity/artifacts/n50/generated/latest/source_vector_s_v2.json",
+            "coupling_operator_C_ref": "affinity/artifacts/n50/generated/latest/coupling_operator_C_v2.json",
             "definition": "v = G s, computed by solving C v = s",
             "ordering": "node_index_ascending",
             "method": {"type": "solve", "solver": "numpy.linalg.solve", "numpy_only": True},
@@ -869,15 +873,15 @@ def main() -> int:
     E = beta0 * s_vec + beta1 * v
     E_eff = beta0 * s_vec + beta1 * (rho_vec * v)
 
-    energy_E_path = artifacts_dir / "node_energy_E_v2.json"
+    energy_E_path = latest_dir / "node_energy_E_v2.json"
     _write_json(
         energy_E_path,
         {
             "schema_version": "1.0",
             "name": "affinity_node_energy_E_v2",
-            "cohort_registry_ref": "affinity/artifacts/n50/student_registry_v1.json",
-            "source_vector_ref": "affinity/artifacts/n50/source_vector_s_v2.json",
-            "propagated_value_v_ref": "affinity/artifacts/n50/propagated_value_v_v2.json",
+            "cohort_registry_ref": "affinity/artifacts/n50/static/registry/student_registry_v1.json",
+            "source_vector_ref": "affinity/artifacts/n50/generated/latest/source_vector_s_v2.json",
+            "propagated_value_v_ref": "affinity/artifacts/n50/generated/latest/propagated_value_v_v2.json",
             "definition": "E = beta0*s + beta1*v",
             "ordering": "node_index_ascending",
             "parameters": {"beta0": beta0, "beta1": beta1},
@@ -886,15 +890,15 @@ def main() -> int:
     )
     created_files.append(energy_E_path)
 
-    energy_E_eff_path = artifacts_dir / "node_energy_E_eff_v2.json"
+    energy_E_eff_path = latest_dir / "node_energy_E_eff_v2.json"
     _write_json(
         energy_E_eff_path,
         {
             "schema_version": "1.0",
             "name": "affinity_node_energy_E_eff_v2",
-            "cohort_registry_ref": "affinity/artifacts/n50/student_registry_v1.json",
-            "source_vector_ref": "affinity/artifacts/n50/source_vector_s_v2.json",
-            "propagated_value_v_ref": "affinity/artifacts/n50/propagated_value_v_v2.json",
+            "cohort_registry_ref": "affinity/artifacts/n50/static/registry/student_registry_v1.json",
+            "source_vector_ref": "affinity/artifacts/n50/generated/latest/source_vector_s_v2.json",
+            "propagated_value_v_ref": "affinity/artifacts/n50/generated/latest/propagated_value_v_v2.json",
             "definition": "E_eff = beta0*s + beta1*(rho ⊙ v)",
             "ordering": "node_index_ascending",
             "parameters": {"beta0": beta0, "beta1": beta1},
@@ -930,18 +934,18 @@ def main() -> int:
             }
         )
 
-    app_outputs_path = artifacts_dir / "app_facing_outputs_v2.json"
+    app_outputs_path = latest_dir / "app_facing_outputs_v2.json"
     _write_json(
         app_outputs_path,
         {
             "schema_version": "1.0",
             "name": "affinity_app_facing_outputs_v2",
-            "cohort_registry_ref": "affinity/artifacts/n50/student_registry_v1.json",
+            "cohort_registry_ref": "affinity/artifacts/n50/static/registry/student_registry_v1.json",
             "inputs": {
-                "source_vector_ref": "affinity/artifacts/n50/source_vector_s_v2.json",
-                "propagated_value_v_ref": "affinity/artifacts/n50/propagated_value_v_v2.json",
-                "energy_E_ref": "affinity/artifacts/n50/node_energy_E_v2.json",
-                "energy_E_eff_ref": "affinity/artifacts/n50/node_energy_E_eff_v2.json",
+                "source_vector_ref": "affinity/artifacts/n50/generated/latest/source_vector_s_v2.json",
+                "propagated_value_v_ref": "affinity/artifacts/n50/generated/latest/propagated_value_v_v2.json",
+                "energy_E_ref": "affinity/artifacts/n50/generated/latest/node_energy_E_v2.json",
+                "energy_E_eff_ref": "affinity/artifacts/n50/generated/latest/node_energy_E_eff_v2.json",
             },
             "canonical_score": "E_eff",
             "top_k": top_k,
@@ -954,7 +958,7 @@ def main() -> int:
 
     if args.snapshot:
         snapshot_dir = _snapshot_run(
-            artifacts_dir=artifacts_dir,
+            artifacts_dir=latest_dir,
             snapshot_root=snapshot_root,
             run_id=run_id,
             extra_files=extra_snapshot_files,
@@ -1130,7 +1134,7 @@ def main() -> int:
                 ]
             lines.append("\t".join(row))
 
-        report_path = artifacts_dir / "optionB_v2_audit_report.txt"
+        report_path = latest_dir / "optionB_v2_audit_report.txt"
         report_path.write_text("\n".join(lines) + "\n")
         print(report_path.read_text())
         print(f"Wrote audit report: {report_path}")

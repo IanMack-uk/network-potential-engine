@@ -1,0 +1,194 @@
+{
+  "schema_version": "1.0",
+  "schema_ref": "affinity/artifacts/n50/static/schemas/observations_schema_v1.json",
+  "cohort_registry_ref": "affinity/artifacts/n50/static/registry/student_registry_v1.json",
+  "generated": {
+    "method": "deterministic_mock",
+    "seed": 0
+  },
+  "events": [
+    {
+      "event_id": "evt_0001",
+      "timestamp": "2026-03-12T00:00:00Z",
+      "event_type": "interaction",
+      "actor_student_id": "urn:qc:person:ulid:01KFHJVET7C3NPVJJASQ6XBHNS",
+      "target_student_id": "urn:qc:person:ulid:01KFHJVET7FCS04EY72A91H291",
+      "weight": 1.0,
+      "channel": "message",
+      "metadata": {
+        "pii": false
+      }
+    },
+    {
+      "event_id": "evt_0002",
+      "timestamp": "2026-03-12T00:05:00Z",
+      "event_type": "interaction",
+      "actor_student_id": "urn:qc:person:ulid:01KFHJVET7FCS04EY72A91H291",
+      "target_student_id": "urn:qc:person:ulid:01KFHJVET87QPW012QEP4K876X",
+      "weight": 2.0,
+      "channel": "message"
+    },
+    {
+      "event_id": "evt_0003",
+      "timestamp": "2026-03-12T00:10:00Z",
+      "event_type": "interaction",
+      "actor_student_id": "urn:qc:person:ulid:01KFHJVET87QPW012QEP4K876X",
+      "target_student_id": "urn:qc:person:ulid:01KFHJVET830R2DFB3X062V2Q9",
+      "weight": 1.5,
+      "channel": "in_person"
+    },
+    {
+      "event_id": "evt_0004",
+      "timestamp": "2026-03-12T00:15:00Z",
+      "event_type": "interaction",
+      "actor_student_id": "urn:qc:person:ulid:01KFHJVET830R2DFB3X062V2Q9",
+      "target_student_id": "urn:qc:person:ulid:01KFHJVET856H2A0RVBC0SZSZ2",
+      "weight": 3.0,
+      "channel": "message"
+    },
+    {
+      "event_id": "evt_0005",
+      "timestamp": "2026-03-12T00:20:00Z",
+      "event_type": "interaction",
+      "actor_student_id": "urn:qc:person:ulid:01KFHJVET856H2A0RVBC0SZSZ2",
+      "target_student_id": "urn:qc:person:ulid:01KFHJVET802Q3ZCEM1ZGMPWTG",
+      "weight": 0.5,
+      "channel": "message"
+    },
+    {
+      "event_id": "evt_0006",
+      "timestamp": "2026-03-12T00:25:00Z",
+      "event_type": "interaction",
+      "actor_student_id": "urn:qc:person:ulid:01KFHJVET802Q3ZCEM1ZGMPWTG",
+      "target_student_id": "urn:qc:person:ulid:01KFHJVET8ZCCXS2Z6AD52ZE65",
+      "weight": 2.5,
+      "channel": "in_person"
+    },
+    {
+      "event_id": "evt_0007",
+      "timestamp": "2026-03-12T00:30:00Z",
+      "event_type": "interaction",
+      "actor_student_id": "urn:qc:person:ulid:01KFHJVET8ZCCXS2Z6AD52ZE65",
+      "target_student_id": "urn:qc:person:ulid:01KFHJVET80QWZ5EQYJD8WH0PR",
+      "weight": 1.25,
+      "channel": "message"
+    },
+    {
+      "event_id": "evt_0008",
+      "timestamp": "2026-03-12T00:35:00Z",
+      "event_type": "interaction",
+      "actor_student_id": "urn:qc:person:ulid:01KFHJVET80QWZ5EQYJD8WH0PR",
+      "target_student_id": "urn:qc:person:ulid:01KFHJVET763FG4SJFE361MCW3",
+      "weight": 4.0,
+      "channel": "message"
+    },
+    {
+      "event_id": "evt_0009",
+      "timestamp": "2026-03-12T00:40:00Z",
+      "event_type": "interaction",
+      "actor_student_id": "urn:qc:person:ulid:01KFHJVET763FG4SJFE361MCW3",
+      "target_student_id": "urn:qc:person:ulid:01KFHJVET7DBNMAXJKDHX157SJ",
+      "weight": 0.75,
+      "channel": "in_person"
+    },
+    {
+      "event_id": "evt_0010",
+      "timestamp": "2026-03-12T00:45:00Z",
+      "event_type": "interaction",
+      "actor_student_id": "urn:qc:person:ulid:01KFHJVET7DBNMAXJKDHX157SJ",
+      "target_student_id": "urn:qc:person:ulid:01KFHJVET7CANJ7WWMM5WRQBW2",
+      "weight": 1.0,
+      "channel": "message"
+    },
+    {
+      "event_id": "evt_0011",
+      "timestamp": "2026-03-12T00:50:00Z",
+      "event_type": "interaction",
+      "actor_student_id": "urn:qc:person:ulid:01KFHJVET7CANJ7WWMM5WRQBW2",
+      "target_student_id": "urn:qc:person:ulid:01KFHJVET7C3NPVJJASQ6XBHNS",
+      "weight": 2.25,
+      "channel": "message"
+    },
+    {
+      "event_id": "evt_0012",
+      "timestamp": "2026-03-12T00:55:00Z",
+      "event_type": "interaction",
+      "actor_student_id": "urn:qc:person:ulid:01KFHJVET7C3NPVJJASQ6XBHNS",
+      "target_student_id": "urn:qc:person:ulid:01KFHJVET87QPW012QEP4K876X",
+      "weight": 1.0,
+      "channel": "in_person"
+    },
+    {
+      "event_id": "evt_0013",
+      "timestamp": "2026-03-12T01:00:00Z",
+      "event_type": "interaction",
+      "actor_student_id": "urn:qc:person:ulid:01KFHJVET7FCS04EY72A91H291",
+      "target_student_id": "urn:qc:person:ulid:01KFHJVET830R2DFB3X062V2Q9",
+      "weight": 0.25,
+      "channel": "message"
+    },
+    {
+      "event_id": "evt_0014",
+      "timestamp": "2026-03-12T01:05:00Z",
+      "event_type": "interaction",
+      "actor_student_id": "urn:qc:person:ulid:01KFHJVET87QPW012QEP4K876X",
+      "target_student_id": "urn:qc:person:ulid:01KFHJVET856H2A0RVBC0SZSZ2",
+      "weight": 3.5,
+      "channel": "message"
+    },
+    {
+      "event_id": "evt_0015",
+      "timestamp": "2026-03-12T01:10:00Z",
+      "event_type": "interaction",
+      "actor_student_id": "urn:qc:person:ulid:01KFHJVET830R2DFB3X062V2Q9",
+      "target_student_id": "urn:qc:person:ulid:01KFHJVET802Q3ZCEM1ZGMPWTG",
+      "weight": 1.75,
+      "channel": "in_person"
+    },
+    {
+      "event_id": "evt_0016",
+      "timestamp": "2026-03-12T01:15:00Z",
+      "event_type": "interaction",
+      "actor_student_id": "urn:qc:person:ulid:01KFHJVET856H2A0RVBC0SZSZ2",
+      "target_student_id": "urn:qc:person:ulid:01KFHJVET8ZCCXS2Z6AD52ZE65",
+      "weight": 2.0,
+      "channel": "message"
+    },
+    {
+      "event_id": "evt_0017",
+      "timestamp": "2026-03-12T01:20:00Z",
+      "event_type": "interaction",
+      "actor_student_id": "urn:qc:person:ulid:01KFHJVET802Q3ZCEM1ZGMPWTG",
+      "target_student_id": "urn:qc:person:ulid:01KFHJVET80QWZ5EQYJD8WH0PR",
+      "weight": 0.5,
+      "channel": "message"
+    },
+    {
+      "event_id": "evt_0018",
+      "timestamp": "2026-03-12T01:25:00Z",
+      "event_type": "interaction",
+      "actor_student_id": "urn:qc:person:ulid:01KFHJVET8ZCCXS2Z6AD52ZE65",
+      "target_student_id": "urn:qc:person:ulid:01KFHJVET7DBNMAXJKDHX157SJ",
+      "weight": 1.0,
+      "channel": "in_person"
+    },
+    {
+      "event_id": "evt_0019",
+      "timestamp": "2026-03-12T01:30:00Z",
+      "event_type": "interaction",
+      "actor_student_id": "urn:qc:person:ulid:01KFHJVET80QWZ5EQYJD8WH0PR",
+      "target_student_id": "urn:qc:person:ulid:01KFHJVET7CANJ7WWMM5WRQBW2",
+      "weight": 2.0,
+      "channel": "message"
+    },
+    {
+      "event_id": "evt_0020",
+      "timestamp": "2026-03-12T01:35:00Z",
+      "event_type": "interaction",
+      "actor_student_id": "urn:qc:person:ulid:01KFHJVET763FG4SJFE361MCW3",
+      "target_student_id": "urn:qc:person:ulid:01KFHJVET7C3NPVJJASQ6XBHNS",
+      "weight": 1.25,
+      "channel": "message"
+    }
+  ]
+}

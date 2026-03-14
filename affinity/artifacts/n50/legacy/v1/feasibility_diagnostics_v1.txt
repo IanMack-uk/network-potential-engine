@@ -1,0 +1,32 @@
+Job 5 — Feasibility diagnostics output (v1)
+
+Purpose:
+- Provide minimal, auditable feasibility diagnostics for the declared regime (interior/unconstrained) for the Affinity n=50 run.
+
+Inputs:
+- NodeAttributeField: affinity/artifacts/n50/legacy/v1/node_attribute_field_v1.json
+- Cohort registry: affinity/artifacts/n50/static/registry/student_registry_v1.json
+- Regime declaration: affinity/artifacts/n50/legacy/v1/feasibility_regime_v1.txt
+
+Diagnostics (computed from committed artifacts):
+
+1) Capacity vector summary (r)
+- Record count (node_attributes): 50
+- r_i min: 1.0
+- r_i max: 1.0
+- r_i mean: 1.0
+- r_i non-negativity violations (r_i < 0): 0
+
+2) PII / extras policy sanity
+- extras present for all records: YES
+- extras all empty objects: YES
+- Result: PASS
+
+3) Regime compatibility note (interior / unconstrained)
+- No explicit w (relational investment variable) is frozen at n=50 in v1.
+- Therefore feasibility is assessed at the level of inputs to the feasible set (capacities r) and the presence/absence of violations in r.
+- Result: PASS
+
+Conclusion:
+- The declared regime is interior/unconstrained for v1.
+- Capacity inputs r are valid and contain no violations.

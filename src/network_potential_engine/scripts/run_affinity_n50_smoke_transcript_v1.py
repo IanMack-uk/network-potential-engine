@@ -45,18 +45,21 @@ def _ranking_indices_by_policy(score: np.ndarray, *, top_k: int) -> list[int]:
 
 def main() -> int:
     repo_root = Path(__file__).resolve().parents[3]
-    artifacts_dir = repo_root / "affinity" / "artifacts" / "n50"
+    artifacts_root = repo_root / "affinity" / "artifacts" / "n50"
+    static_dir = artifacts_root / "static"
+    legacy_dir = artifacts_root / "legacy" / "v1"
+    latest_dir = artifacts_root / "generated" / "latest"
 
-    transcript_path = artifacts_dir / "smoke_run_transcript_v1.txt"
+    transcript_path = latest_dir / "smoke_run_transcript_v1.txt"
 
     artifact_paths = {
-        "registry": artifacts_dir / "student_registry_v1.json",
-        "source_s": artifacts_dir / "source_vector_s_v1.json",
-        "coupling_C": artifacts_dir / "coupling_operator_C_v1.json",
-        "propagated_v": artifacts_dir / "propagated_value_v_v1.json",
-        "energy_E": artifacts_dir / "node_energy_E_v1.json",
-        "energy_E_eff": artifacts_dir / "node_energy_E_eff_v1.json",
-        "export": artifacts_dir / "app_facing_outputs_v1.json",
+        "registry": static_dir / "registry" / "student_registry_v1.json",
+        "source_s": legacy_dir / "source_vector_s_v1.json",
+        "coupling_C": legacy_dir / "coupling_operator_C_v1.json",
+        "propagated_v": legacy_dir / "propagated_value_v_v1.json",
+        "energy_E": legacy_dir / "node_energy_E_v1.json",
+        "energy_E_eff": legacy_dir / "node_energy_E_eff_v1.json",
+        "export": legacy_dir / "app_facing_outputs_v1.json",
     }
 
     missing = [str(p) for p in artifact_paths.values() if not p.exists()]

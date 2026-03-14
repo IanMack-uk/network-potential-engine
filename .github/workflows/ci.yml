@@ -61,10 +61,10 @@ jobs:
           name: affinity-n50-transcripts
           if-no-files-found: error
           path: |
-            affinity/artifacts/n50/smoke_run_transcript_v1.txt
-            affinity/artifacts/n50/product_validity_scenarios_v1.json
-            affinity/artifacts/n50/product_validity_outputs_v1.json
-            affinity/artifacts/n50/product_validity_evaluation_note_v1.txt
+            affinity/artifacts/n50/legacy/v1/smoke_run_transcript_v1.txt
+            affinity/artifacts/n50/legacy/v1/product_validity_scenarios_v1.json
+            affinity/artifacts/n50/legacy/v1/product_validity_outputs_v1.json
+            affinity/artifacts/n50/legacy/v1/product_validity_evaluation_note_v1.txt
 
       - name: Upload Affinity v2 transcripts
         uses: actions/upload-artifact@v4
@@ -72,10 +72,10 @@ jobs:
           name: affinity-n50-v2-transcripts
           if-no-files-found: error
           path: |
-            affinity/artifacts/n50/full_pipeline_transcript_v2.txt
-            affinity/artifacts/n50/smoke_run_transcript_v2.txt
-            affinity/artifacts/n50/optionB_v2_audit_report.txt
-            affinity/artifacts/n50/data_driven_full_audit_transcript_v2.txt
+            affinity/artifacts/n50/generated/latest/full_pipeline_transcript_v2.txt
+            affinity/artifacts/n50/generated/latest/smoke_run_transcript_v2.txt
+            affinity/artifacts/n50/generated/latest/optionB_v2_audit_report.txt
+            affinity/artifacts/n50/generated/latest/data_driven_full_audit_transcript_v2.txt
 
       - name: Upload Affinity v2 product validity
         uses: actions/upload-artifact@v4
@@ -83,6 +83,6 @@ jobs:
           name: affinity-n50-v2-product-validity
           if-no-files-found: error
           path: |
-            affinity/artifacts/n50/product_validity_scenarios_v2.json
-            affinity/artifacts/n50/product_validity_outputs_v2.json
-            affinity/artifacts/n50/product_validity_evaluation_note_v2.txt
+            affinity/artifacts/n50/generated/latest/product_validity_scenarios_v2.json
+            affinity/artifacts/n50/generated/latest/product_validity_outputs_v2.json
+            affinity/artifacts/n50/generated/latest/product_validity_evaluation_note_v2.txt

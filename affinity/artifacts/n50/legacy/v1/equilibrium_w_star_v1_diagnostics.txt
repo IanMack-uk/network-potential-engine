@@ -1,0 +1,46 @@
+Job 7 — Equilibrium candidate w* diagnostics (v1)
+
+Artifacts:
+- w* artifact: affinity/artifacts/n50/legacy/v1/equilibrium_w_star_v1.json
+- Φ/θ params: affinity/artifacts/n50/legacy/v1/potential_phi_and_theta_params_v1.json
+- Φ/θ spec: affinity/artifacts/n50/static/specs/potential_phi_and_theta_spec_v1.md
+- Feasibility regime: affinity/artifacts/n50/legacy/v1/feasibility_regime_v1.txt
+
+Method
+- Type: analytic_linear_solve (NumPy-only)
+- Reason: For the frozen TDC potential with θ fixed, the stationarity condition F(w,θ)=0 reduces to a linear system.
+
+Frozen parameters used (from Job 6 params)
+- q = base_quadratic_weight = 1.0
+- alpha = theta_curvature_weight = 0.2
+- c = coupling_weight = 0.5
+- n = 50
+- θ policy: θ := s, ordered by node_index (Job 4)
+- For v1: s_i = 1.0 for all i ⇒ θ_i = 1.0 for all i
+
+Stationarity equation solved
+- F(w,θ) := ∇_w Φ(w,θ)
+- For Φ = theta_dependent_curvature_potential, stationarity yields:
+  (diag(q + alpha*θ) + c*L_path) w = θ
+  where L_path is the path-graph Laplacian induced by sum_{i}(w_i - w_{i+1})^2.
+
+Diagnostics (computed)
+- w*_min: 0.8333333333333330
+- w*_max: 0.8333333333333334
+- w*_mean: 0.8333333333333331
+- Residual (L2) ||θ - A w*||_2: 7.850462293418876e-16
+- Residual (L∞) max_i |θ_i - (A w*)_i|: 4.440892098500626e-16
+- Condition number (2-norm) cond2(A): 2.665022273690227
+
+Constraint status
+- Declared regime (Job 5): interior/unconstrained.
+- No explicit constraints were enforced in this computation.
+
+Pass/fail thresholds (frozen for v1)
+- PASS if:
+  - residual_l2 <= 1e-10
+  - residual_linf <= 1e-10
+  - all entries of w* are finite
+
+Result
+- PASS

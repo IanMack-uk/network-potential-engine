@@ -9,13 +9,9 @@ docs/cascade_instructions
 docs/development_plan
 docs/chat_conversations
 docs/reviews
-affinity/artifacts/n50/snapshots/
-affinity/artifacts/n50/*_v2.json
-affinity/artifacts/n50/optionB_v2_audit_report.txt
-affinity/artifacts/n50/tie_type_and_strength_readable.json
+affinity/artifacts/n50/generated/snapshots/
+affinity/artifacts/n50/generated/latest/
+affinity/artifacts/n50/inputs/neo4j/tie_type_and_strength_readable.json
 affinity/from_neo4j/student_module_interest_score.json
 affinity/from_neo4j/tie_strength_code_data_live.json
 affinity/from_neo4j/tie_type_and_strength_readable.json
-affinity/artifacts/n50/product_validity_scenarios_v2.json
-affinity/artifacts/n50/product_validity_outputs_v2.json
-affinity/artifacts/n50/product_validity_evaluation_note_v2.txt

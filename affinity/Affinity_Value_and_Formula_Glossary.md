@@ -20,7 +20,7 @@ This file documents the **named values / symbols** used in the current Affinity 
 
 - **Meaning**: Cohort node set (students).
 - **Concrete representation**:
-  - `affinity/artifacts/n50/student_registry_v1.json`
+  - `affinity/artifacts/n50/static/registry/student_registry_v1.json`
 - **Notes**:
   - All vectors and operators are expressed in **`node_index` ascending** order.
 
@@ -44,7 +44,7 @@ This file documents the **named values / symbols** used in the current Affinity 
 
 - **Meaning**: A log of observed interactions (or derived interactions) used to infer student–student relationships.
 - **Schema reference**:
-  - `affinity/artifacts/n50/observations_schema_v1.json`
+  - `affinity/artifacts/n50/static/schemas/observations_schema_v1.json`
 - **Canonical fields**:
   - `event_id`
   - `timestamp`
@@ -77,7 +77,7 @@ This file documents the **named values / symbols** used in the current Affinity 
 
 - **Meaning**: Per-student attribute bundle (capacities/constraints/etc.).
 - **Concrete representation**:
-  - `affinity/artifacts/n50/node_attribute_field_v1.json`
+  - `affinity/artifacts/n50/legacy/v1/node_attribute_field_v1.json`
 - **Key v1 attribute**:
   - `r` (capacity) (currently constant `1.0` for all nodes)
 
@@ -85,7 +85,7 @@ This file documents the **named values / symbols** used in the current Affinity 
 
 - **Meaning**: Policy that maps upstream observations/attributes into the intrinsic source signal.
 - **v1 artifact**:
-  - `affinity/artifacts/n50/source_mapping_psi_v1.txt`
+  - `affinity/artifacts/n50/static/specs/source_mapping_psi_v1.txt`
 - **Current status**:
   - v1 is a frozen placeholder mapping.
 
@@ -93,7 +93,7 @@ This file documents the **named values / symbols** used in the current Affinity 
 
 - **Meaning (app)**: Per-student intrinsic source value signal (value created at that source/person).
 - **Representation**:
-  - `affinity/artifacts/n50/source_vector_s_v1.json`
+  - `affinity/artifacts/n50/legacy/v1/source_vector_s_v1.json`
   - Stored as a list of `{student_id, s}` pairs.
 - **v1 policy**:
   - `s_i = 1.0` for all students.
@@ -117,7 +117,7 @@ This file documents the **named values / symbols** used in the current Affinity 
 
 - **Meaning (math)**: Coupling operator used for propagation; in the framework it corresponds to a Hessian-derived operator from the potential at equilibrium.
 - **Representation**:
-  - `affinity/artifacts/n50/coupling_operator_C_v1.json`
+  - `affinity/artifacts/n50/legacy/v1/coupling_operator_C_v1.json`
 - **v1 format**:
   - symmetric tridiagonal.
 
@@ -126,8 +126,8 @@ This file documents the **named values / symbols** used in the current Affinity 
 - **Meaning**: The inverse operator `G = C^{-1}` (applied via solves rather than materializing the matrix).
 - **Representation**:
   - Policy + diagnostics:
-    - `affinity/artifacts/n50/green_operator_G_v1_policy.txt`
-    - `affinity/artifacts/n50/green_operator_G_v1_diagnostics.txt`
+    - `affinity/artifacts/n50/static/specs/green_operator_G_v1_policy.txt`
+    - `affinity/artifacts/n50/legacy/v1/green_operator_G_v1_diagnostics.txt`
 
 ### `v` (propagated value)
 
@@ -136,9 +136,9 @@ This file documents the **named values / symbols** used in the current Affinity 
   - `v = G s`
   - equivalently: solve `C v = s`
 - **Representation**:
-  - `affinity/artifacts/n50/propagated_value_v_v1.json`
+  - `affinity/artifacts/n50/legacy/v1/propagated_value_v_v1.json`
 - **Diagnostics**:
-  - `affinity/artifacts/n50/propagated_value_v_v1_residual.txt`
+  - `affinity/artifacts/n50/legacy/v1/propagated_value_v_v1_residual.txt`
 
 ---
 
@@ -155,7 +155,7 @@ This file documents the **named values / symbols** used in the current Affinity 
 
 - **Meaning**: A score derived from `s` and `v`.
 - **v1 representation**:
-  - `affinity/artifacts/n50/node_energy_E_v1.json`
+  - `affinity/artifacts/n50/legacy/v1/node_energy_E_v1.json`
 - **Notes**:
   - In v1, this is computed consistently with the declared parameterization.
 
@@ -188,7 +188,7 @@ This file documents the **named values / symbols** used in the current Affinity 
       - `late_majority → 1.05`
       - `laggard → 1.10`
 - **Representation**:
-  - Stored in `affinity/artifacts/n50/node_energy_E_eff_v1.json`.
+  - Stored in `affinity/artifacts/n50/legacy/v1/node_energy_E_eff_v1.json`.
 
 ### `E_eff` (effective energy / canonical score)
 
@@ -197,9 +197,9 @@ This file documents the **named values / symbols** used in the current Affinity 
   - `E_eff = β0 * s + β1 * (rho ⊙ v)`
   - where `⊙` denotes elementwise multiplication.
 - **Representation**:
-  - `affinity/artifacts/n50/node_energy_E_eff_v1.json`
+  - `affinity/artifacts/n50/legacy/v1/node_energy_E_eff_v1.json`
 - **Canonical score declaration**:
-  - `affinity/artifacts/n50/node_energy_canonical_score_v1.txt`
+  - `affinity/artifacts/n50/legacy/v1/node_energy_canonical_score_v1.txt`
 
 ---
 
@@ -209,7 +209,7 @@ This file documents the **named values / symbols** used in the current Affinity 
 
 - **Meaning**: Sorted list of students by canonical score.
 - **v1 export**:
-  - `affinity/artifacts/n50/app_facing_outputs_v1.json`
+  - `affinity/artifacts/n50/legacy/v1/app_facing_outputs_v1.json`
 - **v1 sorting policy (frozen)**:
   - sort key: `(-score, node_index)`
   - score: `E_eff`

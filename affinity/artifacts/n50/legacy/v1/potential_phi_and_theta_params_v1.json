@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "name": "affinity_potential_phi_and_theta_params_v1",
+  "phi": {
+    "implementation": {
+      "function": "theta_dependent_curvature_potential",
+      "module": "src/network_potential_engine/symbolic/potential.py"
+    },
+    "parameters": {
+      "base_quadratic_weight": 1.0,
+      "theta_curvature_weight": 0.2,
+      "coupling_weight": 0.5
+    }
+  },
+  "theta": {
+    "meaning": "per-node parameter vector used by Phi",
+    "construction": {
+      "policy": "theta_equals_source_vector_s",
+      "source_vector_ref": "affinity/artifacts/n50/legacy/v1/source_vector_s_v1.json",
+      "cohort_registry_ref": "affinity/artifacts/n50/static/registry/student_registry_v1.json",
+      "ordering": "node_index_ascending",
+      "notes": "For v1, source_vector_s_v1.json defines s_i=1.0 for all students; therefore theta is constant 1.0 for all nodes when constructed by this policy."
+    }
+  },
+  "evidence_spec_ref": "affinity/artifacts/n50/static/specs/potential_phi_and_theta_spec_v1.md"
+}
