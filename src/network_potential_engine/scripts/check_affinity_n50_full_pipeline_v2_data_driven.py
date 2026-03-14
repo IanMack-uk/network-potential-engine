@@ -5,6 +5,7 @@ import json
 import os
 import platform
 import subprocess
+import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -53,11 +54,11 @@ def _tier_1_to_5(x: str) -> int:
 
 def _rho(cat: str) -> float:
     m = {
-        "innovator": 0.90,
-        "early_adopter": 0.95,
+        "innovator": 1.10,
+        "early_adopter": 1.05,
         "early_majority": 1.00,
-        "late_majority": 1.05,
-        "laggard": 1.10,
+        "late_majority": 0.95,
+        "laggard": 0.90,
     }
     if cat not in m:
         raise ValueError(f"Unexpected adopterCategory enum: {cat!r}")
@@ -172,6 +173,35 @@ def main() -> int:
         help="Print full per-student tables for each stage (large output).",
     )
     parser.add_argument(
+        "--regen",
+        action="store_true",
+        help="Regenerate v2 Affinity n=50 artifacts (Option B) before running checks.",
+    )
+    parser.add_argument(
+        "--neo4j-ties-json",
+        type=str,
+        default="",
+        help=(
+            "Optional path (relative to repo root) to Neo4j-exported directed tie weights JSON. "
+            "If provided, it will be passed through to the v2 artifact generator during --regen."
+        ),
+    )
+    parser.add_argument(
+        "--neo4j-readable-json",
+        type=str,
+        default="",
+        help=(
+            "Optional path (relative to repo root) to Neo4j-exported readable tie table JSON. "
+            "If provided, it will be passed through to the v2 artifact generator during --regen."
+        ),
+    )
+    parser.add_argument(
+        "--seed",
+        type=str,
+        default="",
+        help="Optional scenario seed to pass through to the v2 artifact generator when using --regen.",
+    )
+    parser.add_argument(
         "--out",
         type=str,
         default="",
@@ -203,6 +233,24 @@ def main() -> int:
         artifacts_dir=repo_root / "affinity" / "artifacts" / "n50",
         neo4j_dir=repo_root / "affinity" / "from_neo4j",
     )
+
+    if args.regen:
+        gen_script = repo_root / "src" / "network_potential_engine" / "scripts" / "run_affinity_n50_generate_artifacts_v2_optionB.py"
+        if not gen_script.exists():
+            raise RuntimeError(f"Could not find v2 artifact generator script: {gen_script}")
+
+        cmd = [sys.executable, str(gen_script)]
+        if args.seed:
+            cmd.extend(["--seed", str(args.seed)])
+        if args.neo4j_ties_json:
+            cmd.extend(["--neo4j-ties-json", str(args.neo4j_ties_json)])
+        if args.neo4j_readable_json:
+            cmd.extend(["--neo4j-readable-json", str(args.neo4j_readable_json)])
+
+        section("Regen: running v2 artifact generator (Option B)")
+        emit("command: " + " ".join(cmd))
+        subprocess.check_call(cmd, cwd=str(repo_root))
+        emit("")
 
     section("Affinity n=50 full pipeline check (v2, data-driven)")
     emit(f"timestamp_utc: {datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')}")
@@ -454,11 +502,11 @@ def main() -> int:
 
         emit("Frozen policy:")
         emit("- adopterCategory -> rho mapping:")
-        emit("  - innovator: 0.90")
-        emit("  - early_adopter: 0.95")
+        emit("  - innovator: 1.10")
+        emit("  - early_adopter: 1.05")
         emit("  - early_majority: 1.00")
-        emit("  - late_majority: 1.05")
-        emit("  - laggard: 1.10")
+        emit("  - late_majority: 0.95")
+        emit("  - laggard: 0.90")
         emit("")
 
         rho_art = np.asarray(Eeff_obj["rho"], dtype=float).reshape(-1)

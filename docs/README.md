@@ -3,6 +3,7 @@
 ## Table of Contents
 
 - [Specification Map](#specification-map)
+- [How to Run Affinity v2 (Live Neo4j)](how_to_run_affinity_v2_live_neo4j.md)
 - [Certification Architecture](certification_framework.md)
 - [Verification Boundary](verification_boundary.md)
 - [Theorem–Pipeline Bridge](theorem_pipeline_bridge.md)

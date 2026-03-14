@@ -6,6 +6,10 @@
 
 - Jobs 0–14 are implemented at n=50 scale with concrete artifacts under:
   - `affinity/artifacts/n50/`
+- The v2 generator supports a Neo4j-authoritative mode that pulls inputs live from Aura and writes a per-run snapshot bundle:
+  - runner: `src/network_potential_engine/scripts/run_affinity_n50_generate_artifacts_v2_optionB.py`
+  - how-to: `docs/how_to_run_affinity_v2_live_neo4j.md`
+  - snapshots: `affinity/artifacts/n50/snapshots/<run_id>/`
 - There is a one-command verification transcript (Job 13) that re-checks the key invariants for Jobs 6–12 and writes an auditable transcript:
   - `affinity/artifacts/n50/smoke_run_transcript_v1.txt`
 - There is a “product validity harness” (Job 14) that runs two scenarios and writes:

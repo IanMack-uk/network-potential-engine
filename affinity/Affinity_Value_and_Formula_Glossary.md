@@ -91,7 +91,7 @@ This file documents the **named values / symbols** used in the current Affinity 
 
 ### `s` (source vector)
 
-- **Meaning (app)**: Per-student intrinsic priority/need signal.
+- **Meaning (app)**: Per-student intrinsic source value signal (value created at that source/person).
 - **Representation**:
   - `affinity/artifacts/n50/source_vector_s_v1.json`
   - Stored as a list of `{student_id, s}` pairs.
@@ -250,17 +250,33 @@ These items are not part of v1, but are being defined as a deterministic mock re
 
 ### Attendance propensity `a_i`
 
-- **Meaning**: Per-student overall attendance tendency (e.g., mean ~55%).
-- **Status**: Policy TBD (deterministic bell-curve assignment).
+- **Meaning**: Per-participation attendance probability (stored on `Participation` as `attendance_probability_score`).
+- **Status**: Implemented in Neo4j (authoritative) as a band/attribute-driven baseline plus interest and wellbeing offsets.
+- **Notes**:
+  - The baseline includes offsets from `Person.reliabilityBand`, `Person.initiativeBand`, `Person.openToCollaborate`, `Person.openToWork`.
+  - Wellbeing offsets include:
+    - `Person.lifeStabilityLsb` (LSB): larger attendance offset.
+    - `Person.lifeSatisfactionLsf` (LSF): smaller “mood / engagement” offset.
+  - Per-module interest weight is applied multiplicatively to the baseline probability.
+  - Coefficients (frozen):
+    - `k_lsb = 0.06`
+    - `k_lsf = 0.02`
+    - `k_interest = 0.15`
+  - Definitions (frozen):
+    - `life_off = k_lsb * ((coalesce(lifeStabilityLsb, 5.5) - 5.5) / 4.5)`
+    - `mood_off = k_lsf * ((coalesce(lifeSatisfactionLsf, 5.5) - 5.5) / 4.5)`
+    - `a_raw = 0.55 + rel_off + init_off + collab_off + work_off + life_off + mood_off`
+    - `a_i = clamp(a_raw, 0.20, 0.95)`
+    - `p_raw = a_i * (1.0 + k_interest * interest)`
+    - `attendance_probability_score = clamp(p_raw, 0.0, 1.0)`
 
 ### Interest factor `t_{i,m}`
 
 - **Meaning**: Per-student per-module interest strength.
-- **Proposed source**:
-  - `affinity/from_neo4j/n5_students_module_share_tags.json`
-- **Frozen rule (agreed)**:
-  - missing record ⇒ `t=0` ⇒ multiplier `1.00`
-  - otherwise attendance multiplier: `mult = 1.00 + 0.05 * t`, with `p = min(1.00, a_i * mult)`
+- **Source**:
+  - `affinity/from_neo4j/student_module_interest_score.json`
+- **Rule (current)**:
+  - The Neo4j runbook reads `INTERESTED_IN.weight` for the `(Person)-[:INTERESTED_IN]->(Event)` edge and applies an interest multiplier to the attendance baseline.
 
 ---
 

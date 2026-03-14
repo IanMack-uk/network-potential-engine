@@ -29,6 +29,14 @@ This ledger therefore distinguishes between:
 The Affinity pipeline should be interpreted primarily as a **data‑driven
 audit and deterministic replay system**, not a formal theorem prover.
 
+Evidence for a given run may be stored either as the latest outputs under:
+
+- `affinity/artifacts/n50/`
+
+or as a per-run provenance bundle under:
+
+- `affinity/artifacts/n50/snapshots/<run_id>/`
+
 Key caveats for interpreting the current audited run:
 
 - source-score and receptivity heterogeneity may be limited in the current audited setup,

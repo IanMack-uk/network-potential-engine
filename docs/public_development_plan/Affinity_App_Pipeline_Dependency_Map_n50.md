@@ -14,6 +14,8 @@ It translates the framework’s object layers (P-series) into concrete **jobs** 
 
 This document is **not itself a theorem specification**. It is a planning artifact that enumerates what must be built, in what order, and what “done” means.
 
+Note: for the current v2 implementation, the pipeline supports pulling inputs live from Neo4j Aura and writing per-run provenance bundles under `affinity/artifacts/n50/snapshots/<run_id>/`. See `docs/how_to_run_affinity_v2_live_neo4j.md`.
+
 ---
 
 ## Status indicators

@@ -1,0 +1,3942 @@
+[
+  {
+    "type": "procedure",
+    "name": "apoc.algo.aStar",
+    "text": "Runs the A* search algorithm to find the optimal path between two `NODE` values, using the given `RELATIONSHIP` property name for the cost function.",
+    "signature": "apoc.algo.aStar(startNode :: NODE, endNode :: NODE, relTypesAndDirections :: STRING, weightPropertyName :: STRING, latPropertyName :: STRING, lonPropertyName :: STRING) :: (path :: PATH, weight :: FLOAT)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.algo.aStarConfig",
+    "text": "Runs the A* search algorithm to find the optimal path between two `NODE` values, using the given `RELATIONSHIP` property name for the cost function.\nThis procedure looks for weight, latitude and longitude properties in the config.",
+    "signature": "apoc.algo.aStarConfig(startNode :: NODE, endNode :: NODE, relTypesAndDirections :: STRING, config :: MAP) :: (path :: PATH, weight :: FLOAT)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.algo.allSimplePaths",
+    "text": "Runs a search algorithm to find all of the simple paths between the given `RELATIONSHIP` values, up to a max depth described by `maxNodes`.\nThe returned paths will not contain loops.",
+    "signature": "apoc.algo.allSimplePaths(startNode :: NODE, endNode :: NODE, relTypesAndDirections :: STRING, maxNodes :: INTEGER) :: (path :: PATH)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.algo.cover",
+    "text": "Returns all `RELATIONSHIP` values connecting the given set of `NODE` values.",
+    "signature": "apoc.algo.cover(nodes :: ANY) :: (rel :: RELATIONSHIP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.algo.dijkstra",
+    "text": "Runs Dijkstra's algorithm using the given `RELATIONSHIP` property as the cost function.",
+    "signature": "apoc.algo.dijkstra(startNode :: NODE, endNode :: NODE, relTypesAndDirections :: STRING, weightPropertyName :: STRING, defaultWeight = NaN :: FLOAT, numberOfWantedPaths = 1 :: INTEGER) :: (path :: PATH, weight :: FLOAT)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.atomic.add",
+    "text": "Sets the given property to the sum of itself and the given `INTEGER` or `FLOAT` value.\nThe procedure then sets the property to the returned sum.",
+    "signature": "apoc.atomic.add(container :: ANY, propertyName :: STRING, number :: INTEGER | FLOAT, retryAttempts = 5 :: INTEGER) :: (container :: ANY, property :: STRING, oldValue :: ANY, newValue :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.atomic.concat",
+    "text": "Sets the given property to the concatenation of itself and the `STRING` value.\nThe procedure then sets the property to the returned `STRING`.",
+    "signature": "apoc.atomic.concat(container :: ANY, propertyName :: STRING, string :: STRING, retryAttempts = 5 :: INTEGER) :: (container :: ANY, property :: STRING, oldValue :: ANY, newValue :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.atomic.insert",
+    "text": "Inserts a value at position into the `LIST<ANY>` value of a property.\nThe procedure then sets the result back on the property.",
+    "signature": "apoc.atomic.insert(container :: ANY, propertyName :: STRING, position :: INTEGER, value :: ANY, retryAttempts = 5 :: INTEGER) :: (container :: ANY, property :: STRING, oldValue :: ANY, newValue :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.atomic.remove",
+    "text": "Removes the element at position from the `LIST<ANY>` value of a property.\nThe procedure then sets the property to the resulting `LIST<ANY>` value.",
+    "signature": "apoc.atomic.remove(container :: ANY, propertyName :: STRING, position :: INTEGER, retryAttempts = 5 :: INTEGER) :: (container :: ANY, property :: STRING, oldValue :: ANY, newValue :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.atomic.subtract",
+    "text": "Sets the property of a value to itself minus the given `INTEGER` or `FLOAT` value.\nThe procedure then sets the property to the returned sum.",
+    "signature": "apoc.atomic.subtract(container :: ANY, propertyName :: STRING, number :: INTEGER | FLOAT, retryAttempts = 5 :: INTEGER) :: (container :: ANY, property :: STRING, oldValue :: ANY, newValue :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.atomic.update",
+    "text": "Updates the value of a property with a Cypher operation.",
+    "signature": "apoc.atomic.update(container :: ANY, propertyName :: STRING, operation :: STRING, retryAttempts = 5 :: INTEGER) :: (container :: ANY, property :: STRING, oldValue :: ANY, newValue :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.case",
+    "text": "For each pair of conditional and read-only queries in the given `LIST<ANY>`, this procedure will run the first query for which the conditional is evaluated to true. If none of the conditionals are true, the `ELSE` query will run instead.",
+    "signature": "apoc.case(conditionals :: LIST<ANY>, elseQuery =  :: STRING, params = {} :: MAP) :: (value :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.coll.elements",
+    "text": "Deconstructs a `LIST<ANY>` into identifiers indicating their specific type.",
+    "signature": "apoc.coll.elements(coll :: LIST<ANY>, limit = -1 :: INTEGER, offset = 0 :: INTEGER) :: (_1 :: ANY, _2 :: ANY, _3 :: ANY, _4 :: ANY, _5 :: ANY, _6 :: ANY, _7 :: ANY, _8 :: ANY, _9 :: ANY, _10 :: ANY, _1s :: STRING, _2s :: STRING, _3s :: STRING, _4s :: STRING, _5s :: STRING, _6s :: STRING, _7s :: STRING, _8s :: STRING, _9s :: STRING, _10s :: STRING, _1i :: INTEGER, _2i :: INTEGER, _3i :: INTEGER, _4i :: INTEGER, _5i :: INTEGER, _6i :: INTEGER, _7i :: INTEGER, _8i :: INTEGER, _9i :: INTEGER, _10i :: INTEGER, _1f :: FLOAT, _2f :: FLOAT, _3f :: FLOAT, _4f :: FLOAT, _5f :: FLOAT, _6f :: FLOAT, _7f :: FLOAT, _8f :: FLOAT, _9f :: FLOAT, _10f :: FLOAT, _1b :: BOOLEAN, _2b :: BOOLEAN, _3b :: BOOLEAN, _4b :: BOOLEAN, _5b :: BOOLEAN, _6b :: BOOLEAN, _7b :: BOOLEAN, _8b :: BOOLEAN, _9b :: BOOLEAN, _10b :: BOOLEAN, _1l :: LIST<ANY>, _2l :: LIST<ANY>, _3l :: LIST<ANY>, _4l :: LIST<ANY>, _5l :: LIST<ANY>, _6l :: LIST<ANY>, _7l :: LIST<ANY>, _8l :: LIST<ANY>, _9l :: LIST<ANY>, _10l :: LIST<ANY>, _1m :: MAP, _2m :: MAP, _3m :: MAP, _4m :: MAP, _5m :: MAP, _6m :: MAP, _7m :: MAP, _8m :: MAP, _9m :: MAP, _10m :: MAP, _1n :: NODE, _2n :: NODE, _3n :: NODE, _4n :: NODE, _5n :: NODE, _6n :: NODE, _7n :: NODE, _8n :: NODE, _9n :: NODE, _10n :: NODE, _1r :: RELATIONSHIP, _2r :: RELATIONSHIP, _3r :: RELATIONSHIP, _4r :: RELATIONSHIP, _5r :: RELATIONSHIP, _6r :: RELATIONSHIP, _7r :: RELATIONSHIP, _8r :: RELATIONSHIP, _9r :: RELATIONSHIP, _10r :: RELATIONSHIP, _1p :: PATH, _2p :: PATH, _3p :: PATH, _4p :: PATH, _5p :: PATH, _6p :: PATH, _7p :: PATH, _8p :: PATH, _9p :: PATH, _10p :: PATH, elements :: INTEGER)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.coll.partition",
+    "text": "Partitions the original `LIST<ANY>` into a new `LIST<ANY>` of the given batch size.\nThe final `LIST<ANY>` may be smaller than the given batch size.",
+    "signature": "apoc.coll.partition(coll :: LIST<ANY>, batchSize :: INTEGER) :: (value :: LIST<ANY>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.coll.split",
+    "text": "Splits a collection by the given value.\nThe value itself will not be part of the resulting `LIST<ANY>` values.",
+    "signature": "apoc.coll.split(coll :: LIST<ANY>, value :: ANY) :: (value :: LIST<ANY>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.coll.zipToRows",
+    "text": "Returns the two `LIST<ANY>` values zipped together, with one row per zipped pair.",
+    "signature": "apoc.coll.zipToRows(list1 :: LIST<ANY>, list2 :: LIST<ANY>) :: (value :: LIST<ANY>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.convert.setJsonProperty",
+    "text": "Serializes the given JSON object and sets it as a property on the given `NODE`.",
+    "signature": "apoc.convert.setJsonProperty(node :: NODE, key :: STRING, value :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.convert.toTree",
+    "text": "Returns a stream of `MAP` values, representing the given `PATH` values as a tree with at least one root.",
+    "signature": "apoc.convert.toTree(paths :: LIST<PATH>, lowerCaseRels = true :: BOOLEAN, config = {} :: MAP) :: (value :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": true
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.create.addLabels",
+    "text": "Adds the given labels to the given `NODE` values.",
+    "signature": "apoc.create.addLabels(nodes :: ANY, labels :: LIST<STRING>) :: (node :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.create.clonePathToVirtual",
+    "text": "Takes the given `PATH` and returns a virtual representation of it.",
+    "signature": "apoc.create.clonePathToVirtual(path :: PATH) :: (path :: PATH)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.create.clonePathsToVirtual",
+    "text": "Takes the given `LIST<PATH>` and returns a virtual representation of them.",
+    "signature": "apoc.create.clonePathsToVirtual(paths :: LIST<PATH>) :: (path :: PATH)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.create.node",
+    "text": "Creates a `NODE` with the given dynamic labels.",
+    "signature": "apoc.create.node(labels :: LIST<STRING>, props :: MAP) :: (node :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.create.nodes",
+    "text": "Creates `NODE` values with the given dynamic labels.",
+    "signature": "apoc.create.nodes(labels :: LIST<STRING>, props :: LIST<MAP>) :: (node :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.create.relationship",
+    "text": "Creates a `RELATIONSHIP` with the given dynamic relationship type.",
+    "signature": "apoc.create.relationship(from :: NODE, relType :: STRING, props :: MAP, to :: NODE) :: (rel :: RELATIONSHIP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.create.removeLabels",
+    "text": "Removes the given labels from the given `NODE` values.",
+    "signature": "apoc.create.removeLabels(nodes :: ANY, labels :: LIST<STRING>) :: (node :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.create.removeProperties",
+    "text": "Removes the given properties from the given `NODE` values.",
+    "signature": "apoc.create.removeProperties(nodes :: ANY, keys :: LIST<STRING>) :: (node :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.create.removeRelProperties",
+    "text": "Removes the given properties from the given `RELATIONSHIP` values.",
+    "signature": "apoc.create.removeRelProperties(rels :: ANY, keys :: LIST<STRING>) :: (rel :: RELATIONSHIP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.create.setLabels",
+    "text": "Sets the given labels to the given `NODE` values. Non-matching labels are removed from the nodes.",
+    "signature": "apoc.create.setLabels(nodes :: ANY, labels :: LIST<STRING>) :: (node :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.create.setProperties",
+    "text": "Sets the given properties to the given `NODE` values.",
+    "signature": "apoc.create.setProperties(nodes :: ANY, keys :: LIST<STRING>, values :: LIST<ANY>) :: (node :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.create.setProperty",
+    "text": "Sets the given property to the given `NODE` values.",
+    "signature": "apoc.create.setProperty(nodes :: ANY, key :: STRING, value :: ANY) :: (node :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.create.setRelProperties",
+    "text": "Sets the given properties on the `RELATIONSHIP` values.",
+    "signature": "apoc.create.setRelProperties(rels :: ANY, keys :: LIST<STRING>, values :: LIST<ANY>) :: (rel :: RELATIONSHIP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.create.setRelProperty",
+    "text": "Sets the given property on the `RELATIONSHIP` values.",
+    "signature": "apoc.create.setRelProperty(rels :: ANY, key :: STRING, value :: ANY) :: (rel :: RELATIONSHIP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.create.uuids",
+    "text": "Returns a stream of UUIDs.",
+    "signature": "apoc.create.uuids(count :: INTEGER) :: (row :: INTEGER, uuid :: STRING)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": true
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.create.vNode",
+    "text": "Returns a virtual `NODE`.",
+    "signature": "apoc.create.vNode(labels :: LIST<STRING>, props :: MAP) :: (node :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.create.vNodes",
+    "text": "Returns virtual `NODE` values.",
+    "signature": "apoc.create.vNodes(labels :: LIST<STRING>, props :: LIST<MAP>) :: (node :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.create.vRelationship",
+    "text": "Returns a virtual `RELATIONSHIP`.",
+    "signature": "apoc.create.vRelationship(from :: NODE, relType :: STRING, props :: MAP, to :: NODE) :: (rel :: RELATIONSHIP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.create.virtualPath",
+    "text": "Returns a virtual `PATH`.",
+    "signature": "apoc.create.virtualPath(labelsN :: LIST<STRING>, n :: MAP, arelType :: STRING, props :: MAP, labelsM :: LIST<STRING>, m :: MAP) :: (from :: NODE, rel :: RELATIONSHIP, to :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.cypher.doIt",
+    "text": "Runs a dynamically constructed statement with the given parameters. This procedure allows for both read and write statements.",
+    "signature": "apoc.cypher.doIt(statement :: STRING, params :: MAP) :: (value :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.cypher.run",
+    "text": "Runs a dynamically constructed read-only statement with the given parameters.",
+    "signature": "apoc.cypher.run(statement :: STRING, params :: MAP) :: (value :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.cypher.runMany",
+    "text": "Runs each semicolon separated statement and returns a summary of the statement outcomes.",
+    "signature": "apoc.cypher.runMany(statement :: STRING, params :: MAP, config = {} :: MAP) :: (row :: INTEGER, result :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.cypher.runTimeboxed",
+    "text": "Terminates a Cypher statement if it has not finished before the set timeout (ms).",
+    "signature": "apoc.cypher.runTimeboxed(statement :: STRING, params :: MAP, timeout :: INTEGER) :: (value :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.do.case",
+    "text": "For each pair of conditional queries in the given `LIST<ANY>`, this procedure will run the first query for which the conditional is evaluated to true.\nIf none of the conditionals are true, the `ELSE` query will run instead.",
+    "signature": "apoc.do.case(conditionals :: LIST<ANY>, elseQuery =  :: STRING, params = {} :: MAP) :: (value :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.do.when",
+    "text": "Runs the given read/write `ifQuery` if the conditional has evaluated to true, otherwise the `elseQuery` will run.",
+    "signature": "apoc.do.when(condition :: BOOLEAN, ifQuery :: STRING, elseQuery :: STRING, params = {} :: MAP) :: (value :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.example.movies",
+    "text": "Seeds the database with the Neo4j movie dataset.",
+    "signature": "apoc.example.movies() :: (file :: STRING, source :: STRING, format :: STRING, nodes :: INTEGER, relationships :: INTEGER, properties :: INTEGER, time :: INTEGER, rows :: INTEGER, batchSize :: INTEGER, batches :: INTEGER, done :: BOOLEAN, data :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.export.csv.all",
+    "text": "Exports the full database to the provided CSV file.",
+    "signature": "apoc.export.csv.all(file :: STRING, config :: MAP) :: (file :: STRING, source :: STRING, format :: STRING, nodes :: INTEGER, relationships :: INTEGER, properties :: INTEGER, time :: INTEGER, rows :: INTEGER, batchSize :: INTEGER, batches :: INTEGER, done :: BOOLEAN, data :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.export.csv.data",
+    "text": "Exports the given `NODE` and `RELATIONSHIP` values to the provided CSV file.",
+    "signature": "apoc.export.csv.data(nodes :: LIST<NODE>, rels :: LIST<RELATIONSHIP>, file :: STRING, config :: MAP) :: (file :: STRING, source :: STRING, format :: STRING, nodes :: INTEGER, relationships :: INTEGER, properties :: INTEGER, time :: INTEGER, rows :: INTEGER, batchSize :: INTEGER, batches :: INTEGER, done :: BOOLEAN, data :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.export.csv.graph",
+    "text": "Exports the given graph to the provided CSV file.",
+    "signature": "apoc.export.csv.graph(graph :: MAP, file :: STRING, config :: MAP) :: (file :: STRING, source :: STRING, format :: STRING, nodes :: INTEGER, relationships :: INTEGER, properties :: INTEGER, time :: INTEGER, rows :: INTEGER, batchSize :: INTEGER, batches :: INTEGER, done :: BOOLEAN, data :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.export.csv.query",
+    "text": "Exports the results from running the given Cypher query to the provided CSV file.",
+    "signature": "apoc.export.csv.query(query :: STRING, file :: STRING, config :: MAP) :: (file :: STRING, source :: STRING, format :: STRING, nodes :: INTEGER, relationships :: INTEGER, properties :: INTEGER, time :: INTEGER, rows :: INTEGER, batchSize :: INTEGER, batches :: INTEGER, done :: BOOLEAN, data :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.export.cypher.all",
+    "text": "Exports the full database (incl. indexes) as Cypher statements to the provided file (default: Cypher Shell).",
+    "signature": "apoc.export.cypher.all(file =  :: STRING, config = {} :: MAP) :: (file :: STRING, batches :: INTEGER, source :: STRING, format :: STRING, nodes :: INTEGER, relationships :: INTEGER, properties :: INTEGER, time :: INTEGER, rows :: INTEGER, batchSize :: INTEGER, cypherStatements :: ANY, nodeStatements :: ANY, relationshipStatements :: ANY, schemaStatements :: ANY, cleanupStatements :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.export.cypher.data",
+    "text": "Exports the given `NODE` and `RELATIONSHIP` values (incl. indexes) as Cypher statements to the provided file (default: Cypher Shell).",
+    "signature": "apoc.export.cypher.data(nodes :: LIST<NODE>, rels :: LIST<RELATIONSHIP>, file =  :: STRING, config = {} :: MAP) :: (file :: STRING, batches :: INTEGER, source :: STRING, format :: STRING, nodes :: INTEGER, relationships :: INTEGER, properties :: INTEGER, time :: INTEGER, rows :: INTEGER, batchSize :: INTEGER, cypherStatements :: ANY, nodeStatements :: ANY, relationshipStatements :: ANY, schemaStatements :: ANY, cleanupStatements :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.export.cypher.graph",
+    "text": "Exports the given graph (incl. indexes) as Cypher statements to the provided file (default: Cypher Shell).",
+    "signature": "apoc.export.cypher.graph(graph :: MAP, file :: STRING, config = {} :: MAP) :: (file :: STRING, batches :: INTEGER, source :: STRING, format :: STRING, nodes :: INTEGER, relationships :: INTEGER, properties :: INTEGER, time :: INTEGER, rows :: INTEGER, batchSize :: INTEGER, cypherStatements :: ANY, nodeStatements :: ANY, relationshipStatements :: ANY, schemaStatements :: ANY, cleanupStatements :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.export.cypher.query",
+    "text": "Exports the `NODE` and `RELATIONSHIP` values from the given Cypher query (incl. indexes) as Cypher statements to the provided file (default: Cypher Shell).",
+    "signature": "apoc.export.cypher.query(statement :: STRING, file =  :: STRING, config = {} :: MAP) :: (file :: STRING, batches :: INTEGER, source :: STRING, format :: STRING, nodes :: INTEGER, relationships :: INTEGER, properties :: INTEGER, time :: INTEGER, rows :: INTEGER, batchSize :: INTEGER, cypherStatements :: ANY, nodeStatements :: ANY, relationshipStatements :: ANY, schemaStatements :: ANY, cleanupStatements :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.export.cypher.schema",
+    "text": "Exports all schema indexes and constraints to Cypher statements.",
+    "signature": "apoc.export.cypher.schema(file =  :: STRING, config = {} :: MAP) :: (file :: STRING, batches :: INTEGER, source :: STRING, format :: STRING, nodes :: INTEGER, relationships :: INTEGER, properties :: INTEGER, time :: INTEGER, rows :: INTEGER, batchSize :: INTEGER, cypherStatements :: ANY, nodeStatements :: ANY, relationshipStatements :: ANY, schemaStatements :: ANY, cleanupStatements :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.export.graphml.all",
+    "text": "Exports the full database to the provided GraphML file.",
+    "signature": "apoc.export.graphml.all(file :: STRING, config :: MAP) :: (file :: STRING, source :: STRING, format :: STRING, nodes :: INTEGER, relationships :: INTEGER, properties :: INTEGER, time :: INTEGER, rows :: INTEGER, batchSize :: INTEGER, batches :: INTEGER, done :: BOOLEAN, data :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.export.graphml.data",
+    "text": "Exports the given `NODE` and `RELATIONSHIP` values to the provided GraphML file.",
+    "signature": "apoc.export.graphml.data(nodes :: LIST<NODE>, rels :: LIST<RELATIONSHIP>, file :: STRING, config :: MAP) :: (file :: STRING, source :: STRING, format :: STRING, nodes :: INTEGER, relationships :: INTEGER, properties :: INTEGER, time :: INTEGER, rows :: INTEGER, batchSize :: INTEGER, batches :: INTEGER, done :: BOOLEAN, data :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.export.graphml.graph",
+    "text": "Exports the given graph to the provided GraphML file.",
+    "signature": "apoc.export.graphml.graph(graph :: MAP, file :: STRING, config :: MAP) :: (file :: STRING, source :: STRING, format :: STRING, nodes :: INTEGER, relationships :: INTEGER, properties :: INTEGER, time :: INTEGER, rows :: INTEGER, batchSize :: INTEGER, batches :: INTEGER, done :: BOOLEAN, data :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.export.graphml.query",
+    "text": "Exports the given `NODE` and `RELATIONSHIP` values from the Cypher statement to the provided GraphML file.",
+    "signature": "apoc.export.graphml.query(statement :: STRING, file :: STRING, config :: MAP) :: (file :: STRING, source :: STRING, format :: STRING, nodes :: INTEGER, relationships :: INTEGER, properties :: INTEGER, time :: INTEGER, rows :: INTEGER, batchSize :: INTEGER, batches :: INTEGER, done :: BOOLEAN, data :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.export.json.all",
+    "text": "Exports the full database to the provided JSON file.",
+    "signature": "apoc.export.json.all(file :: STRING, config = {} :: MAP) :: (file :: STRING, source :: STRING, format :: STRING, nodes :: INTEGER, relationships :: INTEGER, properties :: INTEGER, time :: INTEGER, rows :: INTEGER, batchSize :: INTEGER, batches :: INTEGER, done :: BOOLEAN, data :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.export.json.data",
+    "text": "Exports the given `NODE` and `RELATIONSHIP` values to the provided JSON file.",
+    "signature": "apoc.export.json.data(nodes :: LIST<NODE>, rels :: LIST<RELATIONSHIP>, file :: STRING, config = {} :: MAP) :: (file :: STRING, source :: STRING, format :: STRING, nodes :: INTEGER, relationships :: INTEGER, properties :: INTEGER, time :: INTEGER, rows :: INTEGER, batchSize :: INTEGER, batches :: INTEGER, done :: BOOLEAN, data :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.export.json.graph",
+    "text": "Exports the given graph to the provided JSON file.",
+    "signature": "apoc.export.json.graph(graph :: MAP, file :: STRING, config = {} :: MAP) :: (file :: STRING, source :: STRING, format :: STRING, nodes :: INTEGER, relationships :: INTEGER, properties :: INTEGER, time :: INTEGER, rows :: INTEGER, batchSize :: INTEGER, batches :: INTEGER, done :: BOOLEAN, data :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.export.json.query",
+    "text": "Exports the results from the Cypher statement to the provided JSON file.",
+    "signature": "apoc.export.json.query(statement :: STRING, file :: STRING, config = {} :: MAP) :: (file :: STRING, source :: STRING, format :: STRING, nodes :: INTEGER, relationships :: INTEGER, properties :: INTEGER, time :: INTEGER, rows :: INTEGER, batchSize :: INTEGER, batches :: INTEGER, done :: BOOLEAN, data :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.graph.from",
+    "text": "Generates a virtual sub-graph by extracting all of the `NODE` and `RELATIONSHIP` values from the given data.",
+    "signature": "apoc.graph.from(data :: ANY, name :: STRING, props :: MAP) :: (graph :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.graph.fromCypher",
+    "text": "Generates a virtual sub-graph by extracting all of the `NODE` and `RELATIONSHIP` values from the data returned by the given Cypher statement.",
+    "signature": "apoc.graph.fromCypher(statement :: STRING, params :: MAP, name :: STRING, props :: MAP) :: (graph :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.graph.fromDB",
+    "text": "Generates a virtual sub-graph by extracting all of the `NODE` and `RELATIONSHIP` values from the data returned by the given database.",
+    "signature": "apoc.graph.fromDB(name :: STRING, props :: MAP) :: (graph :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.graph.fromData",
+    "text": "Generates a virtual sub-graph by extracting all of the `NODE` and `RELATIONSHIP` values from the given data.",
+    "signature": "apoc.graph.fromData(nodes :: LIST<NODE>, rels :: LIST<RELATIONSHIP>, name :: STRING, props :: MAP) :: (graph :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.graph.fromDocument",
+    "text": "Generates a virtual sub-graph by extracting all of the `NODE` and `RELATIONSHIP` values from the data returned by the given JSON file.",
+    "signature": "apoc.graph.fromDocument(json :: ANY, config = {} :: MAP) :: (graph :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.graph.fromPath",
+    "text": "Generates a virtual sub-graph by extracting all of the `NODE` and `RELATIONSHIP` values from the data returned by the given `PATH`.",
+    "signature": "apoc.graph.fromPath(path :: PATH, name :: STRING, props :: MAP) :: (graph :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.graph.fromPaths",
+    "text": "Generates a virtual sub-graph by extracting all of the `NODE` and `RELATIONSHIP` values from the data returned by the given `PATH` values.",
+    "signature": "apoc.graph.fromPaths(paths :: LIST<PATH>, name :: STRING, props :: MAP) :: (graph :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.graph.validateDocument",
+    "text": "Validates the JSON file and returns the result of the validation.",
+    "signature": "apoc.graph.validateDocument(json :: ANY, config = {} :: MAP) :: (row :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.help",
+    "text": "Returns descriptions of the available APOC procedures and functions. If a keyword is provided, it will return only those procedures and functions that have the keyword in their name.",
+    "signature": "apoc.help(proc :: STRING) :: (type :: STRING, name :: STRING, text :: STRING, signature :: STRING, roles :: LIST<STRING>, writes :: BOOLEAN, core :: BOOLEAN, isDeprecated :: BOOLEAN)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.import.csv",
+    "text": "Imports `NODE` and `RELATIONSHIP` values with the given labels and types from the provided CSV file.",
+    "signature": "apoc.import.csv(nodes :: LIST<MAP>, rels :: LIST<MAP>, config :: MAP) :: (file :: STRING, source :: STRING, format :: STRING, nodes :: INTEGER, relationships :: INTEGER, properties :: INTEGER, time :: INTEGER, rows :: INTEGER, batchSize :: INTEGER, batches :: INTEGER, done :: BOOLEAN, data :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.import.graphml",
+    "text": "Imports a graph from the provided GraphML file.",
+    "signature": "apoc.import.graphml(urlOrBinaryFile :: ANY, config :: MAP) :: (file :: STRING, source :: STRING, format :: STRING, nodes :: INTEGER, relationships :: INTEGER, properties :: INTEGER, time :: INTEGER, rows :: INTEGER, batchSize :: INTEGER, batches :: INTEGER, done :: BOOLEAN, data :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.load.json",
+    "text": "Imports JSON file as a stream of values if the given JSON file is a `LIST<ANY>`.\nIf the given JSON file is a `MAP`, this procedure imports a single value instead.",
+    "signature": "apoc.load.json(urlOrKeyOrBinary :: ANY, path =  :: STRING, config = {} :: MAP) :: (value :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.load.jsonArray",
+    "text": "Loads array from a JSON URL (e.g. web-API) to then import the given JSON file as a stream of values.",
+    "signature": "apoc.load.jsonArray(url :: STRING, path =  :: STRING, config = {} :: MAP) :: (value :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.load.xml",
+    "text": "Loads a single nested `MAP` from an XML URL (e.g. web-API).",
+    "signature": "apoc.load.xml(urlOrBinary :: ANY, path = / :: STRING, config = {} :: MAP, simple = false :: BOOLEAN) :: (value :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.lock.all",
+    "text": "Acquires a write lock on the given `NODE` and `RELATIONSHIP` values.",
+    "signature": "apoc.lock.all(nodes :: LIST<NODE>, rels :: LIST<RELATIONSHIP>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.lock.nodes",
+    "text": "Acquires a write lock on the given `NODE` values.",
+    "signature": "apoc.lock.nodes(nodes :: LIST<NODE>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.lock.read.nodes",
+    "text": "Acquires a read lock on the given `NODE` values.",
+    "signature": "apoc.lock.read.nodes(nodes :: LIST<NODE>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.lock.read.rels",
+    "text": "Acquires a read lock on the given `RELATIONSHIP` values.",
+    "signature": "apoc.lock.read.rels(rels :: LIST<RELATIONSHIP>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.lock.rels",
+    "text": "Acquires a write lock on the given `RELATIONSHIP` values.",
+    "signature": "apoc.lock.rels(rels :: LIST<RELATIONSHIP>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.math.regr",
+    "text": "Returns the coefficient of determination (R-squared) for the values of propertyY and propertyX in the given label.",
+    "signature": "apoc.math.regr(label :: STRING, propertyY :: STRING, propertyX :: STRING) :: (r2 :: FLOAT, avgX :: FLOAT, avgY :: FLOAT, slope :: FLOAT)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.merge.node",
+    "text": "Merges the given `NODE` values with the given dynamic labels.",
+    "signature": "apoc.merge.node(labels :: LIST<STRING>, identProps :: MAP, onCreateProps = {} :: MAP, onMatchProps = {} :: MAP) :: (node :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.merge.node.eager",
+    "text": "Merges the given `NODE` values with the given dynamic labels eagerly.",
+    "signature": "apoc.merge.node.eager(labels :: LIST<STRING>, identProps :: MAP, onCreateProps = {} :: MAP, onMatchProps = {} :: MAP) :: (node :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.merge.nodeWithStats",
+    "text": "Merges the given `NODE` values with the given dynamic labels. Provides queryStatistics in the result.",
+    "signature": "apoc.merge.nodeWithStats(labels :: LIST<STRING>, identProps :: MAP, onCreateProps = {} :: MAP, onMatchProps = {} :: MAP) :: (stats :: MAP, node :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.merge.nodeWithStats.eager",
+    "text": "Merges the given `NODE` values with the given dynamic labels eagerly. Provides queryStatistics in the result.",
+    "signature": "apoc.merge.nodeWithStats.eager(labels :: LIST<STRING>, identProps :: MAP, onCreateProps = {} :: MAP, onMatchProps = {} :: MAP) :: (stats :: MAP, node :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.merge.relationship",
+    "text": "Merges the given `RELATIONSHIP` values with the given dynamic types/properties.",
+    "signature": "apoc.merge.relationship(startNode :: NODE, relType :: STRING, identProps :: MAP, onCreateProps :: MAP, endNode :: NODE, onMatchProps = {} :: MAP) :: (rel :: RELATIONSHIP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.merge.relationship.eager",
+    "text": "Merges the given `RELATIONSHIP` values with the given dynamic types/properties eagerly.",
+    "signature": "apoc.merge.relationship.eager(startNode :: NODE, relType :: STRING, identProps :: MAP, onCreateProps :: MAP, endNode :: NODE, onMatchProps = {} :: MAP) :: (rel :: RELATIONSHIP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.merge.relationshipWithStats",
+    "text": "Merges the given `RELATIONSHIP` values with the given dynamic types/properties. Provides queryStatistics in the result.",
+    "signature": "apoc.merge.relationshipWithStats(startNode :: NODE, relType :: STRING, identProps :: MAP, onCreateProps :: MAP, endNode :: NODE, onMatchProps = {} :: MAP) :: (stats :: MAP, rel :: RELATIONSHIP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.merge.relationshipWithStats.eager",
+    "text": "Merges the given `RELATIONSHIP` values with the given dynamic types/properties eagerly. Provides queryStatistics in the result.",
+    "signature": "apoc.merge.relationshipWithStats.eager(startNode :: NODE, relType :: STRING, identProps :: MAP, onCreateProps :: MAP, endNode :: NODE, onMatchProps = {} :: MAP) :: (stats :: MAP, rel :: RELATIONSHIP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.meta.data",
+    "text": "Examines the full graph and returns a table of metadata.",
+    "signature": "apoc.meta.data(config = {} :: MAP) :: (label :: STRING, property :: STRING, count :: INTEGER, unique :: BOOLEAN, index :: BOOLEAN, existence :: BOOLEAN, type :: STRING, array :: BOOLEAN, sample :: LIST<ANY>, left :: INTEGER, right :: INTEGER, other :: LIST<STRING>, otherLabels :: LIST<STRING>, elementType :: STRING)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.meta.data.of",
+    "text": "Examines the given sub-graph and returns a table of metadata.",
+    "signature": "apoc.meta.data.of(graph :: ANY, config = {} :: MAP) :: (label :: STRING, property :: STRING, count :: INTEGER, unique :: BOOLEAN, index :: BOOLEAN, existence :: BOOLEAN, type :: STRING, array :: BOOLEAN, sample :: LIST<ANY>, left :: INTEGER, right :: INTEGER, other :: LIST<STRING>, otherLabels :: LIST<STRING>, elementType :: STRING)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.meta.graph",
+    "text": "Examines the full graph and returns a meta-graph.",
+    "signature": "apoc.meta.graph(config = {} :: MAP) :: (nodes :: LIST<NODE>, relationships :: LIST<RELATIONSHIP>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.meta.graph.of",
+    "text": "Examines the given sub-graph and returns a meta-graph.",
+    "signature": "apoc.meta.graph.of(graph = {} :: ANY, config = {} :: MAP) :: (nodes :: LIST<NODE>, relationships :: LIST<RELATIONSHIP>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.meta.graphSample",
+    "text": "Examines the full graph and returns a meta-graph.\nUnlike `apoc.meta.graph`, this procedure does not filter away non-existing paths.",
+    "signature": "apoc.meta.graphSample(config = {} :: MAP) :: (nodes :: LIST<NODE>, relationships :: LIST<RELATIONSHIP>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.meta.nodeTypeProperties",
+    "text": "Examines the full graph and returns a table of metadata with information about the `NODE` values therein.",
+    "signature": "apoc.meta.nodeTypeProperties(config = {} :: MAP) :: (nodeType :: STRING, nodeLabels :: LIST<STRING>, propertyName :: STRING, propertyTypes :: LIST<STRING>, mandatory :: BOOLEAN, propertyObservations :: INTEGER, totalObservations :: INTEGER)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.meta.relTypeProperties",
+    "text": "Examines the full graph and returns a table of metadata with information about the `RELATIONSHIP` values therein.",
+    "signature": "apoc.meta.relTypeProperties(config = {} :: MAP) :: (relType :: STRING, sourceNodeLabels :: LIST<STRING>, targetNodeLabels :: LIST<STRING>, propertyName :: STRING, propertyTypes :: LIST<STRING>, mandatory :: BOOLEAN, propertyObservations :: INTEGER, totalObservations :: INTEGER)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.meta.schema",
+    "text": "Examines the given sub-graph and returns metadata as a `MAP`.",
+    "signature": "apoc.meta.schema(config = {} :: MAP) :: (value :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.meta.stats",
+    "text": "Returns the metadata stored in the transactional database statistics.",
+    "signature": "apoc.meta.stats() :: (labelCount :: INTEGER, relTypeCount :: INTEGER, propertyKeyCount :: INTEGER, nodeCount :: INTEGER, relCount :: INTEGER, labels :: MAP, relTypes :: MAP, relTypesCount :: MAP, stats :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.meta.subGraph",
+    "text": "Examines the given sub-graph and returns a meta-graph.",
+    "signature": "apoc.meta.subGraph(config :: MAP) :: (nodes :: LIST<NODE>, relationships :: LIST<RELATIONSHIP>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.neighbors.athop",
+    "text": "Returns all `NODE` values connected by the given `RELATIONSHIP` types at the specified distance.",
+    "signature": "apoc.neighbors.athop(node :: NODE, relTypes =  :: STRING, distance = 1 :: INTEGER) :: (node :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.neighbors.athop.count",
+    "text": "Returns the count of all `NODE` values connected by the given `RELATIONSHIP` types at the specified distance.",
+    "signature": "apoc.neighbors.athop.count(node :: NODE, relTypes =  :: STRING, distance = 1 :: INTEGER) :: (value :: INTEGER)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.neighbors.byhop",
+    "text": "Returns all `NODE` values connected by the given `RELATIONSHIP` types within the specified distance. Returns `LIST<NODE>` values, where each `PATH` of `NODE` values represents one row of the `LIST<NODE>` values.",
+    "signature": "apoc.neighbors.byhop(node :: NODE, relTypes =  :: STRING, distance = 1 :: INTEGER) :: (nodes :: LIST<NODE>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.neighbors.byhop.count",
+    "text": "Returns the count of all `NODE` values connected by the given `RELATIONSHIP` types within the specified distance.",
+    "signature": "apoc.neighbors.byhop.count(node :: NODE, relTypes =  :: STRING, distance = 1 :: INTEGER) :: (value :: LIST<ANY>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.neighbors.tohop",
+    "text": "Returns all `NODE` values connected by the given `RELATIONSHIP` types within the specified distance.\n`NODE` values are returned individually for each row.",
+    "signature": "apoc.neighbors.tohop(node :: NODE, relTypes =  :: STRING, distance = 1 :: INTEGER) :: (node :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.neighbors.tohop.count",
+    "text": "Returns the count of all `NODE` values connected by the given `RELATIONSHIP` values in the pattern within the specified distance.",
+    "signature": "apoc.neighbors.tohop.count(node :: NODE, relTypes =  :: STRING, distance = 1 :: INTEGER) :: (value :: INTEGER)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.nodes.collapse",
+    "text": "Merges `NODE` values together in the given `LIST<NODE>`.\nThe `NODE` values are then combined to become one `NODE`, with all labels of the previous `NODE` values attached to it, and all `RELATIONSHIP` values pointing to it.",
+    "signature": "apoc.nodes.collapse(nodes :: LIST<NODE>, config = {} :: MAP) :: (from :: NODE, rel :: RELATIONSHIP, to :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.nodes.cycles",
+    "text": "Detects all `PATH` cycles in the given `LIST<NODE>`.\nThis procedure can be limited on `RELATIONSHIP` values as well.",
+    "signature": "apoc.nodes.cycles(nodes :: LIST<NODE>, config = {} :: MAP) :: (path :: PATH)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.nodes.delete",
+    "text": "Deletes all `NODE` values with the given ids.",
+    "signature": "apoc.nodes.delete(nodes :: ANY, batchSize :: INTEGER) :: (value :: INTEGER)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.nodes.get",
+    "text": "Returns all `NODE` values with the given ids.",
+    "signature": "apoc.nodes.get(nodes :: ANY) :: (node :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.nodes.group",
+    "text": "Allows for the aggregation of `NODE` values based on the given properties.\nThis procedure returns virtual `NODE` values.",
+    "signature": "apoc.nodes.group(labels :: LIST<STRING>, groupByProperties :: LIST<STRING>, aggregations = [{*=count}, {*=count}] :: LIST<MAP>, config = {} :: MAP) :: (nodes :: LIST<NODE>, relationships :: LIST<RELATIONSHIP>, node :: NODE, relationship :: RELATIONSHIP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.nodes.link",
+    "text": "Creates a linked list of the given `NODE` values connected by the given `RELATIONSHIP` type.",
+    "signature": "apoc.nodes.link(nodes :: LIST<NODE>, type :: STRING, config = {} :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.nodes.rels",
+    "text": "Returns all `RELATIONSHIP` values with the given ids.",
+    "signature": "apoc.nodes.rels(rels :: ANY) :: (rel :: RELATIONSHIP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.path.expand",
+    "text": "Returns `PATH` values expanded from the start `NODE` following the given `RELATIONSHIP` types from min-depth to max-depth.",
+    "signature": "apoc.path.expand(startNode :: ANY, relFilter :: STRING, labelFilter :: STRING, minDepth :: INTEGER, maxDepth :: INTEGER) :: (path :: PATH)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.path.expandConfig",
+    "text": "Returns `PATH` values expanded from the start `NODE` with the given `RELATIONSHIP` types from min-depth to max-depth.",
+    "signature": "apoc.path.expandConfig(startNode :: ANY, config :: MAP) :: (path :: PATH)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.path.spanningTree",
+    "text": "Returns spanning tree `PATH` values expanded from the start `NODE` following the given `RELATIONSHIP` types to max-depth.",
+    "signature": "apoc.path.spanningTree(startNode :: ANY, config :: MAP) :: (path :: PATH)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.path.subgraphAll",
+    "text": "Returns the sub-graph reachable from the start `NODE` following the given `RELATIONSHIP` types to max-depth.",
+    "signature": "apoc.path.subgraphAll(startNode :: ANY, config :: MAP) :: (nodes :: LIST<NODE>, relationships :: LIST<RELATIONSHIP>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.path.subgraphNodes",
+    "text": "Returns the `NODE` values in the sub-graph reachable from the start `NODE` following the given `RELATIONSHIP` types to max-depth.",
+    "signature": "apoc.path.subgraphNodes(startNode :: ANY, config :: MAP) :: (node :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.paths.toJsonTree",
+    "text": "Creates a stream of nested documents representing the graph as a tree by traversing outgoing relationships.",
+    "signature": "apoc.paths.toJsonTree(paths :: LIST<PATH>, lowerCaseRels = true :: BOOLEAN, config = {} :: MAP) :: (value :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.periodic.cancel",
+    "text": "Cancels the given background job.",
+    "signature": "apoc.periodic.cancel(name :: STRING) :: (name :: STRING, delay :: INTEGER, rate :: INTEGER, done :: BOOLEAN, cancelled :: BOOLEAN)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.periodic.commit",
+    "text": "Runs the given statement in separate batched transactions.",
+    "signature": "apoc.periodic.commit(statement :: STRING, params = {} :: MAP) :: (updates :: INTEGER, executions :: INTEGER, runtime :: INTEGER, batches :: INTEGER, failedBatches :: INTEGER, batchErrors :: MAP, failedCommits :: INTEGER, commitErrors :: MAP, wasTerminated :: BOOLEAN)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.periodic.countdown",
+    "text": "Runs a repeatedly called background statement until it returns 0.",
+    "signature": "apoc.periodic.countdown(name :: STRING, statement :: STRING, delay :: INTEGER) :: (name :: STRING, delay :: INTEGER, rate :: INTEGER, done :: BOOLEAN, cancelled :: BOOLEAN)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.periodic.iterate",
+    "text": "Runs the second statement for each item returned by the first statement.\nThis procedure returns the number of batches and the total number of processed rows.",
+    "signature": "apoc.periodic.iterate(cypherIterate :: STRING, cypherAction :: STRING, config :: MAP) :: (batches :: INTEGER, total :: INTEGER, timeTaken :: INTEGER, committedOperations :: INTEGER, failedOperations :: INTEGER, failedBatches :: INTEGER, retries :: INTEGER, errorMessages :: MAP, batch :: MAP, operations :: MAP, wasTerminated :: BOOLEAN, failedParams :: MAP, updateStatistics :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.periodic.list",
+    "text": "Returns a `LIST<ANY>` of all background jobs.",
+    "signature": "apoc.periodic.list() :: (name :: STRING, delay :: INTEGER, rate :: INTEGER, done :: BOOLEAN, cancelled :: BOOLEAN)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.periodic.repeat",
+    "text": "Runs a repeatedly called background job. To stop this procedure, use `apoc.periodic.cancel`.",
+    "signature": "apoc.periodic.repeat(name :: STRING, statement :: STRING, rate :: INTEGER, config = {} :: MAP) :: (name :: STRING, delay :: INTEGER, rate :: INTEGER, done :: BOOLEAN, cancelled :: BOOLEAN)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.periodic.submit",
+    "text": "Creates a background job which runs the given Cypher statement once.",
+    "signature": "apoc.periodic.submit(name :: STRING, statement :: STRING, params = {} :: MAP) :: (name :: STRING, delay :: INTEGER, rate :: INTEGER, done :: BOOLEAN, cancelled :: BOOLEAN)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.refactor.categorize",
+    "text": "Creates new category `NODE` values from `NODE` values in the graph with the specified `sourceKey` as one of its property keys.\nThe new category `NODE` values are then connected to the original `NODE` values with a `RELATIONSHIP` of the given type.",
+    "signature": "apoc.refactor.categorize(sourceKey :: STRING, type :: STRING, outgoing :: BOOLEAN, label :: STRING, targetKey :: STRING, copiedKeys :: LIST<STRING>, batchSize :: INTEGER)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.refactor.cloneNodes",
+    "text": "Clones the given `NODE` values with their labels and properties.\nIt is possible to skip any `NODE` properties using skipProperties (note: this only skips properties on `NODE` values and not their `RELATIONSHIP` values).",
+    "signature": "apoc.refactor.cloneNodes(nodes :: LIST<NODE>, withRelationships = false :: BOOLEAN, skipProperties = [] :: LIST<STRING>) :: (input :: INTEGER, output :: NODE, error :: STRING)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.refactor.cloneSubgraph",
+    "text": "Clones the given `NODE` values with their labels and properties (optionally skipping any properties in the `skipProperties` `LIST<STRING>` via the config `MAP`), and clones the given `RELATIONSHIP` values.\nIf no `RELATIONSHIP` values are provided, all existing `RELATIONSHIP` values between the given `NODE` values will be cloned.",
+    "signature": "apoc.refactor.cloneSubgraph(nodes :: LIST<NODE>, rels = [] :: LIST<RELATIONSHIP>, config = {} :: MAP) :: (input :: INTEGER, output :: NODE, error :: STRING)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.refactor.cloneSubgraphFromPaths",
+    "text": "Clones a sub-graph defined by the given `LIST<PATH>` values.\nIt is possible to skip any `NODE` properties using the `skipProperties` `LIST<STRING>` via the config `MAP`.",
+    "signature": "apoc.refactor.cloneSubgraphFromPaths(paths :: LIST<PATH>, config = {} :: MAP) :: (input :: INTEGER, output :: NODE, error :: STRING)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.refactor.collapseNode",
+    "text": "Collapses the given `NODE` and replaces it with a `RELATIONSHIP` of the given type.",
+    "signature": "apoc.refactor.collapseNode(nodes :: ANY, relType :: STRING) :: (input :: INTEGER, output :: RELATIONSHIP, error :: STRING)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.refactor.extractNode",
+    "text": "Expands the given `RELATIONSHIP` VALUES into intermediate `NODE` VALUES.\nThe intermediate `NODE` values are connected by the given `outType` and `inType`.",
+    "signature": "apoc.refactor.extractNode(rels :: ANY, labels :: LIST<STRING>, outType :: STRING, inType :: STRING) :: (input :: INTEGER, output :: NODE, error :: STRING)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.refactor.from",
+    "text": "Redirects the given `RELATIONSHIP` to the given start `NODE`.",
+    "signature": "apoc.refactor.from(rel :: RELATIONSHIP, newNode :: NODE, config = {} :: MAP) :: (input :: INTEGER, output :: RELATIONSHIP, error :: STRING)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.refactor.invert",
+    "text": "Inverts the direction of the given `RELATIONSHIP`.",
+    "signature": "apoc.refactor.invert(rel :: RELATIONSHIP, config = {} :: MAP) :: (input :: INTEGER, output :: RELATIONSHIP, error :: STRING)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.refactor.mergeNodes",
+    "text": "Merges the given `LIST<NODE>` onto the first `NODE` in the `LIST<NODE>`.\nAll `RELATIONSHIP` values are merged onto that `NODE` as well.",
+    "signature": "apoc.refactor.mergeNodes(nodes :: LIST<NODE>, config = {} :: MAP) :: (node :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.refactor.mergeRelationships",
+    "text": "Merges the given `LIST<RELATIONSHIP>` onto the first `RELATIONSHIP` in the `LIST<RELATIONSHIP>`.",
+    "signature": "apoc.refactor.mergeRelationships(rels :: LIST<RELATIONSHIP>, config = {} :: MAP) :: (rel :: RELATIONSHIP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.refactor.normalizeAsBoolean",
+    "text": "Refactors the given property to a `BOOLEAN`.",
+    "signature": "apoc.refactor.normalizeAsBoolean(entity :: ANY, propertyKey :: STRING, trueValues :: LIST<ANY>, falseValues :: LIST<ANY>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.refactor.rename.label",
+    "text": "Renames the given label from `oldLabel` to `newLabel` for all `NODE` values.\nIf a `LIST<NODE>` is provided, the renaming is applied to the `NODE` values within this `LIST<NODE>` only.",
+    "signature": "apoc.refactor.rename.label(oldLabel :: STRING, newLabel :: STRING, nodes = [] :: LIST<NODE>) :: (batches :: INTEGER, total :: INTEGER, timeTaken :: INTEGER, committedOperations :: INTEGER, failedOperations :: INTEGER, failedBatches :: INTEGER, retries :: INTEGER, errorMessages :: MAP, batch :: MAP, operations :: MAP, constraints :: LIST<STRING>, indexes :: LIST<STRING>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.refactor.rename.nodeProperty",
+    "text": "Renames the given property from `oldName` to `newName` for all `NODE` values.\nIf a `LIST<NODE>` is provided, the renaming is applied to the `NODE` values within this `LIST<NODE>` only.",
+    "signature": "apoc.refactor.rename.nodeProperty(oldName :: STRING, newName :: STRING, nodes = [] :: LIST<NODE>, config = {} :: MAP) :: (batches :: INTEGER, total :: INTEGER, timeTaken :: INTEGER, committedOperations :: INTEGER, failedOperations :: INTEGER, failedBatches :: INTEGER, retries :: INTEGER, errorMessages :: MAP, batch :: MAP, operations :: MAP, constraints :: LIST<STRING>, indexes :: LIST<STRING>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.refactor.rename.type",
+    "text": "Renames all `RELATIONSHIP` values with type `oldType` to `newType`.\nIf a `LIST<RELATIONSHIP>` is provided, the renaming is applied to the `RELATIONSHIP` values within this `LIST<RELATIONSHIP>` only.",
+    "signature": "apoc.refactor.rename.type(oldType :: STRING, newType :: STRING, rels = [] :: LIST<RELATIONSHIP>, config = {} :: MAP) :: (batches :: INTEGER, total :: INTEGER, timeTaken :: INTEGER, committedOperations :: INTEGER, failedOperations :: INTEGER, failedBatches :: INTEGER, retries :: INTEGER, errorMessages :: MAP, batch :: MAP, operations :: MAP, constraints :: LIST<STRING>, indexes :: LIST<STRING>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.refactor.rename.typeProperty",
+    "text": "Renames the given property from `oldName` to `newName` for all `RELATIONSHIP` values.\nIf a `LIST<RELATIONSHIP>` is provided, the renaming is applied to the `RELATIONSHIP` values within this `LIST<RELATIONSHIP>` only.",
+    "signature": "apoc.refactor.rename.typeProperty(oldName :: STRING, newName :: STRING, rels = [] :: LIST<RELATIONSHIP>, config = {} :: MAP) :: (batches :: INTEGER, total :: INTEGER, timeTaken :: INTEGER, committedOperations :: INTEGER, failedOperations :: INTEGER, failedBatches :: INTEGER, retries :: INTEGER, errorMessages :: MAP, batch :: MAP, operations :: MAP, constraints :: LIST<STRING>, indexes :: LIST<STRING>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.refactor.setType",
+    "text": "Changes the type of the given `RELATIONSHIP`.",
+    "signature": "apoc.refactor.setType(rel :: RELATIONSHIP, newType :: STRING) :: (input :: INTEGER, output :: RELATIONSHIP, error :: STRING)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.refactor.to",
+    "text": "Redirects the given `RELATIONSHIP` to the given end `NODE`.",
+    "signature": "apoc.refactor.to(rel :: RELATIONSHIP, endNode :: NODE, config = {} :: MAP) :: (input :: INTEGER, output :: RELATIONSHIP, error :: STRING)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.schema.assert",
+    "text": "Drops all other existing indexes and constraints when `dropExisting` is `true` (default is `true`).\nAsserts at the end of the operation that the given indexes and unique constraints are there.",
+    "signature": "apoc.schema.assert(indexes :: MAP, constraints :: MAP, dropExisting = true :: BOOLEAN) :: (label :: ANY, key :: STRING, keys :: LIST<STRING>, unique :: BOOLEAN, action :: STRING)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.schema.nodes",
+    "text": "Returns all indexes and constraints information for all `NODE` labels in the database.\nIt is possible to define a set of labels to include or exclude in the config parameters.",
+    "signature": "apoc.schema.nodes(config = {} :: MAP) :: (name :: STRING, label :: ANY, properties :: LIST<STRING>, status :: STRING, type :: STRING, failure :: STRING, populationProgress :: FLOAT, size :: INTEGER, valuesSelectivity :: FLOAT, userDescription :: STRING)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.schema.properties.distinct",
+    "text": "Returns all distinct `NODE` property values for the given key.",
+    "signature": "apoc.schema.properties.distinct(label :: STRING, key :: STRING) :: (value :: LIST<ANY>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.schema.properties.distinctCount",
+    "text": "Returns all distinct property values and counts for the given key.",
+    "signature": "apoc.schema.properties.distinctCount(label =  :: STRING, key =  :: STRING) :: (label :: STRING, key :: STRING, value :: ANY, count :: INTEGER)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.schema.relationships",
+    "text": "Returns the indexes and constraints information for all the relationship types in the database.\nIt is possible to define a set of relationship types to include or exclude in the config parameters.",
+    "signature": "apoc.schema.relationships(config = {} :: MAP) :: (name :: STRING, type :: STRING, properties :: LIST<STRING>, status :: STRING, relationshipType :: ANY)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.search.multiSearchReduced",
+    "text": "Returns a reduced representation of the `NODE` values found after a parallel search over multiple indexes.\nThe reduced `NODE` values representation includes: node id, node labels, and the searched properties.",
+    "signature": "apoc.search.multiSearchReduced(labelPropertyMap :: ANY, operator :: STRING, value :: STRING) :: (id :: INTEGER, labels :: LIST<STRING>, values :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.search.node",
+    "text": "Returns all the distinct `NODE` values found after a parallel search over multiple indexes.",
+    "signature": "apoc.search.node(labelPropertyMap :: ANY, operator :: STRING, value :: STRING) :: (node :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.search.nodeAll",
+    "text": "Returns all the `NODE` values found after a parallel search over multiple indexes.",
+    "signature": "apoc.search.nodeAll(labelPropertyMap :: ANY, operator :: STRING, value :: STRING) :: (node :: NODE)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.search.nodeAllReduced",
+    "text": "Returns a reduced representation of the `NODE` values found after a parallel search over multiple indexes.\nThe reduced `NODE` values representation includes: node id, node labels, and the searched properties.",
+    "signature": "apoc.search.nodeAllReduced(labelPropertyMap :: ANY, operator :: STRING, value :: ANY) :: (id :: INTEGER, labels :: LIST<STRING>, values :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.search.nodeReduced",
+    "text": "Returns a reduced representation of the distinct `NODE` values found after a parallel search over multiple indexes.\nThe reduced `NODE` values representation includes: node id, node labels, and the searched properties.",
+    "signature": "apoc.search.nodeReduced(labelPropertyMap :: ANY, operator :: STRING, value :: STRING) :: (id :: INTEGER, labels :: LIST<STRING>, values :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.spatial.geocode",
+    "text": "Returns the geographic location (latitude, longitude, and description) of the given address using a geocoding service (default: OpenStreetMap).",
+    "signature": "apoc.spatial.geocode(location :: STRING, maxResults = 100 :: INTEGER, quotaException = false :: BOOLEAN, config = {} :: MAP) :: (location :: MAP, data :: MAP, latitude :: FLOAT, longitude :: FLOAT, description :: STRING)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.spatial.geocodeOnce",
+    "text": "Returns the geographic location (latitude, longitude, and description) of the given address using a geocoding service (default: OpenStreetMap).\nThis procedure returns at most one result.",
+    "signature": "apoc.spatial.geocodeOnce(location :: STRING, config = {} :: MAP) :: (location :: MAP, data :: MAP, latitude :: FLOAT, longitude :: FLOAT, description :: STRING)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.spatial.reverseGeocode",
+    "text": "Returns a textual address from the given geographic location (latitude, longitude) using a geocoding service (default: OpenStreetMap).\nThis procedure returns at most one result.",
+    "signature": "apoc.spatial.reverseGeocode(latitude :: FLOAT, longitude :: FLOAT, quotaException = false :: BOOLEAN, config = {} :: MAP) :: (location :: MAP, data :: MAP, latitude :: FLOAT, longitude :: FLOAT, description :: STRING)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.spatial.sortByDistance",
+    "text": "Sorts the given collection of `PATH` values by the sum of their distance based on the latitude/longitude values in the `NODE` values.",
+    "signature": "apoc.spatial.sortByDistance(paths :: LIST<PATH>) :: (path :: PATH, distance :: FLOAT)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.stats.degrees",
+    "text": "Returns the percentile groupings of the degrees on the `NODE` values connected by the given `RELATIONSHIP` types.",
+    "signature": "apoc.stats.degrees(relTypes =  :: STRING) :: (type :: STRING, direction :: STRING, total :: INTEGER, p50 :: INTEGER, p75 :: INTEGER, p90 :: INTEGER, p95 :: INTEGER, p99 :: INTEGER, p999 :: INTEGER, max :: INTEGER, min :: INTEGER, mean :: FLOAT)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.text.phoneticDelta",
+    "text": "Returns the US_ENGLISH soundex character difference between the two given `STRING` values.",
+    "signature": "apoc.text.phoneticDelta(text1 :: STRING, text2 :: STRING) :: (phonetic1 :: STRING, phonetic2 :: STRING, delta :: INTEGER)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.util.sleep",
+    "text": "Causes the currently running Cypher to sleep for the given duration of milliseconds (the transaction termination is honored).",
+    "signature": "apoc.util.sleep(duration :: INTEGER)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.util.validate",
+    "text": "If the given predicate is true an exception is thrown.",
+    "signature": "apoc.util.validate(predicate :: BOOLEAN, message :: STRING, params :: LIST<ANY>)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.warmup.run",
+    "text": "Loads all `NODE` and `RELATIONSHIP` values in the database into memory.",
+    "signature": "apoc.warmup.run(loadProperties = false :: BOOLEAN, loadDynamicProperties = false :: BOOLEAN, loadIndexes = false :: BOOLEAN) :: (pageSize :: INTEGER, totalTime :: INTEGER, transactionWasTerminated :: BOOLEAN, nodesPerPage :: INTEGER, nodesTotal :: INTEGER, nodePages :: INTEGER, nodesTime :: INTEGER, relsPerPage :: INTEGER, relsTotal :: INTEGER, relPages :: INTEGER, relsTime :: INTEGER, relGroupsPerPage :: INTEGER, relGroupsTotal :: INTEGER, relGroupPages :: INTEGER, relGroupsTime :: INTEGER, propertiesLoaded :: BOOLEAN, dynamicPropertiesLoaded :: BOOLEAN, propsPerPage :: INTEGER, propRecordsTotal :: INTEGER, propPages :: INTEGER, propsTime :: INTEGER, stringPropsPerPage :: INTEGER, stringPropRecordsTotal :: INTEGER, stringPropPages :: INTEGER, stringPropsTime :: INTEGER, arrayPropsPerPage :: INTEGER, arrayPropRecordsTotal :: INTEGER, arrayPropPages :: INTEGER, arrayPropsTime :: INTEGER, indexesLoaded :: BOOLEAN, indexPages :: INTEGER, indexTime :: INTEGER)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": true
+  },
+  {
+    "type": "procedure",
+    "name": "apoc.when",
+    "text": "This procedure will run the read-only `ifQuery` if the conditional has evaluated to true, otherwise the `elseQuery` will run.",
+    "signature": "apoc.when(condition :: BOOLEAN, ifQuery :: STRING, elseQuery =  :: STRING, params = {} :: MAP) :: (value :: MAP)",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.agg.first",
+    "text": "Returns the first value from the given collection.",
+    "signature": "apoc.agg.first(value :: ANY) :: ANY",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.agg.graph",
+    "text": "Returns all distinct `NODE` and `RELATIONSHIP` values collected into a `MAP` with the keys `nodes` and `relationships`.",
+    "signature": "apoc.agg.graph(path :: ANY) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.agg.last",
+    "text": "Returns the last value from the given collection.",
+    "signature": "apoc.agg.last(value :: ANY) :: ANY",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.agg.maxItems",
+    "text": "Returns a `MAP` `{items: LIST<ANY>, value: ANY}` where the `value` key is the maximum value present, and `items` represent all items with the same value. The size of the list of items can be limited to a given max size.",
+    "signature": "apoc.agg.maxItems(item :: ANY, value :: ANY, groupLimit = -1 :: INTEGER) :: ANY",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.agg.median",
+    "text": "Returns the mathematical median for all non-null `INTEGER` and `FLOAT` values.",
+    "signature": "apoc.agg.median(value :: ANY) :: ANY",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.agg.minItems",
+    "text": "Returns a `MAP` `{items: LIST<ANY>, value: ANY}` where the `value` key is the minimum value present, and `items` represent all items with the same value. The size of the list of items can be limited to a given max size.",
+    "signature": "apoc.agg.minItems(item :: ANY, value :: ANY, groupLimit = -1 :: INTEGER) :: ANY",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.agg.nth",
+    "text": "Returns the nth value in the given collection (to fetch the last item of an unknown length collection, -1 can be used).",
+    "signature": "apoc.agg.nth(value :: ANY, offset :: INTEGER) :: ANY",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.agg.percentiles",
+    "text": "Returns the given percentiles over the range of numerical values in the given collection.",
+    "signature": "apoc.agg.percentiles(value :: INTEGER | FLOAT, percentiles = [0.5, 0.75, 0.9, 0.95, 0.99] :: LIST<FLOAT>) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.agg.product",
+    "text": "Returns the product of all non-null `INTEGER` and `FLOAT` values in the collection.",
+    "signature": "apoc.agg.product(value :: INTEGER | FLOAT) :: INTEGER | FLOAT",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.agg.slice",
+    "text": "Returns a subset of non-null values from the given collection (the collection is considered to be zero-indexed).\nTo specify the range from start until the end of the collection, the length should be set to -1.",
+    "signature": "apoc.agg.slice(value :: ANY, from = 0 :: INTEGER, to = -1 :: INTEGER) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.agg.statistics",
+    "text": "Returns the following statistics on the `INTEGER` and `FLOAT` values in the given collection: percentiles, min, minNonZero, max, total, mean, stdev.",
+    "signature": "apoc.agg.statistics(value :: INTEGER | FLOAT, percentiles = [0.5, 0.75, 0.9, 0.95, 0.99] :: LIST<FLOAT>) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.any.properties",
+    "text": "Returns all properties of the given object.\nThe object can be a virtual `NODE`, a real `NODE`, a virtual `RELATIONSHIP`, a real `RELATIONSHIP`, or a `MAP`.",
+    "signature": "apoc.any.properties(object :: ANY, keys = null :: LIST<STRING>) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.any.property",
+    "text": "Returns the property for the given key from an object.\nThe object can be a virtual `NODE`, a real `NODE`, a virtual `RELATIONSHIP`, a real `RELATIONSHIP`, or a `MAP`.",
+    "signature": "apoc.any.property(object :: ANY, key :: STRING) :: ANY",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.bitwise.op",
+    "text": "Returns the result of the bitwise operation",
+    "signature": "apoc.bitwise.op(a :: INTEGER, operator :: STRING, b :: INTEGER) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.avg",
+    "text": "Returns the average of the numbers in the `LIST<INTEGER | FLOAT>`.",
+    "signature": "apoc.coll.avg(coll :: LIST<INTEGER | FLOAT>) :: FLOAT",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.combinations",
+    "text": "Returns a collection of all combinations of `LIST<ANY>` elements between the selection size `minSelect` and `maxSelect` (default: `minSelect`).",
+    "signature": "apoc.coll.combinations(coll :: LIST<ANY>, minSelect :: INTEGER, maxSelect = -1 :: INTEGER) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.contains",
+    "text": "Returns whether or not the given value exists in the given collection.",
+    "signature": "apoc.coll.contains(coll :: LIST<ANY>, value :: ANY) :: BOOLEAN",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.containsAll",
+    "text": "Returns whether or not all of the given values exist in the given collection.",
+    "signature": "apoc.coll.containsAll(coll1 :: LIST<ANY>, coll2 :: LIST<ANY>) :: BOOLEAN",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.containsAllSorted",
+    "text": "Returns whether or not all of the given values in the second `LIST<ANY>` exist in an already sorted collection (using a binary search).",
+    "signature": "apoc.coll.containsAllSorted(coll1 :: LIST<ANY>, coll2 :: LIST<ANY>) :: BOOLEAN",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.containsDuplicates",
+    "text": "Returns true if a collection contains duplicate elements.",
+    "signature": "apoc.coll.containsDuplicates(coll :: LIST<ANY>) :: BOOLEAN",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.containsSorted",
+    "text": "Returns whether or not the given value exists in an already sorted collection (using a binary search).",
+    "signature": "apoc.coll.containsSorted(coll :: LIST<ANY>, value :: ANY) :: BOOLEAN",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.different",
+    "text": "Returns true if all the values in the given `LIST<ANY>` are unique.",
+    "signature": "apoc.coll.different(coll :: LIST<ANY>) :: BOOLEAN",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.disjunction",
+    "text": "Returns the disjunct set from two `LIST<ANY>` values.",
+    "signature": "apoc.coll.disjunction(list1 :: LIST<ANY>, list2 :: LIST<ANY>) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.dropDuplicateNeighbors",
+    "text": "Removes duplicate consecutive objects in the `LIST<ANY>`.",
+    "signature": "apoc.coll.dropDuplicateNeighbors(list :: LIST<ANY>) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.duplicates",
+    "text": "Returns a `LIST<ANY>` of duplicate items in the collection.",
+    "signature": "apoc.coll.duplicates(coll :: LIST<ANY>) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.duplicatesWithCount",
+    "text": "Returns a `LIST<ANY>` of duplicate items in the collection and their count, keyed by `item` and `count`.",
+    "signature": "apoc.coll.duplicatesWithCount(coll :: LIST<ANY>) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.fill",
+    "text": "Returns a `LIST<ANY>` with the given count of items.",
+    "signature": "apoc.coll.fill(item :: STRING, count :: INTEGER) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.flatten",
+    "text": "Flattens the given `LIST<ANY>` (to flatten nested `LIST<ANY>` values, set recursive to true).",
+    "signature": "apoc.coll.flatten(coll :: LIST<ANY>, recursive = false :: BOOLEAN) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.frequencies",
+    "text": "Returns a `LIST<ANY>` of frequencies of the items in the collection, keyed by `item` and `count`.",
+    "signature": "apoc.coll.frequencies(coll :: LIST<ANY>) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.frequenciesAsMap",
+    "text": "Returns a `MAP` of frequencies of the items in the collection, keyed by `item` and `count`.",
+    "signature": "apoc.coll.frequenciesAsMap(coll :: LIST<ANY>) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.indexOf",
+    "text": "Returns the index for the first occurrence of the specified value in the `LIST<ANY>`.",
+    "signature": "apoc.coll.indexOf(coll :: LIST<ANY>, value :: ANY) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.insert",
+    "text": "Inserts a value into the specified index in the `LIST<ANY>`.",
+    "signature": "apoc.coll.insert(coll :: LIST<ANY>, index :: INTEGER, value :: ANY) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.insertAll",
+    "text": "Inserts all of the values into the `LIST<ANY>`, starting at the specified index.",
+    "signature": "apoc.coll.insertAll(coll :: LIST<ANY>, index :: INTEGER, values :: LIST<ANY>) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.intersection",
+    "text": "Returns the distinct intersection of two `LIST<ANY>` values.",
+    "signature": "apoc.coll.intersection(list1 :: LIST<ANY>, list2 :: LIST<ANY>) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.isEqualCollection",
+    "text": "Returns true if the two collections contain the same elements with the same cardinality in any order.",
+    "signature": "apoc.coll.isEqualCollection(coll :: LIST<ANY>, values :: LIST<ANY>) :: BOOLEAN",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.max",
+    "text": "Returns the maximum of all values in the given `LIST<ANY>`.",
+    "signature": "apoc.coll.max(values :: LIST<ANY>) :: ANY",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.min",
+    "text": "Returns the minimum of all values in the given `LIST<ANY>`.",
+    "signature": "apoc.coll.min(values :: LIST<ANY>) :: ANY",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.occurrences",
+    "text": "Returns the count of the given item in the collection.",
+    "signature": "apoc.coll.occurrences(coll :: LIST<ANY>, item :: ANY) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.pairs",
+    "text": "Returns a `LIST<ANY>` of adjacent elements in the `LIST<ANY>` ([1,2],[2,3],[3,null]).",
+    "signature": "apoc.coll.pairs(list :: LIST<ANY>) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.pairsMin",
+    "text": "Returns `LIST<ANY>` values of adjacent elements in the `LIST<ANY>` ([1,2],[2,3]), skipping the final element.",
+    "signature": "apoc.coll.pairsMin(list :: LIST<ANY>) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.partition",
+    "text": "Partitions the original `LIST<ANY>` into a new `LIST<ANY>` of the given batch size.\nThe final `LIST<ANY>` may be smaller than the given batch size.",
+    "signature": "apoc.coll.partition(coll :: LIST<ANY>, batchSize :: INTEGER) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.randomItem",
+    "text": "Returns a random item from the `LIST<ANY>`, or null on `LIST<NOTHING>` or `LIST<NULL>`.",
+    "signature": "apoc.coll.randomItem(coll :: LIST<ANY>) :: ANY",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.randomItems",
+    "text": "Returns a `LIST<ANY>` of `itemCount` random items from the original `LIST<ANY>` (optionally allowing elements in the original `LIST<ANY>` to be selected more than once).",
+    "signature": "apoc.coll.randomItems(coll :: LIST<ANY>, itemCount :: INTEGER, allowRepick = false :: BOOLEAN) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.remove",
+    "text": "Removes a range of values from the `LIST<ANY>`, beginning at position index for the given length of values.",
+    "signature": "apoc.coll.remove(coll :: LIST<ANY>, index :: INTEGER, length = 1 :: INTEGER) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.removeAll",
+    "text": "Returns the first `LIST<ANY>` with all elements also present in the second `LIST<ANY>` removed.",
+    "signature": "apoc.coll.removeAll(list1 :: LIST<ANY>, list2 :: LIST<ANY>) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.runningTotal",
+    "text": "Returns an accumulative `LIST<INTEGER | FLOAT>`.",
+    "signature": "apoc.coll.runningTotal(list :: LIST<INTEGER | FLOAT>) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.set",
+    "text": "Sets the element at the given index to the new value.",
+    "signature": "apoc.coll.set(coll :: LIST<ANY>, index :: INTEGER, value :: ANY) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.shuffle",
+    "text": "Returns the `LIST<ANY>` shuffled.",
+    "signature": "apoc.coll.shuffle(coll :: LIST<ANY>) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.sort",
+    "text": "Sorts the given `LIST<ANY>` into ascending order.",
+    "signature": "apoc.coll.sort(coll :: LIST<ANY>) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.sortMaps",
+    "text": "Sorts the given `LIST<MAP<STRING, ANY>>` into descending order, based on the `MAP` property indicated by `prop`.",
+    "signature": "apoc.coll.sortMaps(list :: LIST<MAP>, prop :: STRING) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.sortMulti",
+    "text": "Sorts the given `LIST<MAP<STRING, ANY>>` by the given fields.\nTo indicate that a field should be sorted according to ascending values, prefix it with a caret (^).\nIt is also possible to add limits to the `LIST<MAP<STRING, ANY>>` and to skip values.",
+    "signature": "apoc.coll.sortMulti(coll :: LIST<MAP>, orderFields = [] :: LIST<STRING>, limit = -1 :: INTEGER, skip = 0 :: INTEGER) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.sortNodes",
+    "text": "Sorts the given `LIST<NODE>` by the property of the nodes into descending order.",
+    "signature": "apoc.coll.sortNodes(coll :: LIST<NODE>, prop :: STRING) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.sortText",
+    "text": "Sorts the given `LIST<STRING>` into ascending order.",
+    "signature": "apoc.coll.sortText(coll :: LIST<STRING>, conf = {} :: MAP) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.subtract",
+    "text": "Returns the first `LIST<ANY>` as a set with all the elements of the second `LIST<ANY>` removed.",
+    "signature": "apoc.coll.subtract(list1 :: LIST<ANY>, list2 :: LIST<ANY>) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.sum",
+    "text": "Returns the sum of all the `INTEGER | FLOAT` in the `LIST<INTEGER | FLOAT>`.",
+    "signature": "apoc.coll.sum(coll :: LIST<INTEGER | FLOAT>) :: FLOAT",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.sumLongs",
+    "text": "Returns the sum of all the `INTEGER | FLOAT` in the `LIST<INTEGER | FLOAT>`.",
+    "signature": "apoc.coll.sumLongs(coll :: LIST<INTEGER | FLOAT>) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.toSet",
+    "text": "Returns a unique `LIST<ANY>` from the given `LIST<ANY>`.",
+    "signature": "apoc.coll.toSet(coll :: LIST<ANY>) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.union",
+    "text": "Returns the distinct union of the two given `LIST<ANY>` values.",
+    "signature": "apoc.coll.union(list1 :: LIST<ANY>, list2 :: LIST<ANY>) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.unionAll",
+    "text": "Returns the full union of the two given `LIST<ANY>` values (duplicates included).",
+    "signature": "apoc.coll.unionAll(list1 :: LIST<ANY>, list2 :: LIST<ANY>) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.coll.zip",
+    "text": "Returns the two given `LIST<ANY>` values zipped together as a `LIST<LIST<ANY>>`.",
+    "signature": "apoc.coll.zip(list1 :: LIST<ANY>, list2 :: LIST<ANY>) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.convert.fromJsonList",
+    "text": "Converts the given JSON list into a Cypher `LIST<STRING>`.",
+    "signature": "apoc.convert.fromJsonList(list :: STRING, path =  :: STRING, pathOptions = null :: LIST<STRING>) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.convert.fromJsonMap",
+    "text": "Converts the given JSON map into a Cypher `MAP`.",
+    "signature": "apoc.convert.fromJsonMap(map :: STRING, path =  :: STRING, pathOptions = null :: LIST<STRING>) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.convert.getJsonProperty",
+    "text": "Converts a serialized JSON object from the property of the given `NODE` into the equivalent Cypher structure (e.g. `MAP`, `LIST<ANY>`).",
+    "signature": "apoc.convert.getJsonProperty(node :: NODE, key :: STRING, path =  :: STRING, pathOptions = null :: LIST<STRING>) :: ANY",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.convert.getJsonPropertyMap",
+    "text": "Converts a serialized JSON object from the property of the given `NODE` into a Cypher `MAP`.",
+    "signature": "apoc.convert.getJsonPropertyMap(node :: NODE, key :: STRING, path =  :: STRING, pathOptions = null :: LIST<STRING>) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.convert.toJson",
+    "text": "Serializes the given JSON value.",
+    "signature": "apoc.convert.toJson(value :: ANY) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.convert.toList",
+    "text": "Converts the given value into a `LIST<ANY>`.",
+    "signature": "apoc.convert.toList(value :: ANY) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.convert.toMap",
+    "text": "Converts the given value into a `MAP`.",
+    "signature": "apoc.convert.toMap(map :: ANY) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.convert.toNode",
+    "text": "Converts the given value into a `NODE`.",
+    "signature": "apoc.convert.toNode(node :: ANY) :: NODE",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.convert.toNodeList",
+    "text": "Converts the given value into a `LIST<NODE>`.",
+    "signature": "apoc.convert.toNodeList(list :: ANY) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.convert.toRelationship",
+    "text": "Converts the given value into a `RELATIONSHIP`.",
+    "signature": "apoc.convert.toRelationship(rel :: ANY) :: RELATIONSHIP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.convert.toRelationshipList",
+    "text": "Converts the given value into a `LIST<RELATIONSHIP>`.",
+    "signature": "apoc.convert.toRelationshipList(relList :: ANY) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.convert.toSet",
+    "text": "Converts the given value into a set represented in Cypher as a `LIST<ANY>`.",
+    "signature": "apoc.convert.toSet(list :: ANY) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.convert.toSortedJsonMap",
+    "text": "Converts a serialized JSON object from the property of a given `NODE` into a Cypher `MAP`.",
+    "signature": "apoc.convert.toSortedJsonMap(value :: ANY, ignoreCase = true :: BOOLEAN) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.create.uuid",
+    "text": "Returns a UUID.",
+    "signature": "apoc.create.uuid() :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": true
+  },
+  {
+    "type": "function",
+    "name": "apoc.create.vNode",
+    "text": "Returns a virtual `NODE`.",
+    "signature": "apoc.create.vNode(labels :: LIST<STRING>, props = {} :: MAP) :: NODE",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.create.vRelationship",
+    "text": "Returns a virtual `RELATIONSHIP`.",
+    "signature": "apoc.create.vRelationship(from :: NODE, relType :: STRING, props :: MAP, to :: NODE) :: RELATIONSHIP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.create.virtual.fromNode",
+    "text": "Returns a virtual `NODE` from the given existing `NODE`. The virtual `NODE` only contains the requested properties.",
+    "signature": "apoc.create.virtual.fromNode(node :: NODE, propertyNames :: LIST<STRING>, config = {} :: MAP) :: NODE",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.cypher.runFirstColumnMany",
+    "text": "Runs the given statement with the given parameters and returns the first column collected into a `LIST<ANY>`.",
+    "signature": "apoc.cypher.runFirstColumnMany(statement :: STRING, params :: MAP) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.cypher.runFirstColumnSingle",
+    "text": "Runs the given statement with the given parameters and returns the first element of the first column.",
+    "signature": "apoc.cypher.runFirstColumnSingle(statement :: STRING, params :: MAP) :: ANY",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.data.url",
+    "text": "Turns a URL into a `MAP`.",
+    "signature": "apoc.data.url(url :: STRING) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.date.add",
+    "text": "Adds a unit of specified time to the given timestamp.",
+    "signature": "apoc.date.add(time :: INTEGER, unit :: STRING, addValue :: INTEGER, addUnit :: STRING) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.date.convert",
+    "text": "Converts the given timestamp from one time unit into a timestamp of a different time unit.",
+    "signature": "apoc.date.convert(time :: INTEGER, unit :: STRING, toUnit :: STRING) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.date.convertFormat",
+    "text": "Converts a `STRING` of one type of date format into a `STRING` of another type of date format.",
+    "signature": "apoc.date.convertFormat(temporal :: STRING, currentFormat :: STRING, convertTo = yyyy-MM-dd :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.date.currentTimestamp",
+    "text": "Returns the current Unix epoch timestamp in milliseconds.",
+    "signature": "apoc.date.currentTimestamp() :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.date.field",
+    "text": "Returns the value of one field from the given date time.",
+    "signature": "apoc.date.field(time :: INTEGER, unit = d :: STRING, timezone = UTC :: STRING) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.date.fields",
+    "text": "Splits the given date into fields returning a `MAP` containing the values of each field.",
+    "signature": "apoc.date.fields(date :: STRING, pattern = yyyy-MM-dd HH:mm:ss :: STRING) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.date.format",
+    "text": "Returns a `STRING` representation of the time value.\nThe time unit (default: ms), date format (default: ISO), and time zone (default: current time zone) can all be changed.",
+    "signature": "apoc.date.format(time :: INTEGER, unit = ms :: STRING, format = yyyy-MM-dd HH:mm:ss :: STRING, timezone =  :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.date.fromISO8601",
+    "text": "Converts the given date `STRING` (ISO8601) to an `INTEGER` representing the time value in milliseconds.",
+    "signature": "apoc.date.fromISO8601(time :: STRING) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.date.parse",
+    "text": "Parses the given date `STRING` from a specified format into the specified time unit.",
+    "signature": "apoc.date.parse(time :: STRING, unit = ms :: STRING, format = yyyy-MM-dd HH:mm:ss :: STRING, timezone =  :: STRING) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.date.systemTimezone",
+    "text": "Returns the display name of the system time zone (e.g. Europe/London).",
+    "signature": "apoc.date.systemTimezone() :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.date.toISO8601",
+    "text": "Returns a `STRING` representation of a specified time value in the ISO8601 format.",
+    "signature": "apoc.date.toISO8601(time :: INTEGER, unit = ms :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.date.toYears",
+    "text": "Converts the given timestamp or the given date into a `FLOAT` representing years.",
+    "signature": "apoc.date.toYears(value :: ANY, format = yyyy-MM-dd HH:mm:ss :: STRING) :: FLOAT",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.diff.nodes",
+    "text": "Returns a `MAP` detailing the differences between the two given `NODE` values.",
+    "signature": "apoc.diff.nodes(leftNode :: NODE, rightNode :: NODE) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.hashing.fingerprint",
+    "text": "Calculates a MD5 checksum over a `NODE` or `RELATIONSHIP` (identical entities share the same checksum).\nUnsuitable for cryptographic use-cases.",
+    "signature": "apoc.hashing.fingerprint(object :: ANY, excludedPropertyKeys = [] :: LIST<STRING>) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.hashing.fingerprintGraph",
+    "text": "Calculates a MD5 checksum over the full graph.\nThis function uses in-memory data structures.\nUnsuitable for cryptographic use-cases.",
+    "signature": "apoc.hashing.fingerprintGraph(propertyExcludes = [] :: LIST<STRING>) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.hashing.fingerprinting",
+    "text": "Calculates a MD5 checksum over a `NODE` or `RELATIONSHIP` (identical entities share the same checksum).\nUnlike `apoc.hashing.fingerprint()`, this function supports a number of config parameters.\nUnsuitable for cryptographic use-cases.",
+    "signature": "apoc.hashing.fingerprinting(object :: ANY, config = {} :: MAP) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.json.path",
+    "text": "Returns the given JSON path.",
+    "signature": "apoc.json.path(json :: STRING, path = $ :: STRING, pathOptions = null :: LIST<STRING>) :: ANY",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.label.exists",
+    "text": "Returns true or false depending on whether or not the given label exists.",
+    "signature": "apoc.label.exists(node :: ANY, label :: STRING) :: BOOLEAN",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.clean",
+    "text": "Filters the keys and values contained in the given `LIST<ANY>` values.",
+    "signature": "apoc.map.clean(map :: MAP, keys :: LIST<STRING>, values :: LIST<ANY>) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.flatten",
+    "text": "Flattens nested items in the given `MAP`.\nThis function is the reverse of the `apoc.map.unflatten` function.",
+    "signature": "apoc.map.flatten(map :: MAP, delimiter = . :: STRING) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.fromLists",
+    "text": "Creates a `MAP` from the keys and values in the given `LIST<ANY>` values.",
+    "signature": "apoc.map.fromLists(keys :: LIST<STRING>, values :: LIST<ANY>) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.fromNodes",
+    "text": "Returns a `MAP` of the given prop to the node of the given label.",
+    "signature": "apoc.map.fromNodes(label :: STRING, prop :: STRING) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.fromPairs",
+    "text": "Creates a `MAP` from the given `LIST<LIST<ANY>>` of key-value pairs.",
+    "signature": "apoc.map.fromPairs(pairs :: LIST<LIST<ANY>>) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.fromValues",
+    "text": "Creates a `MAP` from the alternating keys and values in the given `LIST<ANY>`.",
+    "signature": "apoc.map.fromValues(values :: LIST<ANY>) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.get",
+    "text": "Returns a value for the given key.\nIf the given key does not exist, or lacks a default value, this function will throw an exception.",
+    "signature": "apoc.map.get(map :: MAP, key :: STRING, value = null :: ANY, fail = true :: BOOLEAN) :: ANY",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.groupBy",
+    "text": "Creates a `MAP` of the `LIST<ANY>` keyed by the given property, with single values.",
+    "signature": "apoc.map.groupBy(values :: LIST<ANY>, key :: STRING) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.groupByMulti",
+    "text": "Creates a `MAP` of the `LIST<ANY>` values keyed by the given property, with the `LIST<ANY>` values.",
+    "signature": "apoc.map.groupByMulti(values :: LIST<ANY>, key :: STRING) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.merge",
+    "text": "Merges the two given `MAP` values into one `MAP`.",
+    "signature": "apoc.map.merge(map1 :: MAP, map2 :: MAP) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.mergeList",
+    "text": "Merges all `MAP` values in the given `LIST<MAP<STRING, ANY>>` into one `MAP`.",
+    "signature": "apoc.map.mergeList(maps :: LIST<MAP>) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.mget",
+    "text": "Returns a `LIST<ANY>` for the given keys.\nIf one of the keys does not exist, or lacks a default value, this function will throw an exception.",
+    "signature": "apoc.map.mget(map :: MAP, keys :: LIST<STRING>, values = [] :: LIST<ANY>, fail = true :: BOOLEAN) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.removeKey",
+    "text": "Removes the given key from the `MAP` (recursively if recursive is true).",
+    "signature": "apoc.map.removeKey(map :: MAP, key :: STRING, config = {} :: MAP) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.removeKeys",
+    "text": "Removes the given keys from the `MAP` (recursively if recursive is true).",
+    "signature": "apoc.map.removeKeys(map :: MAP, keys :: LIST<STRING>, config = {} :: MAP) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.setEntry",
+    "text": "Adds or updates the given entry in the `MAP`.",
+    "signature": "apoc.map.setEntry(map :: MAP, key :: STRING, value :: ANY) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": true
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.setKey",
+    "text": "Adds or updates the given entry in the `MAP`.",
+    "signature": "apoc.map.setKey(map :: MAP, key :: STRING, value :: ANY) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.setLists",
+    "text": "Adds or updates the given keys/value pairs provided in `LIST<ANY>` format (e.g. [key1, key2],[value1, value2]) in a `MAP`.",
+    "signature": "apoc.map.setLists(map :: MAP, keys :: LIST<STRING>, values :: LIST<ANY>) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.setPairs",
+    "text": "Adds or updates the given key/value pairs (e.g. [key1,value1],[key2,value2]) in a `MAP`.",
+    "signature": "apoc.map.setPairs(map :: MAP, pairs :: LIST<LIST<ANY>>) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.setValues",
+    "text": "Adds or updates the alternating key/value pairs (e.g. [key1,value1,key2,value2]) in a `MAP`.",
+    "signature": "apoc.map.setValues(map :: MAP, pairs :: LIST<ANY>) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.sortedProperties",
+    "text": "Returns a `LIST<ANY>` of key/value pairs.\nThe pairs are sorted by alphabetically by key, with optional case sensitivity.",
+    "signature": "apoc.map.sortedProperties(map :: MAP, ignoreCase = true :: BOOLEAN) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.submap",
+    "text": "Returns a sub-map for the given keys.\nIf one of the keys does not exist, or lacks a default value, this function will throw an exception.",
+    "signature": "apoc.map.submap(map :: MAP, keys :: LIST<STRING>, values = [] :: LIST<ANY>, fail = true :: BOOLEAN) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.unflatten",
+    "text": "Unflattens items in the given `MAP` to nested items.\nThis function is the reverse of the `apoc.map.flatten` function.",
+    "signature": "apoc.map.unflatten(map :: MAP, delimiter = . :: STRING) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.updateTree",
+    "text": "Adds the data `MAP` on each level of the nested tree, where the key-value pairs match.",
+    "signature": "apoc.map.updateTree(tree :: MAP, key :: STRING, data :: LIST<LIST<ANY>>) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.map.values",
+    "text": "Returns a `LIST<ANY>` indicated by the given keys (returns a null value if a given key is missing).",
+    "signature": "apoc.map.values(map :: MAP, keys = [] :: LIST<STRING>, addNullsForMissing = false :: BOOLEAN) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.math.maxByte",
+    "text": "Returns the maximum value of a byte.",
+    "signature": "apoc.math.maxByte() :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.math.maxDouble",
+    "text": "Returns the largest positive finite value of type double.",
+    "signature": "apoc.math.maxDouble() :: FLOAT",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.math.maxInt",
+    "text": "Returns the maximum value of an integer.",
+    "signature": "apoc.math.maxInt() :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.math.maxLong",
+    "text": "Returns the maximum value of a long.",
+    "signature": "apoc.math.maxLong() :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.math.minByte",
+    "text": "Returns the minimum value of a byte.",
+    "signature": "apoc.math.minByte() :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.math.minDouble",
+    "text": "Returns the smallest positive non-zero value of type double.",
+    "signature": "apoc.math.minDouble() :: FLOAT",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.math.minInt",
+    "text": "Returns the minimum value of an integer.",
+    "signature": "apoc.math.minInt() :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.math.minLong",
+    "text": "Returns the minimum value of a long.",
+    "signature": "apoc.math.minLong() :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.math.sigmoid",
+    "text": "Returns the sigmoid of the given value.",
+    "signature": "apoc.math.sigmoid(value :: FLOAT) :: FLOAT",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.math.sigmoidPrime",
+    "text": "Returns the sigmoid prime [ sigmoid(val) * (1 - sigmoid(val)) ] of the given value.",
+    "signature": "apoc.math.sigmoidPrime(value :: FLOAT) :: FLOAT",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.meta.cypher.isType",
+    "text": "Returns true if the given value matches the given type.",
+    "signature": "apoc.meta.cypher.isType(value :: ANY, type :: STRING) :: BOOLEAN",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.meta.cypher.type",
+    "text": "Returns the type name of the given value.",
+    "signature": "apoc.meta.cypher.type(value :: ANY) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.meta.cypher.types",
+    "text": "Returns a `MAP` containing the type names of the given values.",
+    "signature": "apoc.meta.cypher.types(props :: ANY) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.meta.nodes.count",
+    "text": "Returns the sum of the `NODE` values with the given labels in the `LIST<STRING>`.",
+    "signature": "apoc.meta.nodes.count(nodes = [] :: LIST<STRING>, config = {} :: MAP) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.node.degree",
+    "text": "Returns the total degrees of the given `NODE`.",
+    "signature": "apoc.node.degree(node :: NODE, relTypes =  :: STRING) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.node.degree.in",
+    "text": "Returns the total number of incoming `RELATIONSHIP` values connected to the given `NODE`.",
+    "signature": "apoc.node.degree.in(node :: NODE, relTypes =  :: STRING) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.node.degree.out",
+    "text": "Returns the total number of outgoing `RELATIONSHIP` values from the given `NODE`.",
+    "signature": "apoc.node.degree.out(node :: NODE, relTypes =  :: STRING) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.node.id",
+    "text": "Returns the id for the given virtual `NODE`.",
+    "signature": "apoc.node.id(node :: NODE) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.node.labels",
+    "text": "Returns the labels for the given virtual `NODE`.",
+    "signature": "apoc.node.labels(node :: NODE) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.node.relationship.exists",
+    "text": "Returns a `BOOLEAN` based on whether the given `NODE` has a connecting `RELATIONSHIP` (or whether the given `NODE` has a connecting `RELATIONSHIP` of the given type and direction).",
+    "signature": "apoc.node.relationship.exists(node :: NODE, relTypes =  :: STRING) :: BOOLEAN",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.node.relationship.types",
+    "text": "Returns a `LIST<STRING>` of distinct `RELATIONSHIP` types for the given `NODE`.",
+    "signature": "apoc.node.relationship.types(node :: NODE, relTypes =  :: STRING) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.node.relationships.exist",
+    "text": "Returns a `BOOLEAN` based on whether the given `NODE` has connecting `RELATIONSHIP` values (or whether the given `NODE` has connecting `RELATIONSHIP` values of the given type and direction).",
+    "signature": "apoc.node.relationships.exist(node :: NODE, relTypes =  :: STRING) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.nodes.connected",
+    "text": "Returns true when a given `NODE` is directly connected to another given `NODE`.\nThis function is optimized for dense nodes.",
+    "signature": "apoc.nodes.connected(startNode :: NODE, endNode :: NODE, types =  :: STRING) :: BOOLEAN",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.nodes.isDense",
+    "text": "Returns true if the given `NODE` is a dense node.",
+    "signature": "apoc.nodes.isDense(node :: NODE) :: BOOLEAN",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.nodes.relationship.types",
+    "text": "Returns a `LIST<STRING>` of distinct `RELATIONSHIP` types from the given `LIST<NODE>` values.",
+    "signature": "apoc.nodes.relationship.types(nodes :: ANY, types =  :: STRING) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.nodes.relationships.exist",
+    "text": "Returns a `BOOLEAN` based on whether or not the given `NODE` values have the given `RELATIONSHIP` values.",
+    "signature": "apoc.nodes.relationships.exist(nodes :: ANY, types =  :: STRING) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.number.arabicToRoman",
+    "text": "Converts the given Arabic numbers to Roman numbers.",
+    "signature": "apoc.number.arabicToRoman(number :: ANY) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.number.exact.add",
+    "text": "Returns the result of adding the two given large numbers (using Java BigDecimal).",
+    "signature": "apoc.number.exact.add(stringA :: STRING, stringB :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.number.exact.div",
+    "text": "Returns the result of dividing a given large number with another given large number (using Java BigDecimal).",
+    "signature": "apoc.number.exact.div(stringA :: STRING, stringB :: STRING, precision = 0 :: INTEGER, roundingMode = HALF_UP :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.number.exact.mul",
+    "text": "Returns the result of multiplying two given large numbers (using Java BigDecimal).",
+    "signature": "apoc.number.exact.mul(stringA :: STRING, stringB :: STRING, precision = 0 :: INTEGER, roundingMode = HALF_UP :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.number.exact.sub",
+    "text": "Returns the result of subtracting a given large number from another given large number (using Java BigDecimal).",
+    "signature": "apoc.number.exact.sub(stringA :: STRING, stringB :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.number.exact.toExact",
+    "text": "Returns the exact value of the given number (using Java BigDecimal).",
+    "signature": "apoc.number.exact.toExact(number :: INTEGER) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.number.exact.toFloat",
+    "text": "Returns the `FLOAT` of the given large number (using Java BigDecimal).",
+    "signature": "apoc.number.exact.toFloat(string :: STRING, precision = 0 :: INTEGER, roundingMode = HALF_UP :: STRING) :: FLOAT",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.number.exact.toInteger",
+    "text": "Returns the `INTEGER` of the given large number (using Java BigDecimal).",
+    "signature": "apoc.number.exact.toInteger(string :: STRING, precision = 0 :: INTEGER, roundingMode = HALF_UP :: STRING) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.number.format",
+    "text": "Formats the given `INTEGER` or `FLOAT` using the given pattern and language to produce a `STRING`.",
+    "signature": "apoc.number.format(number :: ANY, pattern =  :: STRING, language =  :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.number.parseFloat",
+    "text": "Parses the given `STRING` using the given pattern and language to produce a `FLOAT`.",
+    "signature": "apoc.number.parseFloat(text :: STRING, pattern =  :: STRING, language =  :: STRING) :: FLOAT",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.number.parseInt",
+    "text": "Parses the given `STRING` using the given pattern and language to produce a `INTEGER`.",
+    "signature": "apoc.number.parseInt(text :: STRING, pattern =  :: STRING, language =  :: STRING) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.number.romanToArabic",
+    "text": "Converts the given Roman numbers to Arabic numbers.",
+    "signature": "apoc.number.romanToArabic(romanNumber :: STRING) :: INTEGER | FLOAT",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.path.combine",
+    "text": "Combines the two given `PATH` values into one `PATH`.",
+    "signature": "apoc.path.combine(path1 :: PATH, path2 :: PATH) :: PATH",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.path.create",
+    "text": "Returns a `PATH` from the given start `NODE` and `LIST<RELATIONSHIP>`.",
+    "signature": "apoc.path.create(startNode :: NODE, rels = [] :: LIST<RELATIONSHIP>) :: PATH",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.path.elements",
+    "text": "Converts the given `PATH` into a `LIST<NODE | RELATIONSHIP>`.",
+    "signature": "apoc.path.elements(path :: PATH) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.path.slice",
+    "text": "Returns a new `PATH` of the given length, taken from the given `PATH` at the given offset.",
+    "signature": "apoc.path.slice(path :: PATH, offset = 0 :: INTEGER, length = -1 :: INTEGER) :: PATH",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.rel.endNode",
+    "text": "Returns the end `NODE` for the given virtual `RELATIONSHIP`.",
+    "signature": "apoc.rel.endNode(rel :: RELATIONSHIP) :: NODE",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.rel.id",
+    "text": "Returns the id for the given virtual `RELATIONSHIP`.",
+    "signature": "apoc.rel.id(rel :: RELATIONSHIP) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.rel.startNode",
+    "text": "Returns the start `NODE` for the given virtual `RELATIONSHIP`.",
+    "signature": "apoc.rel.startNode(rel :: RELATIONSHIP) :: NODE",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.rel.type",
+    "text": "Returns the type for the given virtual `RELATIONSHIP`.",
+    "signature": "apoc.rel.type(rel :: RELATIONSHIP) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.schema.node.constraintExists",
+    "text": "Returns a `BOOLEAN` depending on whether or not a constraint exists for the given `NODE` label with the given property names.",
+    "signature": "apoc.schema.node.constraintExists(labelName :: STRING, propertyName :: LIST<STRING>) :: BOOLEAN",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.schema.node.indexExists",
+    "text": "Returns a `BOOLEAN` depending on whether or not an index exists for the given `NODE` label with the given property names.",
+    "signature": "apoc.schema.node.indexExists(labelName :: STRING, propertyName :: LIST<STRING>) :: BOOLEAN",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.schema.relationship.constraintExists",
+    "text": "Returns a `BOOLEAN` depending on whether or not a constraint exists for the given `RELATIONSHIP` type with the given property names.",
+    "signature": "apoc.schema.relationship.constraintExists(type :: STRING, propertyName :: LIST<STRING>) :: BOOLEAN",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.schema.relationship.indexExists",
+    "text": "Returns a `BOOLEAN` depending on whether or not an index exists for the given `RELATIONSHIP` type with the given property names.",
+    "signature": "apoc.schema.relationship.indexExists(type :: STRING, propertyName :: LIST<STRING>) :: BOOLEAN",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.scoring.existence",
+    "text": "Returns the given score if true, 0 if false.",
+    "signature": "apoc.scoring.existence(score :: INTEGER, exists :: BOOLEAN) :: FLOAT",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.scoring.pareto",
+    "text": "Applies a Pareto scoring function over the given `INTEGER` values.",
+    "signature": "apoc.scoring.pareto(minimumThreshold :: INTEGER, eightyPercentValue :: INTEGER, maximumValue :: INTEGER, score :: INTEGER) :: FLOAT",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.temporal.format",
+    "text": "Formats the given temporal value into the given time format.",
+    "signature": "apoc.temporal.format(temporal :: ANY, format = yyyy-MM-dd :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.temporal.formatDuration",
+    "text": "Formats the given duration into the given time format.",
+    "signature": "apoc.temporal.formatDuration(input :: ANY, format :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.temporal.toZonedTemporal",
+    "text": "Parses the given date `STRING` using the specified format into the given time zone.",
+    "signature": "apoc.temporal.toZonedTemporal(time :: STRING, format = yyyy-MM-dd HH:mm:ss :: STRING, timezone = UTC :: STRING) :: ZONED DATETIME",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.base64Decode",
+    "text": "Decodes the given Base64 encoded `STRING`.",
+    "signature": "apoc.text.base64Decode(text :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.base64Encode",
+    "text": "Encodes the given `STRING` with Base64.",
+    "signature": "apoc.text.base64Encode(text :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.base64UrlDecode",
+    "text": "Decodes the given Base64 encoded URL.",
+    "signature": "apoc.text.base64UrlDecode(url :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.base64UrlEncode",
+    "text": "Encodes the given URL with Base64.",
+    "signature": "apoc.text.base64UrlEncode(url :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.byteCount",
+    "text": "Returns the size of the given `STRING` in bytes.",
+    "signature": "apoc.text.byteCount(text :: STRING, charset = UTF-8 :: STRING) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.bytes",
+    "text": "Returns the given `STRING` as bytes.",
+    "signature": "apoc.text.bytes(text :: STRING, charset = UTF-8 :: STRING) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.camelCase",
+    "text": "Converts the given `STRING` to camel case.",
+    "signature": "apoc.text.camelCase(text :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.capitalize",
+    "text": "Capitalizes the first letter of the given `STRING`.",
+    "signature": "apoc.text.capitalize(text :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.capitalizeAll",
+    "text": "Capitalizes the first letter of every word in the given `STRING`.",
+    "signature": "apoc.text.capitalizeAll(text :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.charAt",
+    "text": "Returns the `INTEGER` value of the character at the given index.",
+    "signature": "apoc.text.charAt(text :: STRING, index :: INTEGER) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.clean",
+    "text": "Strips the given `STRING` of everything except alpha numeric characters and converts it to lower case.",
+    "signature": "apoc.text.clean(text :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.code",
+    "text": "Converts the `INTEGER` value into a `STRING`.",
+    "signature": "apoc.text.code(codepoint :: INTEGER) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.compareCleaned",
+    "text": "Compares two given `STRING` values stripped of everything except alpha numeric characters converted to lower case.",
+    "signature": "apoc.text.compareCleaned(text1 :: STRING, text2 :: STRING) :: BOOLEAN",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.decapitalize",
+    "text": "Turns the first letter of the given `STRING` from upper case to lower case.",
+    "signature": "apoc.text.decapitalize(text :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.decapitalizeAll",
+    "text": "Turns the first letter of every word in the given `STRING` to lower case.",
+    "signature": "apoc.text.decapitalizeAll(text :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.distance",
+    "text": "Compares the two given `STRING` values using the Levenshtein distance algorithm.",
+    "signature": "apoc.text.distance(text1 :: STRING, text2 :: STRING) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.doubleMetaphone",
+    "text": "Returns the double metaphone phonetic encoding of all words in the given `STRING` value.",
+    "signature": "apoc.text.doubleMetaphone(value :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.format",
+    "text": "Formats the given `STRING` with the given parameters.",
+    "signature": "apoc.text.format(text :: STRING, params :: LIST<ANY>, language = en :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.fuzzyMatch",
+    "text": "Performs a fuzzy match search of the two given `STRING` values.",
+    "signature": "apoc.text.fuzzyMatch(text1 :: STRING, text2 :: STRING) :: BOOLEAN",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.hammingDistance",
+    "text": "Compares the two given `STRING` values using the Hamming distance algorithm.",
+    "signature": "apoc.text.hammingDistance(text1 :: STRING, text2 :: STRING) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.hexCharAt",
+    "text": "Returns the hexadecimal value of the given `STRING` at the given index.",
+    "signature": "apoc.text.hexCharAt(text :: STRING, index :: INTEGER) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.hexValue",
+    "text": "Returns the hexadecimal value of the given value.",
+    "signature": "apoc.text.hexValue(value :: INTEGER) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.indexOf",
+    "text": "Returns the first occurrence of the lookup `STRING` in the given `STRING`, or -1 if not found.",
+    "signature": "apoc.text.indexOf(text :: STRING, lookup :: STRING, from = 0 :: INTEGER, to = -1 :: INTEGER) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.indexesOf",
+    "text": "Returns all occurrences of the lookup `STRING` in the given `STRING`, or an empty list if not found.",
+    "signature": "apoc.text.indexesOf(text :: STRING, lookup :: STRING, from = 0 :: INTEGER, to = -1 :: INTEGER) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.jaroWinklerDistance",
+    "text": "Compares the two given `STRING` values using the Jaro-Winkler distance algorithm.",
+    "signature": "apoc.text.jaroWinklerDistance(text1 :: STRING, text2 :: STRING) :: FLOAT",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.join",
+    "text": "Joins the given `STRING` values using the given delimiter.",
+    "signature": "apoc.text.join(texts :: LIST<STRING>, delimiter :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.levenshteinDistance",
+    "text": "Compares the given `STRING` values using the Levenshtein distance algorithm.",
+    "signature": "apoc.text.levenshteinDistance(text1 :: STRING, text2 :: STRING) :: INTEGER",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": true
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.levenshteinSimilarity",
+    "text": "Returns the similarity (a value within 0 and 1) between the two given `STRING` values based on the Levenshtein distance algorithm.",
+    "signature": "apoc.text.levenshteinSimilarity(text1 :: STRING, text2 :: STRING) :: FLOAT",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.lpad",
+    "text": "Left pads the given `STRING` by the given width.",
+    "signature": "apoc.text.lpad(text :: STRING, count :: INTEGER, delimiter =   :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.phonetic",
+    "text": "Returns the US_ENGLISH phonetic soundex encoding of all words of the `STRING`.",
+    "signature": "apoc.text.phonetic(text :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.random",
+    "text": "Generates a random `STRING` to the given length using a length parameter and an optional `STRING` of valid characters.\nUnsuitable for cryptographic use-cases.",
+    "signature": "apoc.text.random(length :: INTEGER, valid = A-Za-z0-9 :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.regexGroups",
+    "text": "Returns all groups matching the given regular expression in the given text.",
+    "signature": "apoc.text.regexGroups(text :: STRING, regex :: STRING) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.regexGroupsByName",
+    "text": "Returns all groups with their group name matching the given regular expression in the given text.",
+    "signature": "apoc.text.regexGroupsByName(text :: STRING, regex :: STRING) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.regreplace",
+    "text": "Finds and replaces all matches found by the given regular expression with the given replacement.",
+    "signature": "apoc.text.regreplace(text :: STRING, regex :: STRING, replacement :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": true
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.repeat",
+    "text": "Returns the result of the given item multiplied by the given count.",
+    "signature": "apoc.text.repeat(item :: STRING, count :: INTEGER) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.replace",
+    "text": "Finds and replaces all matches found by the given regular expression with the given replacement.",
+    "signature": "apoc.text.replace(text :: STRING, regex :: STRING, replacement :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.rpad",
+    "text": "Right pads the given `STRING` by the given width.",
+    "signature": "apoc.text.rpad(text :: STRING, count :: INTEGER, delimiter =   :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.slug",
+    "text": "Replaces the whitespace in the given `STRING` with the given delimiter.",
+    "signature": "apoc.text.slug(text :: STRING, delimiter = - :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.snakeCase",
+    "text": "Converts the given `STRING` to snake case.",
+    "signature": "apoc.text.snakeCase(text :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.sorensenDiceSimilarity",
+    "text": "Compares the two given `STRING` values using the Sørensen–Dice coefficient formula, with the provided IETF language tag.",
+    "signature": "apoc.text.sorensenDiceSimilarity(text1 :: STRING, text2 :: STRING, languageTag = en :: STRING) :: FLOAT",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.split",
+    "text": "Splits the given `STRING` using a given regular expression as a separator.",
+    "signature": "apoc.text.split(text :: STRING, regex :: STRING, limit = 0 :: INTEGER) :: LIST<ANY>",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.swapCase",
+    "text": "Swaps the cases in the given `STRING`.",
+    "signature": "apoc.text.swapCase(text :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.toCypher",
+    "text": "Converts the given value to a Cypher property `STRING`.",
+    "signature": "apoc.text.toCypher(value :: ANY, config = {} :: MAP) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.toUpperCase",
+    "text": "Converts the given `STRING` to upper case.",
+    "signature": "apoc.text.toUpperCase(text :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.upperCamelCase",
+    "text": "Converts the given `STRING` to upper camel case.",
+    "signature": "apoc.text.upperCamelCase(text :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.urldecode",
+    "text": "Decodes the given URL encoded `STRING`.",
+    "signature": "apoc.text.urldecode(text :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.text.urlencode",
+    "text": "Encodes the given URL `STRING`.",
+    "signature": "apoc.text.urlencode(text :: STRING) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.util.md5",
+    "text": "Returns the MD5 checksum of the concatenation of all `STRING` values in the given `LIST<ANY>`.\nMD5 is a weak hashing algorithm which is unsuitable for cryptographic use-cases.",
+    "signature": "apoc.util.md5(values :: LIST<ANY>) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.util.sha1",
+    "text": "Returns the SHA1 of the concatenation of all `STRING` values in the given `LIST<ANY>`.\nSHA1 is a weak hashing algorithm which is unsuitable for cryptographic use-cases.",
+    "signature": "apoc.util.sha1(values :: LIST<ANY>) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.util.sha256",
+    "text": "Returns the SHA256 of the concatenation of all `STRING` values in the given `LIST<ANY>`.",
+    "signature": "apoc.util.sha256(values :: LIST<ANY>) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.util.sha384",
+    "text": "Returns the SHA384 of the concatenation of all `STRING` values in the given `LIST<ANY>`.",
+    "signature": "apoc.util.sha384(values :: LIST<ANY>) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.util.sha512",
+    "text": "Returns the SHA512 of the concatenation of all `STRING` values in the `LIST<ANY>`.",
+    "signature": "apoc.util.sha512(values :: LIST<ANY>) :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.util.validatePredicate",
+    "text": "If the given predicate is true an exception is thrown, otherwise it returns true (for use inside `WHERE` subclauses).",
+    "signature": "apoc.util.validatePredicate(predicate :: BOOLEAN, message :: STRING, params :: LIST<ANY>) :: BOOLEAN",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.version",
+    "text": "Returns the APOC version currently installed.",
+    "signature": "apoc.version() :: STRING",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  },
+  {
+    "type": "function",
+    "name": "apoc.xml.parse",
+    "text": "Parses the given XML `STRING` as a `MAP`.",
+    "signature": "apoc.xml.parse(data :: STRING, path = / :: STRING, config = {} :: MAP, simple = false :: BOOLEAN) :: MAP",
+    "roles": null,
+    "writes": null,
+    "core": true,
+    "isDeprecated": false
+  }
+]

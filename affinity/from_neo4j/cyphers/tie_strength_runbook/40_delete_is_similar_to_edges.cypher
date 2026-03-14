@@ -1,0 +1,2 @@
+MATCH ()-[s:IS_SIMILAR_TO]-()
+DELETE s;
