@@ -19,6 +19,17 @@ Key documents:
 
 These documents allow readers to trace claims from **theory → verification scripts → artifacts**.
 
+## Affinity v2 (live Neo4j Aura)
+
+To run the current Affinity n=50 v2 pipeline against Neo4j Aura (authoritative inputs) while writing a per-run provenance snapshot:
+
+- `docs/how_to_run_affinity_v2_live_neo4j.md`
+
+Neo4j tie-strength model + runbook:
+
+- `affinity/from_neo4j/TIE_STRENGTH_MODEL.md`
+- `affinity/from_neo4j/cyphers/tie_strength_runbook/RUNBOOK.md`
+
 ## Repository Structure
 
 ```
